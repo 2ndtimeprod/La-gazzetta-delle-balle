@@ -1,0 +1,234 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "DadoFisico.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 36,
+      "title": "Dado fisico a 6 facce (stile e Dark nei Tweaks)",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "Estr-Rulli.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 36,
+      "title": "Sera · Estrazione a rulli",
+      "w": 390,
+      "x": 0,
+      "y": 3640
+    },
+    "Q-Dado.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 36,
+      "title": "Quotidiano · Dado",
+      "w": 390,
+      "x": 940,
+      "y": 2440
+    },
+    "Q-Estr-Rulli.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 36,
+      "title": "Quotidiano · Estrazione a rulli",
+      "w": 390,
+      "x": 470,
+      "y": 3640
+    },
+    "Q-Home.dc.html": {
+      "h": 844,
+      "radius": 36,
+      "title": "Quotidiano · Home",
+      "w": 390,
+      "x": 0,
+      "y": 2440
+    },
+    "Q-Narratore.dc.html": {
+      "h": 844,
+      "radius": 36,
+      "title": "Quotidiano · Narratore",
+      "w": 390,
+      "x": 1410,
+      "y": 2440
+    },
+    "Q-Risultati.dc.html": {
+      "h": 844,
+      "radius": 36,
+      "title": "Quotidiano · Risultati",
+      "w": 390,
+      "x": 2820,
+      "y": 2440
+    },
+    "Q-Scrive.dc.html": {
+      "h": 844,
+      "radius": 36,
+      "title": "Quotidiano · Scrivi la balla",
+      "w": 390,
+      "x": 1880,
+      "y": 2440
+    },
+    "Q-Setup.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 36,
+      "title": "Quotidiano · Nuova partita",
+      "w": 390,
+      "x": 470,
+      "y": 2440
+    },
+    "Q-Vota.dc.html": {
+      "h": 844,
+      "radius": 36,
+      "title": "Quotidiano · Voto",
+      "w": 390,
+      "x": 2350,
+      "y": 2440
+    },
+    "S-Dado.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 36,
+      "title": "Sera · Dado",
+      "w": 390,
+      "x": 940,
+      "y": 1240
+    },
+    "S-Home.dc.html": {
+      "h": 844,
+      "radius": 36,
+      "title": "Sera · Home",
+      "w": 390,
+      "x": 0,
+      "y": 1240
+    },
+    "S-Narratore.dc.html": {
+      "h": 844,
+      "radius": 36,
+      "title": "Sera · Narratore",
+      "w": 390,
+      "x": 1410,
+      "y": 1240
+    },
+    "S-Risultati.dc.html": {
+      "h": 844,
+      "radius": 36,
+      "title": "Sera · Risultati",
+      "w": 390,
+      "x": 2820,
+      "y": 1240
+    },
+    "S-Scrive.dc.html": {
+      "h": 844,
+      "radius": 36,
+      "title": "Sera · Scrivi la balla",
+      "w": 390,
+      "x": 1880,
+      "y": 1240
+    },
+    "S-Setup.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 36,
+      "title": "Sera · Nuova partita",
+      "w": 390,
+      "x": 470,
+      "y": 1240
+    },
+    "S-Vota.dc.html": {
+      "h": 844,
+      "radius": 36,
+      "title": "Sera · Voto",
+      "w": 390,
+      "x": 2350,
+      "y": 1240
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-11-10T07:55:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "noteOrder": [
+    "dado",
+    "dadoNote",
+    "sera",
+    "quot",
+    "estr",
+    "estrNote"
+  ],
+  "notes": {
+    "dado": {
+      "kind": "title1",
+      "maxW": 1800,
+      "text": "Il dado a 6 facce",
+      "w": 240,
+      "x": 0,
+      "y": -280
+    },
+    "dadoNote": {
+      "size": 24,
+      "text": "Dado provvisorio, da sostituire. Nei Tweaks cambi edizione (sera, quotidiano) e accendi Dark.",
+      "w": 420,
+      "x": 470,
+      "y": 0
+    },
+    "estr": {
+      "kind": "title1",
+      "maxW": 860,
+      "text": "Estrazione categoria · tamburo a rulli",
+      "w": 240,
+      "x": 0,
+      "y": 3400
+    },
+    "estrNote": {
+      "size": 24,
+      "text": "Tamburo a 7 facce: le 6 categorie più Jolly oppure Dark. Il rullo segue il dito 1:1 e, al rilascio, parte alla stessa velocità. Le freccette rimbalzano a ogni faccia che passa. L'esito è scelto prima dell'animazione (qui casuale, in produzione dal server). In basso: pulsante Dark e Rilancia, solo per il prototipo.",
+      "w": 440,
+      "x": 940,
+      "y": 3640
+    },
+    "quot": {
+      "kind": "title1",
+      "maxW": 3210,
+      "text": "Tema 2 · Il Quotidiano",
+      "w": 240,
+      "x": 0,
+      "y": 2200
+    },
+    "sera": {
+      "kind": "title1",
+      "maxW": 3210,
+      "text": "Tema 1 · Edizione della sera",
+      "w": 240,
+      "x": 0,
+      "y": 1000
+    }
+  },
+  "order": [
+    "DadoFisico.dc.html",
+    "S-Home.dc.html",
+    "S-Setup.dc.html",
+    "S-Dado.dc.html",
+    "S-Narratore.dc.html",
+    "S-Scrive.dc.html",
+    "S-Vota.dc.html",
+    "S-Risultati.dc.html",
+    "Q-Home.dc.html",
+    "Q-Setup.dc.html",
+    "Q-Dado.dc.html",
+    "Q-Narratore.dc.html",
+    "Q-Scrive.dc.html",
+    "Q-Vota.dc.html",
+    "Q-Risultati.dc.html",
+    "Estr-Rulli.dc.html",
+    "Q-Estr-Rulli.dc.html"
+  ],
+  "pages": [],
+  "title": "Balle credibili: mockup dell'app"
+}

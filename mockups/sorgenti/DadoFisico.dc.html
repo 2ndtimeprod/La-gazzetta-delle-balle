@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Dado fisico a sei facce</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; padding: 50px 22px 30px; display: flex; flex-direction: column; justify-content: space-between; background: {{pageBg}}; background-size: {{pageBgSize}}; color: {{ink}}; font-family: {{bodyFont}}">
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<header style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-family: {{metaFont}}; font-size: 11px; letter-spacing: 1px; color: {{muted}}"><span>MAR 10 NOV 2026</span><span>{{metaRight}}</span></div>
+<div style="border-top: {{ruleTop}}; border-bottom: {{ruleBottom}}; padding: 7px 0 6px; display: flex; justify-content: space-between; align-items: center"><span style="font-family: {{mastFont}}; font-size: {{mastSize}}; font-weight: {{mastWeight}}; font-style: {{mastStyle}}; text-transform: {{mastCase}}">La Gazzetta delle Balle</span><span style="font-family: {{metaFont}}; font-size: 11px; color: {{muted}}">ROUND 3/10</span></div>
+</header>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="align-self: flex-start; font-family: {{metaFont}}; font-size: 11px; letter-spacing: 1.5px; background: {{accent}}; color: {{accentInk}}; padding: 4px 8px">SEI IL NARRATORE</span>
+<h1 style="margin: 4px 0 0; font-family: {{headFont}}; font-weight: {{headWeight}}; font-style: {{headStyle}}; font-size: {{headSize}}; line-height: 1; text-transform: {{headCase}}">Tocca a te, Dom</h1>
+<p style="margin: 0; font-size: 16px; line-height: 1.4; color: {{muted}}">Prendi il dado con il dito e lancialo sul tavolo.</p>
+</div>
+</div>
+
+<div onPointerDown="{{down}}" onPointerMove="{{move}}" onPointerUp="{{up}}" onPointerCancel="{{up}}" style="position: relative; width: 346px; height: 410px; flex-shrink: 0; perspective: 800px; perspective-origin: 50% 40%; touch-action: none; user-select: none; cursor: grab">
+<div style="position: absolute; left: 23px; top: 5px; width: 300px; height: 400px; transform-style: preserve-3d; transform: rotateX(50deg); border-radius: {{trayRadius}}; background: {{trayBg}}; background-size: {{trayBgSize}}; box-shadow: {{trayShadow}}">
+<div aria-hidden="true" style="position: absolute; left: {{shLeft}}; top: {{shTop}}; width: 96px; height: 96px; border-radius: 50%; background: radial-gradient(circle, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 68%); opacity: {{shOpacity}}; transform: translateZ(1px) scale({{shScale}})"></div>
+<div aria-hidden="true" style="position: absolute; left: -32px; top: -32px; width: 64px; height: 64px; transform-style: preserve-3d; transform: {{dieTf}}">
+<div style="position: absolute; left: 2px; top: 2px; width: 60px; height: 60px; background: {{core}}"></div>
+<div style="position: absolute; left: 2px; top: 2px; width: 60px; height: 60px; background: {{core}}; transform: rotateY(90deg)"></div>
+<div style="position: absolute; left: 2px; top: 2px; width: 60px; height: 60px; background: {{core}}; transform: rotateX(90deg)"></div>
+<sc-for list="{{faces}}" as="f" hint-placeholder-count="6">
+<div style="position: absolute; left: 0; top: 0; width: 64px; height: 64px; box-sizing: border-box; border-radius: {{f.radius}}; overflow: hidden; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; transform: {{f.tf}}; background: {{f.bg}}; border: {{f.border}}; color: {{f.ink}}; font-family: {{f.font}}; font-style: {{f.fstyle}}; font-size: {{f.size}}; font-weight: {{f.weight}}; letter-spacing: 0.5px; box-shadow: {{f.inner}}">
+<span style="position: relative">{{f.label}}</span>
+<div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255,255,255,{{f.gloss}}) 0%, rgba(255,255,255,0) 48%)"></div>
+<div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: rgba(0,0,0,{{f.shade}})"></div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div aria-live="polite" style="height: 40px; display: flex; align-items: center; justify-content: center">
+<sc-if value="{{landed}}" hint-placeholder-val="{{false}}"><span style="font-family: {{headFont}}; font-weight: {{headWeight}}; font-style: {{headStyle}}; font-size: 22px; text-transform: {{headCase}}; background: {{resultBg}}; color: {{resultInk}}; padding: 5px 14px">{{resultName}}</span></sc-if>
+<sc-if value="{{flying}}" hint-placeholder-val="{{false}}"><span style="font-family: {{metaFont}}; font-size: 12px; letter-spacing: 1px; color: {{muted}}">STA ROTOLANDO</span></sc-if>
+</div>
+<sc-if value="{{landed}}" hint-placeholder-val="{{false}}">
+<a href="{{avanti}}" style="display: flex; align-items: center; justify-content: center; height: 58px; text-decoration: none; font-family: {{btnFont}}; font-weight: {{btnWeight}}; font-size: {{btnSize}}; letter-spacing: {{btnTrack}}; text-transform: uppercase; background: {{btnBg}}; color: {{btnInk}}; border: {{btnBorder}}; border-radius: {{btnRadius}}; box-shadow: {{btnShadow}}">Pesca la frase</a>
+</sc-if>
+<sc-if value="{{notLanded}}" hint-placeholder-val="{{true}}">
+<button type="button" onClick="{{autoThrow}}" style="height: 58px; cursor: pointer; font-family: {{btnFont}}; font-weight: {{btnWeight}}; font-size: {{btnSize}}; letter-spacing: {{btnTrack}}; text-transform: uppercase; background: {{btn2Bg}}; color: {{btn2Ink}}; border: {{btn2Border}}; border-radius: {{btnRadius}}">Lancialo tu per me</button>
+</sc-if>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"stile":{"editor":"enum","options":["tabloid","sera","quotidiano","scandalo"],"default":"tabloid"},"dark":{"editor":"boolean","default":false},"avanti":{"editor":null,"default":"T-Narratore.dc.html"},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.W = 300; this.H = 400; this.h = 32;
+this.I = (2 / 3) * this.h * this.h;
+this.b = { p: [150, 290, 32], v: [0, 0, 0], q: [0, 0, 0.1736, 0.9848], w: [0, 0, 0] };
+this.phase = 'idle';
+this.face = -1;
+this.samples = [];
+this.state = { tick: 0 };
+this.N = [[0, 0, 1], [0, 0, -1], [1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0]];
+this.TF = ['translateZ(32px)', 'rotateY(180deg) translateZ(32px)', 'rotateY(90deg) translateZ(32px)', 'rotateY(-90deg) translateZ(32px)', 'rotateX(-90deg) translateZ(32px)', 'rotateX(90deg) translateZ(32px)'];
+this.C = [];
+for (let i = 0; i < 8; i++) this.C.push([(i & 1 ? 1 : -1) * this.h, (i & 2 ? 1 : -1) * this.h, (i & 4 ? 1 : -1) * this.h]);
+this.planes = [
+{ n: [0, 0, 1], d: 0, e: 0.42 },
+{ n: [1, 0, 0], d: 0, e: 0.5 },
+{ n: [-1, 0, 0], d: -this.W, e: 0.5 },
+{ n: [0, 1, 0], d: 0, e: 0.5 },
+{ n: [0, -1, 0], d: -this.H, e: 0.5 }
+];
+}
+componentWillUnmount() { cancelAnimationFrame(this.raf); }
+cross(a, b) { return [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]; }
+dot(a, b) { return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]; }
+mat() {
+const q = this.b.q, x = q[0], y = q[1], z = q[2], w = q[3];
+return [
+[1 - 2 * (y * y + z * z), 2 * (x * y - z * w), 2 * (x * z + y * w)],
+[2 * (x * y + z * w), 1 - 2 * (x * x + z * z), 2 * (y * z - x * w)],
+[2 * (x * z - y * w), 2 * (y * z + x * w), 1 - 2 * (x * x + y * y)]
+];
+}
+rotate(dt) {
+const q = this.b.q, w = this.b.w, k = 0.5 * dt;
+const x = w[0] * q[3] + w[1] * q[2] - w[2] * q[1];
+const y = w[1] * q[3] + w[2] * q[0] - w[0] * q[2];
+const z = w[2] * q[3] + w[0] * q[1] - w[1] * q[0];
+const s = -(w[0] * q[0] + w[1] * q[1] + w[2] * q[2]);
+q[0] += x * k; q[1] += y * k; q[2] += z * k; q[3] += s * k;
+const l = Math.hypot(q[0], q[1], q[2], q[3]) || 1;
+q[0] /= l; q[1] /= l; q[2] /= l; q[3] /= l;
+}
+sub(dt) {
+const b = this.b, p = b.p, v = b.v, w = b.w, I = this.I;
+v[2] -= 2800 * dt;
+p[0] += v[0] * dt; p[1] += v[1] * dt; p[2] += v[2] * dt;
+this.rotate(dt);
+const R = this.mat();
+let touched = false;
+for (const pl of this.planes) {
+const n = pl.n;
+let maxPen = 0;
+for (const c of this.C) {
+const r = [R[0][0] * c[0] + R[0][1] * c[1] + R[0][2] * c[2], R[1][0] * c[0] + R[1][1] * c[1] + R[1][2] * c[2], R[2][0] * c[0] + R[2][1] * c[1] + R[2][2] * c[2]];
+const dist = n[0] * (p[0] + r[0]) + n[1] * (p[1] + r[1]) + n[2] * (p[2] + r[2]) - pl.d;
+if (dist >= 0) continue;
+touched = true;
+if (-dist > maxPen) maxPen = -dist;
+let wr = this.cross(w, r);
+let u = [v[0] + wr[0], v[1] + wr[1], v[2] + wr[2]];
+const un = this.dot(u, n);
+if (un >= 0) continue;
+const rn = this.cross(r, n);
+const k = 1 + this.dot(rn, rn) / I;
+const e = un > -140 ? 0 : pl.e;
+const jn = -(1 + e) * un / k;
+v[0] += n[0] * jn; v[1] += n[1] * jn; v[2] += n[2] * jn;
+w[0] += rn[0] * jn / I; w[1] += rn[1] * jn / I; w[2] += rn[2] * jn / I;
+wr = this.cross(w, r);
+u = [v[0] + wr[0], v[1] + wr[1], v[2] + wr[2]];
+const un2 = this.dot(u, n);
+const ut = [u[0] - n[0] * un2, u[1] - n[1] * un2, u[2] - n[2] * un2];
+const s = Math.hypot(ut[0], ut[1], ut[2]);
+if (s > 0.001) {
+const t = [ut[0] / s, ut[1] / s, ut[2] / s];
+const rt = this.cross(r, t);
+const kt = 1 + this.dot(rt, rt) / I;
+let jt = -s / kt;
+const mx = 0.35 * jn;
+if (jt < -mx) jt = -mx;
+v[0] += t[0] * jt; v[1] += t[1] * jt; v[2] += t[2] * jt;
+w[0] += rt[0] * jt / I; w[1] += rt[1] * jt / I; w[2] += rt[2] * jt / I;
+}
+}
+if (maxPen > 0) { p[0] += n[0] * maxPen; p[1] += n[1] * maxPen; p[2] += n[2] * maxPen; }
+}
+if (touched) { w[0] *= 0.996; w[1] *= 0.996; w[2] *= 0.996; v[0] *= 0.998; v[1] *= 0.998; }
+this.contact = touched;
+}
+upFace() {
+const R = this.mat();
+let best = -2, bi = 0;
+for (let i = 0; i < 6; i++) {
+const n = this.N[i];
+const z = R[2][0] * n[0] + R[2][1] * n[1] + R[2][2] * n[2];
+if (z > best) { best = z; bi = i; }
+}
+return { i: bi, z: best };
+}
+checkRest() {
+const b = this.b;
+const sv = Math.hypot(b.v[0], b.v[1], b.v[2]);
+const sw = Math.hypot(b.w[0], b.w[1], b.w[2]);
+if (this.contact && sv < 15 && sw < 0.6) this.rest++; else this.rest = 0;
+const up = this.upFace();
+if ((this.rest > 10 && up.z > 0.985) || this.tfly > 9) {
+b.v = [0, 0, 0]; b.w = [0, 0, 0];
+this.phase = 'landed';
+this.face = up.i;
+} else if (this.rest > 40) {
+b.w = [(Math.random() - 0.5) * 6, (Math.random() - 0.5) * 6, 0];
+this.rest = 0;
+}
+}
+tick(now) {
+const el = Math.min(0.034, Math.max(0.001, (now - this.last) / 1000));
+this.last = now;
+if (this.phase === 'hold') {
+this.rotate(el);
+} else if (this.phase === 'fly') {
+for (let i = 0; i < 6; i++) this.sub(el / 6);
+this.tfly += el;
+this.checkRest();
+}
+this.setState({ tick: this.state.tick + 1 });
+if (this.phase === 'hold' || this.phase === 'fly') this.raf = requestAnimationFrame((n) => this.tick(n));
+}
+run() {
+cancelAnimationFrame(this.raf);
+this.last = performance.now();
+this.raf = requestAnimationFrame((n) => this.tick(n));
+}
+pt(e) {
+const el = e.currentTarget;
+const r = el.getBoundingClientRect();
+const s = (r.width / el.offsetWidth) || 1;
+const sx = (e.clientX - r.left) / s;
+const sy = (e.clientY - r.top) / s;
+return { x: sx - 23, y: (sy - 76) / 258 * this.H, t: performance.now() };
+}
+clampP(p) {
+const m = this.h + 6;
+return [Math.max(m, Math.min(this.W - m, p.x)), Math.max(m, Math.min(this.H - m, p.y))];
+}
+down(e) {
+if (this.phase === 'fly') return;
+if (e.currentTarget.setPointerCapture) { try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {} }
+const p = this.pt(e);
+const c = this.clampP(p);
+this.samples = [p];
+this.b.p = [c[0], c[1], 110];
+this.b.v = [0, 0, 0];
+this.b.w = [4, 3, 2];
+this.phase = 'hold';
+this.face = -1;
+this.run();
+}
+move(e) {
+if (this.phase !== 'hold') return;
+const p = this.pt(e);
+const c = this.clampP(p);
+this.samples.push(p);
+if (this.samples.length > 5) this.samples.shift();
+this.b.p[0] = c[0]; this.b.p[1] = c[1];
+}
+up() {
+if (this.phase !== 'hold') return;
+const a = this.samples[0];
+const z = this.samples[this.samples.length - 1];
+const dt = Math.max(16, z.t - a.t) / 1000;
+let vx = (z.x - a.x) / dt;
+let vy = (z.y - a.y) / dt;
+if (performance.now() - z.t > 120) { vx = 0; vy = 0; }
+let sp = Math.hypot(vx, vy);
+if (sp > 2600) { vx *= 2600 / sp; vy *= 2600 / sp; sp = 2600; }
+if (sp < 150) { vx = (Math.random() - 0.5) * 600; vy = (Math.random() - 0.5) * 600; }
+this.launch([vx, vy, 320]);
+}
+launch(v) {
+const r = () => (Math.random() - 0.5) * 16;
+this.b.v = v;
+this.b.w = [-v[1] / this.h * 0.4 + r(), v[0] / this.h * 0.4 + r(), r()];
+this.phase = 'fly';
+this.face = -1;
+this.rest = 0;
+this.tfly = 0;
+this.run();
+}
+theme() {
+const dark = !!(this.props.dark ?? false);
+const st = this.props.stile ?? 'tabloid';
+const U = ['HISTORY', 'POP', 'GEO', 'SCIENCE', 'FOOD', dark ? 'DARK' : 'JOLLY'];
+const names = ['History', 'Pop culture', 'Geography', 'Science & Nature', 'Food & Drink', dark ? 'Dark' : 'Jolly: scegli tu'];
+if (st === 'sera') {
+return {
+labels: U, names: names, shadeK: 0.4, core: '#0E0C0A',
+face: (i) => {
+const sp = i === 5;
+return { radius: '12px', bg: sp ? (dark ? 'radial-gradient(circle at 30% 25%, #D8382E 0%, #7A100B 85%)' : 'radial-gradient(circle at 30% 25%, #F7D35A 0%, #D9A514 85%)') : 'radial-gradient(circle at 30% 25%, #34302A 0%, #141110 80%)', border: '1.5px solid rgba(241,233,216,0.35)', ink: (sp && !dark) ? '#15120E' : '#F1E9D8', font: "'Anton', sans-serif", fstyle: 'normal', weight: 400, size: '15px', inner: 'inset 0 0 0 4px rgba(0,0,0,0.25)', gloss: 0.22 };
+},
+v: {
+pageBg: 'radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), #15120E', pageBgSize: '4px 4px, auto', ink: '#F1E9D8', muted: '#B8AE9A', bodyFont: "'Source Serif 4', Georgia, serif",
+metaFont: "'IBM Plex Mono', monospace", metaRight: 'EDIZIONE DELLA SERA', ruleTop: '3px solid #F1E9D8', ruleBottom: '1px solid rgba(241,233,216,0.35)',
+mastFont: "'Anton', sans-serif", mastSize: '20px', mastWeight: 400, mastStyle: 'normal', mastCase: 'uppercase',
+accent: '#F0443A', accentInk: '#15120E', headFont: "'Anton', sans-serif", headWeight: 400, headStyle: 'normal', headSize: '44px', headCase: 'uppercase',
+trayRadius: '16px', trayBg: 'radial-gradient(circle at 50% 40%, #3D1915 0%, #26110E 60%, #170A09 100%)', trayBgSize: 'auto', trayShadow: '0 0 0 8px #6B5330, 0 0 0 10px #2A2012, inset 0 0 40px rgba(0,0,0,0.6), 0 30px 40px rgba(0,0,0,0.5)',
+btnFont: "'Anton', sans-serif", btnWeight: 400, btnSize: '22px', btnTrack: '0.5px', btnBg: '#F0443A', btnInk: '#15120E', btnBorder: 'none', btnRadius: '2px', btnShadow: 'none',
+btn2Bg: 'transparent', btn2Ink: '#F1E9D8', btn2Border: '1.5px solid #F1E9D8', resultBg: '#F2C230', resultInk: '#15120E'
+}
+};
+}
+if (st === 'quotidiano') {
+const L = ['History', 'Pop', 'Geo', 'Science', 'Food', dark ? 'Dark' : 'Jolly'];
+return {
+labels: L, names: names, shadeK: 0.42, core: '#D8CFBC',
+face: (i) => {
+const sp = i === 5;
+return { radius: '10px', bg: sp ? (dark ? '#B3001B' : '#111111') : 'radial-gradient(circle at 30% 25%, #FFFFFF 0%, #F3EEE2 60%, #DCD3BF 100%)', border: '1px solid rgba(0,0,0,0.3)', ink: sp ? '#FAF7F0' : '#111111', font: "'Playfair Display', serif", fstyle: 'italic', weight: 800, size: '14px', inner: 'inset 0 0 0 3px rgba(255,255,255,0.2), inset 0 0 0 4px rgba(0,0,0,0.12)', gloss: 0.4 };
+},
+v: {
+pageBg: 'radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), #FAF7F0', pageBgSize: '4px 4px, auto', ink: '#111111', muted: '#5C574E', bodyFont: "'Source Serif 4', Georgia, serif",
+metaFont: "'Inter', sans-serif", metaRight: 'ANNO I · N. 1', ruleTop: '4px double #111111', ruleBottom: '1px solid #111111',
+mastFont: "'Playfair Display', serif", mastSize: '21px', mastWeight: 900, mastStyle: 'italic', mastCase: 'none',
+accent: '#B3001B', accentInk: '#FFFFFF', headFont: "'Playfair Display', serif", headWeight: 900, headStyle: 'normal', headSize: '40px', headCase: 'none',
+trayRadius: '6px', trayBg: 'radial-gradient(circle at 50% 40%, #4A3828 0%, #2E2219 65%, #1C140E 100%)', trayBgSize: 'auto', trayShadow: '0 0 0 1px #111111, 0 0 0 7px #FAF7F0, 0 0 0 8px #111111, inset 0 0 40px rgba(0,0,0,0.5), 0 24px 36px rgba(0,0,0,0.25)',
+btnFont: "'Inter', sans-serif", btnWeight: 700, btnSize: '14px', btnTrack: '2px', btnBg: '#111111', btnInk: '#FAF7F0', btnBorder: 'none', btnRadius: '2px', btnShadow: 'none',
+btn2Bg: 'transparent', btn2Ink: '#111111', btn2Border: '1px solid #111111', resultBg: '#111111', resultInk: '#FAF7F0'
+}
+};
+}
+if (st === 'scandalo') {
+return {
+labels: U, names: names, shadeK: 0.35, core: '#0A0A0A',
+face: (i) => {
+const sp = i === 5;
+return { radius: '6px', bg: sp ? (dark ? '#0A0A0A' : '#E10600') : '#FFFFFF', border: '3px solid #0A0A0A', ink: sp ? (dark ? '#FFD400' : '#FFFFFF') : '#0A0A0A', font: "'Anton', sans-serif", fstyle: 'normal', weight: 400, size: '15px', inner: 'none', gloss: 0.3 };
+},
+v: {
+pageBg: 'radial-gradient(rgba(0,0,0,0.13) 1.5px, transparent 1.7px), #FFD400', pageBgSize: '8px 8px, auto', ink: '#0A0A0A', muted: '#2A2A2A', bodyFont: "'Source Serif 4', Georgia, serif",
+metaFont: "'Archivo Black', sans-serif", metaRight: 'ESCLUSIVO', ruleTop: '4px solid #0A0A0A', ruleBottom: '4px solid #0A0A0A',
+mastFont: "'Anton', sans-serif", mastSize: '22px', mastWeight: 400, mastStyle: 'normal', mastCase: 'uppercase',
+accent: '#E10600', accentInk: '#FFFFFF', headFont: "'Anton', sans-serif", headWeight: 400, headStyle: 'normal', headSize: '48px', headCase: 'uppercase',
+trayRadius: '4px', trayBg: 'radial-gradient(rgba(255,212,0,0.22) 1.4px, transparent 1.6px), #0A0A0A', trayBgSize: '9px 9px, auto', trayShadow: '0 0 0 4px #FFFFFF, 0 0 0 7px #0A0A0A, 12px 14px 0 7px #0A0A0A',
+btnFont: "'Anton', sans-serif", btnWeight: 400, btnSize: '24px', btnTrack: '0.5px', btnBg: '#E10600', btnInk: '#FFFFFF', btnBorder: '3px solid #0A0A0A', btnRadius: '0px', btnShadow: '6px 6px 0 #0A0A0A',
+btn2Bg: '#FFFFFF', btn2Ink: '#0A0A0A', btn2Border: '3px solid #0A0A0A', resultBg: '#0A0A0A', resultInk: '#FFD400'
+}
+};
+}
+return {
+labels: U, names: names, shadeK: 0.5, core: '#E0D5B5',
+face: (i) => {
+const sp = i === 5;
+return { radius: '12px', bg: sp ? (dark ? 'radial-gradient(circle at 30% 25%, #3A3A3A 0%, #111111 80%)' : 'radial-gradient(circle at 30% 25%, #F0303F 0%, #B80016 85%)') : 'radial-gradient(circle at 30% 25%, #FFFDF4 0%, #EFE6CC 65%, #D9CBA5 100%)', border: 'none', ink: sp ? '#FFFDF4' : '#111111', font: "'Anton', sans-serif", fstyle: 'normal', weight: 400, size: '15px', inner: 'inset 0 0 0 2px rgba(0,0,0,0.1), inset 0 -6px 10px rgba(110,80,20,0.28)', gloss: 0.5 };
+},
+v: {
+pageBg: 'radial-gradient(rgba(0,0,0,0.07) 1px, transparent 1px), #F1EADB', pageBgSize: '4px 4px, auto', ink: '#111111', muted: '#3D3A33', bodyFont: "'Source Serif 4', Georgia, serif",
+metaFont: "'IBM Plex Mono', monospace", metaRight: 'EDIZIONE STRAORDINARIA', ruleTop: '3px solid #111111', ruleBottom: '1px solid #111111',
+mastFont: "'Anton', sans-serif", mastSize: '19px', mastWeight: 400, mastStyle: 'normal', mastCase: 'uppercase',
+accent: '#D0021B', accentInk: '#FFFFFF', headFont: "'Anton', sans-serif", headWeight: 400, headStyle: 'normal', headSize: '42px', headCase: 'uppercase',
+trayRadius: '18px', trayBg: 'radial-gradient(circle at 50% 40%, #2E8A5B 0%, #1F6B45 60%, #154B30 100%)', trayBgSize: 'auto', trayShadow: '0 0 0 10px #5A3A22, 0 0 0 13px #2E1C0E, inset 0 0 40px rgba(0,0,0,0.45), 0 30px 40px rgba(0,0,0,0.35)',
+btnFont: "'Anton', sans-serif", btnWeight: 400, btnSize: '22px', btnTrack: '0.5px', btnBg: '#D0021B', btnInk: '#FFFFFF', btnBorder: '3px solid #111111', btnRadius: '0px', btnShadow: '5px 5px 0 #111111',
+btn2Bg: '#FBF7EC', btn2Ink: '#111111', btn2Border: '3px solid #111111', resultBg: '#111111', resultInk: '#F1EADB'
+}
+};
+}
+renderVals() {
+const T = this.theme();
+const b = this.b;
+const R = this.mat();
+const f5 = (x) => (Math.round(x * 100000) / 100000);
+const m = 'matrix3d(' + [R[0][0], R[1][0], R[2][0], 0, R[0][1], R[1][1], R[2][1], 0, R[0][2], R[1][2], R[2][2], 0, 0, 0, 0, 1].map(f5).join(',') + ')';
+const L = [-0.35, -0.45, 0.82];
+const faces = this.N.map((n, i) => {
+const wn = [R[0][0] * n[0] + R[0][1] * n[1] + R[0][2] * n[2], R[1][0] * n[0] + R[1][1] * n[1] + R[1][2] * n[2], R[2][0] * n[0] + R[2][1] * n[1] + R[2][2] * n[2]];
+const lit = Math.max(0, wn[0] * L[0] + wn[1] * L[1] + wn[2] * L[2]);
+const o = T.face(i);
+o.tf = this.TF[i];
+o.label = T.labels[i];
+o.shade = Math.round((1 - lit) * T.shadeK * 100) / 100;
+return o;
+});
+const z = Math.max(0, b.p[2] - this.h);
+const out = Object.assign({}, T.v);
+out.core = T.core;
+out.faces = faces;
+out.dieTf = 'translate3d(' + f5(b.p[0]) + 'px,' + f5(b.p[1]) + 'px,' + f5(b.p[2]) + 'px) ' + m;
+out.shLeft = (b.p[0] - 48) + 'px';
+out.shTop = (b.p[1] - 48) + 'px';
+out.shOpacity = Math.round(100 / (1 + z / 70)) / 100;
+out.shScale = Math.round((1 + z / 220) * 100) / 100;
+out.landed = this.phase === 'landed';
+out.notLanded = this.phase !== 'landed';
+out.flying = this.phase === 'fly';
+out.resultName = this.face >= 0 ? T.names[this.face] : '';
+out.avanti = this.props.avanti ?? 'T-Narratore.dc.html';
+out.down = (e) => this.down(e);
+out.move = (e) => this.move(e);
+out.up = () => this.up();
+out.autoThrow = () => {
+if (this.phase === 'fly') return;
+this.b.p = [150, 330, 100];
+this.launch([(Math.random() - 0.5) * 900, -1300 - Math.random() * 700, 350]);
+};
+return out;
+}
+}
+</script>
+</body>
+</html>

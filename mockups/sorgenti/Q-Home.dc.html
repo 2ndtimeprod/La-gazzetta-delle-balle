@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Il Quotidiano: home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#111111}a:hover{color:#111111}
+@keyframes crossR{from{transform:translateX(-180px)}to{transform:translateX(380px)}}
+@keyframes crossL{from{transform:translateX(380px)}to{transform:translateX(-120px)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(8px) rotate(4deg)}}
+@keyframes waddle{0%,100%{transform:rotate(-1.5deg)}50%{transform:rotate(1.5deg) translateY(-2px)}}
+@keyframes roll{to{transform:rotate(-360deg)}}
+@media (prefers-reduced-motion: reduce){.mv,.mv *{animation-play-state:paused !important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; padding: 50px 24px 30px; display: flex; flex-direction: column; justify-content: space-between; background: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), #FAF7F0; background-size: 4px 4px, auto; color: #111111; font-family: 'Source Serif 4', Georgia, serif">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; color: #5C574E"><span>MARTEDÌ 10 NOVEMBRE 2026</span><span>ANNO I · N. 1</span></div>
+<div style="border-top: 4px double #111111; border-bottom: 1px solid #111111; padding: 12px 0 10px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center">
+<span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 17px">La Gazzetta delle</span>
+<h1 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 64px; line-height: 0.95; letter-spacing: -1.5px">Balle credibili</h1>
+</div>
+<p style="margin: 0; text-align: center; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 3px">IL QUOTIDIANO DELLE VERITÀ IMPROBABILI</p>
+
+<figure style="margin: 6px 0 0; display: flex; flex-direction: column; gap: 6px">
+<div style="position: relative; height: 168px; overflow: hidden; border: 1px solid #111111; background: repeating-linear-gradient(135deg, rgba(0,0,0,0.035) 0 1px, transparent 1px 6px), #F4EFE3">
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 16px; height: 1px; background: #111111"></div>
+<div class="mv" aria-hidden="true" style="position: absolute; left: 0; top: 16px; animation: crossR 12s linear -2s infinite"><div style="animation: floaty 2s ease-in-out infinite"><svg width="88" height="36" viewBox="0 0 96 40"><ellipse cx="48" cy="20" rx="44" ry="14" fill="#FAF7F0" stroke="#111111" stroke-width="1.6"></ellipse><ellipse cx="48" cy="19" rx="24" ry="6" fill="none" stroke="#111111" stroke-width="1.2"></ellipse><path d="M14 22c10 6 58 6 68 0" fill="none" stroke="#111111" stroke-width="0.8"></path></svg></div></div>
+<div class="mv" aria-hidden="true" style="position: absolute; left: 0; bottom: 16px; animation: crossR 16s linear -6s infinite"><div style="animation: waddle 0.6s ease-in-out infinite"><svg width="150" height="69" viewBox="0 0 170 78"><g fill="#FAF7F0" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"><path d="M44 42 L4 34 Q0 50 44 58z"></path><rect x="44" y="56" width="12" height="16" rx="6"></rect><rect x="92" y="56" width="12" height="16" rx="6"></rect><rect x="34" y="28" width="84" height="34" rx="17"></rect><path d="M104 30h18q6-12 16-6l22 8a9 9 0 0 1 0 18l-56 4z"></path></g><g stroke="#111111" stroke-width="0.8"><path d="M50 34l4 22M62 33l4 24M74 33l4 24M86 33l4 24M98 34l4 22"></path></g><circle cx="128" cy="25" r="2.6" fill="#111111"></circle><path d="M126 49l3 5 3-5M138 48l3 5 3-5M150 47l3 5 3-5" fill="none" stroke="#111111" stroke-width="1.2"></path></svg></div></div>
+<div class="mv" aria-hidden="true" style="position: absolute; left: 0; bottom: 16px; animation: crossL 11s linear -3s infinite"><div style="animation: roll 2.4s linear infinite"><svg width="56" height="56" viewBox="0 0 70 70"><path d="M14 24Q22 4 42 8 62 12 64 34 66 58 44 64 18 68 10 48 6 36 14 24z" fill="#FAF7F0" stroke="#111111" stroke-width="1.8"></path><path d="M20 30q10-14 26-12M18 42q14-6 30 2" fill="none" stroke="#111111" stroke-width="0.8"></path><circle cx="30" cy="48" r="1.8" fill="#111111"></circle><circle cx="46" cy="28" r="1.6" fill="#111111"></circle></svg></div></div>
+</div>
+<figcaption style="font-size: 13px; font-style: italic; color: #5C574E; text-align: center">Tavola I. Alcuni protagonisti delle frasi di questa edizione.</figcaption>
+</figure>
+
+<section style="display: flex; flex-direction: column; gap: 6px; padding-top: 4px">
+<h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; border-bottom: 1px solid #111111; padding-bottom: 5px">IN QUESTO NUMERO</h2>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 18px; row-gap: 5px; font-size: 15px">
+<div style="display: flex; align-items: baseline; gap: 4px"><span>Storia</span><span style="flex-grow: 1; border-bottom: 1px dotted #5C574E"></span><span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700">2</span></div>
+<div style="display: flex; align-items: baseline; gap: 4px"><span>Scienza</span><span style="flex-grow: 1; border-bottom: 1px dotted #5C574E"></span><span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700">5</span></div>
+<div style="display: flex; align-items: baseline; gap: 4px"><span>Cultura pop</span><span style="flex-grow: 1; border-bottom: 1px dotted #5C574E"></span><span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700">3</span></div>
+<div style="display: flex; align-items: baseline; gap: 4px"><span>Cibo</span><span style="flex-grow: 1; border-bottom: 1px dotted #5C574E"></span><span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700">6</span></div>
+<div style="display: flex; align-items: baseline; gap: 4px"><span>Geografia</span><span style="flex-grow: 1; border-bottom: 1px dotted #5C574E"></span><span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700">4</span></div>
+<div style="display: flex; align-items: baseline; gap: 4px"><span style="color: #B3001B">Dark</span><span style="flex-grow: 1; border-bottom: 1px dotted #5C574E"></span><span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; color: #B3001B">7</span></div>
+</div>
+</section>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<a href="Q-Setup.dc.html" style="display: flex; align-items: center; justify-content: center; height: 56px; text-decoration: none; background: #111111; color: #FAF7F0; border-radius: 2px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 2px">CREA UNA PARTITA</a>
+<a href="Q-Setup.dc.html" style="display: flex; align-items: center; justify-content: center; height: 50px; text-decoration: none; color: #111111; border: 1px solid #111111; border-radius: 2px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px">ENTRA CON UN CODICE</a>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

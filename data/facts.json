@@ -1,0 +1,5443 @@
+[
+ {
+  "id": "SCI-001",
+  "categoria": "Science",
+  "frase": "Ogni secondo il Sole trasforma ____ in energia.",
+  "risposte": [
+   "circa 4 milioni di tonnellate di materia"
+  ],
+  "spiegazione": "È la massa che la fusione nucleare trasforma in energia ogni secondo. Il Sole è così grande che può andare avanti così per miliardi di anni.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-002",
+  "categoria": "Science",
+  "frase": "La Luna si allontana dalla Terra di circa ____.",
+  "risposte": [
+   "3,8 cm all'anno"
+  ],
+  "spiegazione": "Lo misuriamo con i laser puntati sui riflettori lasciati dalle missioni Apollo. La causa sono le maree.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-003",
+  "categoria": "Science",
+  "frase": "Il terremoto del 2011 in Giappone ha ____.",
+  "risposte": [
+   "accorciato la durata del giorno"
+  ],
+  "spiegazione": "Di circa 1,8 microsecondi: il sisma ha spostato massa verso il centro della Terra, che così ruota un filo più veloce.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-004",
+  "categoria": "Science",
+  "frase": "Tutto l'oro mai estratto starebbe in ____.",
+  "risposte": [
+   "un cubo di circa 22 metri di lato"
+  ],
+  "spiegazione": "L'oro è densissimo: tutto quello estratto nella storia occupa pochissimo spazio.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-005",
+  "categoria": "Science",
+  "frase": "L'elio fu scoperto prima ____ che sulla Terra.",
+  "risposte": [
+   "nel Sole"
+  ],
+  "spiegazione": "Fu visto nella luce solare nel 1868; sulla Terra fu trovato solo 27 anni dopo. Il nome viene da Helios, il Sole in greco.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-006",
+  "categoria": "Science",
+  "frase": "In tutta la crosta terrestre ci sono al massimo ____ di francio.",
+  "risposte": [
+   "circa 30 grammi"
+  ],
+  "spiegazione": "Il francio è radioattivo e decade in pochi minuti: si forma e sparisce di continuo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-007",
+  "categoria": "Science",
+  "frase": "Nel 1669 un alchimista scoprì il fosforo ____.",
+  "risposte": [
+   "facendo evaporare dell'urina"
+  ],
+  "spiegazione": "Hennig Brand cercava di ottenere l'oro. Trovò invece una sostanza che brillava al buio.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-008",
+  "categoria": "Science",
+  "frase": "____ nacque come farmaco contro i dolori al cuore.",
+  "risposte": [
+   "Il Viagra"
+  ],
+  "spiegazione": "Il farmaco era in sperimentazione per il cuore: i volontari segnalarono un effetto collaterale inatteso e l'azienda cambiò strada.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-009",
+  "categoria": "Science",
+  "frase": "Il nucleo della Terra è caldo più o meno quanto ____.",
+  "risposte": [
+   "la superficie del Sole"
+  ],
+  "spiegazione": "Tra 5.000 e 6.000 °C.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-010",
+  "categoria": "Science",
+  "frase": "Il ____ dall'uomo arriva a circa 12 km.",
+  "risposte": [
+   "buco più profondo mai scavato"
+  ],
+  "spiegazione": "12.262 metri, per la precisione. Non ha nemmeno raggiunto il mantello terrestre.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-011",
+  "categoria": "Science",
+  "frase": "In un ____ passano circa 80 milioni di batteri.",
+  "risposte": [
+   "bacio di dieci secondi"
+  ],
+  "spiegazione": "Lo ha misurato uno studio facendo baciare delle coppie e analizzando la saliva prima e dopo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-012",
+  "categoria": "Science",
+  "frase": "I vasi sanguigni di una persona, messi in fila, sarebbero lunghi ____.",
+  "risposte": [
+   "migliaia di chilometri"
+  ],
+  "spiegazione": "La cifra famosa è 100.000 km, ma le stime recenti parlano di 9.000-19.000 km di capillari.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-013",
+  "categoria": "Science",
+  "frase": "Il cervello non sente dolore, quindi ____.",
+  "risposte": [
+   "si può operare da svegli"
+  ],
+  "spiegazione": "Non ha recettori del dolore. In certi interventi il paziente resta sveglio e parla, per aiutare i chirurghi a evitare le zone importanti.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-014",
+  "categoria": "Science",
+  "frase": "C'è un batterio che resiste a radiazioni estreme ed è soprannominato \"____\".",
+  "risposte": [
+   "Conan il Batterio"
+  ],
+  "spiegazione": "Si chiama Deinococcus radiodurans e sopporta dosi di radiazioni che ucciderebbero qualsiasi altro essere vivente.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-015",
+  "categoria": "Science",
+  "frase": "Per dimostrare che le ulcere vengono da un batterio, un medico ____.",
+  "risposte": [
+   "bevve un liquido pieno di batteri"
+  ],
+  "spiegazione": "Barry Marshall bevve l'Helicobacter e si ammalò, come previsto. Vinse il Nobel nel 2005.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-016",
+  "categoria": "Science",
+  "frase": "Nel 1929 un medico ____, e poi vinse il Nobel.",
+  "risposte": [
+   "si infilò un tubicino fino al cuore"
+  ],
+  "spiegazione": "Werner Forssmann voleva dimostrare che si poteva fare senza morire. Oggi il cateterismo cardiaco è routine.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-017",
+  "categoria": "Science",
+  "frase": "Dopo aver preso apposta la prima dose di LSD, il suo scopritore ____.",
+  "risposte": [
+   "tornò a casa in bici"
+  ],
+  "spiegazione": "Albert Hofmann l'aveva scoperto per caso tre giorni prima. Quel viaggio in bici è rimasto famoso.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-018",
+  "categoria": "Science",
+  "frase": "____ contengono una sostanza che rilascia cianuro.",
+  "risposte": [
+   "I semi di mela"
+  ],
+  "spiegazione": "Si chiama amigdalina. Ne servirebbero moltissimi, ben masticati, per essere pericolosi.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-019",
+  "categoria": "Science",
+  "frase": "Per molte piante ____ è un pesticida naturale contro gli insetti.",
+  "risposte": [
+   "la caffeina"
+  ],
+  "spiegazione": "La pianta la produce per difendersi dagli insetti che la mangiano.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-020",
+  "categoria": "Science",
+  "frase": "Il bambù può crescere fino a ____ in un solo giorno.",
+  "risposte": [
+   "circa 90 cm"
+  ],
+  "spiegazione": "Il record registrato è di circa 91 cm in 24 ore.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-021",
+  "categoria": "Science",
+  "frase": "Il DNA di una sola cellula umana, srotolato, è lungo ____.",
+  "risposte": [
+   "circa 2 metri"
+  ],
+  "spiegazione": "Sta arrotolato in un nucleo molto più piccolo di un granello di polvere.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-022",
+  "categoria": "Science",
+  "frase": "Prima del primo test atomico Enrico Fermi accettava scommesse sul fatto che l'esplosione ____.",
+  "risposte": [
+   "incendiasse l'atmosfera"
+  ],
+  "spiegazione": "Test Trinity, 1945. Era umorismo nero: i calcoli avevano già escluso il rischio.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-023",
+  "categoria": "Science",
+  "frase": "Ogni secondo il tuo corpo è attraversato da ____.",
+  "risposte": [
+   "circa 100.000 miliardi di neutrini"
+  ],
+  "spiegazione": "Arrivano dal Sole (è una stima). Non interagiscono quasi con nulla e attraversano anche tutta la Terra.",
+  "stato": "Stima o ipotesi"
+ },
+ {
+  "id": "SCI-024",
+  "categoria": "Science",
+  "frase": "Due orologi atomici messi a ____ segnano un tempo diverso.",
+  "risposte": [
+   "33 cm di differenza d'altezza"
+  ],
+  "spiegazione": "Esperimento del NIST, 2010: più in alto il tempo scorre un filo più veloce, come previsto dalla relatività.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-025",
+  "categoria": "Science",
+  "frase": "Senza le correzioni della relatività il GPS sbaglierebbe di ____.",
+  "risposte": [
+   "circa 10 km al giorno"
+  ],
+  "spiegazione": "Sui satelliti il tempo scorre in modo leggermente diverso che a terra, e gli orologi vanno corretti.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-026",
+  "categoria": "Science",
+  "frase": "Il petrolio non viene dai dinosauri ma da ____.",
+  "risposte": [
+   "antico plancton e alghe marine"
+  ],
+  "spiegazione": "Organismi microscopici sepolti sui fondali e trasformati da calore e pressione in milioni di anni.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-027",
+  "categoria": "Science",
+  "frase": "Parte dell'oro dell'universo si sarebbe formata ____.",
+  "risposte": [
+   "nelle collisioni tra stelle di neutroni"
+  ],
+  "spiegazione": "Quanto oro venga davvero da lì è ancora discusso.",
+  "stato": "Stima o ipotesi"
+ },
+ {
+  "id": "SCI-028",
+  "categoria": "Science",
+  "frase": "L'ossigeno liquido è azzurro e ____.",
+  "risposte": [
+   "viene attratto da un magnete"
+  ],
+  "spiegazione": "Tra i poli di una calamita potente l'ossigeno liquido resta sospeso.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-029",
+  "categoria": "Science",
+  "frase": "Il gallio è un metallo che ____.",
+  "risposte": [
+   "si scioglie in mano"
+  ],
+  "spiegazione": "Fonde a circa 30 °C, meno della temperatura del corpo.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-030",
+  "categoria": "Science",
+  "frase": "Sulla Terra cadono ____ al secondo.",
+  "risposte": [
+   "circa 40-50 fulmini"
+  ],
+  "spiegazione": "Sono milioni di fulmini ogni giorno.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-031",
+  "categoria": "Science",
+  "frase": "L'arcobaleno è in realtà ____.",
+  "risposte": [
+   "un cerchio completo"
+  ],
+  "spiegazione": "Da terra se ne vede solo metà, perché l'orizzonte nasconde il resto. Da un aereo a volte si vede tutto.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-032",
+  "categoria": "Science",
+  "frase": "Quando un fulmine colpisce la sabbia la fonde in ____.",
+  "risposte": [
+   "tubi di vetro"
+  ],
+  "spiegazione": "Si chiamano fulguriti.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-034",
+  "categoria": "Science",
+  "frase": "Attorno a un quasar lontanissimo c'è una gigantesca nube di vapore acqueo, che contiene ____ l'acqua degli oceani terrestri.",
+  "risposte": [
+   "140.000 miliardi di volte"
+  ],
+  "spiegazione": "È il quasar APM 08279+5255, a circa 12 miliardi di anni luce: è la più grande massa d'acqua mai trovata.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-035",
+  "categoria": "Science",
+  "frase": "Sul pianeta HD 189733b si ritiene che ____.",
+  "risposte": [
+   "piova vetro"
+  ],
+  "spiegazione": "Il pianeta è HD 189733b: il vetro sarebbe spinto di lato da venti di migliaia di km/h.",
+  "stato": "Stima o ipotesi"
+ },
+ {
+  "id": "SCI-036",
+  "categoria": "Science",
+  "frase": "Su Titano, la luna di Saturno, ____ e ci sono laghi di idrocarburi.",
+  "risposte": [
+   "piove metano"
+  ],
+  "spiegazione": "Su Titano ci sono anche laghi di idrocarburi.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-037",
+  "categoria": "Science",
+  "frase": "Su Mercurio, il pianeta più vicino al Sole, c'è ____.",
+  "risposte": [
+   "ghiaccio d'acqua"
+  ],
+  "spiegazione": "Si trova nei crateri dei poli, che restano sempre all'ombra.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-038",
+  "categoria": "Science",
+  "frase": "Su Marte i tramonti hanno ____.",
+  "risposte": [
+   "un alone azzurro"
+  ],
+  "spiegazione": "Il contrario della Terra: il resto del cielo resta rossastro.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-039",
+  "categoria": "Science",
+  "frase": "Il vulcano Olympus Mons, su Marte, è alto ____.",
+  "risposte": [
+   "circa 22 km"
+  ],
+  "spiegazione": "Circa due volte e mezza l'Everest.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-040",
+  "categoria": "Science",
+  "frase": "Sulla Stazione Spaziale gli astronauti vedono ____ al giorno.",
+  "risposte": [
+   "circa 16 albe e 16 tramonti"
+  ],
+  "spiegazione": "La stazione fa un giro completo della Terra in circa un'ora e mezza.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-041",
+  "categoria": "Science",
+  "frase": "Sulla Stazione Spaziale ____ vengono riciclati in acqua da bere.",
+  "risposte": [
+   "urina e sudore"
+  ],
+  "spiegazione": "Portare acqua nello spazio costa moltissimo, quindi a bordo si ricicla quasi tutto.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-042",
+  "categoria": "Science",
+  "frase": "Gli astronauti dell'Apollo dicevano che ____ odorava di ____.",
+  "risposte": [
+   "la polvere lunare",
+   "polvere da sparo"
+  ],
+  "spiegazione": "La sentivano sulle tute una volta rientrati nel modulo lunare.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-044",
+  "categoria": "Science",
+  "frase": "La Grande Macchia Rossa di Giove è una tempesta che viene osservata da ____.",
+  "risposte": [
+   "circa 190 anni"
+  ],
+  "spiegazione": "È osservata in modo continuo dall'Ottocento, ed è grande più o meno quanto la Terra.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "SCI-045",
+  "categoria": "Science",
+  "frase": "Una pulsar ruota su sé stessa ____.",
+  "risposte": [
+   "716 volte al secondo"
+  ],
+  "spiegazione": "Si chiama PSR J1748-2446ad ed è una stella morta, piccola e densissima.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-046",
+  "categoria": "Science",
+  "frase": "I lampi di raggi gamma furono scoperti da ____ costruiti per ____.",
+  "risposte": [
+   "satelliti",
+   "spiare i test nucleari"
+  ],
+  "spiegazione": "Nel 1967 cercavano esplosioni atomiche sulla Terra e videro invece lampi provenienti dallo spazio.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-047",
+  "categoria": "Science",
+  "frase": "Il sudore fresco è quasi inodore: la puzza la fanno ____.",
+  "risposte": [
+   "i batteri della pelle"
+  ],
+  "spiegazione": "Il sudore è quasi solo acqua e sali: l'odore nasce quando i batteri lo decompongono.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-048",
+  "categoria": "Science",
+  "frase": "Il ____ contiene tracce di caffeina.",
+  "risposte": [
+   "caffè decaffeinato"
+  ],
+  "spiegazione": "Il processo di decaffeinizzazione non la toglie tutta.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-049",
+  "categoria": "Science",
+  "frase": "Per spiegare il nanosecondo, l'informatica Grace Hopper mostrava ____.",
+  "risposte": [
+   "un filo di 30 cm"
+  ],
+  "spiegazione": "È la distanza che la luce percorre in un nanosecondo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-050",
+  "categoria": "Science",
+  "frase": "Nella stanza più silenziosa del mondo si può sentire ____ quando si aprono e chiudono.",
+  "risposte": [
+   "il rumore delle palpebre"
+  ],
+  "spiegazione": "È una camera della Microsoft che misura circa -20,6 decibel: meno del silenzio.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-001",
+  "categoria": "Food & Drink",
+  "frase": "Frank Epperson a 11 anni, dimenticò fuori di notte acqua e soda con un bastoncino: nacque il ____.",
+  "risposte": [
+   "Popsicle"
+  ],
+  "spiegazione": "Era il 1905. Anni dopo brevettò l'idea.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-002",
+  "categoria": "Food & Drink",
+  "frase": "Thomas Adams voleva trasformare una resina messicana in gomma, non ci riuscì e ne fece ____.",
+  "risposte": [
+   "il chewing gum"
+  ],
+  "spiegazione": "Il chicle era la resina che in Messico si masticava da secoli.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-003",
+  "categoria": "Food & Drink",
+  "frase": "Gli antichi Romani amavano così tanto un'erba, il silfio, che ____.",
+  "risposte": [
+   "la fecero estinguere"
+  ],
+  "spiegazione": "Il silfio si usava in cucina e come medicina. Non si riuscì mai a coltivarlo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-004",
+  "categoria": "Food & Drink",
+  "frase": "Nel 1957 la BBC mandò in onda un pesce d'aprile e mostrò degli svizzeri che raccoglievano ____: molti chiesero come coltivarli.",
+  "risposte": [
+   "spaghetti dagli alberi"
+  ],
+  "spiegazione": "All'epoca in Gran Bretagna la pasta era poco conosciuta, e molti ci cascarono.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-005",
+  "categoria": "Food & Drink",
+  "frase": "Prima dell'apriscatole le scatolette si aprivano con ____, come consigliavano i produttori.",
+  "risposte": [
+   "martello e scalpello"
+  ],
+  "spiegazione": "L'apriscatole fu brevettato quasi cinquant'anni dopo le scatolette.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-007",
+  "categoria": "Food & Drink",
+  "frase": "Dom Pérignon, il monaco dello champagne, considerava ____ un difetto.",
+  "risposte": [
+   "le bollicine"
+  ],
+  "spiegazione": "Cercava di eliminarle dal vino: all'epoca facevano esplodere le bottiglie.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-008",
+  "categoria": "Food & Drink",
+  "frase": "Il gusto umami fu scoperto nel 1908 da un chimico giapponese che ____.",
+  "risposte": [
+   "studiava un'alga"
+  ],
+  "spiegazione": "Kikunae Ikeda studiava l'alga kombu, usata per il brodo, e ne isolò la sostanza responsabile del sapore.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-011",
+  "categoria": "Food & Drink",
+  "frase": "La bacca del miracolo per circa un'ora fa sembrare ____, grazie alla miracolina.",
+  "risposte": [
+   "dolci i cibi acidi"
+  ],
+  "spiegazione": "Una proteina della bacca, la miracolina, inganna per un po' i recettori del dolce sulla lingua.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-012",
+  "categoria": "Food & Drink",
+  "frase": "I pistacchi umidi trasportati in grandi quantità possono ____.",
+  "risposte": [
+   "prendere fuoco da soli"
+  ],
+  "spiegazione": "Contengono moltissimo olio: se sono umidi e ammassati si scaldano da soli. Succede solo con i grandi carichi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-014",
+  "categoria": "Food & Drink",
+  "frase": "L'acqua tonica, sotto luce ultravioletta, ____.",
+  "risposte": [
+   "emette luce azzurra"
+  ],
+  "spiegazione": "Merito del chinino, che assorbe i raggi ultravioletti e li riemette come luce visibile.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-015",
+  "categoria": "Food & Drink",
+  "frase": "Il salmone è rosa perché mangia gamberetti, che ____.",
+  "risposte": [
+   "contengono una sostanza rossa"
+  ],
+  "spiegazione": "Il pigmento si chiama astaxantina. Al salmone d'allevamento viene aggiunto nel mangime.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-016",
+  "categoria": "Food & Drink",
+  "frase": "Nel 1893 la Corte Suprema USA stabilì che il pomodoro è un ortaggio, per ____.",
+  "risposte": [
+   "questioni di tasse"
+  ],
+  "spiegazione": "Sulla verdura importata si pagava un dazio, sulla frutta no. Per la botanica il pomodoro resta un frutto.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-017",
+  "categoria": "Food & Drink",
+  "frase": "Un’ape operaia, in tutta la sua vita, produce circa ____.",
+  "risposte": [
+   "un dodicesimo di cucchiaino di miele"
+  ],
+  "spiegazione": "Per un solo barattolo serve il lavoro di migliaia di api.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-018",
+  "categoria": "Food & Drink",
+  "frase": "Per fare un litro di sciroppo d'acero servono ____.",
+  "risposte": [
+   "circa 40 litri di linfa"
+  ],
+  "spiegazione": "La linfa è quasi tutta acqua e va fatta bollire a lungo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-019",
+  "categoria": "Food & Drink",
+  "frase": "Nel Settecento Federico il Grande assunse 400 \"annusatori\" per scovare chi ____.",
+  "risposte": [
+   "tostava caffè senza permesso"
+  ],
+  "spiegazione": "Voleva che i prussiani bevessero birra invece di caffè importato. Molti annusatori erano ex soldati.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-020",
+  "categoria": "Food & Drink",
+  "frase": "Nel 2020 la Corte suprema irlandese stabilì che il pane di Subway ____.",
+  "risposte": [
+   "non è pane"
+  ],
+  "spiegazione": "Conteneva troppo zucchero: circa il 10% contro il limite del 2%.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-021",
+  "categoria": "Food & Drink",
+  "frase": "Negli USA l'haggis tradizionale scozzese è vietato perché contiene ____.",
+  "risposte": [
+   "polmone di pecora"
+  ],
+  "spiegazione": "Dal 1971 il polmone non si può vendere come cibo per le persone.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-022",
+  "categoria": "Food & Drink",
+  "frase": "Negli USA le uova Kinder Sorpresa sono illegali perché una legge vieta i dolci con ____.",
+  "risposte": [
+   "una sorpresa che non si mangia"
+  ],
+  "spiegazione": "La legge è del 1938. Il Kinder Joy è permesso perché il giocattolo è separato dal dolce.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-023",
+  "categoria": "Food & Drink",
+  "frase": "In Islanda ____ fu vietata fino al 1989.",
+  "risposte": [
+   "la birra forte"
+  ],
+  "spiegazione": "Vino e liquori, invece, erano tornati legali decenni prima.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-024",
+  "categoria": "Food & Drink",
+  "frase": "In Giappone ____ fu vietato per circa 1.200 anni.",
+  "risposte": [
+   "mangiare carne"
+  ],
+  "spiegazione": "Dal 675 al 1872, quando l'imperatore mangiò manzo in pubblico. All'inizio il divieto riguardava solo alcune carni e alcuni mesi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-025",
+  "categoria": "Food & Drink",
+  "frase": "Nel Settecento in Francia il Parlamento vietò ____.",
+  "risposte": [
+   "le patate"
+  ],
+  "spiegazione": "Dal 1748 al 1772: si pensava che diffondessero malattie, come la lebbra.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-026",
+  "categoria": "Food & Drink",
+  "frase": "Nell'Ottocento uno stato americano impose per legge di ____.",
+  "risposte": [
+   "colorare di rosa la margarina"
+  ],
+  "spiegazione": "Era il New Hampshire, su pressione dei produttori di burro: rosa, nessuno l'avrebbe comprata.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-027",
+  "categoria": "Food & Drink",
+  "frase": "Un'antica legge romana vietava di servire ai banchetti qualunque uccello tranne ____.",
+  "risposte": [
+   "una gallina non ingrassata"
+  ],
+  "spiegazione": "Era la Lex Fannia, del 161 a.C., contro il lusso a tavola.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-028",
+  "categoria": "Food & Drink",
+  "frase": "Nel 2011 l'Ungheria introdusse una \"____\".",
+  "risposte": [
+   "tassa sulle patatine"
+  ],
+  "spiegazione": "Colpisce i cibi con troppo sale, zucchero o caffeina. I soldi vanno alla sanità.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-031",
+  "categoria": "Food & Drink",
+  "frase": "____ fu scoperta tenendo una ciotola d'acqua sopra una vasca di birra in fermentazione.",
+  "risposte": [
+   "L'acqua gassata"
+  ],
+  "spiegazione": "Lo fece Joseph Priestley nel 1767: l'acqua assorbì l'anidride carbonica prodotta dalla birra.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-032",
+  "categoria": "Food & Drink",
+  "frase": "Durante il Proibizionismo il governo USA ____.",
+  "risposte": [
+   "avvelenò l'alcol industriale"
+  ],
+  "spiegazione": "Aggiunse metanolo e altre sostanze per scoraggiare chi lo trasformava in liquori. Si stimano circa 10.000 morti.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-034",
+  "categoria": "Food & Drink",
+  "frase": "La Svizzera vietò l'assenzio dopo che un viticoltore che ne aveva bevuto ____.",
+  "risposte": [
+   "uccise la famiglia"
+  ],
+  "spiegazione": "Il delitto è del 1905, il divieto del 1910. L'uomo aveva bevuto anche molto altro.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-035",
+  "categoria": "Food & Drink",
+  "frase": "Dopo la presidenza George Washington gestì ____ degli USA.",
+  "risposte": [
+   "la più grande distilleria di whiskey"
+  ],
+  "spiegazione": "Nel 1799 produsse circa 40.000 litri.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-036",
+  "categoria": "Food & Drink",
+  "frase": "In origine ____ conteneva citrato di litio.",
+  "risposte": [
+   "la 7 Up"
+  ],
+  "spiegazione": "Il litio è un farmaco per l'umore. Nel 1929 la bibita si chiamava \"Bib-Label Lithiated Lemon-Lime Soda\".",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-038",
+  "categoria": "Food & Drink",
+  "frase": "La più antica bottiglia di vino ancora liquido fu sigillata da ____.",
+  "risposte": [
+   "uno strato di olio d'oliva"
+  ],
+  "spiegazione": "Ha circa 1.700 anni. L'olio ha tenuto lontana l'aria.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-040",
+  "categoria": "Food & Drink",
+  "frase": "Dopo la \"Beer Flood\" di Londra, che fece otto morti, la birreria ottenne ____.",
+  "risposte": [
+   "un rimborso delle tasse sulla birra persa"
+  ],
+  "spiegazione": "Era il 1814. L'inchiesta dichiarò che era stato un incidente.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-041",
+  "categoria": "Food & Drink",
+  "frase": "In una delle prime colonie inglesi d'America gli archeologi hanno trovato ____ mangiata dai coloni.",
+  "risposte": [
+   "le ossa di una ragazza"
+  ],
+  "spiegazione": "Jamestown, inverno 1609-1610: lo chiamano \"il tempo della fame\". La ragazza aveva 14 anni.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-042",
+  "categoria": "Food & Drink",
+  "frase": "Nel 1858 in Inghilterra una ventina di persone ____ perché in dei dolcetti finì ____.",
+  "risposte": [
+   "morirono",
+   "dell'arsenico"
+  ],
+  "spiegazione": "A Bradford un apprendista lo prese al posto della polvere di gesso, usata per risparmiare sullo zucchero.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-043",
+  "categoria": "Food & Drink",
+  "frase": "Nel 1902 un chimico americano reclutò 12 volontari per ____.",
+  "risposte": [
+   "mangiare cibo con conservanti tossici"
+  ],
+  "spiegazione": "Harvey Wiley voleva dimostrare che facevano male. Il gruppo fu chiamato \"Poison Squad\".",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-045",
+  "categoria": "Food & Drink",
+  "frase": "Durante il Proibizionismo migliaia di americani rimasero paralizzati bevendo ____.",
+  "risposte": [
+   "estratto di zenzero"
+  ],
+  "spiegazione": "Era un \"medicinale\" alcolico, adulterato con una sostanza tossica per i nervi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-048",
+  "categoria": "Food & Drink",
+  "frase": "In Canada dei ladri rubarono tonnellate di sciroppo d'acero e ____.",
+  "risposte": [
+   "riempivano d'acqua i barili vuotati"
+  ],
+  "spiegazione": "Québec, 2012: il furto andò avanti per quasi un anno prima che qualcuno se ne accorgesse.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-050",
+  "categoria": "Food & Drink",
+  "frase": "Nel 1960 in Inghilterra oltre 100.000 ____ morirono per un ____.",
+  "risposte": [
+   "tacchini",
+   "mangime ammuffito"
+  ],
+  "spiegazione": "Così fu scoperta l'aflatossina, una tossina prodotta da una muffa.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-001",
+  "categoria": "History",
+  "frase": "Nel 1518 a Strasburgo centinaia di persone, per giorni, ____.",
+  "risposte": [
+   "ballarono senza riuscire a fermarsi"
+  ],
+  "spiegazione": "Secondo cronache scritte più tardi, alcuni morirono di sfinimento, ma il numero è incerto. Ancora oggi non si sa cosa causò questa «epidemia di ballo».",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-002",
+  "categoria": "History",
+  "frase": "Nel Medioevo in Francia ____ fu processato per omicidio e impiccato.",
+  "risposte": [
+   "un maiale"
+  ],
+  "spiegazione": "Successe a Falaise, in Normandia, nel 1386: l'animale aveva ucciso un bambino. Fu giustiziato in piazza vestito da uomo. I processi agli animali, all'epoca, erano una cosa seria.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-003",
+  "categoria": "History",
+  "frase": "In Europa, per secoli, le farmacie vendevano come medicina ____.",
+  "risposte": [
+   "mummie egizie macinate"
+  ],
+  "spiegazione": "Si pensava che la polvere di mummia curasse un po' di tutto.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-001",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1919 a Boston, in una giornata qualunque, 21 persone morirono travolte da ____.",
+  "risposte": [
+   "un'onda di melassa"
+  ],
+  "spiegazione": "Il 15 gennaio 1919 un enorme serbatoio cedette e l'onda travolse un quartiere di Boston. Molti morirono soffocati dallo sciroppo; i feriti furono circa 150.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-004",
+  "categoria": "History",
+  "frase": "L'inventore della benzina al piombo morì ____.",
+  "risposte": [
+   "strangolato dalle corde che aveva inventato per alzarsi dal letto"
+  ],
+  "spiegazione": "Si chiamava Thomas Midgley e inventò anche i freon che bucarono l'ozono. Paralizzato dalla poliomielite, si era costruito un sistema di corde e carrucole. Morì nel 1944.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-005",
+  "categoria": "History",
+  "frase": "Il re inglese Giorgio II morì ____.",
+  "risposte": [
+   "sul water"
+  ],
+  "spiegazione": "Era il 1760. Fu trovato a terra appena dopo essere stato sulla seggetta, il «water» dell'epoca. L'autopsia trovò una lacerazione dell'aorta, forse per lo sforzo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-006",
+  "categoria": "History",
+  "frase": "Nel 1932 l'esercito australiano andò a combattere con le mitragliatrici contro ____, e perse.",
+  "risposte": [
+   "gli emù"
+  ],
+  "spiegazione": "Circa 20.000 emù devastavano i campi di grano. I soldati spararono migliaia di colpi uccidendone pochi, e furono ritirati due volte nel giro di poche settimane.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-007",
+  "categoria": "History",
+  "frase": "Nella Seconda guerra mondiale gli USA progettarono di lanciare sul Giappone ____ con ____.",
+  "risposte": [
+   "pipistrelli",
+   "bombe incendiarie addosso"
+  ],
+  "spiegazione": "L'idea era che i pipistrelli andassero a nascondersi sotto i tetti delle case di legno, dove gli ordigni avrebbero appiccato il fuoco. Il progetto, chiamato X-Ray, non fu mai usato.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-051",
+  "categoria": "Food & Drink",
+  "frase": "Il dottor Kellogg, quello dei cereali, sosteneva che il cibo insipido scoraggiasse ____.",
+  "risposte": [
+   "la masturbazione"
+  ],
+  "spiegazione": "I cornflakes però nacquero come cibo digeribile per i pazienti della sua clinica, non per questo scopo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-008",
+  "categoria": "History",
+  "frase": "Negli anni '30 una pubblicità consigliava alle donne di usare ____ per l'igiene intima.",
+  "risposte": [
+   "un disinfettante per la casa"
+  ],
+  "spiegazione": "Era il Lysol. «Igiene intima» era un modo velato per dire contraccezione, allora illegale. Non funzionava e a molte donne causò ustioni.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-009",
+  "categoria": "History",
+  "frase": "Nell'Ottocento, per calmare i neonati che mettevano i denti, si usava ____.",
+  "risposte": [
+   "uno sciroppo con morfina"
+  ],
+  "spiegazione": "Il più famoso era lo sciroppo della signora Winslow, nato negli Stati Uniti nel 1849: un cucchiaino conteneva abbastanza morfina da uccidere un bambino. Lo chiamavano «l'ammazzabambini».",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-010",
+  "categoria": "History",
+  "frase": "Alla maratona olimpica del 1904 il vincitore corse aiutato da ____.",
+  "risposte": [
+   "veleno per topi e brandy"
+  ],
+  "spiegazione": "Si chiamava Thomas Hicks: gli diedero stricnina, un veleno per topi che a piccole dosi si usava come stimolante, con albume d'uovo e brandy. Arrivò al traguardo quasi portato a braccia.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-002",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1906 lo zoo del Bronx espose ____ nella gabbia delle scimmie.",
+  "risposte": [
+   "un uomo congolese"
+  ],
+  "spiegazione": "Si chiamava Ota Benga, del popolo Mbuti. Fu esposto per alcuni giorni, finché le proteste dei pastori delle chiese nere costrinsero lo zoo a smettere. Lo zoo si è scusato nel 2020.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-004",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nell'897 papa Formoso, già morto da tempo, fu riesumato e ____.",
+  "risposte": [
+   "processato"
+  ],
+  "spiegazione": "È il «sinodo del cadavere»: papa Stefano VI fece vestire il corpo da papa, lo mise sul trono e lo condannò. Poi lo fece gettare nel Tevere.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-011",
+  "categoria": "History",
+  "frase": "Per screditare la corrente alternata, un collaboratore di Edison ____.",
+  "risposte": [
+   "fulminava animali in pubblico"
+  ],
+  "spiegazione": "Si chiamava Harold Brown e usava il laboratorio di Edison: nel 1888 uccise con la corrente alternata cani, vitelli e un cavallo. Era la «guerra delle correnti».",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-012",
+  "categoria": "History",
+  "frase": "Un dittatore del Turkmenistan cambiò i nomi dei mesi, e ad aprile diede ____.",
+  "risposte": [
+   "il nome di sua madre"
+  ],
+  "spiegazione": "Era Saparmurat Niyazov, nel 2002. Gennaio prese il suo soprannome, Turkmenbashi. Il suo successore rimise i nomi normali nel 2008.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-005",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nell’Ottocento in Scozia si coprivano le tombe con ____ per non far rubare i cadaveri.",
+  "risposte": [
+   "gabbie di ferro"
+  ],
+  "spiegazione": "Si chiamavano mortsafe. I cadaveri freschi si vendevano alle scuole di medicina per le lezioni di anatomia. Il problema finì quasi del tutto nel 1832, quando una legge permise di usare i corpi non reclamati.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-013",
+  "categoria": "History",
+  "frase": "Durante l'assedio di Leningrado alcuni scienziati morirono di fame pur di non mangiare ____.",
+  "risposte": [
+   "i semi che custodivano"
+  ],
+  "spiegazione": "Era la banca dei semi fondata da Nikolai Vavilov, una delle più grandi del mondo. Alcuni morirono alla scrivania, con tonnellate di semi a pochi passi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-014",
+  "categoria": "History",
+  "frase": "Nel 1939 ____ fu candidato al Nobel per la Pace.",
+  "risposte": [
+   "Hitler"
+  ],
+  "spiegazione": "Lo propose un deputato svedese antinazista, per ironia: protestava contro l'accordo di Monaco. Le reazioni furono così dure che ritirò la candidatura dopo pochi giorni.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-051",
+  "categoria": "Science",
+  "frase": "Dopo la morte di Einstein il medico dell'autopsia gli rubò ____ e lo tenne in ____ per decenni.",
+  "risposte": [
+   "il cervello",
+   "dei barattoli"
+  ],
+  "spiegazione": "Il medico che fece l'autopsia nel 1955 lo prelevò senza permesso e lo tenne con sé per anni.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-006",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1851 un medico americano inventò la «drapetomania», una malattia mentale con cui spiegava ____.",
+  "risposte": [
+   "la fuga degli schiavi"
+  ],
+  "spiegazione": "La inventò il medico Samuel Cartwright nel 1851, unendo le parole greche per «fuggitivo» e «follia». Per lui uno schiavo che voleva scappare non poteva che essere malato.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-007",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1949 il Nobel per la Medicina premiò chi aveva inventato ____.",
+  "risposte": [
+   "un'operazione che tagliava il cervello"
+  ],
+  "spiegazione": "Era il portoghese Egas Moniz, premiato per la «leucotomia», poi chiamata lobotomia. Fu praticata su decine di migliaia di pazienti prima di essere abbandonata.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-015",
+  "categoria": "History",
+  "frase": "Nel 1923 un fantino vinse una corsa, ma ____.",
+  "risposte": [
+   "era già morto d'infarto in sella"
+  ],
+  "spiegazione": "Si chiamava Frank Hayes e successe a Belmont Park, vicino a New York. Il cavallo, dato 20 a 1, vinse di una testa. Forse il cuore cedette per la dieta drastica fatta per rientrare nel peso.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-017",
+  "categoria": "History",
+  "frase": "Pietro il Grande tassava chi portava ____.",
+  "risposte": [
+   "la barba"
+  ],
+  "spiegazione": "Era il 1698: voleva che i russi sembrassero più europei. Chi pagava riceveva un gettone, d'argento per i nobili e di rame per gli altri, da mostrare.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "ANI-002",
+  "categoria": "Animal kingdom",
+  "frase": "Il vombato è l'unico animale che fa la cacca ____.",
+  "risposte": [
+   "a forma di cubo"
+  ],
+  "spiegazione": "Usa i cubetti per segnare il territorio: non rotolano via.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-001",
+  "categoria": "Geography",
+  "frase": "L'animale nazionale della Scozia è ____.",
+  "risposte": [
+   "l'unicorno"
+  ],
+  "spiegazione": "Compare sullo stemma reale scozzese da secoli.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-001",
+  "categoria": "Pop culture",
+  "frase": "Il primo oggetto venduto su eBay fu un ____.",
+  "risposte": [
+   "puntatore laser rotto"
+  ],
+  "spiegazione": "Il compratore spiegò che collezionava puntatori laser rotti.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "ANI-003",
+  "categoria": "Animal kingdom",
+  "frase": "In Svizzera è illegale tenere ____ senza ____.",
+  "risposte": [
+   "un porcellino d'India",
+   "un compagno"
+  ],
+  "spiegazione": "Sono animali sociali, e la legge svizzera considera la solitudine un maltrattamento.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-002",
+  "categoria": "Geography",
+  "frase": "In Giappone puoi pagare per affittare ____ o ____.",
+  "risposte": [
+   "un finto parente",
+   "un finto amico"
+  ],
+  "spiegazione": "Ci sono agenzie che forniscono attori per matrimoni, cene e funerali.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-004",
+  "categoria": "Animal kingdom",
+  "frase": "I gamberetti hanno ____.",
+  "risposte": [
+   "il cuore nella testa"
+  ],
+  "spiegazione": "Si trova nella parte anteriore del corpo, sotto la corazza.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-005",
+  "categoria": "Animal kingdom",
+  "frase": "Nel 1945 un pollo di nome Mike visse ____.",
+  "risposte": [
+   "18 mesi senza testa"
+  ],
+  "spiegazione": "Il colpo d'ascia aveva lasciato intatta la parte del cervello che regola le funzioni vitali. Il padrone lo nutriva con un contagocce.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-018",
+  "categoria": "History",
+  "frase": "Gli astronauti dell'Apollo 11, senza assicurazione sulla vita, ____ da far vendere alle famiglie in caso di morte.",
+  "risposte": [
+   "firmarono autografi"
+  ],
+  "spiegazione": "Nessuno li assicurava per una missione così rischiosa.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-002",
+  "categoria": "Pop culture",
+  "frase": "Il compositore Lully morì dopo essersi colpito ____.",
+  "risposte": [
+   "un piede con il bastone da direttore"
+  ],
+  "spiegazione": "All'epoca si dirigeva battendo a terra un lungo bastone. La ferita andò in cancrena. Lui rifiutò l'amputazione e la cancrena lo uccise.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "GEO-003",
+  "categoria": "Geography",
+  "frase": "D'estate la Torre Eiffel ____.",
+  "risposte": [
+   "si allunga di una decina di centimetri"
+  ],
+  "spiegazione": "Con il caldo il ferro si dilata.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-006",
+  "categoria": "Animal kingdom",
+  "frase": "Un pinguino dello zoo di Edimburgo è ____.",
+  "risposte": [
+   "un generale dell'esercito norvegese"
+  ],
+  "spiegazione": "Si chiama Sir Nils Olav ed è la mascotte della Guardia reale norvegese.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-004",
+  "categoria": "Geography",
+  "frase": "Un'isola al confine tra Francia e Spagna ____.",
+  "risposte": [
+   "cambia nazionalità ogni sei mesi"
+  ],
+  "spiegazione": "È l'Isola dei Fagiani, su un fiume: i due paesi la amministrano a turno.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-007",
+  "categoria": "Animal kingdom",
+  "frase": "La CIA provò a spiare i sovietici con ____.",
+  "risposte": [
+   "un gatto con un microfono impiantato"
+  ],
+  "spiegazione": "Il progetto si chiamava Acoustic Kitty e fu un fallimento costosissimo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-019",
+  "categoria": "History",
+  "frase": "Nel 1958 gli USA studiarono un piano per ____.",
+  "risposte": [
+   "far esplodere una bomba atomica sulla Luna"
+  ],
+  "spiegazione": "Doveva essere una dimostrazione di forza verso l'URSS. Il piano fu abbandonato.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-005",
+  "categoria": "Geography",
+  "frase": "In Islanda esiste un'app per ____.",
+  "risposte": [
+   "evitare di uscire con un proprio cugino"
+  ],
+  "spiegazione": "Gli islandesi sono pochi e molti sono imparentati: l'app controlla un archivio genealogico nazionale.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "FOO-055",
+  "categoria": "Food & Drink",
+  "frase": "L'inventore del tubo delle Pringles volle essere sepolto in parte ____.",
+  "risposte": [
+   "dentro un tubo di Pringles"
+  ],
+  "spiegazione": "Fredric Baur morì nel 2008. I figli comprarono il tubo al supermercato andando al funerale.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-020",
+  "categoria": "History",
+  "frase": "La parola \"robot\" viene dal ceco, dove significa ____.",
+  "risposte": [
+   "lavoro forzato"
+  ],
+  "spiegazione": "La parola comparve nel 1920 in un'opera teatrale dello scrittore ceco Karel Čapek.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-021",
+  "categoria": "History",
+  "frase": "Gli antichi Romani lavavano i vestiti ____.",
+  "risposte": [
+   "con l'urina"
+  ],
+  "spiegazione": "L'ammoniaca contenuta nell'urina funziona da detergente.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-006",
+  "categoria": "Geography",
+  "frase": "La bandiera del Nepal è l'unica al mondo ____.",
+  "risposte": [
+   "non rettangolare"
+  ],
+  "spiegazione": "È formata da due triangoli sovrapposti.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-008",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Fino al 1981 in Italia chi uccideva la moglie, la figlia o la sorella sorprese con un amante rischiava ____.",
+  "risposte": [
+   "solo fino a 7 anni di carcere"
+  ],
+  "spiegazione": "Era il «delitto d'onore» dell'articolo 587 del codice penale: da 3 a 7 anni di carcere, molto meno di un omicidio normale. Valeva anche per una donna che uccideva il marito. Fu abrogato nel 1981.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-009",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Fino al ____ in Italia, per evitare la condanna per stupro, bastava ____.",
+  "risposte": [
+   "1981",
+   "sposare la vittima"
+  ],
+  "spiegazione": "Era il «matrimonio riparatore» dell'articolo 544 del codice penale. Nel 1966 Franca Viola fu la prima a rifiutarlo pubblicamente e fece condannare il suo rapitore.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-022",
+  "categoria": "History",
+  "frase": "Nel 1977, l'anno in cui è uscito Star Wars, in Francia ci fu ____.",
+  "risposte": [
+   "l'ultima esecuzione con la ghigliottina"
+  ],
+  "spiegazione": "Il condannato era Hamida Djandoubi, ghigliottinato a Marsiglia il 10 settembre 1977: il giorno dopo Star Wars veniva presentato in Francia. La pena di morte fu abolita nel 1981.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-023",
+  "categoria": "History",
+  "frase": "Secondo la legge romana, chi uccideva il padre doveva essere gettato in acqua in un sacco con ____.",
+  "risposte": [
+   "un cane, un gallo, una vipera e una scimmia"
+  ],
+  "spiegazione": "Era la «pena del sacco». Non è sicuro che sia mai stata eseguita con tutti e quattro gli animali: il cane e il gallo compaiono nelle fonti solo nel III secolo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-012",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1916 un'elefantessa da circo di nome Mary fu ____ davanti alla folla.",
+  "risposte": [
+   "impiccata a una gru"
+  ],
+  "spiegazione": "Aveva ucciso un addetto del circo, e il pubblico pretese l'esecuzione.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-014",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Ted Bundy, durante il processo, ____.",
+  "risposte": [
+   "si sposò in aula"
+  ],
+  "spiegazione": "Sfruttò una vecchia legge della Florida: bastava dichiararsi sposati davanti a un giudice.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-016",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Issei Sagawa uccise e mangiò una ragazza, poi fu liberato e diventò una celebrità e ____ per una rivista giapponese.",
+  "risposte": [
+   "recensiva ristoranti"
+  ],
+  "spiegazione": "Successe a Parigi nel 1981. Fu dichiarato incapace di intendere, rimandato in Giappone e lì rimesso in libertà.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-017",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "In Germania un ____ trovò la sua vittima con un annuncio su internet, e un uomo si offrì volontario.",
+  "risposte": [
+   "cannibale"
+  ],
+  "spiegazione": "Si chiamava Armin Meiwes, e successe nel 2001. La vittima, un ingegnere di Berlino, rispose al suo annuncio. Al secondo processo Meiwes fu condannato all'ergastolo per omicidio.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-019",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel Congo di Leopoldo II, a chi raccoglieva poca gomma ____.",
+  "risposte": [
+   "tagliavano le mani"
+  ],
+  "spiegazione": "Il Congo era proprietà personale del re del Belgio. Morirono milioni di persone.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-020",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "All'Expo di Bruxelles del 1958 i visitatori potevano guardare uno \"zoo umano\" con ____.",
+  "risposte": [
+   "un villaggio congolese"
+  ],
+  "spiegazione": "Il Congo era ancora una colonia belga. I visitatori si comportavano in modo così razzista che molti congolesi se ne andarono, e il villaggio chiuse prima della fine dell'Expo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-022",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Per 40 anni il governo USA lasciò senza cure ____ con la sifilide per studiarla.",
+  "risposte": [
+   "uomini neri"
+  ],
+  "spiegazione": "È lo studio di Tuskegee, in Alabama, durato dal 1932 al 1972. Ai malati non fu data la penicillina nemmeno quando era diventata la cura normale.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-023",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel primo Novecento negli USA le foto dei linciaggi venivano ____.",
+  "risposte": [
+   "vendute come cartoline"
+  ],
+  "spiegazione": "La gente le spediva a parenti e amici come ricordo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-024",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Fino al ____ negli USA il linciaggio non era un reato federale.",
+  "risposte": [
+   "2022"
+  ],
+  "spiegazione": "La legge porta il nome di Emmett Till, un ragazzo nero di 14 anni linciato nel 1955.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-026",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Il Mississippi ha impiegato fino al ____ per approvare ufficialmente ____.",
+  "risposte": [
+   "2013",
+   "l'abolizione della schiavitù"
+  ],
+  "spiegazione": "Il voto era arrivato nel 1995, ma i documenti non erano mai stati registrati.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-027",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 2000 in Alabama il 40% degli elettori votò per tenere nella costituzione ____.",
+  "risposte": [
+   "il divieto di sposarsi tra bianchi e neri"
+  ],
+  "spiegazione": "Il divieto non era più applicabile dal 1967, ma era rimasto scritto. Fu cancellato con quel referendum, approvato con il 60% dei voti.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-028",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Il padre della ginecologia moderna faceva i suoi esperimenti ____.",
+  "risposte": [
+   "su schiave senza anestesia"
+  ],
+  "spiegazione": "Si chiamava James Marion Sims, nell'Ottocento negli USA.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-029",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Le cellule di una donna americana furono ____ e ____ senza il suo consenso.",
+  "risposte": [
+   "prelevate",
+   "vendute in tutto il mondo"
+  ],
+  "spiegazione": "Henrietta Lacks morì nel 1951. Le sue cellule, le \"HeLa\", si usano ancora oggi nei laboratori. A differenza di altri campioni umani, le sue cellule dimostrarono una capacità straordinaria di sopravvivere e moltiplicarsi fuori dal corpo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-031",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "A Dachau i medici nazisti ____ i prigionieri per studiare ____.",
+  "risposte": [
+   "immergevano in acqua gelata",
+   "gli effetti del freddo estremo"
+  ],
+  "spiegazione": "Volevano capire come salvare i piloti tedeschi caduti in mare.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-032",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Josef Mengele, il medico di Auschwitz, non fu mai processato: morì ____.",
+  "risposte": [
+   "annegato su una spiaggia in Brasile"
+  ],
+  "spiegazione": "Visse nascosto in Sudamerica per oltre trent'anni.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-033",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1927 la Corte Suprema USA approvò la sterilizzazione forzata con la frase \"____\".",
+  "risposte": [
+   "tre generazioni di imbecilli sono abbastanza"
+  ],
+  "spiegazione": "La sentenza non è mai stata formalmente annullata.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-034",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Fino al 1976 la Svezia sterilizzò per legge ____.",
+  "risposte": [
+   "circa 60.000 persone"
+  ],
+  "spiegazione": "Erano considerate \"inadatte\" a fare figli.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-035",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "La sorella di JFK, a 23 anni, fu ____ per volere del padre.",
+  "risposte": [
+   "operata al cervello"
+  ],
+  "spiegazione": "Rosemary Kennedy rimase invalida per tutta la vita.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-036",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Le \"Radium Girls\" ____ pennelli intinti nel radio.",
+  "risposte": [
+   "si mettevano in bocca"
+  ],
+  "spiegazione": "Dipingevano quadranti di orologi che brillavano al buio. Molte si ammalarono gravemente.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-037",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Hugo Boss produceva ____ con ____.",
+  "risposte": [
+   "le uniformi delle SS",
+   "il lavoro forzato"
+  ],
+  "spiegazione": "L'azienda si è scusata ufficialmente nel 2011.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "FOO-056",
+  "categoria": "Food & Drink",
+  "frase": "La Fanta nacque ____.",
+  "risposte": [
+   "nella Germania nazista"
+  ],
+  "spiegazione": "Con la guerra lo sciroppo della Coca-Cola non arrivava più, e la filiale tedesca inventò una bibita con quello che c'era.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-038",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Il padre delle armi chimiche vinse ____.",
+  "risposte": [
+   "il Nobel per la Chimica"
+  ],
+  "spiegazione": "Fritz Haber lo vinse per aver inventato i fertilizzanti artificiali.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-024",
+  "categoria": "History",
+  "frase": "Nella Prima guerra mondiale l'esercito italiano fucilava soldati ____.",
+  "risposte": [
+   "estratti a sorte"
+  ],
+  "spiegazione": "Era la decimazione, usata per punire interi reparti.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-039",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "In guerra il Giappone costrinse decine di migliaia di donne a ____.",
+  "risposte": [
+   "prostituirsi per i militari"
+  ],
+  "spiegazione": "Le chiamavano \"donne di conforto\". Venivano soprattutto dalla Corea.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-041",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Durante il genocidio del Ruanda una radio ____.",
+  "risposte": [
+   "leggeva in diretta i nomi delle persone da uccidere"
+  ],
+  "spiegazione": "La radio incitava all'odio e indicava dove trovare le vittime.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-042",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Sotto i Khmer rossi potevi essere ucciso solo perché ____.",
+  "risposte": [
+   "portavi gli occhiali"
+  ],
+  "spiegazione": "Gli occhiali erano visti come un segno di istruzione, e gli istruiti erano nemici del regime. Bastavano anche le mani morbide o parlare una lingua straniera.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-043",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nella carestia ucraina degli anni '30 più di 2.500 persone furono condannate per ____.",
+  "risposte": [
+   "cannibalismo"
+  ],
+  "spiegazione": "È la grande carestia del 1932-33, sotto Stalin.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-025",
+  "categoria": "History",
+  "frase": "Nel 1958 Mao ordinò lo sterminio ____.",
+  "risposte": [
+   "dei passeri"
+  ],
+  "spiegazione": "Li accusava di mangiare il grano. Senza passeri gli insetti si moltiplicarono, e questo contribuì a una carestia.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-026",
+  "categoria": "History",
+  "frase": "Secondo un cronista dell'epoca, nel 1346, durante un assedio, i mongoli catapultavano oltre le mura ____.",
+  "risposte": [
+   "i cadaveri dei morti di peste"
+  ],
+  "spiegazione": "Successe a Caffa, in Crimea. Il racconto viene da un solo notaio italiano che però non era presente, e oggi molti storici ne dubitano. Se vero, sarebbe uno dei primi casi di guerra biologica.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-044",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "A Jonestown più di 900 persone morirono bevendo ____.",
+  "risposte": [
+   "una bibita al cianuro"
+  ],
+  "spiegazione": "Era il 1978, in Guyana. I seguaci di una setta furono spinti a bere dal loro capo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-045",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "I 39 membri della setta Heaven's Gate si ____ tutti con ____.",
+  "risposte": [
+   "suicidarono",
+   "le stesse Nike ai piedi"
+  ],
+  "spiegazione": "Era il 1997. Credevano che un'astronave li avrebbe portati via.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-046",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1814 a Londra otto persone annegarono in ____.",
+  "risposte": [
+   "un'onda di birra"
+  ],
+  "spiegazione": "Un tino gigante di una birreria cedette e la birra allagò le case vicine.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-027",
+  "categoria": "History",
+  "frase": "Nel 1962 in Tanzania scoppiò un'epidemia di ____.",
+  "risposte": [
+   "risate incontrollabili"
+  ],
+  "spiegazione": "Partì da una scuola e andò avanti per mesi.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-007",
+  "categoria": "Geography",
+  "frase": "Nel 1986 un lago in Camerun ____ che uccise 1.700 persone nel sonno.",
+  "risposte": [
+   "rilasciò un gas"
+  ],
+  "spiegazione": "Era anidride carbonica accumulata sul fondo del lago Nyos, uscita tutta insieme.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-047",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "I sopravvissuti a uno schianto aereo sulle Ande resistettero 72 giorni ____.",
+  "risposte": [
+   "mangiando i compagni morti"
+  ],
+  "spiegazione": "Era il 1972: a bordo c'era una squadra di rugby uruguaiana.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-028",
+  "categoria": "History",
+  "frase": "Per decapitare Maria Stuarda servirono ____.",
+  "risposte": [
+   "più colpi d'ascia"
+  ],
+  "spiegazione": "Era il 1587: il boia non riuscì al primo colpo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-029",
+  "categoria": "History",
+  "frase": "Fino al Novecento nel coro della Cappella Sistina cantavano ____.",
+  "risposte": [
+   "i castrati"
+  ],
+  "spiegazione": "Venivano castrati da bambini per conservare la voce acuta.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-009",
+  "categoria": "Animal kingdom",
+  "frase": "____ sott'acqua trattiene il respiro più a lungo di un delfino.",
+  "risposte": [
+   "Il bradipo"
+  ],
+  "spiegazione": "Rallentando il battito del cuore può restare sott'acqua anche decine di minuti.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-010",
+  "categoria": "Animal kingdom",
+  "frase": "Il collo della giraffa ha ____, come ____.",
+  "risposte": [
+   "sette vertebre",
+   "quello umano"
+  ],
+  "spiegazione": "Sono solo molto più lunghe.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-011",
+  "categoria": "Animal kingdom",
+  "frase": "Il polpo ha ____ e ____.",
+  "risposte": [
+   "tre cuori",
+   "il sangue blu"
+  ],
+  "spiegazione": "Il sangue è blu perché trasporta l'ossigeno con il rame invece che con il ferro.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-012",
+  "categoria": "Animal kingdom",
+  "frase": "I koala hanno ____ quasi uguali alle nostre.",
+  "risposte": [
+   "impronte digitali"
+  ],
+  "spiegazione": "Sono così simili che potrebbero confondere un investigatore.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-013",
+  "categoria": "Animal kingdom",
+  "frase": "Gli squali esistono da prima ____.",
+  "risposte": [
+   "degli alberi"
+  ],
+  "spiegazione": "Gli squali esistono da circa 400 milioni di anni.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-014",
+  "categoria": "Animal kingdom",
+  "frase": "I fenicotteri sono rosa perché mangiano ____.",
+  "risposte": [
+   "gamberetti e alghe"
+  ],
+  "spiegazione": "Da piccoli sono grigi: il rosa arriva con i pigmenti del cibo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-015",
+  "categoria": "Animal kingdom",
+  "frase": "Quando muore ____ dei pesci pagliaccio, il maschio più grosso ____.",
+  "risposte": [
+   "la femmina",
+   "cambia sesso"
+  ],
+  "spiegazione": "Nel gruppo comanda una sola femmina. Nemo, nella realtà, sarebbe andato diversamente.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-016",
+  "categoria": "Animal kingdom",
+  "frase": "Una specie di medusa, quando invecchia, ____.",
+  "risposte": [
+   "torna giovane e ricomincia da capo"
+  ],
+  "spiegazione": "È la Turritopsis, detta \"medusa immortale\": può ripetere il ciclo all'infinito.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "FOO-057",
+  "categoria": "Food & Drink",
+  "frase": "Le banane sono leggermente ____.",
+  "risposte": [
+   "radioattive"
+  ],
+  "spiegazione": "Contengono potassio, e una piccola parte del potassio è naturalmente radioattiva. È del tutto innocuo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-058",
+  "categoria": "Food & Drink",
+  "frase": "Per la botanica la fragola non è ____, mentre ____ sì.",
+  "risposte": [
+   "una bacca",
+   "la banana"
+  ],
+  "spiegazione": "Per i botanici sono bacche anche pomodori e melanzane.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-059",
+  "categoria": "Food & Drink",
+  "frase": "Fuori dal Giappone il wasabi dei ristoranti è quasi sempre ____.",
+  "risposte": [
+   "una radice piccante colorata di verde"
+  ],
+  "spiegazione": "Il vero wasabi è difficile da coltivare e costa moltissimo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-060",
+  "categoria": "Food & Drink",
+  "frase": "Mangiata in grandi quantità, la noce moscata ____.",
+  "risposte": [
+   "provoca allucinazioni"
+  ],
+  "spiegazione": "Ne servono 2-3 cucchiai, e gli effetti sono soprattutto sgradevoli: nausea e tachicardia.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-030",
+  "categoria": "History",
+  "frase": "Cleopatra visse più vicina nel tempo ____ che alla costruzione della piramide di Giza.",
+  "risposte": [
+   "allo sbarco sulla Luna"
+  ],
+  "spiegazione": "La piramide di Giza è così antica che per Cleopatra era già un monumento vecchio di millenni.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-031",
+  "categoria": "History",
+  "frase": "L'Università di Oxford è più antica ____.",
+  "risposte": [
+   "dell'Impero azteco"
+  ],
+  "spiegazione": "A Oxford si insegnava già secoli prima che nascesse l'impero azteco.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-032",
+  "categoria": "History",
+  "frase": "Quando furono costruite le piramidi, su un'isola russa vivevano ancora ____.",
+  "risposte": [
+   "i mammut"
+  ],
+  "spiegazione": "Gli ultimi mammut sopravvissero su un'isola dell'Artico fino a circa 4.000 anni fa.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-008",
+  "categoria": "Geography",
+  "frase": "Il nome completo di Bangkok in thailandese ha ____.",
+  "risposte": [
+   "più di 160 lettere"
+  ],
+  "spiegazione": "Il nome cerimoniale completo conta circa 168 caratteri ed è considerato il nome di città più lungo del mondo. I thailandesi la chiamano semplicemente Krung Thep.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "GEO-009",
+  "categoria": "Geography",
+  "frase": "Tecnicamente, ____ ha il più alto tasso di criminalità del mondo.",
+  "risposte": [
+   "Il Vaticano"
+  ],
+  "spiegazione": "È un trucco statistico: pochissimi abitanti, milioni di turisti e molti borseggi e scippi.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-010",
+  "categoria": "Geography",
+  "frase": "Il Canada ha ____ di tutto il resto del mondo messo insieme.",
+  "risposte": [
+   "più laghi"
+  ],
+  "spiegazione": "Sono centinaia di migliaia.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-011",
+  "categoria": "Geography",
+  "frase": "La Russia ha una superficie più grande di quella ____.",
+  "risposte": [
+   "di Plutone"
+  ],
+  "spiegazione": "La Russia misura circa 17 milioni di km quadrati, poco più della superficie di Plutone.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-012",
+  "categoria": "Geography",
+  "frase": "Il paese con più fusi orari al mondo: ____.",
+  "risposte": [
+   "la Francia"
+  ],
+  "spiegazione": "Merito dei territori d'oltremare sparsi per il mondo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-017",
+  "categoria": "Animal kingdom",
+  "frase": "La più grande popolazione di cammelli selvatici del mondo vive ____.",
+  "risposte": [
+   "in Australia"
+  ],
+  "spiegazione": "Furono portati nell'Ottocento come animali da trasporto e poi liberati.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-052",
+  "categoria": "Science",
+  "frase": "Su Venere un giorno dura ____.",
+  "risposte": [
+   "più di un anno"
+  ],
+  "spiegazione": "Venere ruota su sé stessa così lentamente che fa prima a completare un giro attorno al Sole.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-053",
+  "categoria": "Science",
+  "frase": "Sulla Luna gli astronauti hanno lasciato ____.",
+  "risposte": [
+   "96 sacchetti di pipì, cacca e vomito"
+  ],
+  "spiegazione": "Lasciati dalle missioni Apollo per alleggerire i moduli al ritorno.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-054",
+  "categoria": "Science",
+  "frase": "Sulla Luna l'astronauta Charlie Duke lasciò ____.",
+  "risposte": [
+   "una foto della sua famiglia"
+  ],
+  "spiegazione": "Missione Apollo 16, 1972. La foto è ancora lì.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-055",
+  "categoria": "Science",
+  "frase": "Nello spazio gli astronauti diventano ____.",
+  "risposte": [
+   "più alti di qualche centimetro"
+  ],
+  "spiegazione": "Senza gravità la colonna vertebrale si distende. Tornati a terra si riaccorciano.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-056",
+  "categoria": "Science",
+  "frase": "Nel corpo umano c'è abbastanza ferro per fare ____.",
+  "risposte": [
+   "un piccolo chiodo"
+  ],
+  "spiegazione": "Pochi grammi in tutto, quasi tutti nel sangue.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-057",
+  "categoria": "Science",
+  "frase": "Lo stomaco rinnova di continuo il suo ____ per ____.",
+  "risposte": [
+   "rivestimento",
+   "non digerire sé stesso"
+  ],
+  "spiegazione": "Lo fa ogni pochi giorni: l'acido è abbastanza forte da corrodere i tessuti.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-003",
+  "categoria": "Pop culture",
+  "frase": "La prima webcam della storia inquadrava ____.",
+  "risposte": [
+   "una macchinetta del caffè"
+  ],
+  "spiegazione": "All'università di Cambridge i ricercatori volevano sapere se la caraffa era piena prima di alzarsi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-004",
+  "categoria": "Pop culture",
+  "frase": "Il primo video su YouTube mostra un ragazzo ____.",
+  "risposte": [
+   "allo zoo che parla degli elefanti"
+  ],
+  "spiegazione": "Si intitola \"Me at the zoo\", è del 2005 e dura pochi secondi. Il ragazzo è uno dei fondatori del sito.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-005",
+  "categoria": "Pop culture",
+  "frase": "La prima email di spam fu mandata nel 1978 per ____.",
+  "risposte": [
+   "pubblicizzare dei computer"
+  ],
+  "spiegazione": "Arrivò a qualche centinaio di utenti della rete che ha preceduto internet.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-006",
+  "categoria": "Pop culture",
+  "frase": "Nintendo, fondata nel 1889, ____.",
+  "risposte": [
+   "produceva carte da gioco"
+  ],
+  "spiegazione": "Erano carte tradizionali giapponesi. I videogiochi arrivarono quasi un secolo dopo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-007",
+  "categoria": "Pop culture",
+  "frase": "Ogni anno la LEGO produce ____ di qualunque altra azienda.",
+  "risposte": [
+   "più pneumatici"
+  ],
+  "spiegazione": "Sono le ruote minuscole dei suoi veicoli giocattolo: centinaia di milioni all'anno.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-008",
+  "categoria": "Pop culture",
+  "frase": "Il nome IKEA unisce le iniziali del fondatore, della ____ e del ____.",
+  "risposte": [
+   "sua fattoria",
+   "suo villaggio"
+  ],
+  "spiegazione": "Ingvar Kamprad, la fattoria Elmtaryd e il villaggio di Agunnaryd.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-033",
+  "categoria": "History",
+  "frase": "Un francese mangiò ____, a pezzi, in due anni.",
+  "risposte": [
+   "un aereo intero"
+  ],
+  "spiegazione": "Si chiamava Michel Lotito ed era famoso per mangiare metallo e vetro.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-058",
+  "categoria": "Science",
+  "frase": "Un ranger americano fu ____ e sopravvisse sempre.",
+  "risposte": [
+   "colpito da sette fulmini"
+  ],
+  "spiegazione": "Si chiamava Roy Sullivan ed è nel Guinness dei primati.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-034",
+  "categoria": "History",
+  "frase": "Un uomo giapponese sopravvisse ____ in tre giorni.",
+  "risposte": [
+   "a due bombe atomiche"
+  ],
+  "spiegazione": "Si chiamava Tsutomu Yamaguchi: era a Hiroshima per lavoro e tornò a casa, a Nagasaki, in tempo per la seconda bomba. Nel 2009 fu il primo riconosciuto ufficialmente come sopravvissuto a entrambe.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-035",
+  "categoria": "History",
+  "frase": "Una donna ____, inclusi i naufragi del Titanic e del Britannic, la sua nave gemella.",
+  "risposte": [
+   "sopravvisse a tre incidenti navali"
+  ],
+  "spiegazione": "Si chiamava Violet Jessop. Nel 1911 era cameriera sull'Olympic quando urtò una nave da guerra; nel 1912 era sul Titanic e si salvò su una scialuppa; nel 1916 era sul Britannic, nave ospedale, come volontaria della Croce Rossa, quando affondò per una mina.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-036",
+  "categoria": "History",
+  "frase": "Un soldato giapponese combatté nella giungla ____, convinto che la guerra non fosse finita.",
+  "risposte": [
+   "fino al 1974"
+  ],
+  "spiegazione": "Hiroo Onoda si arrese solo quando il suo vecchio comandante andò di persona a dargli l'ordine.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-037",
+  "categoria": "History",
+  "frase": "La guerra più breve della storia durò ____.",
+  "risposte": [
+   "circa 38 minuti"
+  ],
+  "spiegazione": "Regno Unito contro Zanzibar, 1896.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-038",
+  "categoria": "History",
+  "frase": "Nel 1859 USA e Regno Unito sfiorarono la guerra per colpa di ____.",
+  "risposte": [
+   "un maiale"
+  ],
+  "spiegazione": "Un colono americano sparò al maiale di un inglese su un'isola contesa. L'unica vittima della crisi fu il maiale.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-039",
+  "categoria": "History",
+  "frase": "Nel 1925 Grecia e Bulgaria fecero una breve guerra per ____.",
+  "risposte": [
+   "un cane che aveva attraversato il confine"
+  ],
+  "spiegazione": "Secondo il racconto più diffuso, un soldato greco fu ucciso mentre lo rincorreva.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-009",
+  "categoria": "Pop culture",
+  "frase": "Il Monopoly nasce da un gioco ____ per criticare i grandi proprietari terrieri.",
+  "risposte": [
+   "ideato da una donna"
+  ],
+  "spiegazione": "Si chiamava Elizabeth Magie e lo brevettò nel 1904: voleva mostrare quanto fosse ingiusto il monopolio.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-040",
+  "categoria": "History",
+  "frase": "Nella Seconda guerra mondiale le ____ mandate ai prigionieri nascondevano mappe e soldi veri.",
+  "risposte": [
+   "scatole del Monopoly"
+  ],
+  "spiegazione": "Servivano ad aiutarli a fuggire.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-010",
+  "categoria": "Pop culture",
+  "frase": "Abramo Lincoln è nella Hall of Fame ____.",
+  "risposte": [
+   "del wrestling"
+  ],
+  "spiegazione": "Da giovane era un lottatore famoso nella sua zona, e perse pochissimi incontri.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-041",
+  "categoria": "History",
+  "frase": "Secondo un testimone, al funerale di un presidente americano ____ fu portato via perché non smetteva di dire parolacce.",
+  "risposte": [
+   "il suo pappagallo"
+  ],
+  "spiegazione": "Il presidente era Andrew Jackson, morto nel 1845, e il pappagallo si chiamava Poll. L'unico racconto è la lettera di un reverendo presente al funerale, scritta decenni dopo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-042",
+  "categoria": "History",
+  "frase": "Einstein rifiutò di diventare ____.",
+  "risposte": [
+   "presidente di Israele"
+  ],
+  "spiegazione": "Gli fu offerto nel 1952, dopo la morte del primo presidente. Rispose che per tutta la vita si era occupato di questioni oggettive e non aveva l'esperienza per trattare con le persone.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-043",
+  "categoria": "History",
+  "frase": "Theodore Roosevelt, colpito al petto da un proiettile, ____.",
+  "risposte": [
+   "fece lo stesso un comizio di circa 90 minuti"
+  ],
+  "spiegazione": "Il proiettile fu rallentato dal discorso piegato che teneva in tasca.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-044",
+  "categoria": "History",
+  "frase": "Durante la guerra la futura regina Elisabetta II faceva ____ e ____.",
+  "risposte": [
+   "la meccanica",
+   "l'autista di camion"
+  ],
+  "spiegazione": "Si arruolò a 18 anni nel servizio ausiliario femminile.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-011",
+  "categoria": "Pop culture",
+  "frase": "Il dottor Seuss scrisse \"Prosciutto e uova verdi\" per vincere una scommessa: ____.",
+  "risposte": [
+   "scrivere un libro con solo 50 parole diverse"
+  ],
+  "spiegazione": "La scommessa era con il suo editore. È diventato uno dei libri per bambini più venduti di sempre.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-049",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "La CIA somministrò ____ a cittadini ignari.",
+  "risposte": [
+   "LSD"
+  ],
+  "spiegazione": "Il progetto si chiamava MKUltra e cercava tecniche di controllo mentale.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-045",
+  "categoria": "History",
+  "frase": "Nel 1962 i vertici militari USA proposero ____ per giustificare un attacco a Cuba.",
+  "risposte": [
+   "finti attentati contro americani"
+  ],
+  "spiegazione": "Il piano si chiamava Operazione Northwoods: prevedeva anche attentati in città americane e aerei dirottati, da far ricadere su Cuba. Il governo Kennedy non lo approvò mai.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-050",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "A fine Ottocento un serial killer di Chicago costruì ____.",
+  "risposte": [
+   "un hotel con trappole e stanze senza finestre"
+  ],
+  "spiegazione": "H.H. Holmes, ai tempi dell'Expo del 1893. Molti dettagli del suo \"castello\" sono stati ingigantiti dai giornali.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-051",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel centro di Città del Messico sono state trovate torri azteche fatte di ____.",
+  "risposte": [
+   "centinaia di teschi umani"
+  ],
+  "spiegazione": "Gli Aztechi esponevano così i teschi delle vittime dei sacrifici.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-013",
+  "categoria": "Geography",
+  "frase": "Le catacombe di Parigi contengono le ossa di ____.",
+  "risposte": [
+   "circa 6 milioni di persone"
+  ],
+  "spiegazione": "Furono trasferite lì dai cimiteri della città, ormai troppo pieni.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-014",
+  "categoria": "Geography",
+  "frase": "In una chiesa della Repubblica Ceca c'è un lampadario fatto ____.",
+  "risposte": [
+   "interamente di ossa umane"
+  ],
+  "spiegazione": "È l'ossario di Sedlec, decorato con le ossa di decine di migliaia di persone.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-046",
+  "categoria": "History",
+  "frase": "Dopo la guerra gli USA assunsero ____.",
+  "risposte": [
+   "oltre mille scienziati nazisti"
+  ],
+  "spiegazione": "Era l'operazione Paperclip. Tra loro c'era il futuro costruttore dei razzi della NASA.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-047",
+  "categoria": "History",
+  "frase": "A Chernobyl, quando i robot si ruppero, dei soldati ____.",
+  "risposte": [
+   "spalarono a mano i detriti radioattivi dal tetto"
+  ],
+  "spiegazione": "Li chiamavano \"bio-robot\": potevano restare sul tetto solo per pochissimo tempo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-059",
+  "categoria": "Science",
+  "frase": "Un fisico teneva separate due semisfere di plutonio con ____: sbagliò e morì in nove giorni.",
+  "risposte": [
+   "un cacciavite"
+  ],
+  "spiegazione": "Louis Slotin, 1946. Il cacciavite scivolò per un istante e lui ricevette una dose letale di radiazioni.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-052",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Negli anni '20 un'acqua al radio venduta come tonico faceva ____ a chi la beveva.",
+  "risposte": [
+   "disintegrare la mascella"
+  ],
+  "spiegazione": "Si chiamava Radithor.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-053",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nell'Ottocento la carta da parati verde conteneva ____.",
+  "risposte": [
+   "arsenico"
+  ],
+  "spiegazione": "Il colore verde più di moda era fatto con l'arsenico, e poteva intossicare chi viveva in quelle stanze.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-054",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nell'Ottocento si facevano foto ai ____, messi in posa come ____.",
+  "risposte": [
+   "morti",
+   "se fossero vivi"
+  ],
+  "spiegazione": "Spesso era l'unica foto che la famiglia aveva di quella persona, bambini compresi.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-056",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Negli anni '50 un farmaco contro la nausea dato alle donne incinte fece ____.",
+  "risposte": [
+   "nascere migliaia di bambini malformati"
+  ],
+  "spiegazione": "Era la talidomide.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-048",
+  "categoria": "History",
+  "frase": "Negli anni '40 una pubblicità di sigarette diceva che ____.",
+  "risposte": [
+   "più medici fumavano Camel"
+  ],
+  "spiegazione": "Lo slogan diceva che i medici fumavano Camel più di ogni altra sigaretta.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-049",
+  "categoria": "History",
+  "frase": "Nel 1898 la Bayer vendeva ____ come ____.",
+  "risposte": [
+   "l'eroina",
+   "sciroppo per la tosse"
+  ],
+  "spiegazione": "All'inizio era presentata come un rimedio sicuro.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-050",
+  "categoria": "History",
+  "frase": "Nell'Ottocento si vendevano gocce per il mal di denti dei bambini a base di ____.",
+  "risposte": [
+   "cocaina"
+  ],
+  "spiegazione": "La cocaina era legale e si trovava in molti medicinali.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-057",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1936 l'ultima esecuzione pubblica degli USA attirò ____.",
+  "risposte": [
+   "circa 20.000 spettatori"
+  ],
+  "spiegazione": "Successe in Kentucky.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-058",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "A inizio Novecento la Germania sterminò due popoli della Namibia e mandò ____ in patria per ricerche \"razziali\".",
+  "risposte": [
+   "i loro teschi"
+  ],
+  "spiegazione": "Erano gli Herero e i Nama, tra il 1904 e il 1908.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-060",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "In Australia fino agli anni '70 lo Stato toglieva ____ alle famiglie.",
+  "risposte": [
+   "i bambini aborigeni"
+  ],
+  "spiegazione": "Sono le \"generazioni rubate\": i bambini venivano cresciuti in istituti o da famiglie bianche.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-063",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Un medico di famiglia inglese uccise oltre 200 pazienti, e fu scoperto solo perché ____.",
+  "risposte": [
+   "falsificò un testamento a suo favore"
+  ],
+  "spiegazione": "Harold Shipman uccideva con overdose di diamorfina, cioè eroina medica. Fu arrestato nel 1998, dopo che la figlia di una paziente si accorse che il testamento della madre, tutto a favore del medico, era falso.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-064",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1995 una setta liberò ____ nella metropolitana di Tokyo.",
+  "risposte": [
+   "un gas velenoso"
+  ],
+  "spiegazione": "La setta si chiamava Aum Shinrikyo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-066",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Il kuru è una malattia che colpiva chi mangiava ____.",
+  "risposte": [
+   "il cervello dei morti"
+  ],
+  "spiegazione": "Era un rito funebre di un popolo della Papua Nuova Guinea.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-067",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "In Cina fino al 1905 esisteva la tortura della \"____\". Il condannato veniva ucciso ____.",
+  "risposte": [
+   "morte dei mille tagli",
+   "lentamente, un taglio alla volta"
+  ],
+  "spiegazione": "Il condannato veniva ucciso lentamente, un taglio alla volta.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-068",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1531 Enrico VIII rese legale ____.",
+  "risposte": [
+   "bollire vivi chi avvelenava le persone"
+  ],
+  "spiegazione": "La legge nacque dopo che un cuoco avvelenò la zuppa di un vescovo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-051",
+  "categoria": "History",
+  "frase": "Alle Olimpiadi del 1900 una delle gare era ____.",
+  "risposte": [
+   "il tiro a segno su piccioni veri"
+  ],
+  "spiegazione": "Fu l'unica volta nella storia delle Olimpiadi in cui si uccisero animali di proposito.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-015",
+  "categoria": "Geography",
+  "frase": "Sull'Everest ____ sono usati come punti di riferimento dagli scalatori.",
+  "risposte": [
+   "alcuni cadaveri"
+  ],
+  "spiegazione": "Recuperare i corpi a quelle altitudini è difficilissimo, quindi molti restano dove sono.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-070",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Secondo la tradizione Ivan il Terribile uccise a colpi di bastone ____.",
+  "risposte": [
+   "il figlio ed erede"
+  ],
+  "spiegazione": "Successe nel 1581, durante una lite. Le fonti dell'epoca parlano di un colpo del bastone del padre, ma mancano prove definitive. Un famoso quadro di Repin lo ritrae disperato con il figlio tra le braccia.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-071",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Il pittore Caravaggio ____ e fu condannato a morte.",
+  "risposte": [
+   "uccise un uomo in una rissa"
+  ],
+  "spiegazione": "Passò gli ultimi anni in fuga tra Napoli, Malta e la Sicilia.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-072",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "____ fu rubato da due \"studiosi del cranio\" pochi giorni dopo la sepoltura.",
+  "risposte": [
+   "Il teschio di Haydn"
+  ],
+  "spiegazione": "Morì a Vienna nel 1809. Due appassionati di frenologia pagarono un becchino per avere la testa: volevano trovarci il «bernoccolo della musica». Il cranio fu riunito al corpo solo nel 1954.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-060",
+  "categoria": "Science",
+  "frase": "Chi ha la sindrome della mano aliena ha ____.",
+  "risposte": [
+   "una mano che si muove contro la sua volontà"
+  ],
+  "spiegazione": "Può comparire dopo lesioni al cervello: la mano afferra oggetti o tocca cose da sola.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-061",
+  "categoria": "Science",
+  "frase": "Chi ha la sindrome di Cotard è convinto ____.",
+  "risposte": [
+   "di essere morto"
+  ],
+  "spiegazione": "È una rara sindrome psichiatrica: alcuni pazienti smettono di mangiare perché si credono già morti.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-063",
+  "categoria": "Science",
+  "frase": "Il corpo umano emette ____.",
+  "risposte": [
+   "una luce debolissima"
+  ],
+  "spiegazione": "È troppo debole per essere vista a occhio nudo: la rilevano solo fotocamere sensibilissime.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-064",
+  "categoria": "Science",
+  "frase": "Nasciamo con ____, ma da adulti ne abbiamo 206.",
+  "risposte": [
+   "circa 300 ossa"
+  ],
+  "spiegazione": "Crescendo molte si fondono tra loro, per esempio quelle del cranio.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-065",
+  "categoria": "Science",
+  "frase": "____ ha un'impronta unica, come le dita.",
+  "risposte": [
+   "La lingua umana"
+  ],
+  "spiegazione": "Forma e superficie sono diverse da persona a persona.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-016",
+  "categoria": "Geography",
+  "frase": "In Corea del Sud fino al 2023 si nasceva già ____.",
+  "risposte": [
+   "con un anno di età"
+  ],
+  "spiegazione": "Con il sistema tradizionale si aveva un anno alla nascita e se ne aggiungeva uno a ogni Capodanno.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-018",
+  "categoria": "Animal kingdom",
+  "frase": "L'axolotl rigenera ____.",
+  "risposte": [
+   "arti, cuore e parti del cervello"
+  ],
+  "spiegazione": "È una salamandra messicana che resta \"cucciola\" per tutta la vita.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-019",
+  "categoria": "Animal kingdom",
+  "frase": "I tardigradi sopravvivono ____.",
+  "risposte": [
+   "nel vuoto dello spazio"
+  ],
+  "spiegazione": "Sono animaletti grandi meno di un millimetro, quasi indistruttibili.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-020",
+  "categoria": "Animal kingdom",
+  "frase": "I ratti ____ quando vengono ____.",
+  "risposte": [
+   "ridono",
+   "solleticati"
+  ],
+  "spiegazione": "Emettono ultrasuoni che noi non sentiamo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-022",
+  "categoria": "Animal kingdom",
+  "frase": "Gli ippopotami producono ____ che li protegge ____.",
+  "risposte": [
+   "un liquido rossastro",
+   "dal sole"
+  ],
+  "spiegazione": "Funziona da crema solare e da disinfettante. Un tempo si credeva che sudassero sangue.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-023",
+  "categoria": "Animal kingdom",
+  "frase": "L'animale che uccide più persone al mondo è ____.",
+  "risposte": [
+   "la zanzara"
+  ],
+  "spiegazione": "Circa 700.000 morti all'anno, per le malattie che trasmette, come la malaria.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "FOO-062",
+  "categoria": "Food & Drink",
+  "frase": "Gli anacardi crudi contengono la stessa tossina ____.",
+  "risposte": [
+   "dell'edera velenosa"
+  ],
+  "spiegazione": "Si chiama urushiolo. Quelli in commercio sono trattati con il calore per eliminarla.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "ANI-024",
+  "categoria": "Animal kingdom",
+  "frase": "Dopo la morte di Pablo Escobar ____ si sono moltiplicati e ora sono oltre cento.",
+  "risposte": [
+   "i suoi ippopotami"
+  ],
+  "spiegazione": "Ne aveva quattro nel suo zoo privato: oggi sono oltre cento.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-025",
+  "categoria": "Animal kingdom",
+  "frase": "Una specie di gambero può colpire così forte da ____.",
+  "risposte": [
+   "rompere il vetro degli acquari"
+  ],
+  "spiegazione": "È la canocchia pavone (mantis shrimp): il suo colpo è tra i più veloci del regno animale.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-017",
+  "categoria": "Geography",
+  "frase": "In Giappone ci sono più ____ che bambini.",
+  "risposte": [
+   "animali domestici"
+  ],
+  "spiegazione": "Cani e gatti hanno superato da anni il numero dei bambini.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-018",
+  "categoria": "Geography",
+  "frase": "In Turkmenistan ____ dal 1971.",
+  "risposte": [
+   "un cratere di gas brucia"
+  ],
+  "spiegazione": "Lo chiamano \"porta dell'inferno\".",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-019",
+  "categoria": "Geography",
+  "frase": "In Finlandia ci sono ____ per 5,5 milioni di abitanti.",
+  "risposte": [
+   "circa 3 milioni di saune"
+  ],
+  "spiegazione": "Più o meno una ogni due persone.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-020",
+  "categoria": "Geography",
+  "frase": "L'Italia ha più ____ di qualsiasi altro paese.",
+  "risposte": [
+   "siti UNESCO"
+  ],
+  "spiegazione": "Sono una sessantina.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-021",
+  "categoria": "Geography",
+  "frase": "Nella Fontana di Trevi ogni anno si raccolgono ____.",
+  "risposte": [
+   "oltre un milione di euro di monete"
+  ],
+  "spiegazione": "Nel 2022 sono stati raccolti circa 1,4 milioni di euro. Le monete vanno alla Caritas di Roma, che le usa per aiutare chi è in difficoltà.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "GEO-022",
+  "categoria": "Geography",
+  "frase": "Venezia poggia su ____.",
+  "risposte": [
+   "milioni di pali di legno"
+  ],
+  "spiegazione": "Sott'acqua, senza ossigeno, il legno non marcisce.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-023",
+  "categoria": "Geography",
+  "frase": "In Australia c'è ____ lunga oltre 3.000 km.",
+  "risposte": [
+   "una recinzione anti-conigli"
+  ],
+  "spiegazione": "Fu costruita a inizio Novecento per fermare l'invasione dei conigli. Non bastò.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-024",
+  "categoria": "Geography",
+  "frase": "Il lago Baikal contiene ____ dell'acqua dolce superficiale del mondo.",
+  "risposte": [
+   "circa il 20%"
+  ],
+  "spiegazione": "È il lago più profondo del mondo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-025",
+  "categoria": "Geography",
+  "frase": "Il Mar Morto si trova a ____ sotto il livello del mare.",
+  "risposte": [
+   "circa 430 metri"
+  ],
+  "spiegazione": "È il punto più basso delle terre emerse.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-027",
+  "categoria": "Geography",
+  "frase": "Seimila anni fa il Sahara era ____.",
+  "risposte": [
+   "verde, con laghi e savana"
+  ],
+  "spiegazione": "Lo provano le pitture rupestri con animali della savana.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-028",
+  "categoria": "Geography",
+  "frase": "In Islanda quasi nessuno ha ____.",
+  "risposte": [
+   "un cognome di famiglia"
+  ],
+  "spiegazione": "Il \"cognome\" dice solo di chi sei figlio: Jónsson, figlio di Jón; Jónsdóttir, figlia di Jón.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-029",
+  "categoria": "Geography",
+  "frase": "Sul Rio delle Amazzoni non c'è ____.",
+  "risposte": [
+   "nemmeno un ponte"
+  ],
+  "spiegazione": "Il fiume è larghissimo e attraversa zone quasi senza strade: si usano i traghetti.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-030",
+  "categoria": "Geography",
+  "frase": "Invece del PIL, il Bhutan misura la \"____\".",
+  "risposte": [
+   "felicità interna lorda"
+  ],
+  "spiegazione": "Tiene conto di cose come benessere, cultura e ambiente.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-031",
+  "categoria": "Geography",
+  "frase": "In giapponese esiste una parola, karoshi, per ____.",
+  "risposte": [
+   "la morte da troppo lavoro"
+  ],
+  "spiegazione": "È un fenomeno riconosciuto ufficialmente.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-032",
+  "categoria": "Geography",
+  "frase": "Un cucchiaino di stella di neutroni pesa ____.",
+  "risposte": [
+   "circa un miliardo di tonnellate"
+  ],
+  "spiegazione": "Le stelle di neutroni sono tra gli oggetti più densi dell'universo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-066",
+  "categoria": "Science",
+  "frase": "Nello spazio due pezzi di metallo a contatto ____.",
+  "risposte": [
+   "si saldano da soli"
+  ],
+  "spiegazione": "Si chiama saldatura a freddo: nel vuoto manca lo strato di ossido che sulla Terra tiene separati i metalli.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-067",
+  "categoria": "Science",
+  "frase": "Il Sole contiene ____ della massa del sistema solare.",
+  "risposte": [
+   "il 99,86%"
+  ],
+  "spiegazione": "Tutti i pianeti, le lune e gli asteroidi messi insieme fanno il restante 0,14%.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-070",
+  "categoria": "Science",
+  "frase": "Nel 1968 una sonda sovietica portò ____ attorno alla Luna, e tornarono vive.",
+  "risposte": [
+   "due tartarughe"
+  ],
+  "spiegazione": "La sonda era la Zond 5.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-071",
+  "categoria": "Science",
+  "frase": "Il primo \"bug\" informatico fu ____ trovata in un computer nel 1947.",
+  "risposte": [
+   "una falena vera"
+  ],
+  "spiegazione": "Era finita dentro un computer nel 1947 e fu attaccata con lo scotch al registro dei guasti.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-012",
+  "categoria": "Pop culture",
+  "frase": "Il primo mouse era ____.",
+  "risposte": [
+   "di legno"
+  ],
+  "spiegazione": "Lo costruì Douglas Engelbart negli anni '60: un blocchetto di legno con due rotelle.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-013",
+  "categoria": "Pop culture",
+  "frase": "Il primo SMS, nel 1992, diceva \"____\".",
+  "risposte": [
+   "Merry Christmas"
+  ],
+  "spiegazione": "Lo mandò un ingegnere da un computer, perché i telefoni non avevano ancora la tastiera per scriverli.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-014",
+  "categoria": "Pop culture",
+  "frase": "Nokia nacque nel 1865 come ____.",
+  "risposte": [
+   "produttore di carta"
+  ],
+  "spiegazione": "Era una cartiera finlandese. Prima dei telefoni produsse anche stivali di gomma.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-015",
+  "categoria": "Pop culture",
+  "frase": "Samsung, nata nel 1938, vendeva ____ e ____.",
+  "risposte": [
+   "pesce secco",
+   "generi alimentari"
+  ],
+  "spiegazione": "Era una piccola ditta di commercio coreana. L'elettronica arrivò solo alla fine degli anni '60.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-016",
+  "categoria": "Pop culture",
+  "frase": "Il nome dell'azienda ____ viene da un personaggio del romanzo Moby Dick.",
+  "risposte": [
+   "Starbucks"
+  ],
+  "spiegazione": "Starbuck è il primo ufficiale della nave del capitano Achab.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "FOO-064",
+  "categoria": "Food & Drink",
+  "frase": "In Sardegna esiste un formaggio, il casu marzu, con dentro ____.",
+  "risposte": [
+   "larve vive"
+  ],
+  "spiegazione": "Le larve devono muoversi: se sono morte il formaggio è andato a male. La vendita è vietata.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-065",
+  "categoria": "Food & Drink",
+  "frase": "In Giappone per cucinare il pesce palla ____.",
+  "risposte": [
+   "serve una licenza"
+  ],
+  "spiegazione": "Il fugu contiene un veleno mortale: i cuochi studiano anni per imparare a togliere le parti pericolose.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-066",
+  "categoria": "Food & Drink",
+  "frase": "Il \"miele pazzo\" della Turchia è ____, per via dei rododendri.",
+  "risposte": [
+   "allucinogeno"
+  ],
+  "spiegazione": "Il nettare dei rododendri contiene una tossina. In dosi alte è pericoloso.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-067",
+  "categoria": "Food & Drink",
+  "frase": "Un tempo ____ si potevano noleggiare per una sera.",
+  "risposte": [
+   "gli ananas"
+  ],
+  "spiegazione": "Erano rarissimi e costosissimi: si sfoggiavano alle feste come simbolo di ricchezza.",
+  "stato": "Da ricontrollare (dubbio noto)"
+ },
+ {
+  "id": "FOO-068",
+  "categoria": "Food & Drink",
+  "frase": "Un hamburger di McDonald's comprato in Islanda era ____.",
+  "risposte": [
+   "ancora intatto dopo oltre dieci anni"
+  ],
+  "spiegazione": "Fu comprato nel 2009, l'ultimo giorno prima che McDonald's lasciasse il paese.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-069",
+  "categoria": "Food & Drink",
+  "frase": "Nel 1807 Napoleone fu attaccato da ____.",
+  "risposte": [
+   "una folla di conigli"
+  ],
+  "spiegazione": "Erano conigli d'allevamento liberati per una battuta di caccia: invece di scappare gli corsero incontro. L'aneddoto viene da una sola fonte.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "HIS-053",
+  "categoria": "History",
+  "frase": "Nikola Tesla si innamorò di ____.",
+  "risposte": [
+   "un piccione"
+  ],
+  "spiegazione": "Raccontò di amarla come un uomo ama una donna.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-054",
+  "categoria": "History",
+  "frase": "Isaac Newton ____ per studiare la vista.",
+  "risposte": [
+   "si infilò un ago nell'occhio"
+  ],
+  "spiegazione": "Voleva capire come la pressione sull'occhio cambiasse i colori che vedeva.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-055",
+  "categoria": "History",
+  "frase": "Al Museo Galileo di Firenze è esposto ____.",
+  "risposte": [
+   "il dito medio di Galileo"
+  ],
+  "spiegazione": "Fu staccato dal corpo quasi un secolo dopo la sua morte.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-056",
+  "categoria": "History",
+  "frase": "Michelangelo ebbe ____.",
+  "risposte": [
+   "il naso rotto da un pugno di un collega"
+  ],
+  "spiegazione": "Era un altro scultore, Pietro Torrigiano. Il naso gli rimase storto per sempre.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-057",
+  "categoria": "History",
+  "frase": "Nei capelli di Beethoven furono trovate ____.",
+  "risposte": [
+   "alte dosi di piombo"
+  ],
+  "spiegazione": "Per anni si è pensato che il piombo spiegasse le sue malattie, ma la questione è ancora discussa.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-058",
+  "categoria": "History",
+  "frase": "La Gioconda fu rubata nel 1911 da un italiano che ____.",
+  "risposte": [
+   "voleva riportarla in Italia"
+  ],
+  "spiegazione": "Si chiamava Vincenzo Peruggia. Il quadro restò nascosto per oltre due anni.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-059",
+  "categoria": "History",
+  "frase": "Nel 1926 Agatha Christie ____.",
+  "risposte": [
+   "sparì per 11 giorni"
+  ],
+  "spiegazione": "Fu ritrovata in un albergo, registrata sotto un altro nome. Non spiegò mai cosa fosse successo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-061",
+  "categoria": "History",
+  "frase": "I vichinghi non portavano ____.",
+  "risposte": [
+   "elmi con le corna"
+  ],
+  "spiegazione": "È un'invenzione dell'Ottocento, resa popolare dal teatro e dalle illustrazioni.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-017",
+  "categoria": "Pop culture",
+  "frase": "A Wimbledon 2010 Isner e Mahut giocarono una partita di ____.",
+  "risposte": [
+   "11 ore e 5 minuti"
+  ],
+  "spiegazione": "Durò tre giorni. L'ultimo set finì 70 a 68.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-018",
+  "categoria": "Pop culture",
+  "frase": "Il ____ fu sport olimpico fino al 1920.",
+  "risposte": [
+   "tiro alla fune"
+  ],
+  "spiegazione": "Fu disciplina olimpica dal 1900 al 1920.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-019",
+  "categoria": "Pop culture",
+  "frase": "Nel 2002 in Madagascar una partita finì 149-0, tutti ____.",
+  "risposte": [
+   "autogol"
+  ],
+  "spiegazione": "La squadra segnò apposta nella propria porta per protestare contro l'arbitro.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-020",
+  "categoria": "Pop culture",
+  "frase": "Nel 1939 un match di cricket finì in pareggio dopo ____.",
+  "risposte": [
+   "oltre 10 giorni"
+  ],
+  "spiegazione": "Doveva essere una partita senza limiti di tempo, ma gli inglesi dovevano prendere la nave per tornare a casa.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-063",
+  "categoria": "History",
+  "frase": "Nel 1950 la Marina USA ____ senza avvisare nessuno.",
+  "risposte": [
+   "spruzzò batteri su San Francisco"
+  ],
+  "spiegazione": "Era un test per simulare un attacco biologico. Un uomo ne morì.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-064",
+  "categoria": "History",
+  "frase": "Nel 1666 un uomo fu impiccato per aver appiccato il Grande incendio di Londra, ma ____.",
+  "risposte": [
+   "non era in città"
+  ],
+  "spiegazione": "Robert Hubert confessò, ma era arrivato a Londra dopo l'inizio dell'incendio.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-065",
+  "categoria": "History",
+  "frase": "Il medico Semmelweis, per aver chiesto ai colleghi di ____, finì in manicomio.",
+  "risposte": [
+   "lavarsi le mani"
+  ],
+  "spiegazione": "Aveva capito che così si salvavano le partorienti, ma non fu creduto. In manicomio morì.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-066",
+  "categoria": "History",
+  "frase": "Per provare il primo vaccino, Edward Jenner lo iniettò ____.",
+  "risposte": [
+   "al figlio di otto anni del suo giardiniere"
+  ],
+  "spiegazione": "Era il vaccino contro il vaiolo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-067",
+  "categoria": "History",
+  "frase": "Negli anni '50 a Las Vegas si elesse una \"____\".",
+  "risposte": [
+   "Miss Bomba Atomica"
+  ],
+  "spiegazione": "I test nucleari nel deserto erano un'attrazione: i turisti li guardavano dagli alberghi.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-068",
+  "categoria": "History",
+  "frase": "La guerra dei Cent'anni durò in realtà ____.",
+  "risposte": [
+   "116 anni"
+  ],
+  "spiegazione": "Dal 1337 al 1453, con lunghe pause.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-069",
+  "categoria": "History",
+  "frase": "Nel 1969 El Salvador e Honduras fecero una guerra dopo ____.",
+  "risposte": [
+   "le partite di qualificazione ai Mondiali"
+  ],
+  "spiegazione": "È la \"guerra del calcio\": durò circa 100 ore. Le partite furono la scintilla di tensioni più profonde.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-070",
+  "categoria": "History",
+  "frase": "Nel 1971 gli USA e la Cina ripresero i rapporti grazie a ____.",
+  "risposte": [
+   "una squadra di ping-pong"
+  ],
+  "spiegazione": "È la \"diplomazia del ping-pong\": la squadra americana fu invitata in Cina.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-071",
+  "categoria": "History",
+  "frase": "Papa Giovanni Paolo I regnò soltanto ____.",
+  "risposte": [
+   "33 giorni"
+  ],
+  "spiegazione": "Morì nel 1978, poco più di un mese dopo l'elezione.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-072",
+  "categoria": "Science",
+  "frase": "Gli appunti di Marie Curie sono ____.",
+  "risposte": [
+   "ancora radioattivi"
+  ],
+  "spiegazione": "Si conservano in scatole di piombo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-074",
+  "categoria": "History",
+  "frase": "La testa di Oliver Cromwell restò ____ per circa 25 anni.",
+  "risposte": [
+   "su un palo"
+  ],
+  "spiegazione": "Fu riesumato e decapitato da morto. Poi la testa passò tra i collezionisti fino al 1960.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-075",
+  "categoria": "History",
+  "frase": "Il cuore di Chopin è conservato ____.",
+  "risposte": [
+   "in un vaso di cognac"
+  ],
+  "spiegazione": "È murato in un pilastro della chiesa di Santa Croce a Varsavia. Chopin morì a Parigi nel 1849 e chiese che il cuore tornasse in Polonia: lo portò la sorella. Il liquido è con ogni probabilità cognac.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-076",
+  "categoria": "History",
+  "frase": "Il corpo di Lenin è imbalsamato da cent'anni, e un laboratorio dedicato lo ____.",
+  "risposte": [
+   "ritocca periodicamente"
+  ],
+  "spiegazione": "È esposto a Mosca dal 1924.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-077",
+  "categoria": "History",
+  "frase": "Il corpo di Evita Perón fu nascosto per anni ____.",
+  "risposte": [
+   "in un cimitero di Milano sotto un nome falso"
+  ],
+  "spiegazione": "Rimase 14 anni al Cimitero Maggiore come «Maria Maggi de Magistris». I militari che avevano rovesciato Perón temevano che i peronisti usassero la salma come simbolo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-078",
+  "categoria": "History",
+  "frase": "Nel 1978 ____ fu rubato per chiedere un riscatto.",
+  "risposte": [
+   "il corpo di Charlie Chaplin"
+  ],
+  "spiegazione": "I due ladri furono presi e la bara fu ritrovata.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-079",
+  "categoria": "History",
+  "frase": "Il re francese Carlo VI era convinto ____ e di potersi rompere.",
+  "risposte": [
+   "di essere di vetro"
+  ],
+  "spiegazione": "Per paura di rompersi evitava che lo toccassero.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-080",
+  "categoria": "History",
+  "frase": "Giovanna la Pazza si portò dietro ____ per molti mesi.",
+  "risposte": [
+   "il cadavere del marito"
+  ],
+  "spiegazione": "Era Giovanna di Castiglia, regina dal 1504. Il marito Filippo il Bello morì a Burgos nel 1506 e lei volle portarne la bara fino a Granada: il viaggio durò più di otto mesi. Si racconta che aprisse la bara per guardarlo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-081",
+  "categoria": "History",
+  "frase": "Un papa nominò cardinale il figlio di una mendicante che ____.",
+  "risposte": [
+   "si occupava della sua scimmia"
+  ],
+  "spiegazione": "Il papa era Giulio III, nel 1550. Il ragazzo, Innocenzo, era figlio di una mendicante e aveva circa 18 anni; a Roma lo chiamavano «il cardinale scimmia». Fu uno scandalo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-082",
+  "categoria": "History",
+  "frase": "Il \"vomitorium\" dell'antica Roma era ____.",
+  "risposte": [
+   "un'uscita dello stadio"
+  ],
+  "spiegazione": "Non era una stanza per vomitare e continuare a mangiare: è un equivoco moderno.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-073",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Il banchiere Roberto Calvi fu trovato impiccato sotto un ponte a Londra ____.",
+  "risposte": [
+   "con dei mattoni in tasca"
+  ],
+  "spiegazione": "Era il 1982. Lo chiamavano \"il banchiere di Dio\" per i legami con il Vaticano.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-073",
+  "categoria": "Science",
+  "frase": "In un famoso esperimento, due persone su tre diedero ____ a uno sconosciuto, solo perché glielo avevano ordinato.",
+  "risposte": [
+   "una scossa che credevano mortale"
+  ],
+  "spiegazione": "Esperimento di Milgram: le scosse erano finte, ma i partecipanti non lo sapevano.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-074",
+  "categoria": "Science",
+  "frase": "In un famoso esperimento gli psicologi insegnarono a un bambino ad aver paura ____.",
+  "risposte": [
+   "dei topi bianchi"
+  ],
+  "spiegazione": "È l'esperimento del \"piccolo Albert\": oggi sarebbe considerato del tutto inaccettabile.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-075",
+  "categoria": "Science",
+  "frase": "Per studiare l'affetto, uno psicologo toglieva i cuccioli di scimmia alle madri e dava loro ____.",
+  "risposte": [
+   "madri finte di stoffa o filo"
+  ],
+  "spiegazione": "Harry Harlow voleva capire se ai piccoli serve più il cibo o il contatto.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-075",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "La CIA gestiva bordelli per ____ e osservarli.",
+  "risposte": [
+   "drogare i clienti con LSD"
+  ],
+  "spiegazione": "Operazione \"Midnight Climax\", a San Francisco.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-077",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Il serial killer più prolifico della storia USA ha confessato ____.",
+  "risposte": [
+   "93 omicidi"
+  ],
+  "spiegazione": "Si chiamava Samuel Little.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-078",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "L'identità di Unabomber fu scoperta perché ____.",
+  "risposte": [
+   "il fratello riconobbe lo stile del suo manifesto"
+  ],
+  "spiegazione": "Il manifesto era stato pubblicato sui giornali proprio nella speranza che qualcuno lo riconoscesse.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-079",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1910 un assassino in fuga su una nave fu il primo criminale catturato grazie ____.",
+  "risposte": [
+   "a un messaggio via radio"
+  ],
+  "spiegazione": "Era il dottor Crippen: il capitano lo riconobbe e avvisò la polizia via radio.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-080",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Un serial killer americano fu identificato nel 2018 grazie a ____.",
+  "risposte": [
+   "un sito che ricostruisce le famiglie dal DNA"
+  ],
+  "spiegazione": "È il Golden State Killer: gli investigatori trovarono dei suoi parenti tramite il DNA.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-081",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Al Capone fu condannato per ____.",
+  "risposte": [
+   "evasione fiscale"
+  ],
+  "spiegazione": "Non riuscirono mai a incastrarlo per i suoi crimini più gravi.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-082",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 2015 El Chapo evase da un carcere di massima sicurezza attraverso ____.",
+  "risposte": [
+   "un tunnel lungo circa 1,5 km"
+  ],
+  "spiegazione": "Il tunnel sbucava nella doccia della sua cella.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-083",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Per consegnarsi alle autorità, Pablo Escobar si fece costruire ____ con tanto di ____.",
+  "risposte": [
+   "una prigione di lusso",
+   "campo da calcio"
+  ],
+  "spiegazione": "La chiamavano \"La Catedral\".",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-084",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Il pirata Barbanera si intrecciava ____ nella barba prima delle battaglie.",
+  "risposte": [
+   "micce accese"
+  ],
+  "spiegazione": "Il fumo attorno alla faccia serviva a terrorizzare i nemici.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-085",
+  "categoria": "History",
+  "frase": "Alfred Nobel lesse ____, uscito per errore.",
+  "risposte": [
+   "il proprio annuncio di morte sul giornale"
+  ],
+  "spiegazione": "Lo chiamava \"mercante di morte\" per la dinamite. Si dice che per questo creò i premi Nobel.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-026",
+  "categoria": "Animal kingdom",
+  "frase": "Il parassita \"Toxoplasma\" fa perdere ai topi ____.",
+  "risposte": [
+   "la paura dei gatti"
+  ],
+  "spiegazione": "È il Toxoplasma: i topi sono perfino attirati dall'odore del gatto, così il parassita arriva dove vuole riprodursi.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-027",
+  "categoria": "Animal kingdom",
+  "frase": "Un fungo trasforma le formiche in ____ che lo portano nel posto ideale per riprodursi.",
+  "risposte": [
+   "zombie"
+  ],
+  "spiegazione": "È l'Ophiocordyceps: le porta a morire in alto su una foglia, da dove diffonde le spore.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-028",
+  "categoria": "Animal kingdom",
+  "frase": "Una vespa trasforma gli scarafaggi in ____.",
+  "risposte": [
+   "zombie"
+  ],
+  "spiegazione": "La vespa gioiello lo punge nel cervello e lo porta nella tana, dove le sue larve lo mangiano vivo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-029",
+  "categoria": "Animal kingdom",
+  "frase": "La rana Pipa fa uscire i suoi piccoli ____.",
+  "risposte": [
+   "dalla pelle della schiena"
+  ],
+  "spiegazione": "È la rana Pipa: le uova crescono dentro la pelle della madre.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-030",
+  "categoria": "Animal kingdom",
+  "frase": "In alcuni pesci degli abissi il maschio ____ con la femmina.",
+  "risposte": [
+   "si fonde"
+  ],
+  "spiegazione": "Nei pesci pescatore il maschio, molto più piccolo, vive attaccato a lei come un parassita.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-031",
+  "categoria": "Animal kingdom",
+  "frase": "Le lumache hanno ____ sulla lingua.",
+  "risposte": [
+   "migliaia di denti"
+  ],
+  "spiegazione": "In alcune specie sono oltre 14.000.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-032",
+  "categoria": "Animal kingdom",
+  "frase": "Le api giapponesi uccidono i calabroni ____.",
+  "risposte": [
+   "facendoli morire di caldo"
+  ],
+  "spiegazione": "Li circondano in massa e fanno vibrare i muscoli finché la temperatura diventa letale.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-033",
+  "categoria": "Animal kingdom",
+  "frase": "Il cavallo non può ____.",
+  "risposte": [
+   "vomitare"
+  ],
+  "spiegazione": "Ha una valvola all'ingresso dello stomaco che lo impedisce.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-034",
+  "categoria": "Animal kingdom",
+  "frase": "I conigli mangiano ____ per digerire meglio.",
+  "risposte": [
+   "le proprie feci"
+  ],
+  "spiegazione": "Così recuperano i nutrienti che non hanno assorbito al primo passaggio.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-035",
+  "categoria": "Animal kingdom",
+  "frase": "Alcune tartarughe d'acqua dolce respirano anche ____.",
+  "risposte": [
+   "dal sedere"
+  ],
+  "spiegazione": "Assorbono ossigeno dall'acqua, utile quando passano l'inverno sul fondo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-036",
+  "categoria": "Animal kingdom",
+  "frase": "Le ostriche ____ durante la vita.",
+  "risposte": [
+   "cambiano sesso"
+  ],
+  "spiegazione": "Spesso nascono maschi e poi diventano femmine.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-037",
+  "categoria": "Animal kingdom",
+  "frase": "Nei cavallucci marini è ____ a partorire.",
+  "risposte": [
+   "il maschio"
+  ],
+  "spiegazione": "La femmina depone le uova in una tasca sul ventre del maschio.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-038",
+  "categoria": "Animal kingdom",
+  "frase": "I gatti non sentono ____.",
+  "risposte": [
+   "il sapore dolce"
+  ],
+  "spiegazione": "Manca loro il recettore per il dolce.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-076",
+  "categoria": "Science",
+  "frase": "La Rafflesia, il fiore più grande del mondo, puzza di ____.",
+  "risposte": [
+   "carne marcia"
+  ],
+  "spiegazione": "L'odore serve ad attirare le mosche che la impollinano.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-077",
+  "categoria": "Science",
+  "frase": "Un bosco degli USA è in realtà ____.",
+  "risposte": [
+   "un unico organismo"
+  ],
+  "spiegazione": "Si chiama Pando: decine di migliaia di tronchi collegati dalle stesse radici.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-078",
+  "categoria": "Science",
+  "frase": "Un fulmine è molto più caldo ____.",
+  "risposte": [
+   "della superficie del Sole"
+  ],
+  "spiegazione": "Un fulmine scalda l'aria a decine di migliaia di gradi, per una frazione di secondo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-079",
+  "categoria": "Science",
+  "frase": "Saturno è meno denso dell'acqua, quindi ____.",
+  "risposte": [
+   "galleggerebbe"
+  ],
+  "spiegazione": "È fatto soprattutto di gas: in una vasca abbastanza grande starebbe a galla.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-080",
+  "categoria": "Science",
+  "frase": "Da quando è stato scoperto, Plutone ____.",
+  "risposte": [
+   "non ha ancora completato un'orbita intorno al Sole"
+  ],
+  "spiegazione": "Fu scoperto nel 1930 e per fare un giro attorno al Sole impiega circa 248 anni: completerà il primo giro dalla scoperta nel 2178.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-081",
+  "categoria": "Science",
+  "frase": "Nello spazio una fiamma diventa ____.",
+  "risposte": [
+   "una sfera"
+  ],
+  "spiegazione": "Senza gravità l'aria calda non sale, quindi la fiamma non si allunga verso l'alto.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-082",
+  "categoria": "Science",
+  "frase": "Nello spazio le lacrime non cadono ma ____.",
+  "risposte": [
+   "restano attaccate all'occhio"
+  ],
+  "spiegazione": "Formano una bolla d'acqua che resta incollata all'occhio.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-083",
+  "categoria": "Science",
+  "frase": "Un fotone nato nel nucleo del Sole impiega ____ a uscirne.",
+  "risposte": [
+   "decine di migliaia di anni"
+  ],
+  "spiegazione": "Rimbalza di continuo dentro il Sole. Poi, dalla superficie alla Terra, ci mette solo 8 minuti.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-084",
+  "categoria": "Science",
+  "frase": "In California ____ è accesa dal 1901.",
+  "risposte": [
+   "una lampadina"
+  ],
+  "spiegazione": "Si trova in una caserma dei pompieri di Livermore.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-033",
+  "categoria": "Geography",
+  "frase": "Una ferrovia giapponese si scusò pubblicamente perché un treno era ____.",
+  "risposte": [
+   "partito 20 secondi in anticipo"
+  ],
+  "spiegazione": "Successe nel 2017.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-039",
+  "categoria": "Animal kingdom",
+  "frase": "Uno scarafaggio può vivere ____.",
+  "risposte": [
+   "circa una settimana senza testa"
+  ],
+  "spiegazione": "Respira attraverso il corpo e non ha bisogno della testa per farlo. Alla fine muore di sete.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-040",
+  "categoria": "Animal kingdom",
+  "frase": "Le strisce delle zebre sembrano ____.",
+  "risposte": [
+   "confondere gli insetti che pungono"
+  ],
+  "spiegazione": "Gli insetti faticano ad atterrare sulle superfici a strisce.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-041",
+  "categoria": "Animal kingdom",
+  "frase": "Il maschio dell'ornitorinco ha ____ sulle zampe posteriori.",
+  "risposte": [
+   "una spina velenosa"
+  ],
+  "spiegazione": "È uno dei pochissimi mammiferi velenosi.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-042",
+  "categoria": "Animal kingdom",
+  "frase": "Nelle iene la femmina partorisce attraverso ____.",
+  "risposte": [
+   "un organo simile a un pene"
+  ],
+  "spiegazione": "Nella iena maculata la femmina è più grossa del maschio e comanda il branco.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-043",
+  "categoria": "Animal kingdom",
+  "frase": "La Fregata, un uccello marino, ____.",
+  "risposte": [
+   "dorme in volo"
+  ],
+  "spiegazione": "È la fregata: dorme a pezzetti di pochi secondi durante voli che durano settimane.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-044",
+  "categoria": "Animal kingdom",
+  "frase": "Il cuore di un colibrì batte ____.",
+  "risposte": [
+   "oltre mille volte al minuto"
+  ],
+  "spiegazione": "E le ali possono battere decine di volte al secondo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-045",
+  "categoria": "Animal kingdom",
+  "frase": "Lo struzzo ha occhi più grandi ____.",
+  "risposte": [
+   "del cervello"
+  ],
+  "spiegazione": "Sono gli occhi più grandi tra gli animali terrestri.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-046",
+  "categoria": "Animal kingdom",
+  "frase": "Il calamaro gigante ha occhi ____.",
+  "risposte": [
+   "grandi come piatti"
+  ],
+  "spiegazione": "Sono tra gli occhi più grandi del regno animale: servono a vedere negli abissi.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-048",
+  "categoria": "Animal kingdom",
+  "frase": "Le meduse non hanno ____.",
+  "risposte": [
+   "cervello, cuore né ossa"
+  ],
+  "spiegazione": "Sono fatte quasi solo d'acqua.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-049",
+  "categoria": "Animal kingdom",
+  "frase": "La stella marina non ha ____.",
+  "risposte": [
+   "cervello né sangue"
+  ],
+  "spiegazione": "Al posto del sangue usa l'acqua di mare.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-085",
+  "categoria": "Science",
+  "frase": "Nel tuo corpo ____ sono più o meno quanto le tue cellule.",
+  "risposte": [
+   "i batteri"
+  ],
+  "spiegazione": "Per anni si è detto che i batteri fossero dieci volte le cellule: le stime recenti dicono circa uno a uno.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-086",
+  "categoria": "Science",
+  "frase": "Le unghie crescono più in fretta ____.",
+  "risposte": [
+   "sul dito medio"
+  ],
+  "spiegazione": "Le unghie delle mani crescono anche molto più in fretta di quelle dei piedi.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-087",
+  "categoria": "Science",
+  "frase": "I neonati non hanno ____.",
+  "risposte": [
+   "le rotule"
+  ],
+  "spiegazione": "Hanno solo cartilagine, che si indurisce in seguito.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "SCI-088",
+  "categoria": "Science",
+  "frase": "La mattina siamo più alti di circa un centimetro rispetto alla sera, perché ____.",
+  "risposte": [
+   "la schiena si allunga mentre dormiamo"
+  ],
+  "spiegazione": "Di giorno la gravità schiaccia i dischi della colonna vertebrale; di notte, da sdraiati, si ridistendono.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-086",
+  "categoria": "History",
+  "frase": "Al posto della carta igienica gli antichi Romani usavano ____.",
+  "risposte": [
+   "una spugna su un bastone"
+  ],
+  "spiegazione": "Probabilmente era in comune tra tutti quelli che usavano la latrina.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-088",
+  "categoria": "History",
+  "frase": "In Italia il divorzio è stato introdotto soltanto nel ____.",
+  "risposte": [
+   "1970"
+  ],
+  "spiegazione": "Nel 1974 un referendum provò ad abolirlo, senza riuscirci.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-090",
+  "categoria": "History",
+  "frase": "L'ultimo re d'Italia, Umberto II, regnò soltanto ____.",
+  "risposte": [
+   "34 giorni"
+  ],
+  "spiegazione": "Dal maggio al giugno 1946, fino al referendum che scelse la repubblica. Lo chiamarono \"re di maggio\".",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-021",
+  "categoria": "Pop culture",
+  "frase": "Nel 1987 gli italiani elessero ____ alla Camera dei deputati.",
+  "risposte": [
+   "Cicciolina"
+  ],
+  "spiegazione": "Ilona Staller, pornostar, fu eletta con il Partito Radicale.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "GEO-035",
+  "categoria": "Geography",
+  "frase": "Il Duomo di Milano ha richiesto ____ per essere finito.",
+  "risposte": [
+   "quasi 600 anni"
+  ],
+  "spiegazione": "I lavori iniziarono nel 1386.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-036",
+  "categoria": "Geography",
+  "frase": "Fino agli anni '50 i Sassi di Matera erano considerati una \"____\".",
+  "risposte": [
+   "vergogna nazionale"
+  ],
+  "spiegazione": "La gente viveva nelle grotte in condizioni durissime. Oggi sono patrimonio UNESCO.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "FOO-070",
+  "categoria": "Food & Drink",
+  "frase": "In Giappone ____ può costare centinaia di euro.",
+  "risposte": [
+   "un'anguria quadrata"
+  ],
+  "spiegazione": "Crescono dentro contenitori quadrati e si usano come decorazione: da mangiare non sono un granché.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-071",
+  "categoria": "Food & Drink",
+  "frase": "Per gli Aztechi i semi di cacao erano usati ____.",
+  "risposte": [
+   "come moneta"
+  ],
+  "spiegazione": "Con i semi di cacao si pagavano anche i tributi.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "FOO-072",
+  "categoria": "Food & Drink",
+  "frase": "Per un chilo di zafferano servono ____.",
+  "risposte": [
+   "circa 150.000 fiori"
+  ],
+  "spiegazione": "Ogni fiore dà solo tre fili, raccolti a mano. Per questo è tra le spezie più costose al mondo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-073",
+  "categoria": "Food & Drink",
+  "frase": "La vaniglia è ____ nella maggior parte delle coltivazioni.",
+  "risposte": [
+   "impollinata a mano"
+  ],
+  "spiegazione": "Il metodo fu inventato nel 1841 da un ragazzo dell'isola della Riunione, Edmond Albius.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-074",
+  "categoria": "Food & Drink",
+  "frase": "Nel 2019 un solo tonno rosso è stato venduto per ____.",
+  "risposte": [
+   "circa 3 milioni di dollari"
+  ],
+  "spiegazione": "Pesava 278 kg e lo comprò il proprietario di una catena di sushi, alla prima asta dell'anno a Tokyo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-075",
+  "categoria": "Food & Drink",
+  "frase": "Il kopi luwak è un caffè ricavato dai chicchi raccolti ____.",
+  "risposte": [
+   "nelle feci di un animale"
+  ],
+  "spiegazione": "Lo Zibetto mangia le bacche del caffè e i chicchi escono interi. È tra i caffè più cari al mondo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-076",
+  "categoria": "Food & Drink",
+  "frase": "A Singapore ____ è vietato in metropolitana per via dell'odore.",
+  "risposte": [
+   "il durian"
+  ],
+  "spiegazione": "È un frutto dall'odore fortissimo. Lo vietano anche molti hotel.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-077",
+  "categoria": "Food & Drink",
+  "frase": "Il surströmming, pesce fermentato svedese, è vietato da ____.",
+  "risposte": [
+   "diverse compagnie aeree"
+  ],
+  "spiegazione": "Le lattine sono gonfie per la fermentazione e l'odore è fortissimo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-078",
+  "categoria": "Food & Drink",
+  "frase": "L'hákarl islandese è ____ e lasciata a seccare.",
+  "risposte": [
+   "carne di squalo fermentata"
+  ],
+  "spiegazione": "La carne fresca dello squalo della Groenlandia è tossica: va fatta fermentare per settimane e poi seccare per mesi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-022",
+  "categoria": "Pop culture",
+  "frase": "Nel 1991 un ____ sopravvisse a un attacco missilistico e funzionava ancora.",
+  "risposte": [
+   "Game Boy"
+  ],
+  "spiegazione": "Era di un soldato americano nella guerra del Golfo: bruciato fuori, ma si accendeva ancora.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-023",
+  "categoria": "Pop culture",
+  "frase": "Il primo ____ della storia è ancora visitabile.",
+  "risposte": [
+   "sito web"
+  ],
+  "spiegazione": "Lo creò Tim Berners-Lee al CERN di Ginevra, nel 1991.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-091",
+  "categoria": "History",
+  "frase": "La prima fotografia con una persona ritrae un uomo che ____.",
+  "risposte": [
+   "si faceva lucidare le scarpe"
+  ],
+  "spiegazione": "Parigi, 1838. La posa durava minuti: lui restò immobile abbastanza a lungo, i passanti no.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-092",
+  "categoria": "History",
+  "frase": "L'inventore della ____ era un dentista.",
+  "risposte": [
+   "sedia elettrica"
+  ],
+  "spiegazione": "Si chiamava Alfred Southwick e propose l'elettricità come metodo di esecuzione.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-093",
+  "categoria": "History",
+  "frase": "Il dottor Guillotin, quello della ghigliottina, era ____.",
+  "risposte": [
+   "contrario alla pena di morte"
+  ],
+  "spiegazione": "La proponeva come metodo meno crudele, uguale per tutti.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-094",
+  "categoria": "History",
+  "frase": "L'inventore del motore diesel ____ e non fu mai ritrovato.",
+  "risposte": [
+   "scomparve da una nave"
+  ],
+  "spiegazione": "Rudolf Diesel sparì nel 1913 durante una traversata.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-025",
+  "categoria": "Pop culture",
+  "frase": "Ed Headrick, padre del Frisbee moderno, volle che le sue ceneri ____.",
+  "risposte": [
+   "diventassero dei frisbee"
+  ],
+  "spiegazione": "Morì nel 2002. I dischi furono dati a parenti e amici.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-026",
+  "categoria": "Pop culture",
+  "frase": "Al Tour de France del 1904 alcuni ciclisti vennero squalificati per ____.",
+  "risposte": [
+   "essere saliti su un treno"
+  ],
+  "spiegazione": "Tra gli squalificati c'era anche il vincitore.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "GEO-037",
+  "categoria": "Geography",
+  "frase": "Nel 1883 l'esplosione del Krakatoa si sentì a ____ di distanza.",
+  "risposte": [
+   "quasi 5.000 km"
+  ],
+  "spiegazione": "È considerato il suono più forte mai registrato.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-038",
+  "categoria": "Geography",
+  "frase": "Nel 1900 in Texas un ____ uccise 8.000 persone.",
+  "risposte": [
+   "uragano"
+  ],
+  "spiegazione": "Colpì la città di Galveston. È il peggior disastro naturale della storia degli USA.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-039",
+  "categoria": "Geography",
+  "frase": "Nel 1815 ____ provocò \"l'anno senza estate\" in tutto il mondo.",
+  "risposte": [
+   "l'eruzione di un vulcano"
+  ],
+  "spiegazione": "Il vulcano era il Tambora: le ceneri oscurarono il cielo e l'anno dopo i raccolti andarono persi.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-028",
+  "categoria": "Pop culture",
+  "frase": "Nel 1816, Mary Shelley ebbe l'idea di Frankenstein, bloccata in casa ____.",
+  "risposte": [
+   "dal maltempo"
+  ],
+  "spiegazione": "Era in vacanza sul lago di Ginevra con Byron, che propose una gara a chi scriveva la storia di paura migliore.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-095",
+  "categoria": "History",
+  "frase": "I muri di Pompei erano pieni di graffiti: ____, dichiarazioni d'amore e ____.",
+  "risposte": [
+   "insulti",
+   "pubblicità di bordelli"
+  ],
+  "spiegazione": "La cenere li ha conservati per quasi duemila anni.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-096",
+  "categoria": "History",
+  "frase": "Gli antichi Egizi mummificarono milioni di animali, tra cui ____.",
+  "risposte": [
+   "gatti, uccelli e coccodrilli"
+  ],
+  "spiegazione": "Erano offerte agli dei.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-097",
+  "categoria": "History",
+  "frase": "Quando la mummia di Ramses II andò a Parigi nel 1976, ricevette ____.",
+  "risposte": [
+   "un passaporto"
+  ],
+  "spiegazione": "Alla voce professione c'era scritto \"re (defunto)\".",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-098",
+  "categoria": "History",
+  "frase": "Nel 1348 la peste a Firenze uccise ____.",
+  "risposte": [
+   "circa metà della popolazione"
+  ],
+  "spiegazione": "Boccaccio ambientò il Decameron proprio durante quella epidemia.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-099",
+  "categoria": "History",
+  "frase": "Enrico VIII aveva un servitore personale incaricato di ____.",
+  "risposte": [
+   "aiutarlo in bagno"
+  ],
+  "spiegazione": "Era una carica ambita, perché dava un accesso privato al re.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-100",
+  "categoria": "History",
+  "frase": "Nel 1983 un ufficiale sovietico evitò forse una guerra nucleare ____.",
+  "risposte": [
+   "ignorando un falso allarme missilistico"
+  ],
+  "spiegazione": "Stanislav Petrov giudicò che fosse un errore del sistema. Aveva ragione.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-102",
+  "categoria": "History",
+  "frase": "Nel 1961 gli USA persero ____ sulla Carolina del Nord.",
+  "risposte": [
+   "due bombe atomiche"
+  ],
+  "spiegazione": "Caddero da un aereo in avaria. Per una delle due funzionò solo una sicura su quattro.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-029",
+  "categoria": "Pop culture",
+  "frase": "Nel 1970 Nixon nominò ____ agente federale onorario antidroga.",
+  "risposte": [
+   "Elvis Presley"
+  ],
+  "spiegazione": "Elvis si presentò alla Casa Bianca senza appuntamento per chiedere il distintivo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-105",
+  "categoria": "History",
+  "frase": "Il presidente USA Garfield morì più per ____ che per il proiettile.",
+  "risposte": [
+   "le infezioni causate dai medici"
+  ],
+  "spiegazione": "Cercarono il proiettile con dita e strumenti non sterilizzati.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-106",
+  "categoria": "History",
+  "frase": "Gli orsacchiotti \"teddy bear\" si chiamano così per ____.",
+  "risposte": [
+   "un orso che Roosevelt si rifiutò di uccidere"
+  ],
+  "spiegazione": "Teddy era il soprannome di Theodore Roosevelt.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-107",
+  "categoria": "History",
+  "frase": "Il presidente Calvin Coolidge teneva ____ alla Casa Bianca.",
+  "risposte": [
+   "un procione domestico"
+  ],
+  "spiegazione": "Si chiamava Rebecca. Era arrivata per finire sulla tavola del Ringraziamento.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-109",
+  "categoria": "History",
+  "frase": "Il dittatore ugandese Idi Amin si autoproclamò \"____\".",
+  "risposte": [
+   "re di Scozia"
+  ],
+  "spiegazione": "Tra i tanti titoli che si diede c'era anche questo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-111",
+  "categoria": "History",
+  "frase": "L'unità di guardie del corpo di Gheddafi era composta da ____.",
+  "risposte": [
+   "sole donne"
+  ],
+  "spiegazione": "Le chiamavano \"amazzoni\".",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-112",
+  "categoria": "History",
+  "frase": "Saddam Hussein scrisse ____.",
+  "risposte": [
+   "dei romanzi"
+  ],
+  "spiegazione": "Uscirono senza il suo nome in copertina.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-113",
+  "categoria": "History",
+  "frase": "Il dittatore rumeno Ceaușescu fu giustiziato ____.",
+  "risposte": [
+   "il giorno di Natale del 1989"
+  ],
+  "spiegazione": "Dopo un processo durato pochissimo, insieme alla moglie.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "HIS-115",
+  "categoria": "History",
+  "frase": "Nel 1946 il corpo di Mussolini ____.",
+  "risposte": [
+   "fu rubato da dei fascisti"
+  ],
+  "spiegazione": "Lo dissotterrarono di notte tre neofascisti guidati da Domenico Leccisi, nel cimitero di Musocco a Milano. Fu ritrovato dopo quasi quattro mesi e restituito alla famiglia solo nel 1957.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-030",
+  "categoria": "Pop culture",
+  "frase": "Lo studente Randy Gardner, a 17 anni, ____ per 11 giorni di fila.",
+  "risposte": [
+   "restò sveglio"
+  ],
+  "spiegazione": "Era un esperimento per la fiera della scienza della scuola, nel 1964.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-031",
+  "categoria": "Pop culture",
+  "frase": "Il Guinness dei primati nacque da una discussione su quale fosse ____.",
+  "risposte": [
+   "l'uccello da caccia più veloce"
+  ],
+  "spiegazione": "Era il 1951 e tra i cacciatori c'era il direttore della birra Guinness.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-032",
+  "categoria": "Pop culture",
+  "frase": "L'uomo più alto mai registrato arrivò a ____.",
+  "risposte": [
+   "2,72 metri"
+  ],
+  "spiegazione": "Si chiamava Robert Wadlow, americano, morto a 22 anni nel 1940.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "GEO-040",
+  "categoria": "Geography",
+  "frase": "____ ha più piramidi dell'Egitto.",
+  "risposte": [
+   "Il Sudan"
+  ],
+  "spiegazione": "Sono più piccole e più ripide di quelle egizie.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-041",
+  "categoria": "Geography",
+  "frase": "____ non si vede a occhio nudo dallo spazio.",
+  "risposte": [
+   "La Grande Muraglia cinese"
+  ],
+  "spiegazione": "È lunghissima ma stretta, e ha il colore del terreno intorno.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-042",
+  "categoria": "Geography",
+  "frase": "In Papua Nuova Guinea si parlano ____.",
+  "risposte": [
+   "oltre 800 lingue"
+  ],
+  "spiegazione": "È il paese con più lingue al mondo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-043",
+  "categoria": "Geography",
+  "frase": "Il Liechtenstein non ha ____ dal 1868.",
+  "risposte": [
+   "un esercito"
+  ],
+  "spiegazione": "Lo abolì perché costava troppo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-044",
+  "categoria": "Geography",
+  "frase": "Il Costa Rica ha abolito ____ nel 1948.",
+  "risposte": [
+   "l'esercito"
+  ],
+  "spiegazione": "Lo decise dopo una guerra civile.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-045",
+  "categoria": "Geography",
+  "frase": "In Nuova Zelanda ____ sono molte più delle persone.",
+  "risposte": [
+   "le pecore"
+  ],
+  "spiegazione": "Circa cinque pecore per abitante.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-046",
+  "categoria": "Geography",
+  "frase": "Fino al 2025 l'Islanda era uno dei pochi posti al mondo senza ____.",
+  "risposte": [
+   "zanzare"
+  ],
+  "spiegazione": "Nell'ottobre 2025 un appassionato di insetti ne trovò tre nel suo giardino, nella valle di Kjós vicino a Reykjavík: le prime mai viste in natura sull'isola. Ora l'unico posto senza zanzare resta l'Antartide.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "GEO-047",
+  "categoria": "Geography",
+  "frase": "Il deserto più grande del mondo è ____.",
+  "risposte": [
+   "l'Antartide"
+  ],
+  "spiegazione": "Un deserto si definisce dalle poche precipitazioni, non dal caldo.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-048",
+  "categoria": "Geography",
+  "frase": "In Antartide c'è ____, per via del ferro nell'acqua.",
+  "risposte": [
+   "una cascata color rosso sangue"
+  ],
+  "spiegazione": "Si chiama Blood Falls: il ferro arrugginisce a contatto con l'aria.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-049",
+  "categoria": "Geography",
+  "frase": "La Torre Eiffel doveva essere smontata dopo vent'anni, ma la salvò ____.",
+  "risposte": [
+   "l'antenna radio"
+  ],
+  "spiegazione": "Si rivelò utilissima per le trasmissioni.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-050",
+  "categoria": "Geography",
+  "frase": "Big Ben è il nome ____, non della torre.",
+  "risposte": [
+   "della campana"
+  ],
+  "spiegazione": "La torre si chiama Elizabeth Tower.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-051",
+  "categoria": "Geography",
+  "frase": "La Statua della Libertà arrivò dalla Francia ____.",
+  "risposte": [
+   "smontata in oltre 200 casse"
+  ],
+  "spiegazione": "Fu un regalo della Francia agli Stati Uniti.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-052",
+  "categoria": "Geography",
+  "frase": "Il Cristo Redentore di Rio viene ____ più volte all'anno.",
+  "risposte": [
+   "colpito dai fulmini"
+  ],
+  "spiegazione": "In media circa quattro volte.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-033",
+  "categoria": "Pop culture",
+  "frase": "Negli anni '90 l'agenzia di spionaggio NSA vietò ____ nei suoi uffici.",
+  "risposte": [
+   "il Furby"
+  ],
+  "spiegazione": "Temeva che il pupazzo imparasse informazioni riservate e le ripetesse. In realtà non registrava niente.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-034",
+  "categoria": "Pop culture",
+  "frase": "Il suono di avvio di Windows 95 fu composto ____.",
+  "risposte": [
+   "su un Mac"
+  ],
+  "spiegazione": "Lo scrisse il musicista Brian Eno. Dura circa tre secondi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-035",
+  "categoria": "Pop culture",
+  "frase": "Nel Mr. Potato Head originale i pezzi andavano infilati in ____.",
+  "risposte": [
+   "una vera patata"
+  ],
+  "spiegazione": "Era il 1952. Il corpo di plastica arrivò più tardi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-036",
+  "categoria": "Pop culture",
+  "frase": "Il programmatore di un videogioco Atari nascose nel gioco ____.",
+  "risposte": [
+   "una stanza con la sua firma"
+  ],
+  "spiegazione": "Il gioco era Adventure: Atari non metteva i nomi degli sviluppatori. È considerato il primo \"easter egg\" famoso.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-037",
+  "categoria": "Pop culture",
+  "frase": "In America la prima console Nintendo fu venduta con un robot per ____.",
+  "risposte": [
+   "sembrare un giocattolo"
+  ],
+  "spiegazione": "Dopo il crollo del 1983 i negozi non volevano più sentir parlare di videogiochi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-038",
+  "categoria": "Pop culture",
+  "frase": "Il Cluedo fu ideato in guerra come passatempo per ____.",
+  "risposte": [
+   "le lunghe notti al buio durante i bombardamenti"
+  ],
+  "spiegazione": "Nacque a Birmingham e all'inizio si chiamava \"Murder!\".",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-039",
+  "categoria": "Pop culture",
+  "frase": "Il Play-Doh nacque come prodotto per ____.",
+  "risposte": [
+   "pulire carta da parati"
+  ],
+  "spiegazione": "Si usava per rimuovere residui di carbone e quando le stufe a carbone sparirono, fu riciclato come giocattolo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-040",
+  "categoria": "Pop culture",
+  "frase": "Dopo aver mescolato per la prima volta il suo cubo, Rubik ci mise ____ per risolverlo.",
+  "risposte": [
+   "circa un mese"
+  ],
+  "spiegazione": "Non sapeva nemmeno se una soluzione esistesse.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-041",
+  "categoria": "Pop culture",
+  "frase": "Per decidere quante tessere dare a ogni lettera, l'inventore dello Scrabble contò le lettere ____.",
+  "risposte": [
+   "nella prima pagina del New York Times"
+  ],
+  "spiegazione": "Si chiamava Alfred Butts.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-042",
+  "categoria": "Pop culture",
+  "frase": "Il Pet Rock, un sasso venduto come animale domestico, nacque da ____.",
+  "risposte": [
+   "una battuta al bar"
+  ],
+  "spiegazione": "Il suo inventore scherzava: un sasso non va nutrito né portato a spasso. Diventò milionario.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-043",
+  "categoria": "Pop culture",
+  "frase": "____ fu aggiunto di nascosto ai primi giochi Pokémon, per scherzo.",
+  "risposte": [
+   "Mew"
+  ],
+  "spiegazione": "Un programmatore usò lo spazio rimasto libero all'ultimo momento.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-044",
+  "categoria": "Pop culture",
+  "frase": "Durante la guerra gli Oscar erano ____.",
+  "risposte": [
+   "di gesso"
+  ],
+  "spiegazione": "Dal 1943 al 1945 il metallo serviva altrove. I vincitori poterono cambiarli con quelli veri dopo la guerra.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-046",
+  "categoria": "Pop culture",
+  "frase": "Chi vince un Oscar non può venderlo: prima deve offrirlo all'Academy ____.",
+  "risposte": [
+   "per 1 dollaro"
+  ],
+  "spiegazione": "La regola vale dal 1951.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-048",
+  "categoria": "Pop culture",
+  "frase": "Il primo studio cinematografico di Edison ruotava su una rotaia per ____.",
+  "risposte": [
+   "seguire il sole"
+  ],
+  "spiegazione": "Si chiamava Black Maria e aveva il tetto apribile: serviva tutta la luce possibile.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-050",
+  "categoria": "Pop culture",
+  "frase": "Per il finale di \"Dottor Stranamore\" Kubrick girò una battaglia di ____.",
+  "risposte": [
+   "torte alla crema"
+  ],
+  "spiegazione": "La scena, tra generali e presidente, fu tagliata perché troppo farsesca.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-051",
+  "categoria": "Pop culture",
+  "frase": "Per \"Biancaneve\" Disney ricevette un Oscar speciale: una statuetta normale più ____.",
+  "risposte": [
+   "sette in miniatura"
+  ],
+  "spiegazione": "Una per ogni nano.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-052",
+  "categoria": "Pop culture",
+  "frase": "Sul set Sergio Leone faceva suonare ____.",
+  "risposte": [
+   "la musica di Morricone"
+  ],
+  "spiegazione": "Serviva a dare il ritmo agli attori: la musica era stata scritta prima delle riprese.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-053",
+  "categoria": "Pop culture",
+  "frase": "Sul set del \"Signore degli Anelli\" un attore, per paura dell'elicottero, ____.",
+  "risposte": [
+   "salì a piedi una montagna"
+  ],
+  "spiegazione": "Era Sean Bean, che ha paura di volare.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-054",
+  "categoria": "Pop culture",
+  "frase": "Il ronzio della spada laser di Star Wars nacque ____.",
+  "risposte": [
+   "dal motore di un proiettore"
+  ],
+  "spiegazione": "Fu unito al fruscio captato per caso da un microfono vicino a una TV.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-055",
+  "categoria": "Pop culture",
+  "frase": "Il soprannome di René Lacoste, \"il coccodrillo\", nacque da una scommessa su ____.",
+  "risposte": [
+   "una valigia di coccodrillo"
+  ],
+  "spiegazione": "Era il 1923: se avesse vinto una partita, il capitano della squadra gliel'avrebbe regalata.",
+  "stato": "Verificato, da ricontrollare"
+ },
+ {
+  "id": "POP-057",
+  "categoria": "Pop culture",
+  "frase": "Marlon Brando brevettò un dispositivo per ____.",
+  "risposte": [
+   "accordare i tamburi"
+  ],
+  "spiegazione": "Era un appassionato di bonghi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-059",
+  "categoria": "Pop culture",
+  "frase": "La borsa Birkin nacque da uno schizzo su ____.",
+  "risposte": [
+   "un sacchetto per il vomito in aereo"
+  ],
+  "spiegazione": "Lo racconta Jane Birkin: in aereo era seduta accanto al capo di Hermès.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-060",
+  "categoria": "Pop culture",
+  "frase": "Alle Olimpiadi del 1912 l'oro per la letteratura andò a ____.",
+  "risposte": [
+   "due autori inesistenti"
+  ],
+  "spiegazione": "Erano pseudonimi di Pierre de Coubertin, il fondatore delle Olimpiadi moderne.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-061",
+  "categoria": "Pop culture",
+  "frase": "Alla maratona olimpica del 1904 un corridore si fermò, ____ e fece un pisolino.",
+  "risposte": [
+   "mangiò mele marce"
+  ],
+  "spiegazione": "Il cubano Carvajal ebbe i crampi per le mele, e arrivò comunque quarto.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-063",
+  "categoria": "Pop culture",
+  "frase": "Il primo premio per il titolo di libro più strano andò a un volume sui ____.",
+  "risposte": [
+   "topi da laboratorio"
+  ],
+  "spiegazione": "Era il 1978. I topi nudi sono topi da laboratorio senza pelo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-064",
+  "categoria": "Pop culture",
+  "frase": "Nel 1938 i creatori di Superman cedettero il personaggio per ____.",
+  "risposte": [
+   "412 dollari"
+  ],
+  "spiegazione": "Nel 2012 quell'assegno è stato venduto all'asta per 160.000 dollari.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-066",
+  "categoria": "Pop culture",
+  "frase": "Nel 1974 in Portogallo una ____ fu il segnale in codice del colpo di stato dei militari.",
+  "risposte": [
+   "canzone trasmessa alla radio"
+  ],
+  "spiegazione": "Era \"E depois do adeus\", la canzone portoghese dell'Eurovision di quell'anno. È la Rivoluzione dei garofani.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-068",
+  "categoria": "Pop culture",
+  "frase": "Nel 2013 i Metallica suonarono ____.",
+  "risposte": [
+   "in Antartide"
+  ],
+  "spiegazione": "Il pubblico ascoltò in cuffia, come in una silent disco, per non disturbare l'ambiente.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-070",
+  "categoria": "Pop culture",
+  "frase": "All'Eurovision 1969 vinsero ____.",
+  "risposte": [
+   "quattro paesi a pari merito"
+  ],
+  "spiegazione": "Lo spareggio non era previsto: fu introdotto l'anno dopo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-071",
+  "categoria": "Pop culture",
+  "frase": "Il compositore Rachmaninov tornò a comporre grazie a ____.",
+  "risposte": [
+   "tre mesi di ipnosi"
+  ],
+  "spiegazione": "Era bloccato dopo un fiasco. Dedicò al suo medico il Secondo concerto per pianoforte.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-072",
+  "categoria": "Pop culture",
+  "frase": "Eminem non ritirò il suo Oscar perché ____.",
+  "risposte": [
+   "dormiva"
+  ],
+  "spiegazione": "Era a casa, con i cartoni animati accesi per la figlia. La canzone premiata era \"Lose Yourself\".",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-073",
+  "categoria": "Pop culture",
+  "frase": "Beethoven scrisse un brano per ____.",
+  "risposte": [
+   "un'orchestra meccanica"
+  ],
+  "spiegazione": "Era \"La vittoria di Wellington\", pensata per la macchina dell'amico Maelzel.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-074",
+  "categoria": "Pop culture",
+  "frase": "A un concerto di 18 ore, ogni 20 minuti di permanenza il pubblico riceveva ____.",
+  "risposte": [
+   "un rimborso di 5 centesimi"
+  ],
+  "spiegazione": "Era \"Vexations\" di Satie, nel 1963: un breve tema ripetuto 840 volte. Il biglietto costava 5 dollari.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-075",
+  "categoria": "Pop culture",
+  "frase": "Il pittore televisivo Bob Ross parlava sempre con voce calma perché si era ripromesso di ____.",
+  "risposte": [
+   "non urlare mai più"
+  ],
+  "spiegazione": "Era stato per anni un sergente severo dell'aeronautica.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-077",
+  "categoria": "Pop culture",
+  "frase": "Un famoso presentatore americano indossava scarpe da ginnastica in tv per ____.",
+  "risposte": [
+   "correre dietro le quinte"
+  ],
+  "spiegazione": "Era Fred Rogers: doveva spostarsi in silenzio tra l'organo e i burattini.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-078",
+  "categoria": "Pop culture",
+  "frase": "Nella prima stagione di Sesame Street il pupazzo Oscar era ____.",
+  "risposte": [
+   "arancione"
+  ],
+  "spiegazione": "Poi diventò verde: nella serie spiegarono che era stato in vacanza in una palude.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-080",
+  "categoria": "Pop culture",
+  "frase": "La sigla di Doctor Who, del 1963, fu fatta ____.",
+  "risposte": [
+   "senza sintetizzatori"
+  ],
+  "spiegazione": "Usarono nastri tagliati e incollati a mano, una corda pizzicata e rumori elettronici.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-081",
+  "categoria": "Pop culture",
+  "frase": "Nei primi episodi di Mr. Bean gli occhi dell'orsacchiotto erano ____.",
+  "risposte": [
+   "puntine da disegno"
+  ],
+  "spiegazione": "Teddy è l'inseparabile orsacchiotto di Mr. Bean.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-079",
+  "categoria": "Food & Drink",
+  "frase": "Il piatto finale di \"Ratatouille\" fu ideato da ____.",
+  "risposte": [
+   "un vero chef"
+  ],
+  "spiegazione": "Thomas Keller, del ristorante French Laundry, fece da consulente al film. La sua versione si chiama confit byaldi: verdure a fettine sottili disposte a ventaglio.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-080",
+  "categoria": "Food & Drink",
+  "frase": "I Baci Perugina all'inizio si chiamavano ____.",
+  "risposte": [
+   "Cazzotti"
+  ],
+  "spiegazione": "Li inventò Luisa Spagnoli nel 1922 con gli avanzi di nocciole: la forma le ricordava un pugno chiuso. Il nome più romantico lo volle Giovanni Buitoni.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-081",
+  "categoria": "Food & Drink",
+  "frase": "Secondo la tradizione, il Ferrero Rocher prende il nome da ____.",
+  "risposte": [
+   "la grotta di Lourdes"
+  ],
+  "spiegazione": "Michele Ferrero era devotissimo alla Madonna di Lourdes. \"Rocher\" in francese vuol dire roccia, come la superficie del cioccolatino.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-082",
+  "categoria": "Food & Drink",
+  "frase": "Walt Disney voleva tagliare ____ di \"Lilli e il vagabondo\".",
+  "risposte": [
+   "la scena degli spaghetti"
+  ],
+  "spiegazione": "L'animatore Frank Thomas la animò lo stesso e convinse Disney a tenerla. Oggi è una delle scene più famose del cinema.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-083",
+  "categoria": "Food & Drink",
+  "frase": "Il cervello di scimmia di \"Indiana Jones\" era ____.",
+  "risposte": [
+   "crema e lamponi"
+  ],
+  "spiegazione": "Anche gli scarafaggi della stessa cena erano di gomma, riempiti di crema.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-084",
+  "categoria": "Food & Drink",
+  "frase": "Nel \"Padrino\" la battuta \"prendi i cannoli\" ____.",
+  "risposte": [
+   "fu improvvisata"
+  ],
+  "spiegazione": "Il copione diceva solo \"lascia la pistola\". Richard Castellano, che interpretava Clemenza, aggiunse i cannoli.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-085",
+  "categoria": "Food & Drink",
+  "frase": "Il sangue della doccia di \"Psycho\" era ____.",
+  "risposte": [
+   "sciroppo di cioccolato"
+  ],
+  "spiegazione": "Il film era in bianco e nero e il cioccolato rendeva meglio del sangue finto. Il rumore delle coltellate era un coltello piantato in un melone.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-086",
+  "categoria": "Food & Drink",
+  "frase": "Chaplin rifece la scena 63 volte mangiando una scarpa di ____.",
+  "risposte": [
+   "liquirizia"
+  ],
+  "spiegazione": "Era \"La febbre dell'oro\" (1925). Lui e l'altro attore stettero male per l'effetto lassativo della liquirizia.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-087",
+  "categoria": "Food & Drink",
+  "frase": "Secondo il suo creatore, Pac-Man è ispirato a ____.",
+  "risposte": [
+   "una pizza senza una fetta"
+  ],
+  "spiegazione": "Toru Iwatani ammise poi che era vero solo a metà: aveva anche arrotondato il carattere giapponese che significa \"bocca\".",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-088",
+  "categoria": "Food & Drink",
+  "frase": "Le caramelle gommose di Harry Potter esistono anche al gusto ____.",
+  "risposte": [
+   "vomito"
+  ],
+  "spiegazione": "Le produce la Jelly Belly. Nella scatola ci sono anche caccola, terra, lombrico e uovo marcio.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-089",
+  "categoria": "Food & Drink",
+  "frase": "Il cocktail Vesper prende il nome da ____.",
+  "risposte": [
+   "una fidanzata di James Bond"
+  ],
+  "spiegazione": "È Vesper Lynd, in \"Casino Royale\" (1953). Gin, vodka e Kina Lillet, un aperitivo che oggi non si produce più.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-090",
+  "categoria": "Food & Drink",
+  "frase": "Le ceneri di Renato Bialetti furono sepolte ____.",
+  "risposte": [
+   "dentro una moka"
+  ],
+  "spiegazione": "Fu lui a rendere famosa nel mondo la caffettiera inventata dal padre. L'omino coi baffi del marchio è la sua caricatura.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-091",
+  "categoria": "Food & Drink",
+  "frase": "In Francia il Quarter Pounder cambia nome per colpa del ____.",
+  "risposte": [
+   "sistema metrico"
+  ],
+  "spiegazione": "Il nome sul menu francese è \"Royal Cheese\", non \"Royale with Cheese\" come nel film.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-092",
+  "categoria": "Food & Drink",
+  "frase": "In Texas c'è una statua di Braccio di Ferro per ringraziarlo ____.",
+  "risposte": [
+   "di aver fatto vendere più spinaci"
+  ],
+  "spiegazione": "Crystal City si definisce capitale mondiale degli spinaci. I produttori attribuivano al marinaio un aumento dei consumi di circa un terzo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-093",
+  "categoria": "Food & Drink",
+  "frase": "Le fettuccine Alfredo furono rese famose in America da ____.",
+  "risposte": [
+   "due attori famosi del cinema muto"
+  ],
+  "spiegazione": "Erano Mary Pickford e Douglas Fairbanks. Nel 1927 regalarono ad Alfredo una forchetta e un cucchiaio d'oro.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-094",
+  "categoria": "Food & Drink",
+  "frase": "La droga blu di \"Breaking Bad\" era ____.",
+  "risposte": [
+   "zucchero colorato"
+  ],
+  "spiegazione": "La preparava un negozio di dolci di Albuquerque, che poi l'ha venduta ai fan in bustine da un dollaro.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-095",
+  "categoria": "Food & Drink",
+  "frase": "Dopo \"Forrest Gump\" nacque davvero ____.",
+  "risposte": [
+   "una catena di ristoranti di gamberi"
+  ],
+  "spiegazione": "La Bubba Gump Shrimp Co. aprì a Monterey, in California, nel 1996. È l'unica catena di ristoranti tratta da un film.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-096",
+  "categoria": "Food & Drink",
+  "frase": "La bottiglietta del Campari Soda fu disegnata da ____.",
+  "risposte": [
+   "un artista famoso"
+  ],
+  "spiegazione": "Fortunato Depero, nel 1932. Da allora è rimasta quasi identica, ed era il primo aperitivo già pronto in monodose.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-097",
+  "categoria": "Food & Drink",
+  "frase": "Il carpaccio fu inventato per una contessa che ____.",
+  "risposte": [
+   "non poteva mangiare carne cotta"
+  ],
+  "spiegazione": "Lo creò Giuseppe Cipriani all'Harry's Bar di Venezia e lo chiamò come il pittore Vittore Carpaccio, per i rossi dei suoi quadri.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-098",
+  "categoria": "Food & Drink",
+  "frase": "Le e-mail spam si chiamano così per colpa di ____.",
+  "risposte": [
+   "uno sketch dei Monty Python"
+  ],
+  "spiegazione": "Nello sketch del 1970, in un locale dove ogni piatto contiene carne in scatola Spam, dei vichinghi cantano \"Spam\" coprendo ogni conversazione.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-099",
+  "categoria": "Food & Drink",
+  "frase": "Andy Warhol pranzò per vent'anni con ____.",
+  "risposte": [
+   "la stessa zuppa in scatola"
+  ],
+  "spiegazione": "È uno dei motivi per cui dipinse le famose lattine: 32 tele, una per ogni gusto.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-100",
+  "categoria": "Food & Drink",
+  "frase": "Il logo dei Chupa Chups è opera di ____.",
+  "risposte": [
+   "un pittore famoso"
+  ],
+  "spiegazione": "Salvador Dalí, nel 1969, in circa un'ora. Consigliò anche di mettere il logo in cima alla caramella, perché si vedesse sempre.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-101",
+  "categoria": "Food & Drink",
+  "frase": "Il cocktail Bellini prende il nome da ____.",
+  "risposte": [
+   "un pittore veneziano"
+  ],
+  "spiegazione": "Giuseppe Cipriani, all'Harry's Bar di Venezia: il rosa di prosecco e pesca gli ricordava un quadro di Giovanni Bellini.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-102",
+  "categoria": "Food & Drink",
+  "frase": "Il fiume di cioccolato di Willy Wonka era ____.",
+  "risposte": [
+   "acqua puzzolente"
+  ],
+  "spiegazione": "Restava ferma per ore e prese un odore acido. L'attore di Augustus Gloop raccontò che era gelida e profonda 10 centimetri.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-103",
+  "categoria": "Food & Drink",
+  "frase": "Nel libro, Hannibal Lecter mangia il fegato con ____.",
+  "risposte": [
+   "un vino rosso pregiato"
+  ],
+  "spiegazione": "Nel film diventa \"un buon Chianti\": lo sceneggiatore temeva che il pubblico non sapesse cosa fosse l'Amarone.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-104",
+  "categoria": "Food & Drink",
+  "frase": "Il Negroni nacque quando un conte chiese di ____.",
+  "risposte": [
+   "mettere il gin al posto della soda"
+  ],
+  "spiegazione": "Il conte Camillo Negroni, a Firenze verso il 1919, voleva un Americano più forte.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-105",
+  "categoria": "Food & Drink",
+  "frase": "I biscotti della fortuna \"cinesi\" vengono ____.",
+  "risposte": [
+   "dal Giappone"
+  ],
+  "spiegazione": "Vicino a Kyoto già negli anni Settanta dell'Ottocento si vendevano biscotti simili, con il bigliettino infilato nella piega.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-106",
+  "categoria": "Food & Drink",
+  "frase": "Secondo la storia più nota, l'insalata Caesar nacque ____.",
+  "risposte": [
+   "in Messico"
+  ],
+  "spiegazione": "Caesar Cardini, a Tijuana, nel 1924: col locale pieno per il 4 luglio, improvvisò con quello che restava in cucina.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-107",
+  "categoria": "Food & Drink",
+  "frase": "Secondo la storia più nota, la pizza hawaiana nacque ____.",
+  "risposte": [
+   "in Canada"
+  ],
+  "spiegazione": "Sam Panopoulos, nel 1962, in un ristorante dell'Ontario. Alcuni storici hanno trovato pizze con l'ananas anche prima.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-108",
+  "categoria": "Food & Drink",
+  "frase": "Il Negroni sbagliato nacque ____.",
+  "risposte": [
+   "da un errore del barista"
+  ],
+  "spiegazione": "Al Bar Basso di Milano, nel 1972, Mirko Stocchetto mise lo spumante al posto del gin.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-109",
+  "categoria": "Food & Drink",
+  "frase": "I Puffi devono il nome a un disegnatore che a tavola ____.",
+  "risposte": [
+   "non si ricordava la parola \"sale\""
+  ],
+  "spiegazione": "Peyo chiese all'amico Franquin di passargli lo \"schtroumpf\", e i due passarono il resto del weekend a parlare così.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-110",
+  "categoria": "Food & Drink",
+  "frase": "Le Pez nacquero per aiutare a ____.",
+  "risposte": [
+   "smettere di fumare"
+  ],
+  "spiegazione": "Le inventò nel 1927 l'austriaco Eduard Haas. \"PEZ\" viene da Pfefferminz, menta piperita in tedesco.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-111",
+  "categoria": "Food & Drink",
+  "frase": "In Dragon Ball i nomi dei Saiyan vengono da ____.",
+  "risposte": [
+   "nomi di verdure"
+  ],
+  "spiegazione": "Lo spiegò Akira Toriyama: Kakarot da carrot (carota), Vegeta da vegetable (verdura), Radish da radish (ravanello).",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-112",
+  "categoria": "Food & Drink",
+  "frase": "In Giappone a Natale molte famiglie mangiano ____.",
+  "risposte": [
+   "il pollo fritto del KFC"
+  ],
+  "spiegazione": "Tutto nasce da una campagna pubblicitaria del 1974, \"Kentucky per Natale\", pensata come sostituto del tacchino.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-113",
+  "categoria": "Food & Drink",
+  "frase": "Una banca emiliana accetta come garanzia per i prestiti ____.",
+  "risposte": [
+   "forme di Parmigiano"
+  ],
+  "spiegazione": "Il Credem lo fa dal 1953: custodisce le forme in magazzini blindati mentre stagionano e, se il prestito non viene pagato, le vende.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-114",
+  "categoria": "Food & Drink",
+  "frase": "A Bologna gli spaghetti alla bolognese ____.",
+  "risposte": [
+   "non esistono"
+  ],
+  "spiegazione": "Lì il ragù si mangia con le tagliatelle o nelle lasagne. Un sindaco di Bologna li ha definiti una fake news.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-115",
+  "categoria": "Food & Drink",
+  "frase": "Nei primi cinema i popcorn ____.",
+  "risposte": [
+   "erano vietati"
+  ],
+  "spiegazione": "I cinema volevano sembrare teatri eleganti. Durante la Grande Depressione cominciarono a venderli, e per molti fu la salvezza.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-116",
+  "categoria": "Food & Drink",
+  "frase": "La prima Nutella era ____.",
+  "risposte": [
+   "un panetto da tagliare a fette"
+  ],
+  "spiegazione": "Nel 1946 il cacao scarseggiava e Pietro Ferrero, ad Alba, usò soprattutto nocciole: era il Giandujot. La Nutella arrivò nel 1964.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-117",
+  "categoria": "Food & Drink",
+  "frase": "La prima ricetta pubblicata della carbonara uscì ____.",
+  "risposte": [
+   "in una guida di Chicago"
+  ],
+  "spiegazione": "Era il 1952. In Italia la ricetta comparve su una rivista nel 1954, con aglio e groviera.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-118",
+  "categoria": "Food & Drink",
+  "frase": "Il furgone di Pizza Planet di \"Toy Story\" compare ____.",
+  "risposte": [
+   "in quasi tutti i film Pixar"
+  ],
+  "spiegazione": "Manca solo negli \"Incredibili\". In \"Ribelle\", ambientato nel Medioevo, compare come intaglio di legno.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-082",
+  "categoria": "Pop culture",
+  "frase": "____ nacque nel 1963 per la pubblicità di un detersivo.",
+  "risposte": [
+   "detersivo"
+  ],
+  "spiegazione": "Il pulcino nero debuttò a Carosello per il detersivo Ava.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-083",
+  "categoria": "Pop culture",
+  "frase": "“Nel blu dipinto di blu” vinse il ____ come disco dell'anno.",
+  "risposte": [
+   "Grammy"
+  ],
+  "spiegazione": "Ai primi Grammy, nel 1959, Modugno vinse il premio Record of the Year.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-084",
+  "categoria": "Pop culture",
+  "frase": "Il concerto di Vasco Rossi a Modena Park nel 2017 è il record mondiale di ____ per un concerto.",
+  "risposte": [
+   "biglietti venduti"
+  ],
+  "spiegazione": "I paganti furono 225.173, record per un singolo artista.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-085",
+  "categoria": "Pop culture",
+  "frase": "Nel 1970 Raffaella Carrà fece scandalo in TV mostrando ____.",
+  "risposte": [
+   "ombelico"
+  ],
+  "spiegazione": "Successe a Canzonissima, sulla sigla “Ma che musica maestro”.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-086",
+  "categoria": "Pop culture",
+  "frase": "Mina non ____ dal 1978",
+  "risposte": [
+   "1978"
+  ],
+  "spiegazione": "L'ultimo concerto fu il 23 agosto 1978 alla Bussoladomani; da allora solo dischi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-087",
+  "categoria": "Pop culture",
+  "frase": "Secondo la versione più nota, Totò scrisse “Malafemmena” pensando alla ____.",
+  "risposte": [
+   "moglie"
+  ],
+  "spiegazione": "La canzone è del 1951; la dedica alla moglie Diana è la versione più diffusa.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-088",
+  "categoria": "Pop culture",
+  "frase": "Sophia Loren è stata la prima a vincere l'Oscar per un ruolo ____.",
+  "risposte": [
+   "inglese"
+  ],
+  "spiegazione": "Vinse nel 1962 per “La ciociara”.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-089",
+  "categoria": "Pop culture",
+  "frase": "Per ritirare l'Oscar nel 1999, Roberto Benigni ____.",
+  "risposte": [
+   "camminò sopra le poltrone"
+  ],
+  "spiegazione": "Era l'Oscar per “La vita è bella”; saltò sugli schienali per arrivare al palco.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-090",
+  "categoria": "Pop culture",
+  "frase": "La parola ____ nasce da un personaggio del film La dolce vita.",
+  "risposte": [
+   "La dolce vita"
+  ],
+  "spiegazione": "Paparazzo era il fotografo che accompagnava Mastroianni nel film di Fellini.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-091",
+  "categoria": "Pop culture",
+  "frase": "Per la scena nella Fontana di Trevi, Mastroianni aveva sotto lo smoking una ____.",
+  "risposte": [
+   "muta da sub"
+  ],
+  "spiegazione": "Si girò d'inverno; secondo i racconti bevve anche vodka per il freddo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-092",
+  "categoria": "Pop culture",
+  "frase": "Il tema del “Buono, il brutto, il cattivo” imita il verso del ____.",
+  "risposte": [
+   "coyote"
+  ],
+  "spiegazione": "Morricone si ispirò all'ululato del coyote per il famoso motivo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-093",
+  "categoria": "Pop culture",
+  "frase": "Bud Spencer fu il primo italiano a ____ in meno di un minuto.",
+  "risposte": [
+   "un minuto"
+  ],
+  "spiegazione": "Fece 59\"5 nel 1950 a Salsomaggiore; poi nuotò alle Olimpiadi del 1952.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-094",
+  "categoria": "Pop culture",
+  "frase": "Il nome Bud Spencer unisce l'attore Spencer Tracy e ____.",
+  "risposte": [
+   "birra"
+  ],
+  "spiegazione": "“Bud” viene dalla Budweiser, la sua birra preferita.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-095",
+  "categoria": "Pop culture",
+  "frase": "Nella prima versione di Collodi, la storia di Pinocchio finiva con il burattino ____.",
+  "risposte": [
+   "impiccato"
+  ],
+  "spiegazione": "Il Gatto e la Volpe lo appendevano alla Quercia grande; i lettori protestarono e Collodi continuò la storia.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-096",
+  "categoria": "Pop culture",
+  "frase": "Mike Bongiorno, simbolo della TV italiana, era ____.",
+  "risposte": [
+   "New York"
+  ],
+  "spiegazione": "Nacque nel 1924 da famiglia italoamericana e diventò cittadino italiano solo nel 2003.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-097",
+  "categoria": "Pop culture",
+  "frase": "Il cavallino della Ferrari era dipinto ____ della Prima guerra mondiale.",
+  "risposte": [
+   "aereo"
+  ],
+  "spiegazione": "Era il simbolo di Francesco Baracca; la madre lo regalò a Enzo Ferrari come portafortuna.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-098",
+  "categoria": "Pop culture",
+  "frase": "Prima delle auto, ____ costruiva trattori.",
+  "risposte": [
+   "trattori"
+  ],
+  "spiegazione": "Secondo la storia più nota, iniziò a fare auto dopo una lite con Enzo Ferrari per una frizione.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-099",
+  "categoria": "Pop culture",
+  "frase": "Secondo la storia più nota, la Vespa si chiama così per la sua ____ e il suo ____.",
+  "risposte": [
+   "forma",
+   "ronzio"
+  ],
+  "spiegazione": "Davanti al prototipo, nel 1946, Enrico Piaggio avrebbe detto: “Sembra una vespa!”.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-100",
+  "categoria": "Pop culture",
+  "frase": "Super Mario prende il nome dal ____ di un magazzino di Nintendo in America.",
+  "risposte": [
+   "proprietario"
+  ],
+  "spiegazione": "Si chiamava Mario Segale; Miyamoto ha confermato il legame nel 2015.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-101",
+  "categoria": "Pop culture",
+  "frase": "Diabolik è stato inventato da due ____.",
+  "risposte": [
+   "sorelle"
+  ],
+  "spiegazione": "Angela e Luciana Giussani, Milano 1962; il formato tascabile era pensato per i pendolari.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-102",
+  "categoria": "Pop culture",
+  "frase": "Il volto di ____ è ispirato all'attore Rupert Everett.",
+  "risposte": [
+   "Rupert Everett"
+  ],
+  "spiegazione": "Il disegnatore Claudio Villa lo prese a modello su suggerimento di Sclavi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-103",
+  "categoria": "Pop culture",
+  "frase": "La canzone “4/3/1943” di Lucio Dalla doveva intitolarsi “____”.",
+  "risposte": [
+   "Gesù bambino"
+  ],
+  "spiegazione": "La censura cambiò il titolo nella data di nascita di Dalla, ma la canzone non parla di lui.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-104",
+  "categoria": "Pop culture",
+  "frase": "A Sanremo 1983 “Vita spericolata” di Vasco Rossi arrivò ____.",
+  "risposte": [
+   "penultima"
+  ],
+  "spiegazione": "Poi diventò una delle canzoni italiane più famose.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-105",
+  "categoria": "Pop culture",
+  "frase": "Gigliola Cinquetti vinse l'Eurovision 1964 a soli ____.",
+  "risposte": [
+   "16"
+  ],
+  "spiegazione": "Con “Non ho l'età” portò all'Italia la prima vittoria all'Eurovision.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-106",
+  "categoria": "Pop culture",
+  "frase": "Durante la guerra, la Coppa del Mondo vinta dall'Italia fu nascosta in una ____.",
+  "risposte": [
+   "scatola da scarpe"
+  ],
+  "spiegazione": "Ottorino Barassi la tenne sotto il letto a Roma, al riparo dai tedeschi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-107",
+  "categoria": "Pop culture",
+  "frase": "Emilio Salgari descrisse la Malesia di Sandokan ____.",
+  "risposte": [
+   "vista"
+  ],
+  "spiegazione": "Non lasciò mai l'Italia: si documentava su libri, atlanti e giornali.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-108",
+  "categoria": "Pop culture",
+  "frase": "Il commissario Montalbano porta il nome di uno ____.",
+  "risposte": [
+   "scrittore"
+  ],
+  "spiegazione": "È un omaggio a Manuel Vázquez Montalbán, amico di Camilleri.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-110",
+  "categoria": "Pop culture",
+  "frase": "Celentano incise una canzone di ____ che suonano come ____.",
+  "risposte": [
+   "parole senza senso",
+   "l'inglese"
+  ],
+  "spiegazione": "È “Prisencolinensinainciusol” (1972), arrivata al primo posto in Italia.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-111",
+  "categoria": "Pop culture",
+  "frase": "La parola “ciao” viene dal veneziano e in origine significava “____”.",
+  "risposte": [
+   "schiavo"
+  ],
+  "spiegazione": "Era un saluto rispettoso: “s'ciavo”, cioè “sono vostro schiavo”.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-112",
+  "categoria": "Pop culture",
+  "frase": "Paolo Villaggio creò Fantozzi pensando a quando lavorava come ____.",
+  "risposte": [
+   "acciaieria"
+  ],
+  "spiegazione": "Lavorò per alcuni anni all'Italsider di Genova.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-113",
+  "categoria": "Pop culture",
+  "frase": "Paperinik, l'eroe mascherato di Paperino, è stato inventato ____.",
+  "risposte": [
+   "Italia"
+  ],
+  "spiegazione": "Nacque su Topolino nel 1969, da Elisa Penna, Guido Martina e Giovan Battista Carpi.",
+  "stato": "Verificato"
+ }
+]

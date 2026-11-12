@@ -1,0 +1,354 @@
+[
+ {
+  "id": "SCI-001",
+  "categoria": "Science",
+  "frase": "Ogni secondo il Sole trasforma ____ in energia.",
+  "risposte": [
+   "circa 4 milioni di tonnellate di materia"
+  ],
+  "spiegazione": "È la massa che la fusione nucleare trasforma in energia ogni secondo. Il Sole è così grande che può andare avanti così per miliardi di anni.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-002",
+  "categoria": "Science",
+  "frase": "La Luna si allontana dalla Terra di circa ____.",
+  "risposte": [
+   "3,8 cm all'anno"
+  ],
+  "spiegazione": "Lo misuriamo con i laser puntati sui riflettori lasciati dalle missioni Apollo. La causa sono le maree.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-003",
+  "categoria": "Science",
+  "frase": "Il terremoto del 2011 in Giappone ha ____.",
+  "risposte": [
+   "accorciato la durata del giorno"
+  ],
+  "spiegazione": "Di circa 1,8 microsecondi: il sisma ha spostato massa verso il centro della Terra, che così ruota un filo più veloce.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-004",
+  "categoria": "Science",
+  "frase": "Tutto l'oro mai estratto starebbe in ____.",
+  "risposte": [
+   "un cubo di circa 22 metri di lato"
+  ],
+  "spiegazione": "L'oro è densissimo: tutto quello estratto nella storia occupa pochissimo spazio.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "SCI-005",
+  "categoria": "Science",
+  "frase": "L'elio fu scoperto prima ____ che sulla Terra.",
+  "risposte": [
+   "nel Sole"
+  ],
+  "spiegazione": "Fu visto nella luce solare nel 1868; sulla Terra fu trovato solo 27 anni dopo. Il nome viene da Helios, il Sole in greco.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-001",
+  "categoria": "Food & Drink",
+  "frase": "Frank Epperson a 11 anni, dimenticò fuori di notte acqua e soda con un bastoncino: nacque il ____.",
+  "risposte": [
+   "Popsicle"
+  ],
+  "spiegazione": "Era il 1905. Anni dopo brevettò l'idea.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-002",
+  "categoria": "Food & Drink",
+  "frase": "Thomas Adams voleva trasformare una resina messicana in gomma, non ci riuscì e ne fece ____.",
+  "risposte": [
+   "il chewing gum"
+  ],
+  "spiegazione": "Il chicle era la resina che in Messico si masticava da secoli.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-003",
+  "categoria": "Food & Drink",
+  "frase": "Gli antichi Romani amavano così tanto un'erba, il silfio, che ____.",
+  "risposte": [
+   "la fecero estinguere"
+  ],
+  "spiegazione": "Il silfio si usava in cucina e come medicina. Non si riuscì mai a coltivarlo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-004",
+  "categoria": "Food & Drink",
+  "frase": "Nel 1957 la BBC mandò in onda un pesce d'aprile e mostrò degli svizzeri che raccoglievano ____: molti chiesero come coltivarli.",
+  "risposte": [
+   "spaghetti dagli alberi"
+  ],
+  "spiegazione": "All'epoca in Gran Bretagna la pasta era poco conosciuta, e molti ci cascarono.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "FOO-005",
+  "categoria": "Food & Drink",
+  "frase": "Prima dell'apriscatole le scatolette si aprivano con ____, come consigliavano i produttori.",
+  "risposte": [
+   "martello e scalpello"
+  ],
+  "spiegazione": "L'apriscatole fu brevettato quasi cinquant'anni dopo le scatolette.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-001",
+  "categoria": "History",
+  "frase": "Nel 1518 a Strasburgo centinaia di persone, per giorni, ____.",
+  "risposte": [
+   "ballarono senza riuscire a fermarsi"
+  ],
+  "spiegazione": "Secondo cronache scritte più tardi, alcuni morirono di sfinimento, ma il numero è incerto. Ancora oggi non si sa cosa causò questa «epidemia di ballo».",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-002",
+  "categoria": "History",
+  "frase": "Nel Medioevo in Francia ____ fu processato per omicidio e impiccato.",
+  "risposte": [
+   "un maiale"
+  ],
+  "spiegazione": "Successe a Falaise, in Normandia, nel 1386: l'animale aveva ucciso un bambino. Fu giustiziato in piazza vestito da uomo. I processi agli animali, all'epoca, erano una cosa seria.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-003",
+  "categoria": "History",
+  "frase": "In Europa, per secoli, le farmacie vendevano come medicina ____.",
+  "risposte": [
+   "mummie egizie macinate"
+  ],
+  "spiegazione": "Si pensava che la polvere di mummia curasse un po' di tutto.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "DRK-001",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1919 a Boston, in una giornata qualunque, 21 persone morirono travolte da ____.",
+  "risposte": [
+   "un'onda di melassa"
+  ],
+  "spiegazione": "Il 15 gennaio 1919 un enorme serbatoio cedette e l'onda travolse un quartiere di Boston. Molti morirono soffocati dallo sciroppo; i feriti furono circa 150.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-004",
+  "categoria": "History",
+  "frase": "L'inventore della benzina al piombo morì ____.",
+  "risposte": [
+   "strangolato dalle corde che aveva inventato per alzarsi dal letto"
+  ],
+  "spiegazione": "Si chiamava Thomas Midgley e inventò anche i freon che bucarono l'ozono. Paralizzato dalla poliomielite, si era costruito un sistema di corde e carrucole. Morì nel 1944.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "HIS-005",
+  "categoria": "History",
+  "frase": "Il re inglese Giorgio II morì ____.",
+  "risposte": [
+   "sul water"
+  ],
+  "spiegazione": "Era il 1760. Fu trovato a terra appena dopo essere stato sulla seggetta, il «water» dell'epoca. L'autopsia trovò una lacerazione dell'aorta, forse per lo sforzo.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-002",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1906 lo zoo del Bronx espose ____ nella gabbia delle scimmie.",
+  "risposte": [
+   "un uomo congolese"
+  ],
+  "spiegazione": "Si chiamava Ota Benga, del popolo Mbuti. Fu esposto per alcuni giorni, finché le proteste dei pastori delle chiese nere costrinsero lo zoo a smettere. Lo zoo si è scusato nel 2020.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-004",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nell'897 papa Formoso, già morto da tempo, fu riesumato e ____.",
+  "risposte": [
+   "processato"
+  ],
+  "spiegazione": "È il «sinodo del cadavere»: papa Stefano VI fece vestire il corpo da papa, lo mise sul trono e lo condannò. Poi lo fece gettare nel Tevere.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-005",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nell’Ottocento in Scozia si coprivano le tombe con ____ per non far rubare i cadaveri.",
+  "risposte": [
+   "gabbie di ferro"
+  ],
+  "spiegazione": "Si chiamavano mortsafe. I cadaveri freschi si vendevano alle scuole di medicina per le lezioni di anatomia. Il problema finì quasi del tutto nel 1832, quando una legge permise di usare i corpi non reclamati.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "DRK-006",
+  "categoria": "Dark/Politically incorrect",
+  "frase": "Nel 1851 un medico americano inventò la «drapetomania», una malattia mentale con cui spiegava ____.",
+  "risposte": [
+   "la fuga degli schiavi"
+  ],
+  "spiegazione": "La inventò il medico Samuel Cartwright nel 1851, unendo le parole greche per «fuggitivo» e «follia». Per lui uno schiavo che voleva scappare non poteva che essere malato.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "ANI-002",
+  "categoria": "Animal kingdom",
+  "frase": "Il vombato è l'unico animale che fa la cacca ____.",
+  "risposte": [
+   "a forma di cubo"
+  ],
+  "spiegazione": "Usa i cubetti per segnare il territorio: non rotolano via.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-001",
+  "categoria": "Geography",
+  "frase": "L'animale nazionale della Scozia è ____.",
+  "risposte": [
+   "l'unicorno"
+  ],
+  "spiegazione": "Compare sullo stemma reale scozzese da secoli.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-001",
+  "categoria": "Pop culture",
+  "frase": "Il primo oggetto venduto su eBay fu un ____.",
+  "risposte": [
+   "puntatore laser rotto"
+  ],
+  "spiegazione": "Il compratore spiegò che collezionava puntatori laser rotti.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "ANI-003",
+  "categoria": "Animal kingdom",
+  "frase": "In Svizzera è illegale tenere ____ senza ____.",
+  "risposte": [
+   "un porcellino d'India",
+   "un compagno"
+  ],
+  "spiegazione": "Sono animali sociali, e la legge svizzera considera la solitudine un maltrattamento.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-002",
+  "categoria": "Geography",
+  "frase": "In Giappone puoi pagare per affittare ____ o ____.",
+  "risposte": [
+   "un finto parente",
+   "un finto amico"
+  ],
+  "spiegazione": "Ci sono agenzie che forniscono attori per matrimoni, cene e funerali.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-004",
+  "categoria": "Animal kingdom",
+  "frase": "I gamberetti hanno ____.",
+  "risposte": [
+   "il cuore nella testa"
+  ],
+  "spiegazione": "Si trova nella parte anteriore del corpo, sotto la corazza.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-005",
+  "categoria": "Animal kingdom",
+  "frase": "Nel 1945 un pollo di nome Mike visse ____.",
+  "risposte": [
+   "18 mesi senza testa"
+  ],
+  "spiegazione": "Il colpo d'ascia aveva lasciato intatta la parte del cervello che regola le funzioni vitali. Il padrone lo nutriva con un contagocce.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-002",
+  "categoria": "Pop culture",
+  "frase": "Il compositore Lully morì dopo essersi colpito ____.",
+  "risposte": [
+   "un piede con il bastone da direttore"
+  ],
+  "spiegazione": "All'epoca si dirigeva battendo a terra un lungo bastone. La ferita andò in cancrena. Lui rifiutò l'amputazione e la cancrena lo uccise.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "GEO-003",
+  "categoria": "Geography",
+  "frase": "D'estate la Torre Eiffel ____.",
+  "risposte": [
+   "si allunga di una decina di centimetri"
+  ],
+  "spiegazione": "Con il caldo il ferro si dilata.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "ANI-006",
+  "categoria": "Animal kingdom",
+  "frase": "Un pinguino dello zoo di Edimburgo è ____.",
+  "risposte": [
+   "un generale dell'esercito norvegese"
+  ],
+  "spiegazione": "Si chiama Sir Nils Olav ed è la mascotte della Guardia reale norvegese.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-004",
+  "categoria": "Geography",
+  "frase": "Un'isola al confine tra Francia e Spagna ____.",
+  "risposte": [
+   "cambia nazionalità ogni sei mesi"
+  ],
+  "spiegazione": "È l'Isola dei Fagiani, su un fiume: i due paesi la amministrano a turno.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "GEO-005",
+  "categoria": "Geography",
+  "frase": "In Islanda esiste un'app per ____.",
+  "risposte": [
+   "evitare di uscire con un proprio cugino"
+  ],
+  "spiegazione": "Gli islandesi sono pochi e molti sono imparentati: l'app controlla un archivio genealogico nazionale.",
+  "stato": "Non verificato (da memoria)"
+ },
+ {
+  "id": "POP-003",
+  "categoria": "Pop culture",
+  "frase": "La prima webcam della storia inquadrava ____.",
+  "risposte": [
+   "una macchinetta del caffè"
+  ],
+  "spiegazione": "All'università di Cambridge i ricercatori volevano sapere se la caraffa era piena prima di alzarsi.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-004",
+  "categoria": "Pop culture",
+  "frase": "Il primo video su YouTube mostra un ragazzo ____.",
+  "risposte": [
+   "allo zoo che parla degli elefanti"
+  ],
+  "spiegazione": "Si intitola \"Me at the zoo\", è del 2005 e dura pochi secondi. Il ragazzo è uno dei fondatori del sito.",
+  "stato": "Verificato"
+ },
+ {
+  "id": "POP-005",
+  "categoria": "Pop culture",
+  "frase": "La prima email di spam fu mandata nel 1978 per ____.",
+  "risposte": [
+   "pubblicizzare dei computer"
+  ],
+  "spiegazione": "Arrivò a qualche centinaio di utenti della rete che ha preceduto internet.",
+  "stato": "Verificato"
+ }
+]

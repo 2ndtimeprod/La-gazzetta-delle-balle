@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Edizione della sera: nuova partita</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#F1E9D8}a:hover{color:#F1E9D8}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; padding: 50px 22px 30px; display: flex; flex-direction: column; justify-content: space-between; background: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), #15120E; background-size: 4px 4px, auto; color: #F1E9D8; font-family: 'Source Serif 4', Georgia, serif">
+<div style="display: flex; flex-direction: column">
+<header style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1px; color: #B8AE9A"><span>MAR 10 NOV 2026</span><span>EDIZIONE DELLA SERA</span></div>
+<div style="border-top: 3px solid #F1E9D8; border-bottom: 1px solid rgba(241,233,216,0.35); padding: 7px 0 6px; display: flex; justify-content: space-between; align-items: center"><span style="font-family: 'Anton', sans-serif; font-size: 20px; text-transform: uppercase">La Gazzetta delle Balle</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #B8AE9A">NUOVA PARTITA</span></div>
+</header>
+<h1 style="margin: 16px 0 4px; font-family: 'Anton', sans-serif; font-weight: 400; font-size: 40px; line-height: 1; text-transform: uppercase">Prepara l'edizione</h1>
+
+<section style="border-bottom: 1px solid rgba(241,233,216,0.22); padding: 14px 0; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1px; color: #B8AE9A">GIOCATORI · MINIMO 3, UNO NARRA A TURNO</span>
+<div style="display: flex; align-items: center; justify-content: space-between">
+<button type="button" aria-label="Un giocatore in meno" onClick="{{minus}}" style="width: 52px; height: 52px; cursor: pointer; background: transparent; color: #F1E9D8; border: 1.5px solid #F1E9D8; border-radius: 2px; font-family: 'Anton', sans-serif; font-size: 28px">−</button>
+<span aria-live="polite" style="font-family: 'Anton', sans-serif; font-size: 64px; line-height: 1">{{players}}</span>
+<button type="button" aria-label="Un giocatore in più" onClick="{{plus}}" style="width: 52px; height: 52px; cursor: pointer; background: transparent; color: #F1E9D8; border: 1.5px solid #F1E9D8; border-radius: 2px; font-family: 'Anton', sans-serif; font-size: 28px">+</button>
+</div>
+</section>
+
+<section style="border-bottom: 1px solid rgba(241,233,216,0.22); padding: 14px 0; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1px; color: #B8AE9A">GIRI DA NARRATORE</span>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1.5px solid #F1E9D8">
+<sc-for list="{{laps}}" as="lap" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{lap.pressed}}" onClick="{{lap.pick}}" style="height: 46px; cursor: pointer; border: none; border-left: {{lap.sep}}; background: {{lap.bg}}; color: {{lap.fg}}; font-family: 'Anton', sans-serif; font-size: 20px">{{lap.n}}</button>
+</sc-for>
+</div>
+<span style="font-size: 14px; font-style: italic; color: #B8AE9A">{{roundsText}}</span>
+</section>
+
+<section style="border-bottom: 1px solid rgba(241,233,216,0.22); padding: 14px 0; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 2px"><span id="s-dark" style="font-family: 'Anton', sans-serif; font-size: 20px; text-transform: uppercase">Categoria Dark</span><span style="font-size: 14px; font-style: italic; color: #B8AE9A">Prende il posto del Jolly sul dado</span></div>
+<button type="button" role="switch" aria-checked="{{darkOn}}" aria-labelledby="s-dark" onClick="{{toggleDark}}" style="flex-shrink: 0; width: 64px; height: 36px; padding: 3px; cursor: pointer; border: 1.5px solid #F1E9D8; border-radius: 18px; background: {{darkTrack}}; display: flex; justify-content: {{darkJustify}}"><span style="width: 27px; height: 27px; border-radius: 50%; background: {{darkKnob}}; display: block"></span></button>
+</div>
+<sc-if value="{{darkOn}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 2px"><span id="s-ext" style="font-family: 'Anton', sans-serif; font-size: 17px; text-transform: uppercase">Anche i fatti estremi</span><span style="font-size: 14px; font-style: italic; color: #B8AE9A">Solo se tutti al tavolo sono d'accordo</span></div>
+<button type="button" role="switch" aria-checked="{{extOn}}" aria-labelledby="s-ext" onClick="{{toggleExt}}" style="flex-shrink: 0; width: 64px; height: 36px; padding: 3px; cursor: pointer; border: 1.5px solid #F1E9D8; border-radius: 18px; background: {{extTrack}}; display: flex; justify-content: {{extJustify}}"><span style="width: 27px; height: 27px; border-radius: 50%; background: {{extKnob}}; display: block"></span></button>
+</div>
+</sc-if>
+</section>
+
+<section style="padding: 14px 0 0; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1px; color: #B8AE9A">SUL DADO</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{faces}}" as="f" hint-placeholder-count="6">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; padding: 5px 8px; border: 1px solid rgba(241,233,216,0.4); background: {{f.bg}}; color: {{f.fg}}">{{f.label}}</span>
+</sc-for>
+</div>
+</section>
+</div>
+<a href="S-Dado.dc.html" style="display: flex; align-items: center; justify-content: center; height: 58px; text-decoration: none; background: #F0443A; color: #15120E; border-radius: 2px; font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 0.5px; text-transform: uppercase">Crea la stanza</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { players: 5, laps: 2, dark: false, ext: false };
+}
+renderVals() {
+const s = this.state;
+const labels = ['HISTORY', 'POP', 'GEO', 'SCIENCE', 'FOOD', s.dark ? 'DARK' : 'JOLLY'];
+return {
+players: s.players,
+roundsText: 'Ognuno narra ' + (s.laps === 1 ? '1 volta' : s.laps + ' volte') + ': ' + (s.players * s.laps) + ' round in tutto.',
+minus: () => this.setState({ players: Math.max(3, s.players - 1) }),
+plus: () => this.setState({ players: Math.min(12, s.players + 1) }),
+laps: [1, 2, 3].map((n, i) => ({ n: n, pressed: s.laps === n ? 'true' : 'false', bg: s.laps === n ? '#F1E9D8' : 'transparent', fg: s.laps === n ? '#15120E' : '#F1E9D8', sep: i === 0 ? 'none' : '1.5px solid #F1E9D8', pick: () => this.setState({ laps: n }) })),
+darkOn: s.dark, darkTrack: s.dark ? '#F0443A' : 'transparent', darkKnob: s.dark ? '#15120E' : '#F1E9D8', darkJustify: s.dark ? 'flex-end' : 'flex-start',
+toggleDark: () => this.setState({ dark: !s.dark, ext: s.dark ? false : s.ext }),
+extOn: s.ext, extTrack: s.ext ? '#F0443A' : 'transparent', extKnob: s.ext ? '#15120E' : '#F1E9D8', extJustify: s.ext ? 'flex-end' : 'flex-start',
+toggleExt: () => this.setState({ ext: !s.ext }),
+faces: labels.map((l, i) => ({ label: l, bg: i < 5 ? 'transparent' : (s.dark ? '#F0443A' : '#F2C230'), fg: i < 5 ? '#F1E9D8' : '#15120E' }))
+};
+}
+}
+</script>
+</body>
+</html>

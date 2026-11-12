@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Edizione della sera: home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#F1E9D8}a:hover{color:#F1E9D8}
+@keyframes crossR{from{transform:translateX(-180px)}to{transform:translateX(400px)}}
+@keyframes crossL{from{transform:translateX(400px)}to{transform:translateX(-120px)}}
+@keyframes hop{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-14px) rotate(7deg)}}
+@keyframes waddle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg) translateY(-3px)}}
+@keyframes roll{to{transform:rotate(-360deg)}}
+@keyframes sweep{0%{transform:translateX(-140px)}50%{transform:translateX(220px)}100%{transform:translateX(-140px)}}
+@media (prefers-reduced-motion: reduce){.mv,.mv *{animation-play-state:paused !important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; padding: 50px 22px 30px; display: flex; flex-direction: column; justify-content: space-between; background: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), #15120E; background-size: 4px 4px, auto; color: #F1E9D8; font-family: 'Source Serif 4', Georgia, serif">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1px; color: #B8AE9A"><span>MAR 10 NOV 2026</span><span>EDIZIONE DELLA SERA</span></div>
+<div style="border-top: 3px solid #F1E9D8; padding-top: 8px">
+<h1 style="margin: 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: 72px; line-height: 0.88; letter-spacing: -0.5px; text-transform: uppercase"><span style="color: #F0443A">Balle</span><br>credibili</h1>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid rgba(241,233,216,0.35); border-bottom: 1px solid rgba(241,233,216,0.35); padding: 6px 0"><span style="font-style: italic; font-size: 15px">Il quotidiano delle verità improbabili</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #B8AE9A">N. 1</span></div>
+
+<figure style="margin: 4px 0 0; display: flex; flex-direction: column; gap: 6px">
+<div style="position: relative; height: 172px; overflow: hidden; background: radial-gradient(circle at 50% 25%, #3A332A 0%, #1C1813 75%)">
+<div class="mv" aria-hidden="true" style="position: absolute; top: -20px; left: 0; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(241,233,216,0.16) 0%, rgba(241,233,216,0) 65%); animation: sweep 9s ease-in-out infinite"></div>
+<div class="mv" aria-hidden="true" style="position: absolute; left: 0; bottom: 10px; animation: crossR 8s linear -1s infinite"><div style="animation: hop 0.7s ease-in-out infinite; transform-origin: 50% 100%"><svg width="66" height="78" viewBox="0 0 78 92"><path d="M18 6h26a6 6 0 0 1 6 6v36c0 7 4 10 12 12 8 2 12 7 12 13v5a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6V12a6 6 0 0 1 6-6z" fill="#E9DFCB"></path><rect x="10" y="78" width="66" height="10" rx="5" fill="#BDB29C"></rect></svg></div></div>
+<div class="mv" aria-hidden="true" style="position: absolute; left: 0; bottom: 12px; animation: crossL 10s linear -4s infinite"><div style="animation: roll 1.8s linear infinite"><svg width="60" height="60" viewBox="0 0 70 70"><path d="M14 24Q22 4 42 8 62 12 64 34 66 58 44 64 18 68 10 48 6 36 14 24z" fill="#D9CCB2"></path><circle cx="28" cy="40" r="2.5" fill="#6E6453"></circle><circle cx="46" cy="28" r="2" fill="#6E6453"></circle><circle cx="42" cy="50" r="2.2" fill="#6E6453"></circle></svg></div></div>
+<div class="mv" aria-hidden="true" style="position: absolute; left: 0; bottom: 8px; animation: crossR 14s linear -9s infinite"><div style="animation: waddle 0.5s ease-in-out infinite"><svg width="150" height="69" viewBox="0 0 170 78"><path d="M44 42 L4 34 Q0 50 44 58z" fill="#CFC3AA"></path><rect x="44" y="56" width="12" height="16" rx="6" fill="#BDB29C"></rect><rect x="92" y="56" width="12" height="16" rx="6" fill="#BDB29C"></rect><rect x="34" y="28" width="84" height="34" rx="17" fill="#E9DFCB"></rect><path d="M104 30h18q6-12 16-6l22 8a9 9 0 0 1 0 18l-56 4z" fill="#E9DFCB"></path><circle cx="128" cy="25" r="3" fill="#15120E"></circle></svg></div></div>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: radial-gradient(rgba(21,18,14,0.55) 1.1px, transparent 1.3px); background-size: 5px 5px"></div>
+</div>
+<figcaption style="display: flex; justify-content: space-between; gap: 10px; font-size: 13px; font-style: italic; color: #B8AE9A"><span>Avvistati stanotte: sono tutti protagonisti delle frasi in gioco.</span><span style="flex-shrink: 0; font-family: 'IBM Plex Mono', monospace; font-style: normal; font-size: 10px">FOTO BC</span></figcaption>
+</figure>
+
+<h2 style="margin: 6px 0 0; font-family: 'Anton', sans-serif; font-weight: 400; font-size: 30px; line-height: 1; text-transform: uppercase">Stanotte qualcuno mentirà</h2>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<article style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1px; color: #F0443A">POP CULTURE</span><p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.3">Perché un giocattolo parlante finì nel mirino dei servizi segreti?</p></article>
+<article style="display: flex; flex-direction: column; gap: 4px; border-left: 1px solid rgba(241,233,216,0.25); padding-left: 16px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1px; color: #F0443A">POP CULTURE</span><p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.3">Lo stivale di gomma nel passato di un colosso dei telefoni.</p></article>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<a href="S-Setup.dc.html" style="display: flex; align-items: center; justify-content: center; height: 58px; text-decoration: none; background: #F0443A; color: #15120E; border-radius: 2px; font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 0.5px; text-transform: uppercase">Crea una partita</a>
+<a href="S-Setup.dc.html" style="display: flex; align-items: center; justify-content: center; height: 52px; text-decoration: none; color: #F1E9D8; border: 1.5px solid #F1E9D8; border-radius: 2px; font-family: 'Anton', sans-serif; font-size: 18px; letter-spacing: 0.5px; text-transform: uppercase">Entra con un codice</a>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

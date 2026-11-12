@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Il Quotidiano: nuova partita</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&amp;family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#111111}a:hover{color:#111111}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; padding: 50px 24px 30px; display: flex; flex-direction: column; justify-content: space-between; background: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), #FAF7F0; background-size: 4px 4px, auto; color: #111111; font-family: 'Source Serif 4', Georgia, serif">
+<div style="display: flex; flex-direction: column">
+<header style="border-top: 4px double #111111; border-bottom: 1px solid #111111; padding: 8px 0 7px; display: flex; justify-content: space-between; align-items: center"><span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 900; font-size: 20px">La Gazzetta delle Balle</span><span style="font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; color: #5C574E">ANNO I · N. 1</span></header>
+<h1 style="margin: 18px 0 2px; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 36px; line-height: 1">Nuova partita</h1>
+<p style="margin: 0 0 6px; font-style: italic; font-size: 17px; color: #5C574E">Componi l'edizione di stasera.</p>
+
+<section style="border-top: 1px solid #111111; padding: 12px 0; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2.5px">GIOCATORI</span>
+<div style="display: flex; align-items: center; justify-content: space-between">
+<button type="button" aria-label="Un giocatore in meno" onClick="{{minus}}" style="width: 48px; height: 48px; cursor: pointer; background: transparent; color: #111111; border: 1px solid #111111; border-radius: 50%; font-family: 'Playfair Display', serif; font-size: 24px">−</button>
+<div style="display: flex; flex-direction: column; align-items: center"><span aria-live="polite" style="font-family: 'Playfair Display', serif; font-weight: 900; font-size: 56px; line-height: 1">{{players}}</span><span style="font-size: 13px; font-style: italic; color: #5C574E">minimo 3, uno narra a turno</span></div>
+<button type="button" aria-label="Un giocatore in più" onClick="{{plus}}" style="width: 48px; height: 48px; cursor: pointer; background: transparent; color: #111111; border: 1px solid #111111; border-radius: 50%; font-family: 'Playfair Display', serif; font-size: 24px">+</button>
+</div>
+</section>
+
+<section style="border-top: 1px solid #111111; padding: 12px 0; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2.5px">GIRI DA NARRATORE</span>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid #111111">
+<sc-for list="{{laps}}" as="lap" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{lap.pressed}}" onClick="{{lap.pick}}" style="height: 44px; cursor: pointer; border: none; border-left: {{lap.sep}}; background: {{lap.bg}}; color: {{lap.fg}}; font-family: 'Playfair Display', serif; font-weight: 800; font-size: 19px">{{lap.n}}</button>
+</sc-for>
+</div>
+<span style="font-size: 14px; font-style: italic; color: #5C574E">{{roundsText}}</span>
+</section>
+
+<section style="border-top: 1px solid #111111; padding: 12px 0; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 1px"><span id="q-dark" style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 19px">Categoria Dark</span><span style="font-size: 14px; font-style: italic; color: #5C574E">Prende il posto del Jolly sul dado</span></div>
+<button type="button" role="switch" aria-checked="{{darkOn}}" aria-labelledby="q-dark" onClick="{{toggleDark}}" style="flex-shrink: 0; width: 56px; height: 32px; padding: 3px; cursor: pointer; border: 1px solid #111111; border-radius: 16px; background: {{darkTrack}}; display: flex; justify-content: {{darkJustify}}"><span style="width: 24px; height: 24px; border-radius: 50%; background: {{darkKnob}}; display: block"></span></button>
+</div>
+<sc-if value="{{darkOn}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 1px"><span id="q-ext" style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 17px">Anche i fatti estremi</span><span style="font-size: 14px; font-style: italic; color: #5C574E">Solo se tutti sono d'accordo</span></div>
+<button type="button" role="switch" aria-checked="{{extOn}}" aria-labelledby="q-ext" onClick="{{toggleExt}}" style="flex-shrink: 0; width: 56px; height: 32px; padding: 3px; cursor: pointer; border: 1px solid #111111; border-radius: 16px; background: {{extTrack}}; display: flex; justify-content: {{extJustify}}"><span style="width: 24px; height: 24px; border-radius: 50%; background: {{extKnob}}; display: block"></span></button>
+</div>
+</sc-if>
+</section>
+
+<section style="border-top: 1px solid #111111; padding: 12px 0 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2.5px">LE SEI FACCE DEL DADO</span>
+<div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{faces}}" as="f" hint-placeholder-count="6">
+<span style="height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid rgba(0,0,0,0.3); background: {{f.bg}}; color: {{f.fg}}; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 800; font-size: 11px; box-shadow: inset 0 0 0 3px rgba(255,255,255,0.25)">{{f.label}}</span>
+</sc-for>
+</div>
+</section>
+</div>
+<a href="Q-Dado.dc.html" style="display: flex; align-items: center; justify-content: center; height: 56px; text-decoration: none; background: #111111; color: #FAF7F0; border-radius: 2px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 2px">CREA LA STANZA</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { players: 5, laps: 2, dark: false, ext: false };
+}
+renderVals() {
+const s = this.state;
+const labels = ['History', 'Pop', 'Geo', 'Science', 'Food', s.dark ? 'Dark' : 'Jolly'];
+return {
+players: s.players,
+roundsText: 'Ognuno narra ' + (s.laps === 1 ? '1 volta' : s.laps + ' volte') + ': ' + (s.players * s.laps) + ' round in tutto.',
+minus: () => this.setState({ players: Math.max(3, s.players - 1) }),
+plus: () => this.setState({ players: Math.min(12, s.players + 1) }),
+laps: [1, 2, 3].map((n, i) => ({ n: n, pressed: s.laps === n ? 'true' : 'false', bg: s.laps === n ? '#111111' : 'transparent', fg: s.laps === n ? '#FAF7F0' : '#111111', sep: i === 0 ? 'none' : '1px solid #111111', pick: () => this.setState({ laps: n }) })),
+darkOn: s.dark, darkTrack: s.dark ? '#B3001B' : 'transparent', darkKnob: s.dark ? '#FAF7F0' : '#111111', darkJustify: s.dark ? 'flex-end' : 'flex-start',
+toggleDark: () => this.setState({ dark: !s.dark, ext: s.dark ? false : s.ext }),
+extOn: s.ext, extTrack: s.ext ? '#B3001B' : 'transparent', extKnob: s.ext ? '#FAF7F0' : '#111111', extJustify: s.ext ? 'flex-end' : 'flex-start',
+toggleExt: () => this.setState({ ext: !s.ext }),
+faces: labels.map((l, i) => ({ label: l, bg: i < 5 ? 'radial-gradient(circle at 30% 25%, #FFFFFF 0%, #F3EEE2 60%, #DCD3BF 100%)' : (s.dark ? '#B3001B' : '#111111'), fg: i < 5 ? '#111111' : '#FAF7F0' }))
+};
+}
+}
+</script>
+</body>
+</html>
