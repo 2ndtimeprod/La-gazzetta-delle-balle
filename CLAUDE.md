@@ -46,11 +46,12 @@ Formato di ogni fatto:
 
 ## Modello dati (bozza)
 - `rooms`: code, host_player_id, settings (giri, dark, estremi), phase, round_index, created_at.
-- `players`: id, room_code, name, score, seat_order, connected.
+- `players`: id (generato dal server), room_code, name, score, seat_order, connected. Il segreto del giocatore sta in `player_secrets` (mai leggibile): il client salva `{playerId, secret}` per stanza in `localStorage` e li passa a ogni RPC.
 - `rounds`: id, room_code, narrator_id, category, fact_id, phase, deadline_at.
 - `bluffs`: round_id, player_id, text (o due parti), normalized.
 - `votes`: round_id, voter_id, choice_id.
 - `facts`: i campi del JSON; nessuna policy di lettura per `anon`.
+- Tabelle segrete aggiunte: `round_options` (card mescolate, balle identiche unite), `round_points`, `app_config` (`fact_filter` = `all`|`verified`). `anon` legge solo `rooms`, `players`, `rounds`; il resto passa da `get_state` e dalle RPC (`supabase/migrations/0001..0005`). I contatori `bluff_count`/`vote_count` in `rounds` servono a far scattare Realtime.
 Fasi del round: `picking` → `writing` (60 s) → `reading` → `voting` → `reveal` → `explain` → `scores`.
 
 ## Regole sulle risposte
@@ -85,3 +86,5 @@ mockups/     sorgenti dei mockup
 ## Stato
 - 12/11/2026: nessun codice ancora. Pronti: archivio v12 (541 fatti, 260 verificati), facts.json, facts_sample.json, convertitore.
 - 12/11/2026 (sessione 0): repo preparato con la struttura sopra. Archivio xlsx in `data/`, mockup in `mockups/sorgenti` e `mockups/generatori`, handoff v5 in `docs/`. Aggiunto `.gitignore` (esclude `.env*`). Prossimo passo: fase 1 (Vite + React + TS, migration Supabase).
+- 12/11/2026 (fase 1): migration 0001-0005 (schema, RLS, helper privati, RPC lobby e round, get_state), testate con `npm run test:db` (pglite: sicurezza + partita simulata, tutti ok). Scheletro Vite + React + TS con `src/lib/{supabase,session,api,useRoomState}.ts` e pagina `DevTest`. Env: `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` (solo in `.env.local`/Vercel). Seed campione: `supabase/seed/facts_sample.sql` (generato da `tools/facts_to_sql.py`).
+- Da fare in fase 2: lobby vera (sostituisce DevTest), impostazioni, avvio. Non ancora gestiti: heartbeat `connected`, pulizia stanze vecchie, limiti anti-abuso.
