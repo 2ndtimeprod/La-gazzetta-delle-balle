@@ -67,6 +67,7 @@ const who = (s: Session) => ({ p_code: s.code, p_player: s.playerId, p_secret: s
 export const getState = (s: Session) => rpc<GameState>('get_state', who(s));
 export const startGame = (s: Session) => rpc<void>('start_game', who(s));
 export const heartbeat = (s: Session) => rpc<void>('heartbeat', who(s));
+export const skipNarrator = (s: Session) => rpc<void>('skip_narrator', who(s));
 export const leaveRoom = (s: Session) => rpc<void>('leave_room', who(s));
 export const updateSettings = (s: Session, p: Partial<Settings>) => rpc<void>('update_settings', { ...who(s), p_settings: p });
 export const spin = (s: Session) => rpc<{ face: string }>('spin', who(s));

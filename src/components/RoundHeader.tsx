@@ -11,7 +11,7 @@ export default function RoundHeader({ state }: Pick<RoundProps, 'state'>) {
       <div className="kicker-row">
         <span className={`kicker${mine ? '' : ' ghost'}`}>{mine ? 'Sei il narratore' : `Narra ${nameOf(state.players, r.narrator_id)}`}</span>
         {r.category && <span className="cat">{CATEGORIE[r.category] ?? r.category}</span>}
-        {narr && !narr.connected && <span className="tag off">narratore offline: avanza l'host</span>}
+        {narr && !narr.connected && <span className="tag off">narratore offline</span>}
       </div>
     </>
   );

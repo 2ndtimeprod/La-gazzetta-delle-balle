@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { pickCategory, spin } from '../../lib/api';
+import { pickCategory, skipNarrator, spin } from '../../lib/api';
 import { CATEGORIE, NORMALI, nameOf, roles, type RoundProps } from '../../lib/round';
 import { useAct } from '../../lib/useAct';
 import RoundHeader from '../../components/RoundHeader';
@@ -63,8 +63,26 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
           <Choices busy={busy} onPick={(c) => run(async () => { await pickCategory(session, c); onHold(false); })} />
         </section>
       )}
+      {roles(state).isHost && !isNarrator && r.phase === 'picking' && !r.jolly && (
+        <Skip name={nameOf(state.players, r.narrator_id)} busy={busy} onSkip={() => run(() => skipNarrator(session))} />
+      )}
       <Toast msg={spinErr || err} />
     </main>
+  );
+}
+
+// Solo il direttore: se il narratore non c'è o non gira, si passa al successivo (con conferma).
+function Skip({ name, busy, onSkip }: { name: string; busy: boolean; onSkip: () => void }) {
+  const [sure, setSure] = useState(false);
+  if (!sure) return <div className="actions"><button className="btn link" onClick={() => setSure(true)}>{name} non gira? Salta il turno</button></div>;
+  return (
+    <div className="actions">
+      <p className="muted" style={{ textAlign: 'center' }}>Salti il turno di {name}: il tamburo passa al prossimo narratore.</p>
+      <div className="choices">
+        <button className="btn small primary" disabled={busy} onClick={onSkip}>Salta il turno</button>
+        <button className="btn small" onClick={() => setSure(false)}>Aspetta</button>
+      </div>
+    </div>
   );
 }
 

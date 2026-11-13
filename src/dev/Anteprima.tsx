@@ -54,6 +54,7 @@ export default function Anteprima({ which }: { which: string }) {
   const p = { session: S, refresh: noop };
   switch (which) {
     case 'home': return <Home onSession={noop} />;
+    case 'tutorial': localStorage.removeItem('balle:tutorial-visto'); return <Home onSession={noop} />;
     case 'lobby': return <Lobby {...p} state={st.lobby} onLeft={noop} />;
     case 'scrive': return <Writing {...p} state={st.scrive} />;
     case 'narratore': return <Writing {...p} state={st.narratore} />;

@@ -12,6 +12,8 @@ import './theme/tokens.css';
 import './theme/base.css';
 import './theme/game.css';
 import './theme/drum.css';
+import './theme/tutorial.css';
+import Tutorial from './components/Tutorial';
 import Toast from './components/Toast';
 import Waiting from './components/Waiting';
 
@@ -20,7 +22,7 @@ const ANTEPRIMA = import.meta.env.DEV ? new URLSearchParams(location.search).get
 
 const DEAD = ['Stanza non trovata.', 'Sessione non valida.'];
 
-export default function App() {
+function Screens() {
   const [session, setSession] = useState<Session | null>(() => lastSession());
   const { state, error, refresh } = useRoomState(session);
   useHeartbeat(session, refresh);
@@ -41,4 +43,8 @@ export default function App() {
   }
   if (state.room.phase === 'finished') return <Finished session={session} state={state} onLeft={() => setSession(null)} />;
   return <Playing session={session} state={state} refresh={refresh} onLeft={() => setSession(null)} />;
+}
+
+export default function App() {
+  return <><Screens /><Tutorial /></>;
 }

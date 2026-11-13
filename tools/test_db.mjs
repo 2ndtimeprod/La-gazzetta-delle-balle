@@ -116,7 +116,7 @@ ok(s.players.reduce((t, p) => t + p.score, 0) === 2, 'punteggi totali coerenti (
 const mkRoom = async (names) => { const h = await rpc('create_room', names[0]); const ps = [h];
   for (const n of names.slice(1)) ps.push(await rpc('join_room', h.code, n)); return ps; };
 const hb = (ps, p) => rpc('heartbeat', ps[0].code, p.player_id, p.secret);
-const stale = (p) => db.exec(`insert into public.player_presence(player_id,last_seen) values ('${p.player_id}', now() - interval '2 minutes')
+const stale = (p) => db.exec(`insert into public.player_presence(player_id,last_seen) values ('${p.player_id}', now() - interval '5 minutes')
   on conflict (player_id) do update set last_seen = excluded.last_seen`);
 const gs = (ps, p) => rpc('get_state', ps[0].code, p.player_id, p.secret);
 const act = (ps, fn, p, ...x) => rpc(fn, ps[0].code, p.player_id, p.secret, ...x);
@@ -131,7 +131,10 @@ ok(await fails_with('unauthorized', 'heartbeat', C, a.player_id, b.secret), 'hea
   await stale(ps[0]); await hb(ps, ps[1]);
   const s = await gs(ps, ps[1]);
   ok(s.room.host_player_id === ps[1].player_id, 'presenza: host sparito, ruolo passato');
-  ok(s.round.idx === 1 && s.round.narrator_id === ps[1].player_id, 'presenza: narratore assente saltato');
+  ok(s.round.idx === 0, 'presenza: narratore assente NON saltato in automatico');
+  ok(await fails_with('not_host', 'skip_narrator', ps[0].code, ps[2].player_id, ps[2].secret), 'salta narratore: solo il direttore');
+  await act(ps, 'skip_narrator', ps[1]);
+  ok((await gs(ps, ps[1])).round.narrator_id === ps[1].player_id, 'salta narratore: il direttore passa al successivo');
   ok(s.players.find(p => p.id === ps[0].player_id).connected === false, 'presenza: giocatore segnato disconnesso');
   await hb(ps, ps[0]);
   ok((await gs(ps, ps[2])).players.find(p => p.id === ps[0].player_id).connected === true, 'presenza: rientro con battito');
