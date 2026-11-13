@@ -54,7 +54,7 @@ export default function Writing({ session, state, refresh }: RoundProps) {
           {parts.map((v, i) => (
             <div className="field" key={i}>
               <label className="label" htmlFor={`b${i}`}>{holes > 1 ? `Buco ${i + 1}` : 'La tua balla'}</label>
-              <input id={`b${i}`} className="input" maxLength={80} value={v} autoComplete="off" autoFocus={i === 0 && !sent}
+              <input id={`b${i}`} className="input" maxLength={80} value={v} autoComplete="off" autoCapitalize="none" autoFocus={i === 0 && !sent}
                 placeholder="Deve sembrare vera" enterKeyHint={i === holes - 1 ? 'send' : 'next'}
                 onChange={(e) => setParts(parts.map((x, j) => (j === i ? e.target.value : x)))} />
             </div>

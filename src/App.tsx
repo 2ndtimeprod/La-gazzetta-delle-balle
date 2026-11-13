@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { configured } from './lib/supabase';
 import { clearSession, lastSession, type Session } from './lib/session';
 import { useRoomState } from './lib/useRoomState';
@@ -13,6 +13,9 @@ import './theme/base.css';
 import './theme/game.css';
 import './theme/drum.css';
 import './theme/tutorial.css';
+import './theme/intro.css';
+import Intro from './components/Intro';
+import EdizioneStraordinaria from './components/EdizioneStraordinaria';
 import Tutorial from './components/Tutorial';
 import Toast from './components/Toast';
 import Waiting from './components/Waiting';
@@ -32,6 +35,16 @@ function Screens() {
     if (session && error && DEAD.includes(error)) { clearSession(session.code); setSession(null); }
   }, [session, error]);
 
+  // Inizio partita: da 'lobby' a 'playing' si vede l'edizione straordinaria (non al rientro a partita in corso).
+  const phase = state?.room.phase ?? null;
+  const prev = useRef<string | null>(null);
+  const [edi, setEdi] = useState(false);
+  useEffect(() => {
+    if (prev.current === 'lobby' && phase === 'playing') setEdi(true);
+    prev.current = phase;
+  }, [phase]);
+  const endEdi = useCallback(() => setEdi(false), []);
+
   if (ANTEPRIMA) return <Anteprima which={ANTEPRIMA} />;
   if (!configured) {
     return <main className="page"><Toast msg="Mancano VITE_SUPABASE_URL e VITE_SUPABASE_PUBLISHABLE_KEY." /></main>;
@@ -42,9 +55,9 @@ function Screens() {
     return <Lobby session={session} state={state} refresh={refresh} onLeft={() => setSession(null)} />;
   }
   if (state.room.phase === 'finished') return <Finished session={session} state={state} onLeft={() => setSession(null)} />;
-  return <Playing session={session} state={state} refresh={refresh} onLeft={() => setSession(null)} />;
+  return <><Playing session={session} state={state} refresh={refresh} onLeft={() => setSession(null)} />{edi && <EdizioneStraordinaria state={state} onDone={endEdi} />}</>;
 }
 
 export default function App() {
-  return <><Screens /><Tutorial /></>;
+  return <><Screens /><Intro /><Tutorial /></>;
 }

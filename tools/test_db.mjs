@@ -24,7 +24,7 @@ const fails_with = async (msg, fn, ...args) => { try { await rpc(fn, ...args); r
   catch (e) { return e.message.includes(msg); } };
 
 // --- Sicurezza: anon non legge i dati segreti
-for (const t of ['facts', 'bluffs', 'votes', 'round_options', 'player_secrets', 'app_config', 'round_points', 'player_presence']) {
+for (const t of ['facts', 'bluffs', 'votes', 'round_options', 'player_secrets', 'app_config', 'round_points', 'player_presence', 'round_pending']) {
   let denied = false;
   try { await as('anon', `select * from public.${t}`); } catch { denied = true; }
   ok(denied, `anon non può leggere ${t}`);
@@ -59,7 +59,14 @@ let narr = narrIs(s); const others = Object.values(P).filter(p => p !== narr);
 ok(s.round.phase === 'picking' && !s.round.frase, 'picking: nessuna frase visibile');
 ok(await fails_with('not_narrator', 'spin', C, others[0].player_id, others[0].secret), 'solo il narratore gira');
 let sp = await call('spin', narr);
-if (sp.face === 'Jolly') { await call('pick_category', narr, 'Science'); }
+if (sp.face !== 'Jolly') {
+  const so0 = await st(others[0]);
+  ok(so0.round.phase === 'picking' && !so0.round.frase && !so0.round.category, 'a tamburo non fermo gli altri non vedono né fatto né categoria');
+  ok((await call('spin', narr)).face === sp.face, 'spin ripetuto restituisce la stessa faccia');
+  const nh = others.find(p => p.player_id !== host.player_id);
+  ok(await fails_with('not_narrator', 'start_writing', C, nh.player_id, nh.secret), 'start_writing: solo narratore o direttore');
+}
+if (sp.face === 'Jolly') { await call('pick_category', narr, 'Science'); } else { await call('start_writing', narr); }
 s = await st(narr);
 ok(s.round.phase === 'writing' && s.round.truth?.length >= 1, 'narratore vede la risposta vera durante la scrittura');
 const so = await st(others[0]);
@@ -101,7 +108,7 @@ ok(s.round.idx === 1 && s.round.phase === 'picking' && s.round.narrator_id !== n
 for (let i = 1; i < 3; i++) {
   s = await st(host); narr = narrIs(s);
   const oth = Object.values(P).filter(p => p !== narr);
-  sp = await call('spin', narr); if (sp.face === 'Jolly') await call('pick_category', narr, 'History');
+  sp = await call('spin', narr); if (sp.face === 'Jolly') await call('pick_category', narr, 'History'); else { await call('start_writing', narr); }
   s = await st(narr);
   await call('close_writing', narr); // il narratore chiude subito: nessuna balla -> reveal
   s = await st(host);
@@ -140,7 +147,7 @@ ok(await fails_with('unauthorized', 'heartbeat', C, a.player_id, b.secret), 'hea
   ok((await gs(ps, ps[2])).players.find(p => p.id === ps[0].player_id).connected === true, 'presenza: rientro con battito');
 
   // Scrittura: un presente sparisce, gli altri rispondono e si passa avanti
-  const sp = await act(ps, 'spin', ps[1]); if (sp.face === 'Jolly') await act(ps, 'pick_category', ps[1], 'Science');
+  const sp = await act(ps, 'spin', ps[1]); if (sp.face === 'Jolly') await act(ps, 'pick_category', ps[1], 'Science'); else { await act(ps, 'start_writing', ps[1]); }
   const holes = (await gs(ps, ps[1])).round.holes;
   await stale(ps[3]); await hb(ps, ps[2]);
   const mk = (t) => Array.from({ length: holes }, (_, i) => `${t} ${i}`);
@@ -184,7 +191,7 @@ await db.exec(`delete from public.rooms where code in (${fill})`);
   await act(ps, 'update_settings', ps[0], JSON.stringify({ timer: false }));
   ok((await gs(ps, ps[1])).room.settings.timer === false, 'timer: spento in lobby');
   await act(ps, 'start_game', ps[0]);
-  const sp = await act(ps, 'spin', ps[0]); if (sp.face === 'Jolly') await act(ps, 'pick_category', ps[0], 'Science');
+  const sp = await act(ps, 'spin', ps[0]); if (sp.face === 'Jolly') await act(ps, 'pick_category', ps[0], 'Science'); else { await act(ps, 'start_writing', ps[0]); }
   ok((await gs(ps, ps[1])).round.deadline_at === null, 'timer spento: nessuna scadenza');
   ok(await fails_with('too_early', 'close_writing', ps[0].code, ps[1].player_id, ps[1].secret), 'timer spento: un giocatore non chiude la scrittura');
   ok(await fails_with('game_started', 'update_settings', ps[0].code, ps[0].player_id, ps[0].secret, JSON.stringify({ giri: 2 })), 'in partita: i giri non si cambiano');
@@ -204,7 +211,7 @@ await db.exec(`delete from public.rooms where code in (${fill})`);
   const s2 = await gs(ps, ps[0]); // scores
   await act(ps, 'advance', ps[0]);
   const s3 = await gs(ps, ps[1]);
-  const sp2 = await act(ps, 'spin', ps[1]); if (sp2.face === 'Jolly') await act(ps, 'pick_category', ps[1], 'Science');
+  const sp2 = await act(ps, 'spin', ps[1]); if (sp2.face === 'Jolly') await act(ps, 'pick_category', ps[1], 'Science'); else { await act(ps, 'start_writing', ps[1]); }
   ok(s2.round.phase === 'scores' && (await gs(ps, ps[2])).round.deadline_at !== null, 'timer riacceso: il round dopo ha la scadenza');
 }
 

@@ -71,6 +71,7 @@ export const skipNarrator = (s: Session) => rpc<void>('skip_narrator', who(s));
 export const leaveRoom = (s: Session) => rpc<void>('leave_room', who(s));
 export const updateSettings = (s: Session, p: Partial<Settings>) => rpc<void>('update_settings', { ...who(s), p_settings: p });
 export const spin = (s: Session) => rpc<{ face: string }>('spin', who(s));
+export const startWriting = (s: Session) => rpc<void>('start_writing', who(s));
 export const pickCategory = (s: Session, c: string) => rpc<void>('pick_category', { ...who(s), p_category: c });
 export const submitBluff = (s: Session, parts: string[]) => rpc<void>('submit_bluff', { ...who(s), p_parts: parts });
 export const closeWriting = (s: Session) => rpc<void>('close_writing', who(s));
