@@ -51,13 +51,13 @@ Formato di ogni fatto:
 - `bluffs`: round_id, player_id, text (o due parti), normalized.
 - `votes`: round_id, voter_id, choice_id.
 - `facts`: i campi del JSON; nessuna policy di lettura per `anon`.
-- Tabelle segrete aggiunte: `round_options` (card mescolate, balle identiche unite), `round_points`, `app_config` (`fact_filter` = `all`|`verified`). `anon` legge solo `rooms`, `players`, `rounds`; il resto passa da `get_state` e dalle RPC (`supabase/migrations/0001..0010`). I contatori `bluff_count`/`vote_count` in `rounds` servono a far scattare Realtime.
+- Tabelle segrete aggiunte: `round_options` (card mescolate, balle identiche unite), `round_points`, `app_config` (`fact_filter` = `all`|`verified`). `anon` legge solo `rooms`, `players`, `rounds`; il resto passa da `get_state` e dalle RPC (`supabase/migrations/0001..0011`). I contatori `bluff_count`/`vote_count` in `rounds` servono a far scattare Realtime.
 Fasi del round: `picking` → `writing` (60 s) → `reading` → `voting` → `reveal` → `explain` → `scores`.
 
 ## Regole sulle risposte
 - Normalizza: minuscole, senza accenti, spazi compressi, punteggiatura tolta.
-- Se una balla è uguale o molto vicina alla risposta vera (distanza di Levenshtein piccola), rifiutala e chiedi di riscriverla.
-- Balle identiche tra giocatori si uniscono in una sola card; i punti vanno a tutti gli autori.
+- Confronto (`private.parts_close`, migration 0011): tolti articoli, preposizioni ed elisioni, due risposte sono "vicine" se uguali, con le stesse parole in altro ordine, o con Levenshtein ≤ len/5. Una balla vicina alla vera è rifiutata (`too_close`).
+- Una balla vicina a quella di un altro giocatore è rifiutata (`duplicate`): chi arriva dopo la cambia. Niente più unione di card, così il numero di card non tradisce i doppioni.
 - Chi non scrive in tempo non ha una card.
 
 ## Look
@@ -96,3 +96,4 @@ mockups/     sorgenti dei mockup
 - Limite noto: nessun rate limit per IP (servirebbe una Edge Function); il tetto di 300 stanze e la pulizia sono solo un freno.
 - 13/11/2026 (home prima pagina): sostituita la versione con titolo ondulato e disegni (PR #6). Testata dritta in due righe (`Masthead`: filetto doppio, trama a puntini, "Balle" rosso, motto con rombi), box "Ultim'ora" più veloce (80 s) con 10 curiosità in `src/data/ultimora.ts`, modulo a tagliando tratteggiato con timbro N° 0317, tasto primario con bordo inferiore. Quelle 10 curiosità sono tolte dal gioco: `data/facts.json`, `facts_sample.json`, seed, lista `ESCLUDI` in `tools/xlsx_to_json.py` (vale ai prossimi import dall'Excel) e migration `0009_ultimora_facts.sql` (da eseguire a mano). Mockup in Claude Design (canvas "mockup nuova estetica"); schermate interne (Lobby, Scrivi, Vota, Classifica) non ancora riallineate ai mockup.
 - 13/11/2026 (tamburo sync + animazioni): migration `0010_reveal_after_drum.sql` (da eseguire a mano). `spin` salva categoria e fatto in `round_pending` (segreta, idempotente se il narratore ricarica) e la fase resta `picking`; a tamburo fermo il client del narratore chiama `start_writing` (anche il direttore può) che apre la scrittura e fa partire i 60 s: la frase esce a tutti insieme (auto dopo 1,5 s o tasto "Pesca la frase"). Il Jolly non cambia (`pick_category` apre subito). Tutorial con parti chiave evidenziate (`.hl`). Campo balla con `autoCapitalize="none"`. Quotidiano: `--f-num` = Source Serif 4 corsivo 700 (`--num-w`). `Intro.tsx`: titolo battuto a macchina al centro che vola sulla testata della home (una volta per caricamento, salta con `prefers-reduced-motion`; il tutorial al primo avvio aspetta la fine); `EdizioneStraordinaria.tsx`: overlay all'avvio partita (lobby→playing).
+- 13/11/2026 (balle simili): migration `0011_similar_bluffs.sql` (da eseguire a mano, dopo la 0010). `parts_close` ignora articoli/ordine/refusi ("una chewing gum" = "il chewing gum"); `submit_bluff` rifiuta anche i doppioni tra giocatori (`duplicate`). Tutorial e `test:db` aggiornati. Idea scartata: finte risposte dell'archivio come esche.

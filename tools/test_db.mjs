@@ -52,6 +52,17 @@ const P = { host, a, b };
 const st = async (p) => rpc('get_state', C, p.player_id, p.secret);
 const call = (fn, p, ...x) => rpc(fn, C, p.player_id, p.secret, ...x);
 
+// --- Confronto tra risposte (articoli, ordine, elisioni, refusi)
+const close = async (a, b) => (await db.query(`select private.parts_close($1::text[], $2::text[]) as r`, [a, b])).rows[0].r;
+ok(await close(['una chewing gum'], ['il chewing gum']), 'articolo diverso: troppo simile');
+ok(await close(['chewing-gum'], ['il chewing gum']), 'senza articolo e col trattino: troppo simile');
+ok(await close(['gum chewing'], ['il chewing gum']), 'parole in altro ordine: troppo simile');
+ok(await close(["l'orso"], ['un orso']), 'elisione (l\'orso) = un orso');
+ok(await close(['chewin gum'], ['chewing gum']), 'refuso: troppo simile');
+ok(!(await close(['gomma da masticare'], ['il chewing gum'])), 'sinonimo diverso: accettato');
+ok(!(await close(['Parigi'], ['Londra'])), 'risposte diverse: accettate');
+ok(!(await close(['forma', 'altro'], ['forma', 'ronzio'])), 'due buchi: una sola parte uguale non basta');
+
 // --- Round 0
 let s = await st(host);
 const narrIs = (s0) => Object.values(P).find(p => p.player_id === s0.round.narrator_id);
@@ -78,15 +89,16 @@ const mk = (t) => Array.from({ length: holes }, (_, i) => `${t} ${i}`);
 await call('submit_bluff', others[0], mk('Zebra'));
 await call('submit_bluff', others[0], mk('Zebra')); // sostituzione
 ok((await st(host)).round.bluff_count === 1, 'una balla contata');
-await call('submit_bluff', others[1], mk('zebra')); // identica (normalizzata): si unisce
+ok(await fails_with('duplicate', 'submit_bluff', C, others[1].player_id, others[1].secret, mk('la zebra')), 'balla uguale a quella di un altro (senza articolo) rifiutata');
+await call('submit_bluff', others[1], mk('cobra'));
 s = await st(narr);
 ok(s.round.phase === 'reading', 'tutti hanno scritto: si passa a reading');
-ok(s.round.options.length === 2, 'balle identiche unite: 2 card (vera + 1)');
+ok(s.round.options.length === 3, 'una card per giocatore: vera + 2 balle, nessuna unione');
 ok(!JSON.stringify(s.round.options).includes('is_true'), 'le card non dicono quale è vera');
 await call('advance', narr); // voting
 s = await st(others[0]);
 const trueText = (await db.query(`select id from public.round_options where is_true`)).rows[0].id;
-const bluffOpt = (await db.query(`select id from public.round_options where not is_true`)).rows[0].id;
+const bluffOpt = (await db.query(`select id from public.round_options where not is_true and $1 = any(author_ids)`, [others[0].player_id])).rows[0].id;
 ok(await fails_with('own_bluff', 'cast_vote', C, others[0].player_id, others[0].secret, bluffOpt), 'non si vota la propria balla');
 ok(s.round.options.find(o => o.id === Number(bluffOpt)).mine === true, 'la card propria è marcata mine');
 await call('cast_vote', others[0], Number(trueText));
