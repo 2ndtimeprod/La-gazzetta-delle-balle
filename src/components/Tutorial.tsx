@@ -36,7 +36,7 @@ const SLIDES: Slide[] = [
   },
   {
     kicker: '4 · Punti', title: 'Si vince in due modi',
-    body: <><u className="hl"><b>+1</b> se voti la risposta vera</u>. <u className="hl"><b>+1</b> per ogni giocatore che vota la tua balla</u>. Se due scrivono la stessa balla, <u className="hl">diventa una sola card</u> e i punti vanno a entrambi.</>,
+    body: <><u className="hl"><b>+1</b> se voti la risposta vera</u>. <u className="hl"><b>+1</b> per ogni giocatore che vota la tua balla</u>. Due balle uguali non sono ammesse: <u className="hl">chi arriva dopo la deve cambiare</u>.</>,
     art: <div className="tu-art tu-points"><span>+1</span><span>+1</span><span>+1</span></div>,
   },
   {

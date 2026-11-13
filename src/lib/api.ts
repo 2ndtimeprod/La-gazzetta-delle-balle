@@ -33,6 +33,7 @@ const MESSAGES: Record<string, string> = {
   not_narrator: 'Solo il narratore può farlo.',
   bad_phase: 'Azione non possibile in questa fase.',
   too_close: 'Troppo simile alla risposta vera: riscrivila.',
+  duplicate: 'Un altro giocatore ha già scritto una risposta uguale: scrivine una diversa.',
   bad_text: 'Testo non valido (1-80 caratteri).',
   bad_parts: 'Compila tutti i campi.',
   already_voted: 'Hai già votato.',
