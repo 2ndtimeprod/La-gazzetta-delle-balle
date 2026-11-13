@@ -28,10 +28,10 @@ export default function Lobby({ session, state, onLeft, refresh }: Props) {
     } catch { /* annullato */ }
   };
 
-  const Toggle = ({ k, title, desc }: { k: 'dark' | 'estremi' | 'timer'; title: string; desc: string }) => (
+  const Toggle = ({ k, title, desc }: { k: 'dark' | 'estremi' | 'timer' | 'dibattito'; title: string; desc: string }) => (
     <label className="switch-row">
       <span><b>{title}</b><small>{desc}</small></span>
-      <input type="checkbox" className="switch" checked={k === 'timer' ? st.timer !== false : !!st[k]} disabled={!isHost}
+      <input type="checkbox" className="switch" checked={k === 'timer' ? st.timer !== false : k === 'dibattito' ? st.dibattito !== false : !!st[k]} disabled={!isHost}
         onChange={(e) => set({ [k]: e.target.checked })} />
     </label>
   );
@@ -65,6 +65,7 @@ export default function Lobby({ session, state, onLeft, refresh }: Props) {
           {[1, 2, 3].map((g) => <button key={g} className={st.giri === g ? 'on' : ''} disabled={!isHost} onClick={() => set({ giri: g })}>{g}</button>)}
         </div>
         <Toggle k="timer" title="Cronometro" desc="60 secondi per scrivere la balla" />
+        <Toggle k="dibattito" title="Dibattito" desc="Un minuto di discussione, una volta a testa per partita" />
         <Toggle k="dark" title="Dark" desc="Notizie scorrette: la settima faccia del tamburo" />
         <Toggle k="estremi" title="Estremi" desc="In arrivo" />
       </section>

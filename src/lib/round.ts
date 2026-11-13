@@ -19,6 +19,12 @@ export function roles(state: GameState) {
   return { me, isNarrator, isHost, canAdvance: isNarrator || isHost };
 }
 
+// Un dibattito è in corso (orologio del server).
+export const debateLive = (state: GameState) => {
+  const u = state.round?.debate_until;
+  return !!u && Date.parse(u) > Date.parse(state.now);
+};
+
 export const timerOn = (state: GameState) => state.room.settings.timer !== false;
 
 // Giocatori che devono scrivere/votare: connessi e non narratore.

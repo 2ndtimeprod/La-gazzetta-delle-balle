@@ -94,6 +94,15 @@ await call('submit_bluff', others[1], mk('cobra'));
 s = await st(narr);
 ok(s.round.phase === 'reading', 'tutti hanno scritto: si passa a reading');
 ok(s.round.options.length === 3, 'una card per giocatore: vera + 2 balle, nessuna unione');
+// --- Dibattito
+ok(await fails_with('debate_narrator', 'start_debate', C, narr.player_id, narr.secret), 'il narratore non lancia il dibattito');
+await call('start_debate', others[0]);
+s = await st(narr);
+ok(s.round.debate_by === others[0].player_id && new Date(s.round.debate_until) > new Date(s.now), 'dibattito avviato: autore e scadenza visibili a tutti');
+ok(s.players.find((x) => x.id === others[0].player_id).debate_used === true, 'dibattito segnato come usato');
+ok(await fails_with('debate_running', 'start_debate', C, others[1].player_id, others[1].secret), 'un solo dibattito alla volta');
+await db.query(`update public.rounds set debate_until = now() - interval '1 second'`);
+ok(await fails_with('debate_used', 'start_debate', C, others[0].player_id, others[0].secret), 'un dibattito a testa per partita');
 ok(!JSON.stringify(s.round.options).includes('is_true'), 'le card non dicono quale è vera');
 await call('advance', narr); // voting
 s = await st(others[0]);

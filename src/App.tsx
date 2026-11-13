@@ -14,6 +14,7 @@ import './theme/game.css';
 import './theme/drum.css';
 import './theme/tutorial.css';
 import './theme/intro.css';
+import './theme/debate.css';
 import Intro from './components/Intro';
 import EdizioneStraordinaria from './components/EdizioneStraordinaria';
 import Tutorial from './components/Tutorial';
