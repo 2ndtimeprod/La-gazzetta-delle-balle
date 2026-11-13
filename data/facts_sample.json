@@ -20,26 +20,6 @@
   "stato": "Verificato"
  },
  {
-  "id": "SCI-003",
-  "categoria": "Science",
-  "frase": "Il terremoto del 2011 in Giappone ha ____.",
-  "risposte": [
-   "accorciato la durata del giorno"
-  ],
-  "spiegazione": "Di circa 1,8 microsecondi: il sisma ha spostato massa verso il centro della Terra, che così ruota un filo più veloce.",
-  "stato": "Verificato"
- },
- {
-  "id": "SCI-004",
-  "categoria": "Science",
-  "frase": "Tutto l'oro mai estratto starebbe in ____.",
-  "risposte": [
-   "un cubo di circa 22 metri di lato"
-  ],
-  "spiegazione": "L'oro è densissimo: tutto quello estratto nella storia occupa pochissimo spazio.",
-  "stato": "Verificato"
- },
- {
   "id": "SCI-005",
   "categoria": "Science",
   "frase": "L'elio fu scoperto prima ____ che sulla Terra.",
@@ -107,16 +87,6 @@
    "ballarono senza riuscire a fermarsi"
   ],
   "spiegazione": "Secondo cronache scritte più tardi, alcuni morirono di sfinimento, ma il numero è incerto. Ancora oggi non si sa cosa causò questa «epidemia di ballo».",
-  "stato": "Verificato"
- },
- {
-  "id": "HIS-002",
-  "categoria": "History",
-  "frase": "Nel Medioevo in Francia ____ fu processato per omicidio e impiccato.",
-  "risposte": [
-   "un maiale"
-  ],
-  "spiegazione": "Successe a Falaise, in Normandia, nel 1386: l'animale aveva ucciso un bambino. Fu giustiziato in piazza vestito da uomo. I processi agli animali, all'epoca, erano una cosa seria.",
   "stato": "Verificato"
  },
  {
@@ -320,16 +290,6 @@
   ],
   "spiegazione": "Gli islandesi sono pochi e molti sono imparentati: l'app controlla un archivio genealogico nazionale.",
   "stato": "Non verificato (da memoria)"
- },
- {
-  "id": "POP-003",
-  "categoria": "Pop culture",
-  "frase": "La prima webcam della storia inquadrava ____.",
-  "risposte": [
-   "una macchinetta del caffè"
-  ],
-  "spiegazione": "All'università di Cambridge i ricercatori volevano sapere se la caraffa era piena prima di alzarsi.",
-  "stato": "Verificato"
  },
  {
   "id": "POP-004",

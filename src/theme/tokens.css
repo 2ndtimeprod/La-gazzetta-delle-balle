@@ -4,7 +4,8 @@
   --ink: #111111; --muted: #5C574E; --rule: #111111; --rule-soft: rgba(17,17,17,.16);
   --accent: #B3001B; --accent-ink: #FFFFFF; --hi: #111111; --hi-ink: #FAF7F0;
   --true: #1A6B35; --true-soft: rgba(26,107,53,.09); --gold: #9A6F08;
-  --primary: #111111; --primary-ink: #FAF7F0; --primary-press: #000;
+  --primary: #111111; --primary-ink: #FAF7F0; --primary-press: #000; --primary-edge: #000;
+  --tx: rgba(17,17,17,.1); --tsh: rgba(17,17,17,.14);
   --f-mast: 'Playfair Display', Georgia, serif;
   --f-head: 'Playfair Display', Georgia, serif; --head-w: 900; --head-case: none; --head-track: -.6px; --head-size: 40px;
   --f-body: 'Source Serif 4', Georgia, serif;
@@ -28,7 +29,8 @@
   --ink: #F1E9D8; --muted: #B8AE9A; --rule: #F1E9D8; --rule-soft: rgba(241,233,216,.2);
   --accent: #F0443A; --accent-ink: #15120E; --hi: #F1E9D8; --hi-ink: #15120E;
   --true: #8FD6A0; --true-soft: rgba(143,214,160,.1); --gold: #F2C230;
-  --primary: #F0443A; --primary-ink: #15120E; --primary-press: #D8352C;
+  --primary: #F0443A; --primary-ink: #15120E; --primary-press: #D8352C; --primary-edge: #8E1E18;
+  --tx: rgba(241,233,216,.09); --tsh: rgba(0,0,0,.65);
   --f-head: 'Anton', Impact, sans-serif; --head-w: 400; --head-case: uppercase; --head-track: .3px; --head-size: 44px;
   --f-meta: 'IBM Plex Mono', ui-monospace, monospace; --meta-w: 500; --meta-track: 1.2px;
   --f-btn: 'Anton', Impact, sans-serif; --btn-w: 400; --btn-size: 21px; --btn-track: .6px;

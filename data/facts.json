@@ -20,26 +20,6 @@
   "stato": "Verificato"
  },
  {
-  "id": "SCI-003",
-  "categoria": "Science",
-  "frase": "Il terremoto del 2011 in Giappone ha ____.",
-  "risposte": [
-   "accorciato la durata del giorno"
-  ],
-  "spiegazione": "Di circa 1,8 microsecondi: il sisma ha spostato massa verso il centro della Terra, che così ruota un filo più veloce.",
-  "stato": "Verificato"
- },
- {
-  "id": "SCI-004",
-  "categoria": "Science",
-  "frase": "Tutto l'oro mai estratto starebbe in ____.",
-  "risposte": [
-   "un cubo di circa 22 metri di lato"
-  ],
-  "spiegazione": "L'oro è densissimo: tutto quello estratto nella storia occupa pochissimo spazio.",
-  "stato": "Verificato"
- },
- {
   "id": "SCI-005",
   "categoria": "Science",
   "frase": "L'elio fu scoperto prima ____ che sulla Terra.",
@@ -692,16 +672,6 @@
   "stato": "Verificato"
  },
  {
-  "id": "FOO-026",
-  "categoria": "Food & Drink",
-  "frase": "Nell'Ottocento uno stato americano impose per legge di ____.",
-  "risposte": [
-   "colorare di rosa la margarina"
-  ],
-  "spiegazione": "Era il New Hampshire, su pressione dei produttori di burro: rosa, nessuno l'avrebbe comprata.",
-  "stato": "Verificato"
- },
- {
   "id": "FOO-027",
   "categoria": "Food & Drink",
   "frase": "Un'antica legge romana vietava di servire ai banchetti qualunque uccello tranne ____.",
@@ -861,16 +831,6 @@
    "ballarono senza riuscire a fermarsi"
   ],
   "spiegazione": "Secondo cronache scritte più tardi, alcuni morirono di sfinimento, ma il numero è incerto. Ancora oggi non si sa cosa causò questa «epidemia di ballo».",
-  "stato": "Verificato"
- },
- {
-  "id": "HIS-002",
-  "categoria": "History",
-  "frase": "Nel Medioevo in Francia ____ fu processato per omicidio e impiccato.",
-  "risposte": [
-   "un maiale"
-  ],
-  "spiegazione": "Successe a Falaise, in Normandia, nel 1386: l'animale aveva ucciso un bambino. Fu giustiziato in piazza vestito da uomo. I processi agli animali, all'epoca, erano una cosa seria.",
   "stato": "Verificato"
  },
  {
@@ -1073,16 +1033,6 @@
    "un'operazione che tagliava il cervello"
   ],
   "spiegazione": "Era il portoghese Egas Moniz, premiato per la «leucotomia», poi chiamata lobotomia. Fu praticata su decine di migliaia di pazienti prima di essere abbandonata.",
-  "stato": "Verificato"
- },
- {
-  "id": "HIS-015",
-  "categoria": "History",
-  "frase": "Nel 1923 un fantino vinse una corsa, ma ____.",
-  "risposte": [
-   "era già morto d'infarto in sella"
-  ],
-  "spiegazione": "Si chiamava Frank Hayes e successe a Belmont Park, vicino a New York. Il cavallo, dato 20 a 1, vinse di una testa. Forse il cuore cedette per la dieta drastica fatta per rientrare nel peso.",
   "stato": "Verificato"
  },
  {
@@ -1787,16 +1737,6 @@
   "stato": "Non verificato (da memoria)"
  },
  {
-  "id": "FOO-057",
-  "categoria": "Food & Drink",
-  "frase": "Le banane sono leggermente ____.",
-  "risposte": [
-   "radioattive"
-  ],
-  "spiegazione": "Contengono potassio, e una piccola parte del potassio è naturalmente radioattiva. È del tutto innocuo.",
-  "stato": "Verificato"
- },
- {
   "id": "FOO-058",
   "categoria": "Food & Drink",
   "frase": "Per la botanica la fragola non è ____, mentre ____ sì.",
@@ -1977,16 +1917,6 @@
   ],
   "spiegazione": "Lo fa ogni pochi giorni: l'acido è abbastanza forte da corrodere i tessuti.",
   "stato": "Non verificato (da memoria)"
- },
- {
-  "id": "POP-003",
-  "categoria": "Pop culture",
-  "frase": "La prima webcam della storia inquadrava ____.",
-  "risposte": [
-   "una macchinetta del caffè"
-  ],
-  "spiegazione": "All'università di Cambridge i ricercatori volevano sapere se la caraffa era piena prima di alzarsi.",
-  "stato": "Verificato"
  },
  {
   "id": "POP-004",
@@ -3558,16 +3488,6 @@
   "stato": "Non verificato (da memoria)"
  },
  {
-  "id": "SCI-080",
-  "categoria": "Science",
-  "frase": "Da quando è stato scoperto, Plutone ____.",
-  "risposte": [
-   "non ha ancora completato un'orbita intorno al Sole"
-  ],
-  "spiegazione": "Fu scoperto nel 1930 e per fare un giro attorno al Sole impiega circa 248 anni: completerà il primo giro dalla scoperta nel 2178.",
-  "stato": "Verificato"
- },
- {
   "id": "SCI-081",
   "categoria": "Science",
   "frase": "Nello spazio una fiamma diventa ____.",
@@ -4097,16 +4017,6 @@
   ],
   "spiegazione": "Caddero da un aereo in avaria. Per una delle due funzionò solo una sicura su quattro.",
   "stato": "Non verificato (da memoria)"
- },
- {
-  "id": "POP-029",
-  "categoria": "Pop culture",
-  "frase": "Nel 1970 Nixon nominò ____ agente federale onorario antidroga.",
-  "risposte": [
-   "Elvis Presley"
-  ],
-  "spiegazione": "Elvis si presentò alla Casa Bianca senza appuntamento per chiedere il distintivo.",
-  "stato": "Verificato"
  },
  {
   "id": "HIS-105",
@@ -4836,16 +4746,6 @@
    "una fidanzata di James Bond"
   ],
   "spiegazione": "È Vesper Lynd, in \"Casino Royale\" (1953). Gin, vodka e Kina Lillet, un aperitivo che oggi non si produce più.",
-  "stato": "Verificato"
- },
- {
-  "id": "FOO-090",
-  "categoria": "Food & Drink",
-  "frase": "Le ceneri di Renato Bialetti furono sepolte ____.",
-  "risposte": [
-   "dentro una moka"
-  ],
-  "spiegazione": "Fu lui a rendere famosa nel mondo la caffettiera inventata dal padre. L'omino coi baffi del marchio è la sua caricatura.",
   "stato": "Verificato"
  },
  {

@@ -15,19 +15,10 @@ export default function Masthead({ meta, big }: { meta?: string; big?: boolean }
       </div>
       <div className="mast-bar">
         {big
-          ? (
-            <svg className="mast-svg" viewBox="0 0 360 176" role="img" aria-label="La Gazzetta delle Balle">
-              <defs>
-                <path id="mast-l1" d="M4 72C100 32 250 98 356 54" />
-                <path id="mast-l2" d="M4 146C100 106 250 172 356 128" />
-              </defs>
-              <text className="mast-t"><textPath href="#mast-l1" textLength="346" lengthAdjust="spacing">La Gazzetta</textPath></text>
-              <text className="mast-t"><textPath href="#mast-l2" textLength="346" lengthAdjust="spacing">delle <tspan className="mast-red">Balle</tspan></textPath></text>
-              <path className="mast-swash" d="M4 160C100 120 250 186 356 142" />
-            </svg>
-          )
+          ? <div className="mast-title"><h1 className="mast-l1">La Gazzetta</h1><div className="mast-l2">delle <em>Balle</em></div></div>
           : <><span className="mast-name">La Gazzetta delle Balle</span>{meta && <span className="mast-meta">{meta}</span>}</>}
       </div>
+      {big && <div className="motto"><i /><b /><span>Il quotidiano delle verità improbabili</span><b /><i /></div>}
     </header>
   );
 }
