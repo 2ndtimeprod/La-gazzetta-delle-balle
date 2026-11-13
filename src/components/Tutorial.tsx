@@ -6,22 +6,22 @@ const SEEN = 'balle:tutorial-visto';
 const EVT = 'balle:tutorial';
 export const openTutorial = () => window.dispatchEvent(new Event(EVT));
 
-type Slide = { kicker: string; title: string; body: React.ReactNode; art: React.ReactNode };
+type Slide = { kicker: string; title: string; body: React.ReactNode; art: React.ReactNode; extra?: React.ReactNode };
 
 const SLIDES: Slide[] = [
   {
     kicker: 'Benvenuto in redazione', title: 'Una notizia è vera. Le altre sono balle.',
-    body: <><u className="hl">Da 3 a 12 giocatori</u>, un telefono a testa, tutti nella stessa stanza. Ogni round esce una notizia vera ma incompleta: <u className="hl">voi inventate il pezzo mancante</u> e <u className="hl">cercate di far cadere gli altri</u>.</>,
+    body: <><u className="hl">Da 3 a 12 giocatori</u>, un telefono a testa, tutti nella stessa stanza. Ogni round esce una notizia vera ma incompleta: <u className="hl">voi inventate il pezzo mancante</u> e <u className="hl">cercate di ingannare gli altri</u>.</>,
     art: <div className="tu-art"><span className="tu-mast">La Gazzetta delle Balle</span></div>,
   },
   {
     kicker: '1 · Il narratore', title: 'A turno, uno conduce',
-    body: <>Il narratore gira il tamburo ed esce la categoria. <u className="hl">Lui vede la risposta vera, quindi non gioca la mano</u>: legge, conduce e non fa trapelare niente. Al round dopo tocca al vicino.</>,
+    body: <>Il narratore gira il tamburo ed estrae una categoria. <u className="hl">Lui vede la risposta vera, quindi non gioca la mano</u>: legge, conduce e non fa trapelare niente agli altri giocatori. Al round successivo tocca a un altro giocatore.</>,
     art: <div className="tu-art"><span className="tu-strip">Scienza</span></div>,
   },
   {
     kicker: '2 · Scrivi', title: 'Riempi il buco con una balla',
-    body: <>Tutti gli altri vedono la frase con un buco (a volte due) e <u className="hl">inventano la risposta più credibile possibile</u>. Col cronometro acceso avete <u className="hl">60 secondi</u>.</>,
+    body: <>Tutti gli altri vedono la frase con un elemento mancante (a volte due) e <u className="hl">inventano la risposta più credibile possibile</u>. Col cronometro acceso avete <u className="hl">60 secondi</u>.</>,
     art: <div className="tu-art"><p className="tu-sent">Il Furby fu vietato all'NSA perché temeva che <span className="gap" />.</p></div>,
   },
   {
@@ -36,8 +36,9 @@ const SLIDES: Slide[] = [
   },
   {
     kicker: '4 · Punti', title: 'Si vince in due modi',
-    body: <><u className="hl"><b>+1</b> se voti la risposta vera</u>. <u className="hl"><b>+1</b> per ogni giocatore che vota la tua balla</u>. Due balle uguali non sono ammesse: <u className="hl">chi arriva dopo la deve cambiare</u>.</>,
+    body: <><u className="hl"><b>+1</b> se voti la risposta vera</u>. <u className="hl"><b>+1</b> per ogni giocatore che vota la tua balla</u>. Due balle uguali non sono ammesse: <u className="hl">se qualcuno ha già scritto la stessa cosa, la tua balla non viene accettata</u>.</>,
     art: <div className="tu-art tu-points"><span>+1</span><span>+1</span><span>+1</span></div>,
+    extra: <div className="tu-shot"><div className="tu-field">la Torre Eiffel</div><div className="tu-err">Un altro giocatore ha già scritto una risposta uguale: scrivine una diversa.</div></div>,
   },
   {
     kicker: 'Il mestiere', title: 'Scrivila come un giornalista',
@@ -56,6 +57,11 @@ const SLIDES: Slide[] = [
       </ul>
     ),
     art: null,
+  },
+  {
+    kicker: 'Ultima cosa', title: 'Siate creativi',
+    body: <>Non siate prudenti: <u className="hl">le balle migliori sono quelle più strane e specifiche</u>. La realtà è già assurda, e ci credono di più.</>,
+    art: <div className="tu-art tu-big"><span>Più è strana,<br />più è vera!</span></div>,
   },
 ];
 
@@ -121,6 +127,7 @@ export default function Tutorial() {
           <span className="kicker">{s.kicker}</span>
           <h2 className="head sm">{s.title}</h2>
           <div className="tu-body">{s.body}</div>
+          {s.extra}
         </div>
         <div className="tu-dots">{SLIDES.map((_, n) => <button key={n} className={n === i ? 'on' : ''} aria-label={`Scheda ${n + 1}`} onClick={() => go(n)} />)}</div>
         <div className="choices">
