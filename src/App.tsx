@@ -15,6 +15,9 @@ import './theme/drum.css';
 import './theme/tutorial.css';
 import './theme/intro.css';
 import './theme/debate.css';
+import './theme/prova.css';
+import ProvaBar from './components/ProvaBar';
+import { loadProva } from './lib/prova';
 import Intro from './components/Intro';
 import EdizioneStraordinaria from './components/EdizioneStraordinaria';
 import Tutorial from './components/Tutorial';
@@ -46,6 +49,8 @@ function Screens() {
   }, [phase]);
   const endEdi = useCallback(() => setEdi(false), []);
 
+  const prova = session ? loadProva(session.code) : null;
+  const view = (() => {
   if (ANTEPRIMA) return <Anteprima which={ANTEPRIMA} />;
   if (!configured) {
     return <main className="page"><Toast msg="Mancano VITE_SUPABASE_URL e VITE_SUPABASE_PUBLISHABLE_KEY." /></main>;
@@ -57,6 +62,8 @@ function Screens() {
   }
   if (state.room.phase === 'finished') return <Finished session={session} state={state} onLeft={() => setSession(null)} />;
   return <><Playing session={session} state={state} refresh={refresh} onLeft={() => setSession(null)} />{edi && <EdizioneStraordinaria state={state} onDone={endEdi} />}</>;
+  })();
+  return <>{view}{prova && session && <ProvaBar sessions={prova} session={session} state={state} onPick={setSession} />}</>;
 }
 
 export default function App() {

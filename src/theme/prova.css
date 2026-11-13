@@ -1,0 +1,5 @@
+.prova-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 80; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  padding: 8px 10px max(8px, env(safe-area-inset-bottom)); background: #111; color: #fff; font: 600 13px/1 var(--f-body); }
+.prova-bar button { padding: 7px 10px; border: 1px solid #888; background: transparent; color: inherit; font: inherit; border-radius: 3px; }
+.prova-bar button.on { background: #fff; color: #111; }
+body:has(.prova-bar) { padding-bottom: 56px; }
