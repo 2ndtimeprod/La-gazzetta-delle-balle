@@ -108,3 +108,21 @@
 /* Jolly */
 .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .choices .btn { min-height: 54px; }
+
+/* Home: prima pagina */
+.page .modulo, .page .interne { animation-delay: .2s; }
+.lead { display: flex; flex-direction: column; gap: 10px; }
+.lead-title { text-wrap: balance; }
+.foto { margin: 0; color: var(--ink); background: radial-gradient(var(--rule-soft) 1px, transparent 1.2px) 0 0 / 5px 5px, var(--paper);
+  border: 1px solid var(--rule); box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center; }
+.foto .illu { width: 100%; height: 100%; display: block; }
+.lead .foto { height: 150px; padding: 8px; }
+.foto.sm { width: 92px; height: 70px; flex-shrink: 0; padding: 4px; box-shadow: none; }
+.modulo { display: flex; flex-direction: column; gap: 14px; padding: 14px 14px 16px; border: 1.5px solid var(--rule); background: var(--paper); }
+.modulo .section-title { border-bottom: 1px dashed var(--rule-soft); }
+.modulo .actions { margin-top: 0; }
+.interne { display: flex; flex-direction: column; gap: 14px; }
+.brief { display: flex; gap: 12px; align-items: flex-start; padding-bottom: 14px; border-bottom: 1px solid var(--rule-soft); }
+.brief:last-child { border-bottom: 0; padding-bottom: 0; }
+.brief .cat { font-size: 13px; }
+.brief-title { margin: 3px 0 0; font: var(--head-w) 17px/1.12 var(--f-head); text-transform: var(--head-case); letter-spacing: calc(var(--head-track) / 2); text-wrap: balance; }
