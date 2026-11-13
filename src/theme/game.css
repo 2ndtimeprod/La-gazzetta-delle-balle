@@ -108,6 +108,12 @@
 /* Jolly */
 .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .choices .btn { min-height: 54px; }
+.cat-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-top: 3px double var(--rule); }
+.cat-list li { border-bottom: 1px solid var(--rule); animation: rise .45s calc(var(--i) * .09s) cubic-bezier(.2,.8,.2,1) both; }
+.cat-list button { width: 100%; display: flex; align-items: baseline; gap: 14px; padding: 13px 4px; background: transparent; color: var(--ink); border: 0; text-align: left; cursor: pointer; }
+.cat-list button:active, .cat-list button:hover { background: var(--strip-alt); }
+.cat-list i { min-width: 22px; color: var(--accent); font: var(--num-w) 20px/1 var(--f-num); font-style: var(--num-style); }
+.cat-list span { font: var(--strip-w) var(--strip-size)/1 var(--strip-font); font-style: var(--strip-style); text-transform: var(--strip-case); }
 
 /* Home */
 .coupon { display: flex; flex-direction: column; gap: 14px; padding: 14px 14px 16px; border: 1.5px dashed var(--rule); background: var(--paper); box-shadow: 4px 4px 0 var(--rule-soft); }

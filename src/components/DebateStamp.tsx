@@ -14,7 +14,7 @@ export default function DebateStamp({ state }: { state: GameState }) {
     if (seen.current !== undefined && until && until !== seen.current && Date.parse(until) > Date.parse(state.now)) setStamp(true);
     seen.current = until;
   }, [until]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => { if (!stamp) return; const t = setTimeout(() => setStamp(false), 3200); return () => clearTimeout(t); }, [stamp]);
+  useEffect(() => { if (!stamp) return; const t = setTimeout(() => setStamp(false), 6500); return () => clearTimeout(t); }, [stamp]);
   const who = state.round?.debate_by ? nameOf(state.players, state.round.debate_by) : '';
   return (
     <>
