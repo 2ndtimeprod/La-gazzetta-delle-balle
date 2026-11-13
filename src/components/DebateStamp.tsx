@@ -25,10 +25,10 @@ export default function DebateStamp({ state }: { state: GameState }) {
         <div className="debate-over" role="alert" onClick={() => setStamp(false)}>
           <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true">
             <filter id="stamp-rough" x="-8%" y="-8%" width="116%" height="116%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="warp" />
-              <feDisplacementMap in="SourceGraphic" in2="warp" scale="6" result="rough" />
-              <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="11" result="grain" />
-              <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2.6 -0.45" result="holes" />
+              <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="4" result="warp" />
+              <feDisplacementMap in="SourceGraphic" in2="warp" scale="2.2" result="rough" />
+              <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="3" seed="11" result="grain" />
+              <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 3.4 -0.95" result="holes" />
               <feComposite in="rough" in2="holes" operator="in" />
             </filter>
           </svg>
