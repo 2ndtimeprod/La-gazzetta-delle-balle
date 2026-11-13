@@ -4,6 +4,7 @@ import type { Session } from '../lib/session';
 import Masthead from '../components/Masthead';
 import Toast from '../components/Toast';
 import { openTutorial } from '../components/Tutorial';
+import { creaProva, provaAbilitata } from '../lib/prova';
 import { ULTIMORA } from '../data/ultimora';
 
 export default function Home({ onSession }: { onSession: (s: Session) => void }) {
@@ -43,6 +44,11 @@ export default function Home({ onSession }: { onSession: (s: Session) => void })
         <Toast msg={err} />
       </div>
       </section>
+      {provaAbilitata() && (
+        <button className={`btn small${busy === 'create' ? ' busy' : ''}`} disabled={!!busy} onClick={() => run('create', () => creaProva(4))}>
+          Stanza di prova: 4 giocatori su questo dispositivo
+        </button>
+      )}
       <ol className="howto">
         <li><span><b>Il narratore</b> estrae una notizia vera, con un buco.</span></li>
         <li><span><b>Gli altri</b> riempiono il buco con una balla credibile.</span></li>
