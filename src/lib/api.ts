@@ -1,8 +1,8 @@
 import { supabase } from './supabase';
 import { saveSession, type Session } from './session';
 
-export type Settings = { giri: number; dark: boolean; estremi: boolean; timer?: boolean }; // timer assente = acceso
-export type Player = { id: string; name: string; score: number; seat: number; connected: boolean };
+export type Settings = { giri: number; dark: boolean; estremi: boolean; timer?: boolean; dibattito?: boolean }; // timer assente = acceso
+export type Player = { id: string; name: string; score: number; seat: number; connected: boolean; debate_used?: boolean };
 export type Option = {
   id: number; parts: string[]; mine?: boolean;
   is_true?: boolean; authors?: string[]; voters?: string[];
@@ -11,6 +11,7 @@ export type RoundState = {
   id: number; idx: number; total: number; narrator_id: string; phase: string;
   category: string | null; jolly: boolean; deadline_at: string | null;
   bluff_count: number; vote_count: number;
+  debate_by?: string | null; debate_until?: string | null;
   frase?: string; holes?: number; truth?: string[]; spiegazione?: string;
   my_bluff?: string[] | null; submitted?: string[];
   options?: Option[]; voted?: string[]; my_vote?: number | null; points?: Record<string, number>;
@@ -39,6 +40,10 @@ const MESSAGES: Record<string, string> = {
   already_voted: 'Hai già votato.',
   own_bluff: 'Non puoi votare la tua balla.',
   no_facts: 'Fatti esauriti per questa categoria.',
+  debate_off: 'Il dibattito è disattivato in questa stanza.',
+  debate_narrator: 'Il narratore non può lanciare un dibattito.',
+  debate_used: 'Hai già usato il tuo dibattito.',
+  debate_running: 'C\'è già un dibattito in corso.',
   too_many_rooms: 'Troppe stanze aperte in questo momento: riprova tra poco.',
 };
 
@@ -76,5 +81,6 @@ export const startWriting = (s: Session) => rpc<void>('start_writing', who(s));
 export const pickCategory = (s: Session, c: string) => rpc<void>('pick_category', { ...who(s), p_category: c });
 export const submitBluff = (s: Session, parts: string[]) => rpc<void>('submit_bluff', { ...who(s), p_parts: parts });
 export const closeWriting = (s: Session) => rpc<void>('close_writing', who(s));
+export const startDebate = (s: Session) => rpc<void>('start_debate', who(s));
 export const castVote = (s: Session, option: number) => rpc<void>('cast_vote', { ...who(s), p_option: option });
 export const advance = (s: Session) => rpc<void>('advance', who(s));

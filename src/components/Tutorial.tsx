@@ -41,6 +41,11 @@ const SLIDES: Slide[] = [
     extra: <div className="tu-shot"><div className="tu-field">la Torre Eiffel</div><div className="tu-err">Un altro giocatore ha già scritto una risposta uguale: scrivine una diversa.</div></div>,
   },
   {
+    kicker: 'Mossa speciale', title: 'Il dibattito',
+    body: <>Se è attivo, <u className="hl">ognuno può lanciare un dibattito una sola volta per partita</u>, dall'arrivo della frase fino all'ultimo voto (il narratore no). Per <u className="hl">60 secondi</u> si discute ad alta voce: convincete gli altri a votare la vostra balla o bluffate per fargli votare quella sbagliata.</>,
+    art: <div className="tu-art"><span className="tu-stamp">Dibattito!</span></div>,
+  },
+  {
     kicker: 'Il mestiere', title: 'Scrivila come un giornalista',
     body: <>Una balla scritta male si riconosce subito. Prima di inviare <u className="hl">controlla maiuscole e minuscole, refusi e il correttore automatico</u> del telefono, che cambia le parole senza chiedere. <u className="hl">Niente punto finale</u> (la frase ha già il suo) e niente emoji.</>,
     art: <div className="tu-art tu-typo"><s>la Torre eiffel.</s><b>la Torre Eiffel</b></div>,
