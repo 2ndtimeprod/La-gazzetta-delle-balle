@@ -16,6 +16,7 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
   const { err, busy, run } = useAct(refresh);
   const [landed, setLanded] = useState<string | null>(null);
   const [spinErr, setSpinErr] = useState('');
+  const [showPick, setShowPick] = useState(false); // il Jolly lascia al tamburo il tempo di fermarsi
   const me = nameOf(state.players, state.me);
 
   const doSpin = async () => {
@@ -34,6 +35,12 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
     const t = setTimeout(done, 1500);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [landed]);
+
+  useEffect(() => {
+    if (landed !== 'Jolly') { setShowPick(false); return; }
+    const t = setTimeout(() => setShowPick(true), 2200);
+    return () => clearTimeout(t);
   }, [landed]);
 
   const chooser = isNarrator && r.phase === 'picking' && r.jolly && (landed === 'Jolly' || landed === null);
@@ -61,7 +68,7 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
       {landed && landed !== 'Jolly' && (
         <div className="actions"><button className="btn primary" onClick={done}>Pesca la frase</button></div>
       )}
-      {chooser && landed === 'Jolly' && (
+      {chooser && landed === 'Jolly' && showPick && (
         <section className="stack">
           <h2 className="section-title"><span>Jolly: scegli la categoria</span></h2>
           <Choices busy={busy} onPick={(c) => run(async () => { await pickCategory(session, c); onHold(false); })} />
@@ -92,8 +99,12 @@ function Skip({ name, busy, onSkip }: { name: string; busy: boolean; onSkip: () 
 
 function Choices({ busy, onPick }: { busy: boolean; onPick: (c: string) => void }) {
   return (
-    <div className="choices">
-      {NORMALI.map((c) => <button key={c} className="btn small" disabled={busy} onClick={() => onPick(c)}>{CATEGORIE[c]}</button>)}
-    </div>
+    <ol className="cat-list">
+      {NORMALI.map((c, i) => (
+        <li key={c} style={{ ['--i' as string]: i }}>
+          <button disabled={busy} onClick={() => onPick(c)}><i>{i + 1}</i><span>{CATEGORIE[c]}</span></button>
+        </li>
+      ))}
+    </ol>
   );
 }
