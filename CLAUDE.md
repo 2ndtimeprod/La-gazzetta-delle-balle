@@ -72,7 +72,7 @@ I mockup HTML di riferimento sono in `mockups/` (schermate S-/Q-: Home, Setup, N
 ```
 CLAUDE.md
 data/        facts_sample.json (sviluppo), facts.json (completo, solo per l'import)
-tools/       xlsx_to_json.py, import_facts (da scrivere)
+tools/       xlsx_to_json.py, facts_to_sql.py, import_facts.py
 supabase/    migrations/ (schema, policy, RPC)
 src/         app React: screens/, components/, lib/ (supabase, normalizzazione), theme/
 mockups/     sorgenti dei mockup
@@ -101,3 +101,4 @@ mockups/     sorgenti dei mockup
 - 13/11/2026 (balle simili): migration `0011_similar_bluffs.sql` (da eseguire a mano, dopo la 0010). `parts_close` ignora articoli/ordine/refusi ("una chewing gum" = "il chewing gum"); `submit_bluff` rifiuta anche i doppioni tra giocatori (`duplicate`). Tutorial e `test:db` aggiornati. Idea scartata: finte risposte dell'archivio come esche.
 - 13/11/2026 (dibattito): migration `0012_debate.sql` (da eseguire a mano). `start_debate`, `players.debate_used`, `rounds.debate_by/debate_until`, `settings.dibattito` (assente = acceso). Client: `DebateButton` (footer), `DebateStamp` (timbro 3 s + barra col conto alla rovescia), `theme/debate.css`, scheda nel tutorial. Nessun blocco del gioco durante il dibattito. Non provato su telefono vero.
 - 13/11/2026 (stanza di prova): nessuna migration. Aprendo l'app con `?prova` la Home mostra "Stanza di prova": crea una stanza con 4 giocatori (Anna, Bruno, Carla, Dino) le cui sessioni stanno in `localStorage` (`lib/prova.ts`); `ProvaBar` (barra scura in basso) cambia giocatore con un tocco e tiene vivi i battiti di tutti. Il narratore è marcato (N). Non provata su un Supabase reale.
+- 13/11/2026 (fase 5, import fatti): nessuna migration (`fact_filter` esiste dalla 0001, default `all`). `tools/import_facts.py` (con `--dry-run`) converte l'Excel, convalida (buchi, categorie, id, spiegazioni) e scrive `supabase/seed/facts_all.sql` (upsert per id, 531 fatti, rieseguibile). Dom lo incolla nel SQL Editor. Verificati 250/531, ma per categoria: Animali 0, Geografia 3, Scienza 17, Dark 16: con `verified` il tamburo può cadere su categorie vuote o quasi. `test:db` carica l'archivio completo. Per tornare ai soli verificati: `update app_config set value='verified' where key='fact_filter';`.

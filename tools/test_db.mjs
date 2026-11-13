@@ -240,5 +240,18 @@ await db.exec(`delete from public.rooms where code in (${fill})`);
 await db.exec(`update public.app_config set value='verified' where key='fact_filter'`);
 ok((await db.query(`select count(*) c from public.facts where private.fact_ok(stato)`)).rows[0].c < 35, 'filtro "verified" attivo');
 
+// --- Archivio completo (supabase/seed/facts_all.sql): carico, riesecuzione e filtro per categoria
+await db.exec(readFileSync('supabase/seed/facts_all.sql', 'utf8'));
+await db.exec(readFileSync('supabase/seed/facts_all.sql', 'utf8'));
+const cnt = async (w) => (await db.query(`select count(*)::int c from public.facts where ${w}`)).rows[0].c;
+ok(await cnt('true') >= 531, 'archivio completo importato (upsert rieseguibile, >= 531 fatti)');
+for (const cat of ['History', 'Pop culture', 'Geography', 'Animal kingdom', 'Science', 'Food & Drink', 'Dark/Politically incorrect']) {
+  const q = `categoria='${cat}'`;
+  ok(await cnt(q) >= 40, `${cat}: almeno 40 fatti con filtro "all"`);
+  console.log(`     (nota: ${cat} con "verified" = ${await cnt(q + ` and stato='Verificato'`)} fatti)`);
+}
+await db.exec(`update public.app_config set value='all' where key='fact_filter'`);
+ok(await cnt('private.fact_ok(stato)') > 500, 'filtro "all": tutti i fatti pescabili');
+
 console.log(fails ? `\n${fails} test FALLITI` : '\nTutti i test passati');
 process.exit(fails ? 1 : 0);
