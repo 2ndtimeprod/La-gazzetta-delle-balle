@@ -17,8 +17,8 @@ export default function Writing({ session, state, refresh }: RoundProps) {
 
   // Allo scadere chiunque chiude la scrittura (il server accetta solo dopo la scadenza).
   useEffect(() => {
-    if (left === 0 && !closed.current) { closed.current = true; closeWriting(session).then(refresh, refresh); }
-  }, [left, session, refresh]);
+    if (r.deadline_at && left === 0 && !closed.current) { closed.current = true; closeWriting(session).then(refresh, refresh); }
+  }, [left, r.deadline_at, session, refresh]);
 
   const sent = r.my_bluff != null;
   const same = sent && r.my_bluff!.every((x, i) => x === parts[i].trim());
@@ -27,7 +27,9 @@ export default function Writing({ session, state, refresh }: RoundProps) {
   return (
     <main className="page">
       <RoundHeader state={state} />
-      <p className={`timer${left <= 10 ? ' low' : ''}`}>{left}s</p>
+      {r.deadline_at
+        ? <p className={`timer${left <= 10 ? ' low' : ''}`}>{left}s</p>
+        : <p className="muted" style={{ textAlign: 'center' }}>Senza cronometro: si va avanti quando hanno scritto tutti.</p>}
       {isNarrator ? (
         <>
           <Sentence frase={r.frase!} parts={r.truth} />
