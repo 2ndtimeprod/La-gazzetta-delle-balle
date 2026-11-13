@@ -6,12 +6,14 @@ import { clearSession, type Session } from '../lib/session';
 export default function LeaveGame({ session, onLeft }: { session: Session; onLeft: () => void }) {
   const [sure, setSure] = useState(false);
   const leave = async () => { try { await leaveRoom(session); } catch { /* esci comunque */ } clearSession(session.code); onLeft(); };
+  if (!sure) return <button className="btn link" onClick={() => setSure(true)}>Esci dalla partita</button>;
   return (
-    <div className="page leave">
-      {!sure
-        ? <button onClick={() => setSure(true)}>Esci dalla partita</button>
-        : <div className="row"><button className="primary" onClick={leave}>Esci davvero</button><button onClick={() => setSure(false)}>Resta</button></div>}
-      {sure && <p className="muted">Non potrai rientrare in questa partita.</p>}
+    <div className="stack" style={{ animation: 'rise .3s ease both' }}>
+      <p className="muted" style={{ textAlign: 'center' }}>Uscendo non potrai rientrare in questa partita.</p>
+      <div className="choices">
+        <button className="btn small primary" onClick={leave}>Esci davvero</button>
+        <button className="btn small" onClick={() => setSure(false)}>Resta</button>
+      </div>
     </div>
   );
 }

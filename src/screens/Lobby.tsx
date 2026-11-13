@@ -1,69 +1,83 @@
 import { useState } from 'react';
 import { leaveRoom, startGame, updateSettings, type GameState, type Settings } from '../lib/api';
 import { clearSession, type Session } from '../lib/session';
+import Masthead from '../components/Masthead';
+import Toast from '../components/Toast';
+import Waiting from '../components/Waiting';
 
 type Props = { session: Session; state: GameState; onLeft: () => void; refresh: () => void };
 
 export default function Lobby({ session, state, onLeft, refresh }: Props) {
   const [err, setErr] = useState('');
+  const [copied, setCopied] = useState(false);
   const { room, players, me } = state;
   const isHost = room.host_player_id === me;
   const st = room.settings;
-  const enough = players.length >= 3;
+  const enough = players.filter((p) => p.connected).length >= 3;
 
   const act = async (f: () => Promise<unknown>) => {
     try { await f(); setErr(''); refresh(); } catch (e) { setErr((e as Error).message); }
   };
   const set = (p: Partial<Settings>) => act(() => updateSettings(session, p));
   const leave = () => act(async () => { await leaveRoom(session); clearSession(session.code); onLeft(); });
-  const share = () => {
+  const share = async () => {
     const url = `${location.origin}${location.pathname}?c=${room.code}`;
-    if (navigator.share) void navigator.share({ title: 'Balle credibili', url }).catch(() => {});
-    else void navigator.clipboard?.writeText(url);
+    try {
+      if (navigator.share) await navigator.share({ title: 'La Gazzetta delle Balle', text: `Entra nella stanza ${room.code}`, url });
+      else { await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 1800); }
+    } catch { /* annullato */ }
   };
+
+  const Toggle = ({ k, title, desc }: { k: 'dark' | 'estremi' | 'timer'; title: string; desc: string }) => (
+    <label className="switch-row">
+      <span><b>{title}</b><small>{desc}</small></span>
+      <input type="checkbox" className="switch" checked={k === 'timer' ? st.timer !== false : !!st[k]} disabled={!isHost}
+        onChange={(e) => set({ [k]: e.target.checked })} />
+    </label>
+  );
 
   return (
     <main className="page">
-      <header className="masthead"><small>Codice stanza</small><p className="roomcode">{room.code}</p></header>
-      <button onClick={share}>Condividi link</button>
+      <Masthead meta={`Stanza ${room.code}`} />
+      <div className="code-tiles" aria-label={`Codice ${room.code}`}>{room.code.split('').map((c, i) => <span key={i}>{c}</span>)}</div>
+      <button className="btn small" onClick={share}>{copied ? 'Link copiato' : 'Invita: condividi il link'}</button>
 
       <section>
-        <h2>Giocatori ({players.length}/12)</h2>
-        <ul className="players">
-          {players.map((p) => (
-            <li key={p.id}>
-              <span>{p.name}{p.id === me && ' (tu)'}</span>
-              <span className="tag">{!p.connected && 'offline '}{p.id === room.host_player_id && 'host'}</span>
+        <h2 className="section-title"><span>La redazione</span><span>{players.length}/12</span></h2>
+        <ul className="roster">
+          {players.map((p, i) => (
+            <li key={p.id} className={p.connected ? '' : 'offline'}>
+              <span className="no">N. {String(i + 1).padStart(2, '0')}</span>
+              <span className="nm">{p.name}{p.id === me && <span className="tag"> (tu)</span>}</span>
+              <span className="lead" />
+              {!p.connected && <span className="tag off">offline</span>}
+              {p.id === room.host_player_id && <span className="tag host">Direttore</span>}
             </li>
           ))}
         </ul>
       </section>
 
       <section className="card">
-        <h2>Impostazioni</h2>
-        <div>
-          <label>Giri (tutti fanno il narratore una volta per giro)</label>
-          <div className="seg">
-            {[1, 2, 3].map((g) => (
-              <button key={g} className={st.giri === g ? 'on' : ''} disabled={!isHost} onClick={() => set({ giri: g })}>{g}</button>
-            ))}
-          </div>
+        <div className="switch-row" style={{ cursor: 'default' }}>
+          <span><b>Giri</b><small>Ognuno fa il narratore una volta per giro</small></span>
         </div>
-        <label className="toggle">Dark
-          <input type="checkbox" checked={st.dark} disabled={!isHost} onChange={(e) => set({ dark: e.target.checked })} /></label>
-        <label className="toggle">Estremi
-          <input type="checkbox" checked={st.estremi} disabled={!isHost} onChange={(e) => set({ estremi: e.target.checked })} /></label>
-        <label className="toggle">Cronometro (60 s per scrivere)
-          <input type="checkbox" checked={st.timer !== false} disabled={!isHost} onChange={(e) => set({ timer: e.target.checked })} /></label>
-        {!isHost && <p className="muted">Le impostazioni le decide chi ha creato la stanza.</p>}
+        <div className="seg" style={{ marginBottom: 6 }}>
+          {[1, 2, 3].map((g) => <button key={g} className={st.giri === g ? 'on' : ''} disabled={!isHost} onClick={() => set({ giri: g })}>{g}</button>)}
+        </div>
+        <Toggle k="timer" title="Cronometro" desc="60 secondi per scrivere la balla" />
+        <Toggle k="dark" title="Dark" desc="Notizie scorrette: la settima faccia del tamburo" />
+        <Toggle k="estremi" title="Estremi" desc="In arrivo" />
       </section>
 
-      {isHost
-        ? <button className="primary" disabled={!enough} onClick={() => act(() => startGame(session))}>
-            {enough ? 'Avvia partita' : 'Servono almeno 3 giocatori'}</button>
-        : <p className="muted">In attesa che l'host avvii la partita.</p>}
-      <button onClick={leave}>Esci</button>
-      {err && <p className="err" role="alert">{err}</p>}
+      <div className="actions">
+        {isHost
+          ? <button className="btn primary" disabled={!enough} onClick={() => act(() => startGame(session))}>
+              {enough ? 'Si va in stampa' : 'Servono almeno 3 giocatori'}</button>
+          : <Waiting>Il direttore sta impaginando la partita</Waiting>}
+        {!isHost && <p className="muted">Le impostazioni le sceglie il direttore, cioè chi ha creato la stanza.</p>}
+        <button className="btn link" onClick={leave}>Esci dalla stanza</button>
+        <Toast msg={err} />
+      </div>
     </main>
   );
 }

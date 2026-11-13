@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Balle credibili</title>
+    <meta name="theme-color" content="#15120E" />
+    <title>La Gazzetta delle Balle</title>
+    <script>
+      // Tema prima del primo disegno, per non avere il lampo del tema sbagliato.
+      try {
+        var t = localStorage.getItem('balle:theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'quotidiano' : 'sera');
+        document.documentElement.dataset.theme = t;
+      } catch (e) { document.documentElement.dataset.theme = 'sera'; }
+    </script>
   </head>
   <body>
     <div id="root"></div>
