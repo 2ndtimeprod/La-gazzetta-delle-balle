@@ -83,7 +83,7 @@ button, input { font: inherit; color: inherit; }
 .input::placeholder { color: var(--muted); opacity: .55; font-style: italic; font-weight: 400; }
 .input:focus { border-bottom-color: var(--accent); }
 .input.code::placeholder { font-size: 22px; letter-spacing: .3em; }
-.input.code { font: 400 40px/1 var(--f-num); font-style: var(--num-style); letter-spacing: .5em; text-transform: uppercase; text-align: center; padding-left: .5em; }
+.input.code { font: var(--num-w) 40px/1 var(--f-num); font-style: var(--num-style); letter-spacing: .5em; text-transform: uppercase; text-align: center; padding-left: .5em; }
 
 /* Interruttori */
 .switch-row { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--rule-soft); cursor: pointer; }
@@ -97,7 +97,7 @@ button, input { font: inherit; color: inherit; }
 .switch:disabled { opacity: .5; cursor: default; }
 .seg { display: grid; grid-template-columns: repeat(3, 1fr); border: 1.5px solid var(--ink); border-radius: 2px; overflow: hidden; }
 .seg button { border: 0; border-right: 1.5px solid var(--ink); background: transparent; padding: 10px 0; cursor: pointer;
-  font: 400 24px/1 var(--f-num); font-style: var(--num-style); transition: background-color .2s, color .2s; }
+  font: var(--num-w) 24px/1 var(--f-num); font-style: var(--num-style); transition: background-color .2s, color .2s; }
 .seg button:last-child { border-right: 0; }
 .seg button.on { background: var(--ink); color: var(--bg); }
 .seg button:disabled { cursor: default; }

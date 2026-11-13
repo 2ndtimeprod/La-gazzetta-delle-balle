@@ -11,7 +11,7 @@
   --f-body: 'Source Serif 4', Georgia, serif;
   --f-meta: 'Inter', system-ui, sans-serif; --meta-w: 700; --meta-track: 2px;
   --f-btn: 'Inter', system-ui, sans-serif; --btn-w: 800; --btn-size: 13px; --btn-track: 2.4px;
-  --f-num: 'Playfair Display', Georgia, serif; --num-style: italic;
+  --f-num: 'Source Serif 4', Georgia, serif; --num-style: italic; --num-w: 700;
   --mast-top: 4px double var(--rule);
   --shadow: 0 1px 0 rgba(17,17,17,.05), 0 14px 30px -18px rgba(17,17,17,.45);
   --tray-bg: radial-gradient(circle at 50% 38%, #4A3828 0%, #2E2219 62%, #1C140E 100%);
@@ -34,7 +34,7 @@
   --f-head: 'Anton', Impact, sans-serif; --head-w: 400; --head-case: uppercase; --head-track: .3px; --head-size: 44px;
   --f-meta: 'IBM Plex Mono', ui-monospace, monospace; --meta-w: 500; --meta-track: 1.2px;
   --f-btn: 'Anton', Impact, sans-serif; --btn-w: 400; --btn-size: 21px; --btn-track: .6px;
-  --f-num: 'Anton', Impact, sans-serif; --num-style: normal;
+  --f-num: 'Anton', Impact, sans-serif; --num-style: normal; --num-w: 400;
   --mast-top: 3px solid var(--rule);
   --shadow: 0 1px 0 rgba(0,0,0,.4), 0 18px 34px -20px rgba(0,0,0,.9);
   --tray-bg: radial-gradient(circle at 50% 38%, #3D1915 0%, #26110E 60%, #170A09 100%);

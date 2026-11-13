@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { pickCategory, skipNarrator, spin } from '../../lib/api';
+import { pickCategory, skipNarrator, spin, startWriting } from '../../lib/api';
 import { CATEGORIE, NORMALI, nameOf, roles, type RoundProps } from '../../lib/round';
 import { useAct } from '../../lib/useAct';
 import RoundHeader from '../../components/RoundHeader';
@@ -7,8 +7,9 @@ import Drum from '../../components/Drum';
 import Toast from '../../components/Toast';
 import Waiting from '../../components/Waiting';
 
-// Il narratore gira il tamburo. `onHold` tiene questa schermata visibile finché l'animazione
-// non si ferma, anche se il server è già passato alla scrittura.
+// Il narratore gira il tamburo. Il server tiene il risultato segreto finché il tamburo non si ferma:
+// solo allora il client del narratore chiama `start_writing` e la frase compare a tutti insieme.
+// `onHold` tiene questa schermata visibile fino a quel momento.
 export default function Picking({ session, state, refresh, onHold }: RoundProps & { onHold: (b: boolean) => void }) {
   const r = state.round!;
   const { isNarrator } = roles(state);
@@ -22,12 +23,15 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
     try { return (await spin(session)).face; }
     catch (e) { setSpinErr((e as Error).message); onHold(false); throw e; }
   };
-  const done = () => { onHold(false); refresh(); };
+  const done = async () => {
+    try { await startWriting(session); setSpinErr(''); onHold(false); refresh(); }
+    catch (e) { setSpinErr((e as Error).message); }
+  };
 
-  // Dopo una categoria normale si passa da soli alla frase; il pulsante serve a chi ha fretta.
+  // Dopo una categoria normale la frase si apre da sola a tamburo fermo; il pulsante serve a chi ha fretta.
   useEffect(() => {
     if (!landed || landed === 'Jolly') return;
-    const t = setTimeout(done, 2600);
+    const t = setTimeout(done, 1500);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [landed]);

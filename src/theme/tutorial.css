@@ -10,6 +10,8 @@
 .tu-slide .kicker { align-self: flex-start; }
 .tu-body { font-size: 17px; line-height: 1.5; text-wrap: pretty; }
 .tu-body b { color: var(--accent); }
+/* Evidenziatore: le parti da non perdere. */
+.hl { text-decoration: none; font-weight: 700; background: linear-gradient(color-mix(in srgb, var(--accent) 38%, transparent), color-mix(in srgb, var(--accent) 38%, transparent)) 0 92% / 100% .42em no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 1px; }
 .tu-art { height: 96px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--rule-soft); background: var(--paper);
   overflow: hidden; margin-bottom: 4px; }
 .tu-mast { font: italic 900 30px/1 var(--f-mast); letter-spacing: -.5px; animation: ink .8s ease both; }
@@ -17,14 +19,14 @@
   font-family: var(--strip-font); font-style: var(--strip-style); font-weight: var(--strip-w); text-transform: var(--strip-case); font-size: 26px;
   animation: tu-roll .7s cubic-bezier(.2,.8,.2,1) both; }
 .tu-sent { margin: 0 16px; font: 600 17px/1.35 var(--f-body); text-align: center; }
-.tu-stamp { padding: 7px 12px 6px; border: 3px solid var(--accent); color: var(--accent); font: 400 24px/1 var(--f-num); font-style: var(--num-style);
+.tu-stamp { padding: 7px 12px 6px; border: 3px solid var(--accent); color: var(--accent); font: var(--num-w) 24px/1 var(--f-num); font-style: var(--num-style);
   text-transform: uppercase; letter-spacing: 1px; animation: stamp .5s .15s cubic-bezier(.2,.9,.3,1.2) both; }
 .tu-letters { gap: 10px; }
 .tu-letters i { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1.5px solid var(--ink);
-  font: 400 21px/1 var(--f-num); font-style: var(--num-style); }
+  font: var(--num-w) 21px/1 var(--f-num); font-style: var(--num-style); }
 .tu-letters i.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); animation: pop .5s .2s cubic-bezier(.3,1.6,.5,1) both; }
 .tu-points { gap: 12px; }
-.tu-points span { font: 400 30px/1 var(--f-num); font-style: var(--num-style); background: var(--accent); color: var(--accent-ink); padding: 6px 10px; animation: pop .45s cubic-bezier(.3,1.6,.5,1) both; }
+.tu-points span { font: var(--num-w) 30px/1 var(--f-num); font-style: var(--num-style); background: var(--accent); color: var(--accent-ink); padding: 6px 10px; animation: pop .45s cubic-bezier(.3,1.6,.5,1) both; }
 .tu-points span:nth-child(2) { animation-delay: .15s } .tu-points span:nth-child(3) { animation-delay: .3s }
 .tu-typo { flex-direction: column; gap: 6px; font: 600 20px/1.2 var(--f-body); }
 .tu-typo s { color: var(--muted); text-decoration-color: var(--accent); text-decoration-thickness: 2px; }

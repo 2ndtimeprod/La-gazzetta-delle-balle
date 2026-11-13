@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import type { GameState, RoundState } from '../lib/api';
 import type { Session } from '../lib/session';
 import Lobby from '../screens/Lobby';
+import EdizioneStraordinaria from '../components/EdizioneStraordinaria';
 import Home from '../screens/Home';
 import Finished from '../screens/Finished';
 import Writing from '../screens/round/Writing';
@@ -54,6 +55,7 @@ export default function Anteprima({ which }: { which: string }) {
   const p = { session: S, refresh: noop };
   switch (which) {
     case 'home': return <Home onSession={noop} />;
+    case 'edizione': return <><Lobby session={S} state={state(null, 'p1', 'lobby')} refresh={noop} onLeft={noop} /><EdizioneStraordinaria state={state({ phase: 'picking' })} onDone={noop} /></>;
     case 'tutorial': localStorage.removeItem('balle:tutorial-visto'); return <Home onSession={noop} />;
     case 'lobby': return <Lobby {...p} state={st.lobby} onLeft={noop} />;
     case 'scrive': return <Writing {...p} state={st.scrive} />;
