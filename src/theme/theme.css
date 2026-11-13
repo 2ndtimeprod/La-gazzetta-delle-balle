@@ -1,0 +1,29 @@
+/* Il Quotidiano (chiaro). Il tema scuro e i font definitivi arrivano in fase 4. */
+:root {
+  --bg: #FAF7F0; --fg: #111111; --red: #B3001B; --muted: #6b665c; --line: #111111;
+  --serif: 'Playfair Display', Georgia, serif; --sans: Inter, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); }
+.page { max-width: 480px; margin: 0 auto; padding: 20px 16px 32px; min-height: 100dvh; display: flex; flex-direction: column; gap: 14px; }
+.masthead { border-top: 4px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; text-align: center; }
+.masthead h1 { font-family: var(--serif); font-size: 30px; margin: 0; line-height: 1.1; }
+.masthead small { color: var(--muted); letter-spacing: .08em; text-transform: uppercase; font-size: 11px; }
+h2 { font-family: var(--serif); font-size: 20px; margin: 0; }
+label { font-size: 13px; font-weight: 600; display: block; margin-bottom: 4px; }
+input[type=text] { width: 100%; padding: 12px; font-size: 18px; border: 1px solid var(--line); background: #fff; border-radius: 0; }
+input.code { text-transform: uppercase; letter-spacing: .4em; text-align: center; font-size: 24px; }
+button { font: inherit; font-weight: 700; padding: 13px 16px; border: 2px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+button.primary { background: var(--red); border-color: var(--red); color: #fff; }
+button:disabled { opacity: .45; cursor: default; }
+.row { display: flex; gap: 8px; } .row > * { flex: 1; }
+.card { border: 1px solid var(--line); padding: 12px; background: #fff; display: flex; flex-direction: column; gap: 10px; }
+.err { background: #fde8ea; border-left: 4px solid var(--red); padding: 8px 10px; font-size: 14px; }
+.roomcode { font-family: var(--serif); font-size: 52px; letter-spacing: .15em; text-align: center; margin: 0; }
+.players { list-style: none; margin: 0; padding: 0; }
+.players li { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #ddd6c6; font-size: 17px; }
+.tag { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.seg { display: flex; } .seg button { flex: 1; border-right-width: 0; padding: 10px; }
+.seg button:last-child { border-right-width: 2px; } .seg button.on { background: var(--fg); color: var(--bg); }
+.toggle { display: flex; justify-content: space-between; align-items: center; font-size: 16px; }
+.muted { color: var(--muted); font-size: 14px; }
