@@ -27,3 +27,14 @@ button:disabled { opacity: .45; cursor: default; }
 .seg button:last-child { border-right-width: 2px; } .seg button.on { background: var(--fg); color: var(--bg); }
 .toggle { display: flex; justify-content: space-between; align-items: center; font-size: 16px; }
 .muted { color: var(--muted); font-size: 14px; }
+.sentence { font-family: var(--serif); font-size: 22px; line-height: 1.4; margin: 0; }
+.gap { display: inline-block; min-width: 4.5ch; border-bottom: 2px solid var(--fg); margin: 0 .2em; }
+.fill { color: var(--red); border-bottom: 2px solid var(--red); margin: 0 .15em; }
+.timer { font-family: var(--serif); font-size: 44px; text-align: center; margin: 0; }
+.timer.low { color: var(--red); }
+.opt { text-align: left; font-weight: 400; background: #fff; display: block; width: 100%; }
+.opt.on { outline: 3px solid var(--red); }
+.opt.true { border-color: #1a7a3a; border-width: 3px; }
+.badge { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; }
+.badge.true { color: #1a7a3a; } .badge.lie { color: var(--red); }
+.stack { display: flex; flex-direction: column; gap: 10px; }

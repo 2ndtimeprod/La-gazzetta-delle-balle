@@ -5,6 +5,7 @@ import { useRoomState } from './lib/useRoomState';
 import Home from './screens/Home';
 import Lobby from './screens/Lobby';
 import Playing from './screens/Playing';
+import Finished from './screens/Finished';
 import './theme/theme.css';
 
 const DEAD = ['Stanza non trovata.', 'Sessione non valida.'];
@@ -26,5 +27,6 @@ export default function App() {
   if (state.room.phase === 'lobby') {
     return <Lobby session={session} state={state} refresh={refresh} onLeft={() => setSession(null)} />;
   }
-  return <Playing state={state} />;
+  if (state.room.phase === 'finished') return <Finished session={session} state={state} onLeft={() => setSession(null)} />;
+  return <Playing session={session} state={state} refresh={refresh} />;
 }
