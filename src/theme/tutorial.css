@@ -41,3 +41,9 @@
 @keyframes tu-in { from { opacity: 0; transform: translateY(24px) scale(.96); } }
 @keyframes tu-slide { from { opacity: 0; transform: translateX(calc(var(--d, 1) * 36px)); } }
 @keyframes tu-roll { from { transform: perspective(300px) rotateX(70deg); opacity: 0; } }
+
+.tu-shot { margin-top: 10px; display: grid; gap: 6px; }
+.tu-field { padding: 8px 10px; border: 2px solid var(--accent); background: var(--paper); font: 600 15px/1.2 var(--f-body); }
+.tu-err { color: var(--accent); font: 600 12px/1.3 var(--f-body); }
+.tu-big { height: 120px; }
+.tu-big span { font: italic 900 30px/1.05 var(--f-mast); text-align: center; color: var(--accent); animation: ink .8s ease both; }
