@@ -3,6 +3,7 @@ import { createRoom, joinRoom } from '../lib/api';
 import type { Session } from '../lib/session';
 import Masthead from '../components/Masthead';
 import Toast from '../components/Toast';
+import { openTutorial } from '../components/Tutorial';
 
 const ULTIMORA = [
   'Scoperta una verità che nessuno aveva chiesto',
@@ -36,6 +37,7 @@ export default function Home({ onSession }: { onSession: (s: Session) => void })
         <li><span><b>Gli altri</b> riempiono il buco con una balla credibile.</span></li>
         <li><span><b>Si vota</b> la vera: punti a chi indovina e a chi inganna.</span></li>
       </ol>
+      <button className="btn link howto-link" onClick={openTutorial}>Come si gioca: la guida completa</button>
       <div className="field">
         <label className="label" htmlFor="n">Firma dell'inviato</label>
         <input id="n" className="input" maxLength={20} value={name} placeholder="Il tuo nome" autoComplete="off"

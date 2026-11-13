@@ -1,0 +1,41 @@
+/* Tutorial: scheda centrata a slide. */
+.tu-backdrop { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 18px;
+  background: rgba(10,8,6,.62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: tu-fade .3s ease both; }
+.tu-card { width: 100%; max-width: 420px; max-height: calc(100dvh - 36px); overflow: auto; display: flex; flex-direction: column; gap: 16px;
+  padding: 18px 20px 20px; background: var(--bg); color: var(--ink); border-top: var(--mast-top); box-shadow: 0 30px 60px -20px rgba(0,0,0,.7);
+  animation: tu-in .45s cubic-bezier(.2,.9,.3,1.15) both; touch-action: pan-y; }
+.tu-top { display: flex; justify-content: space-between; align-items: center; }
+.tu-top .theme-btn { font: var(--meta-w) 10.5px/1 var(--f-meta); letter-spacing: var(--meta-track); text-transform: uppercase; padding: 7px 10px; }
+.tu-slide { display: flex; flex-direction: column; gap: 10px; min-height: 452px; animation: tu-slide .4s cubic-bezier(.2,.8,.2,1) both; }
+.tu-slide .kicker { align-self: flex-start; }
+.tu-body { font-size: 17px; line-height: 1.5; text-wrap: pretty; }
+.tu-body b { color: var(--accent); }
+.tu-art { height: 96px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--rule-soft); background: var(--paper);
+  overflow: hidden; margin-bottom: 4px; }
+.tu-mast { font: italic 900 30px/1 var(--f-mast); letter-spacing: -.5px; animation: ink .8s ease both; }
+.tu-strip { padding: 14px 40px; background: var(--strip); color: var(--strip-ink); border-top: var(--strip-rule); border-bottom: var(--strip-rule);
+  font-family: var(--strip-font); font-style: var(--strip-style); font-weight: var(--strip-w); text-transform: var(--strip-case); font-size: 26px;
+  animation: tu-roll .7s cubic-bezier(.2,.8,.2,1) both; }
+.tu-sent { margin: 0 16px; font: 600 17px/1.35 var(--f-body); text-align: center; }
+.tu-stamp { padding: 7px 12px 6px; border: 3px solid var(--accent); color: var(--accent); font: 400 24px/1 var(--f-num); font-style: var(--num-style);
+  text-transform: uppercase; letter-spacing: 1px; animation: stamp .5s .15s cubic-bezier(.2,.9,.3,1.2) both; }
+.tu-letters { gap: 10px; }
+.tu-letters i { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1.5px solid var(--ink);
+  font: 400 21px/1 var(--f-num); font-style: var(--num-style); }
+.tu-letters i.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); animation: pop .5s .2s cubic-bezier(.3,1.6,.5,1) both; }
+.tu-points { gap: 12px; }
+.tu-points span { font: 400 30px/1 var(--f-num); font-style: var(--num-style); background: var(--accent); color: var(--accent-ink); padding: 6px 10px; animation: pop .45s cubic-bezier(.3,1.6,.5,1) both; }
+.tu-points span:nth-child(2) { animation-delay: .15s } .tu-points span:nth-child(3) { animation-delay: .3s }
+.tu-typo { flex-direction: column; gap: 6px; font: 600 20px/1.2 var(--f-body); }
+.tu-typo s { color: var(--muted); text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
+.tu-typo b { color: var(--true); animation: ink .6s .3s ease both; }
+.tu-tips { margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; }
+.tu-tips li::marker { color: var(--accent); }
+.tu-dots { display: flex; justify-content: center; gap: 7px; }
+.tu-dots button { width: 8px; height: 8px; padding: 0; border: 1.5px solid var(--ink); background: transparent; cursor: pointer; transition: background-color .2s, transform .2s; }
+.tu-dots button.on { background: var(--accent); border-color: var(--accent); transform: scale(1.25); }
+.howto-link { align-self: center; }
+@keyframes tu-fade { from { opacity: 0; } }
+@keyframes tu-in { from { opacity: 0; transform: translateY(24px) scale(.96); } }
+@keyframes tu-slide { from { opacity: 0; transform: translateX(calc(var(--d, 1) * 36px)); } }
+@keyframes tu-roll { from { transform: perspective(300px) rotateX(70deg); opacity: 0; } }
