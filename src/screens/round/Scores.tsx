@@ -3,6 +3,8 @@ import { roles, type RoundProps } from '../../lib/round';
 import { useAct } from '../../lib/useAct';
 import RoundHeader from '../../components/RoundHeader';
 import Scoreboard from '../../components/Scoreboard';
+import Toast from '../../components/Toast';
+import Waiting from '../../components/Waiting';
 
 export default function Scores({ session, state, refresh }: RoundProps) {
   const r = state.round!;
@@ -12,12 +14,14 @@ export default function Scores({ session, state, refresh }: RoundProps) {
   return (
     <main className="page">
       <RoundHeader state={state} />
-      <h2>Punteggi</h2>
+      <h1 className="head">Classifica</h1>
       <Scoreboard players={state.players} me={state.me} gained={r.points} />
-      {canAdvance
-        ? <button className="primary" disabled={busy} onClick={() => run(() => advance(session))}>{last ? 'Fine partita' : 'Prossimo round'}</button>
-        : <p className="muted">Aspetta il narratore…</p>}
-      {err && <p className="err" role="alert">{err}</p>}
+      <div className="actions">
+        {canAdvance
+          ? <button className="btn primary" disabled={busy} onClick={() => run(() => advance(session))}>{last ? "Ultima edizione: vedi chi vince" : 'Prossimo round'}</button>
+          : <Waiting>{last ? 'Si stampa l\'edizione finale' : 'Il prossimo narratore si prepara'}</Waiting>}
+        <Toast msg={err} />
+      </div>
     </main>
   );
 }

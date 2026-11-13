@@ -1,0 +1,47 @@
+/* Due edizioni, stesso impianto. La testata è sempre Playfair Display corsivo 900. */
+:root, [data-theme="quotidiano"] {
+  --bg: #FAF7F0; --bg-dot: rgba(0,0,0,.035); --paper: #FFFDF8; --paper-2: #F1EBDD;
+  --ink: #111111; --muted: #5C574E; --rule: #111111; --rule-soft: rgba(17,17,17,.16);
+  --accent: #B3001B; --accent-ink: #FFFFFF; --hi: #111111; --hi-ink: #FAF7F0;
+  --true: #1A6B35; --true-soft: rgba(26,107,53,.09); --gold: #9A6F08;
+  --primary: #111111; --primary-ink: #FAF7F0; --primary-press: #000;
+  --f-mast: 'Playfair Display', Georgia, serif;
+  --f-head: 'Playfair Display', Georgia, serif; --head-w: 900; --head-case: none; --head-track: -.6px; --head-size: 40px;
+  --f-body: 'Source Serif 4', Georgia, serif;
+  --f-meta: 'Inter', system-ui, sans-serif; --meta-w: 700; --meta-track: 2px;
+  --f-btn: 'Inter', system-ui, sans-serif; --btn-w: 800; --btn-size: 13px; --btn-track: 2.4px;
+  --f-num: 'Playfair Display', Georgia, serif; --num-style: italic;
+  --mast-top: 4px double var(--rule);
+  --shadow: 0 1px 0 rgba(17,17,17,.05), 0 14px 30px -18px rgba(17,17,17,.45);
+  --tray-bg: radial-gradient(circle at 50% 38%, #4A3828 0%, #2E2219 62%, #1C140E 100%);
+  --tray-ring: 0 0 0 1px #111, 0 0 0 7px #FAF7F0, 0 0 0 8px #111, 0 26px 40px -16px rgba(0,0,0,.55);
+  --strip: #FAF7F0; --strip-alt: #EDE6D6; --strip-ink: #111111; --strip-special: #111111; --strip-special-ink: #FAF7F0;
+  --strip-font: 'Playfair Display', serif; --strip-style: italic; --strip-w: 900; --strip-case: none; --strip-size: 27px;
+  --strip-rule: 4px double rgba(17,17,17,.65); --drum-back: #1C140E;
+  --bezel: #FAF7F0; --bezel-dark: #111111; --tray-ink: #E6DCC6;
+  --stud: radial-gradient(circle at 35% 30%, #FFFFFF 0%, #D9CFB8 45%, #6F654F 100%);
+  --flap: #B3001B; --flap-hi: #E0384F; --flap-edge: #4C000B; --pivot: #111111;
+  color-scheme: light;
+}
+[data-theme="sera"] {
+  --bg: #15120E; --bg-dot: rgba(255,255,255,.035); --paper: #1C1814; --paper-2: #2A241D;
+  --ink: #F1E9D8; --muted: #B8AE9A; --rule: #F1E9D8; --rule-soft: rgba(241,233,216,.2);
+  --accent: #F0443A; --accent-ink: #15120E; --hi: #F1E9D8; --hi-ink: #15120E;
+  --true: #8FD6A0; --true-soft: rgba(143,214,160,.1); --gold: #F2C230;
+  --primary: #F0443A; --primary-ink: #15120E; --primary-press: #D8352C;
+  --f-head: 'Anton', Impact, sans-serif; --head-w: 400; --head-case: uppercase; --head-track: .3px; --head-size: 44px;
+  --f-meta: 'IBM Plex Mono', ui-monospace, monospace; --meta-w: 500; --meta-track: 1.2px;
+  --f-btn: 'Anton', Impact, sans-serif; --btn-w: 400; --btn-size: 21px; --btn-track: .6px;
+  --f-num: 'Anton', Impact, sans-serif; --num-style: normal;
+  --mast-top: 3px solid var(--rule);
+  --shadow: 0 1px 0 rgba(0,0,0,.4), 0 18px 34px -20px rgba(0,0,0,.9);
+  --tray-bg: radial-gradient(circle at 50% 38%, #3D1915 0%, #26110E 60%, #170A09 100%);
+  --tray-ring: 0 0 0 8px #6B5330, 0 0 0 10px #2A2012, 0 30px 46px -14px rgba(0,0,0,.8);
+  --strip: #F1E9D8; --strip-alt: #E4DAC4; --strip-ink: #15120E; --strip-special: #F2C230; --strip-special-ink: #15120E;
+  --strip-font: 'Anton', Impact, sans-serif; --strip-style: normal; --strip-w: 400; --strip-case: uppercase; --strip-size: 29px;
+  --strip-rule: 3px double rgba(21,18,14,.55); --drum-back: #0E0C0A;
+  --bezel: #6B5330; --bezel-dark: #2A2012; --tray-ink: #B8AE9A;
+  --stud: radial-gradient(circle at 35% 30%, #FFF1B8 0%, #C9A55A 45%, #5A4420 100%);
+  --flap: #F0443A; --flap-hi: #FF7A70; --flap-edge: #5E120D; --pivot: #C9A55A;
+  color-scheme: dark;
+}

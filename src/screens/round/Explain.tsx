@@ -1,10 +1,12 @@
 import { advance } from '../../lib/api';
-import { roles, type RoundProps } from '../../lib/round';
+import { CATEGORIE, roles, type RoundProps } from '../../lib/round';
 import { useAct } from '../../lib/useAct';
 import RoundHeader from '../../components/RoundHeader';
 import Sentence from '../../components/Sentence';
+import Toast from '../../components/Toast';
+import Waiting from '../../components/Waiting';
 
-// Provvisoria: la schermata di spiegazione definitiva (con mockup) arriva in fase 4.
+// L'articolo: la frase vera come titolo, la spiegazione come pezzo di giornale.
 export default function Explain({ session, state, refresh }: RoundProps) {
   const r = state.round!;
   const { err, busy, run } = useAct(refresh);
@@ -12,12 +14,16 @@ export default function Explain({ session, state, refresh }: RoundProps) {
   return (
     <main className="page">
       <RoundHeader state={state} />
+      <h1 className="head">Com'è andata davvero</h1>
       <Sentence frase={r.frase!} parts={r.truth} />
-      <div className="card"><span className="badge true">Com'è davvero</span><p style={{ margin: 0 }}>{r.spiegazione}</p></div>
-      {canAdvance
-        ? <button className="primary" disabled={busy} onClick={() => run(() => advance(session))}>Vai ai punteggi</button>
-        : <p className="muted">Aspetta il narratore…</p>}
-      {err && <p className="err" role="alert">{err}</p>}
+      <div className="byline"><span>Dal nostro archivio</span><span>{r.category ? CATEGORIE[r.category] : ''}</span></div>
+      <p className="article">{r.spiegazione || 'Su questa notizia l\'archivio tace.'}</p>
+      <div className="actions">
+        {canAdvance
+          ? <button className="btn primary" disabled={busy} onClick={() => run(() => advance(session))}>Vai alla classifica</button>
+          : <Waiting>Si passa alla classifica</Waiting>}
+        <Toast msg={err} />
+      </div>
     </main>
   );
 }
