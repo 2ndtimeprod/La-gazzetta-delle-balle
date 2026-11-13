@@ -1,13 +1,20 @@
-import type { GameState } from '../lib/api';
+import type { RoundProps } from '../lib/round';
+import Picking from './round/Picking';
+import Writing from './round/Writing';
+import Voting from './round/Voting';
+import Reveal from './round/Reveal';
+import Explain from './round/Explain';
+import Scores from './round/Scores';
 
-// Segnaposto fino alla fase 3 (round completo).
-export default function Playing({ state }: { state: GameState }) {
-  const narr = state.players.find((p) => p.id === state.round?.narrator_id);
-  return (
-    <main className="page">
-      <header className="masthead"><h1>Partita iniziata</h1></header>
-      <p>Narratore: <b>{narr?.name ?? '?'}</b>{state.round?.narrator_id === state.me && ' (tu)'}</p>
-      <p className="muted">Il round arriva nella fase 3.</p>
-    </main>
-  );
+// Sceglie la schermata in base alla fase del round.
+export default function Playing(p: RoundProps) {
+  switch (p.state.round?.phase) {
+    case 'picking': return <Picking {...p} />;
+    case 'writing': return <Writing {...p} />;
+    case 'reading': case 'voting': return <Voting {...p} />;
+    case 'reveal': return <Reveal {...p} />;
+    case 'explain': return <Explain {...p} />;
+    case 'scores': return <Scores {...p} />;
+    default: return <main className="page"><p className="muted">Caricamento…</p></main>;
+  }
 }
