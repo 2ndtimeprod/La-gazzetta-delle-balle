@@ -37,4 +37,5 @@ button:disabled { opacity: .45; cursor: default; }
 .opt.true { border-color: #1a7a3a; border-width: 3px; }
 .badge { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; }
 .badge.true { color: #1a7a3a; } .badge.lie { color: var(--red); }
+.leave { min-height: 0; padding-top: 0; }
 .stack { display: flex; flex-direction: column; gap: 10px; }

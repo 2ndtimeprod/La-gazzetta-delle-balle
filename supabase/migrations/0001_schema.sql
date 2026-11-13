@@ -1,4 +1,4 @@
--- Balle credibili, fase 1. Eseguire nel SQL Editor di Supabase i file 0001..0005 in ordine.
+-- Balle credibili, fase 1. Eseguire nel SQL Editor di Supabase i file 0001..0006 in ordine.
 create extension if not exists fuzzystrmatch with schema extensions;
 create schema if not exists private; -- helper interni: non esposti dall'API
 

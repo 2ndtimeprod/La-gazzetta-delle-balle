@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { configured } from './lib/supabase';
 import { clearSession, lastSession, type Session } from './lib/session';
 import { useRoomState } from './lib/useRoomState';
+import { useHeartbeat } from './lib/useHeartbeat';
 import Home from './screens/Home';
 import Lobby from './screens/Lobby';
 import Playing from './screens/Playing';
@@ -13,6 +14,7 @@ const DEAD = ['Stanza non trovata.', 'Sessione non valida.'];
 export default function App() {
   const [session, setSession] = useState<Session | null>(() => lastSession());
   const { state, error, refresh } = useRoomState(session);
+  useHeartbeat(session, refresh);
 
   // Sessione salvata ma stanza sparita o giocatore non più valido: torna alla home.
   useEffect(() => {
@@ -28,5 +30,5 @@ export default function App() {
     return <Lobby session={session} state={state} refresh={refresh} onLeft={() => setSession(null)} />;
   }
   if (state.room.phase === 'finished') return <Finished session={session} state={state} onLeft={() => setSession(null)} />;
-  return <Playing session={session} state={state} refresh={refresh} />;
+  return <Playing session={session} state={state} refresh={refresh} onLeft={() => setSession(null)} />;
 }

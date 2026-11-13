@@ -33,7 +33,7 @@ export default function Lobby({ session, state, onLeft, refresh }: Props) {
           {players.map((p) => (
             <li key={p.id}>
               <span>{p.name}{p.id === me && ' (tu)'}</span>
-              {p.id === room.host_player_id && <span className="tag">host</span>}
+              <span className="tag">{!p.connected && 'offline '}{p.id === room.host_player_id && 'host'}</span>
             </li>
           ))}
         </ul>

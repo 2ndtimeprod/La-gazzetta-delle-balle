@@ -24,7 +24,7 @@ const fails_with = async (msg, fn, ...args) => { try { await rpc(fn, ...args); r
   catch (e) { return e.message.includes(msg); } };
 
 // --- Sicurezza: anon non legge i dati segreti
-for (const t of ['facts', 'bluffs', 'votes', 'round_options', 'player_secrets', 'app_config', 'round_points']) {
+for (const t of ['facts', 'bluffs', 'votes', 'round_options', 'player_secrets', 'app_config', 'round_points', 'player_presence']) {
   let denied = false;
   try { await as('anon', `select * from public.${t}`); } catch { denied = true; }
   ok(denied, `anon non può leggere ${t}`);
@@ -111,6 +111,69 @@ for (let i = 1; i < 3; i++) {
 s = await st(host);
 ok(s.room.phase === 'finished', 'partita finita dopo giri x giocatori round');
 ok(s.players.reduce((t, p) => t + p.score, 0) === 2, 'punteggi totali coerenti (2)');
+
+// --- Presenza (0006)
+const mkRoom = async (names) => { const h = await rpc('create_room', names[0]); const ps = [h];
+  for (const n of names.slice(1)) ps.push(await rpc('join_room', h.code, n)); return ps; };
+const hb = (ps, p) => rpc('heartbeat', ps[0].code, p.player_id, p.secret);
+const stale = (p) => db.exec(`insert into public.player_presence(player_id,last_seen) values ('${p.player_id}', now() - interval '2 minutes')
+  on conflict (player_id) do update set last_seen = excluded.last_seen`);
+const gs = (ps, p) => rpc('get_state', ps[0].code, p.player_id, p.secret);
+const act = (ps, fn, p, ...x) => rpc(fn, ps[0].code, p.player_id, p.secret, ...x);
+
+ok(await fails_with('unauthorized', 'heartbeat', C, a.player_id, b.secret), 'heartbeat: segreto sbagliato rifiutato');
+
+// Narratore (e host) spariti prima di girare il tamburo: round saltato e host passato
+{ const ps = await mkRoom(['H', 'A', 'B', 'C']);
+  for (const p of ps) await hb(ps, p);
+  await act(ps, 'start_game', ps[0]);
+  ok((await gs(ps, ps[1])).round.narrator_id === ps[0].player_id, 'presenza: all\'inizio narra l\'host');
+  await stale(ps[0]); await hb(ps, ps[1]);
+  const s = await gs(ps, ps[1]);
+  ok(s.room.host_player_id === ps[1].player_id, 'presenza: host sparito, ruolo passato');
+  ok(s.round.idx === 1 && s.round.narrator_id === ps[1].player_id, 'presenza: narratore assente saltato');
+  ok(s.players.find(p => p.id === ps[0].player_id).connected === false, 'presenza: giocatore segnato disconnesso');
+  await hb(ps, ps[0]);
+  ok((await gs(ps, ps[2])).players.find(p => p.id === ps[0].player_id).connected === true, 'presenza: rientro con battito');
+
+  // Scrittura: un presente sparisce, gli altri rispondono e si passa avanti
+  const sp = await act(ps, 'spin', ps[1]); if (sp.face === 'Jolly') await act(ps, 'pick_category', ps[1], 'Science');
+  const holes = (await gs(ps, ps[1])).round.holes;
+  await stale(ps[3]); await hb(ps, ps[2]);
+  const mk = (t) => Array.from({ length: holes }, (_, i) => `${t} ${i}`);
+  await act(ps, 'submit_bluff', ps[2], mk('Alfa'));
+  ok((await gs(ps, ps[1])).round.phase === 'writing', 'presenza: finché manca un presente si aspetta');
+  await act(ps, 'submit_bluff', ps[0], mk('Beta'));
+  ok((await gs(ps, ps[1])).round.phase === 'reading', 'presenza: scrittura chiusa con i soli presenti');
+}
+// Un solo presente: gli altri in background non fanno saltare i round
+{ const ps = await mkRoom(['H', 'A', 'B']);
+  for (const p of ps) await hb(ps, p);
+  await act(ps, 'start_game', ps[0]);
+  await stale(ps[0]); await stale(ps[2]); await hb(ps, ps[1]);
+  ok((await gs(ps, ps[1])).round.idx === 0, 'presenza: con un solo presente nulla avanza da solo');
+}
+// Lobby: chi è disconnesso viene tolto all'avvio
+{ const ps = await mkRoom(['H', 'A', 'B', 'C']);
+  for (const p of ps) await hb(ps, p);
+  await stale(ps[3]); await hb(ps, ps[0]);
+  await act(ps, 'start_game', ps[0]);
+  const s = await gs(ps, ps[0]);
+  ok(s.players.length === 3 && s.room.phase === 'playing', 'lobby: disconnesso tolto, partita con i 3 presenti');
+  const qs = await mkRoom(['H', 'A', 'B']);
+  for (const p of qs) await hb(qs, p);
+  await stale(qs[2]); await hb(qs, qs[0]);
+  ok(await fails_with('too_few_players', 'start_game', qs[0].code, qs[0].player_id, qs[0].secret), 'lobby: 2 presenti + 1 disconnesso: avvio rifiutato');
+}
+// Pulizia e tetto stanze
+await db.exec(`insert into public.rooms(code, created_at) values ('OLDR', now() - interval '1 day')`);
+await db.exec(`insert into public.players(room_code, name, seat_order, created_at) values ('OLDR', 'x', 0, now() - interval '1 day')`);
+await rpc('create_room', 'Nuovo');
+ok((await db.query(`select count(*) c from public.rooms where code = 'OLDR'`)).rows[0].c === 0, 'pulizia: stanza vecchia senza battiti eliminata');
+const fill = `select chr(65+(i/17576)%26)||chr(65+(i/676)%26)||chr(65+(i/26)%26)||chr(65+i%26) from generate_series(1000,1400) i`;
+await db.exec(`insert into public.rooms(code) ${fill}`);
+ok(await fails_with('too_many_rooms', 'create_room', 'Troppe'), 'tetto: oltre 300 stanze create_room rifiutato');
+await db.exec(`delete from public.rooms where code in (${fill})`);
 
 // --- Filtro fatti
 await db.exec(`update public.app_config set value='verified' where key='fact_filter'`);

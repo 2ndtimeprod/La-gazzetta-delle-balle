@@ -38,6 +38,7 @@ const MESSAGES: Record<string, string> = {
   already_voted: 'Hai già votato.',
   own_bluff: 'Non puoi votare la tua balla.',
   no_facts: 'Fatti esauriti per questa categoria.',
+  too_many_rooms: 'Troppe stanze aperte in questo momento: riprova tra poco.',
 };
 
 async function rpc<T>(fn: string, args: Record<string, unknown>): Promise<T> {
@@ -65,6 +66,7 @@ const who = (s: Session) => ({ p_code: s.code, p_player: s.playerId, p_secret: s
 
 export const getState = (s: Session) => rpc<GameState>('get_state', who(s));
 export const startGame = (s: Session) => rpc<void>('start_game', who(s));
+export const heartbeat = (s: Session) => rpc<void>('heartbeat', who(s));
 export const leaveRoom = (s: Session) => rpc<void>('leave_room', who(s));
 export const updateSettings = (s: Session, p: Partial<Settings>) => rpc<void>('update_settings', { ...who(s), p_settings: p });
 export const spin = (s: Session) => rpc<{ face: string }>('spin', who(s));
