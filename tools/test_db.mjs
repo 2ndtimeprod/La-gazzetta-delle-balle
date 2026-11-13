@@ -175,6 +175,36 @@ await db.exec(`insert into public.rooms(code) ${fill}`);
 ok(await fails_with('too_many_rooms', 'create_room', 'Troppe'), 'tetto: oltre 300 stanze create_room rifiutato');
 await db.exec(`delete from public.rooms where code in (${fill})`);
 
+// --- Cronometro (0007)
+{ const ps = await mkRoom(['H', 'A', 'B']);
+  ok(await fails_with('not_host', 'update_settings', ps[0].code, ps[1].player_id, ps[1].secret, JSON.stringify({ timer: false })), 'timer: solo l\'host lo cambia');
+  await act(ps, 'update_settings', ps[0], JSON.stringify({ timer: false }));
+  ok((await gs(ps, ps[1])).room.settings.timer === false, 'timer: spento in lobby');
+  await act(ps, 'start_game', ps[0]);
+  const sp = await act(ps, 'spin', ps[0]); if (sp.face === 'Jolly') await act(ps, 'pick_category', ps[0], 'Science');
+  ok((await gs(ps, ps[1])).round.deadline_at === null, 'timer spento: nessuna scadenza');
+  ok(await fails_with('too_early', 'close_writing', ps[0].code, ps[1].player_id, ps[1].secret), 'timer spento: un giocatore non chiude la scrittura');
+  ok(await fails_with('game_started', 'update_settings', ps[0].code, ps[0].player_id, ps[0].secret, JSON.stringify({ giri: 2 })), 'in partita: i giri non si cambiano');
+  await act(ps, 'update_settings', ps[0], JSON.stringify({ timer: true }));
+  const d = (await gs(ps, ps[1])).round.deadline_at;
+  ok(d !== null && Date.parse(d) > Date.now(), 'timer acceso a metà scrittura: riparte da 60 s');
+  await act(ps, 'update_settings', ps[0], JSON.stringify({ timer: false }));
+  ok((await gs(ps, ps[1])).round.deadline_at === null, 'timer spento a metà scrittura: scadenza tolta');
+  const holes = (await gs(ps, ps[0])).round.holes;
+  const mk = (t) => Array.from({ length: holes }, (_, i) => `${t} ${i}`);
+  await act(ps, 'submit_bluff', ps[1], mk('Uno'));
+  ok((await gs(ps, ps[0])).round.phase === 'writing', 'timer spento: si aspetta chi non ha scritto');
+  await act(ps, 'submit_bluff', ps[2], mk('Due'));
+  ok((await gs(ps, ps[0])).round.phase === 'reading', 'timer spento: chiude quando scrivono tutti');
+  await act(ps, 'update_settings', ps[0], JSON.stringify({ timer: true }));
+  await act(ps, 'advance', ps[0]); await act(ps, 'advance', ps[0]); await act(ps, 'advance', ps[0]); await act(ps, 'advance', ps[0]);
+  const s2 = await gs(ps, ps[0]); // scores
+  await act(ps, 'advance', ps[0]);
+  const s3 = await gs(ps, ps[1]);
+  const sp2 = await act(ps, 'spin', ps[1]); if (sp2.face === 'Jolly') await act(ps, 'pick_category', ps[1], 'Science');
+  ok(s2.round.phase === 'scores' && (await gs(ps, ps[2])).round.deadline_at !== null, 'timer riacceso: il round dopo ha la scadenza');
+}
+
 // --- Filtro fatti
 await db.exec(`update public.app_config set value='verified' where key='fact_filter'`);
 ok((await db.query(`select count(*) c from public.facts where private.fact_ok(stato)`)).rows[0].c < 35, 'filtro "verified" attivo');

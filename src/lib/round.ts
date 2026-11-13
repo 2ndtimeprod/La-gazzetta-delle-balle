@@ -19,6 +19,8 @@ export function roles(state: GameState) {
   return { me, isNarrator, isHost, canAdvance: isNarrator || isHost };
 }
 
+export const timerOn = (state: GameState) => state.room.settings.timer !== false;
+
 // Giocatori che devono scrivere/votare: connessi e non narratore.
 export const needed = (state: GameState) =>
   state.players.filter((p) => p.connected && p.id !== state.round?.narrator_id).length;

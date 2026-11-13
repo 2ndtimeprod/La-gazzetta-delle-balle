@@ -53,6 +53,8 @@ export default function Lobby({ session, state, onLeft, refresh }: Props) {
           <input type="checkbox" checked={st.dark} disabled={!isHost} onChange={(e) => set({ dark: e.target.checked })} /></label>
         <label className="toggle">Estremi
           <input type="checkbox" checked={st.estremi} disabled={!isHost} onChange={(e) => set({ estremi: e.target.checked })} /></label>
+        <label className="toggle">Cronometro (60 s per scrivere)
+          <input type="checkbox" checked={st.timer !== false} disabled={!isHost} onChange={(e) => set({ timer: e.target.checked })} /></label>
         {!isHost && <p className="muted">Le impostazioni le decide chi ha creato la stanza.</p>}
       </section>
 

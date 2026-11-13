@@ -1,7 +1,7 @@
 import { supabase } from './supabase';
 import { saveSession, type Session } from './session';
 
-export type Settings = { giri: number; dark: boolean; estremi: boolean };
+export type Settings = { giri: number; dark: boolean; estremi: boolean; timer?: boolean }; // timer assente = acceso
 export type Player = { id: string; name: string; score: number; seat: number; connected: boolean };
 export type Option = {
   id: number; parts: string[]; mine?: boolean;
