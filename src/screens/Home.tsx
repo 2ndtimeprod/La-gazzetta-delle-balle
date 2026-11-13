@@ -4,15 +4,7 @@ import type { Session } from '../lib/session';
 import Masthead from '../components/Masthead';
 import Toast from '../components/Toast';
 import { openTutorial } from '../components/Tutorial';
-import Illustrazione from '../components/Illustrazione';
-import { EDIZIONE_CORRENTE } from '../data/curiosita';
-
-const ULTIMORA = [
-  'Scoperta una verità che nessuno aveva chiesto',
-  'Gli esperti smentiscono, poi ci ripensano',
-  'Fonti attendibili confermano: forse',
-  'Clamoroso in redazione: una notizia è vera',
-];
+import { ULTIMORA } from '../data/ultimora';
 
 export default function Home({ onSession }: { onSession: (s: Session) => void }) {
   const [name, setName] = useState('');
@@ -24,7 +16,6 @@ export default function Home({ onSession }: { onSession: (s: Session) => void })
     setBusy(kind); setErr('');
     try { onSession(await f()); } catch (e) { setErr((e as Error).message); setBusy(''); }
   };
-  const [apertura, ...interne] = EDIZIONE_CORRENTE;
   const nameOk = name.trim().length >= 1;
 
   return (
@@ -34,14 +25,8 @@ export default function Home({ onSession }: { onSession: (s: Session) => void })
         <span className="ticker-tag">Ultim'ora</span>
         <div className="ticker-viewport"><div className="ticker-track">{[...ULTIMORA, ...ULTIMORA].map((t, i) => <span key={i}>{t}</span>)}</div></div>
       </div>
-      <article className="lead">
-        <div className="kicker-row"><span className="kicker">In prima pagina</span><span className="cat">{apertura.sezione}</span></div>
-        <figure className="foto"><Illustrazione id={apertura.id} /></figure>
-        <h2 className="head lead-title" style={{ fontSize: `calc(var(--head-size) * ${apertura.titolo.length > 75 ? .6 : apertura.titolo.length > 55 ? .7 : .82})` }}>{apertura.titolo}</h2>
-        <p className="lede">{apertura.testo}</p>
-      </article>
-      <section className="modulo">
-      <h3 className="section-title"><span>Modulo di arruolamento</span></h3>
+      <section className="coupon">
+      <div className="coupon-head"><span>Modulo di arruolamento</span><span className="coupon-no">N° 0317</span></div>
       <div className="field">
         <label className="label" htmlFor="n">Firma dell'inviato</label>
         <input id="n" className="input" maxLength={20} value={name} placeholder="Il tuo nome" autoComplete="off"
@@ -57,15 +42,6 @@ export default function Home({ onSession }: { onSession: (s: Session) => void })
           onClick={() => run('join', () => joinRoom(code, name))}>Entra con il codice</button>
         <Toast msg={err} />
       </div>
-      </section>
-      <section className="interne">
-        <h3 className="section-title"><span>Dalle pagine interne</span><span>Edizione di oggi</span></h3>
-        {interne.map((c) => (
-          <article key={c.id} className="brief">
-            <figure className="foto sm"><Illustrazione id={c.id} /></figure>
-            <div><span className="cat">{c.sezione}</span><h4 className="brief-title">{c.titolo}</h4></div>
-          </article>
-        ))}
       </section>
       <ol className="howto">
         <li><span><b>Il narratore</b> estrae una notizia vera, con un buco.</span></li>
