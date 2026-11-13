@@ -11,7 +11,7 @@ export default function DebateStamp({ state }: { state: GameState }) {
   const left = useCountdown(until, state.now);
   useEffect(() => {
     // al primo stato (anche rientrando a dibattito in corso) non si ripete il timbro
-    if (seen.current !== undefined && until && until !== seen.current && left > 0) setStamp(true);
+    if (seen.current !== undefined && until && until !== seen.current && Date.parse(until) > Date.parse(state.now)) setStamp(true);
     seen.current = until;
   }, [until]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { if (!stamp) return; const t = setTimeout(() => setStamp(false), 3200); return () => clearTimeout(t); }, [stamp]);
