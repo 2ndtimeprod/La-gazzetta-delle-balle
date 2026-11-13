@@ -4,6 +4,8 @@
   padding: 24px; background: rgba(10,8,6,.72); animation: debate-fade .2s ease both; }
 .debate-stamp { padding: 12px 22px 8px; border: 7px solid var(--accent); color: var(--accent); background: rgba(250,247,240,.06);
   font: var(--num-w) clamp(48px, 17vw, 88px)/1 var(--f-num); font-style: var(--num-style); text-transform: uppercase; letter-spacing: 2px;
+  filter: url(#stamp-rough); opacity: .92; border-radius: 3px 5px 2px 4px;
+  box-shadow: 2px 1px 0 color-mix(in srgb, var(--accent) 28%, transparent);
   animation: debate-slam .55s cubic-bezier(.2,.9,.3,1.1) both; }
 .debate-sub { margin: 0; max-width: 300px; text-align: center; color: #F1E9D8; font: 500 17px/1.4 var(--f-body); }
 .debate-bar { position: sticky; top: 0; z-index: 30; padding: 8px 12px; text-align: center; background: var(--accent); color: var(--accent-ink); font: 600 14px/1.2 var(--f-body); }
