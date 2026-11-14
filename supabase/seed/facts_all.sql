@@ -508,7 +508,7 @@ insert into public.facts (id, categoria, frase, risposte, spiegazione, stato) va
 ('POP-087','Pop culture','Secondo la versione più nota, Totò scrisse “Malafemmena” pensando alla ____.',array['moglie'],'La canzone è del 1951; la dedica alla moglie Diana è la versione più diffusa.','Verificato'),
 ('POP-088','Pop culture','Sophia Loren è stata la prima a vincere l''Oscar per un ruolo ____.',array['inglese'],'Vinse nel 1962 per “La ciociara”.','Verificato'),
 ('POP-089','Pop culture','Per ritirare l''Oscar nel 1999, Roberto Benigni ____.',array['camminò sopra le poltrone'],'Era l''Oscar per “La vita è bella”; saltò sugli schienali per arrivare al palco.','Verificato'),
-('POP-090','Pop culture','La parola ____ nasce da un personaggio del film La dolce vita.',array['La dolce vita'],'Paparazzo era il fotografo che accompagnava Mastroianni nel film di Fellini.','Verificato'),
+('POP-090','Pop culture','La parola ____ nasce da un personaggio del film La dolce vita.',array['paparazzo'],'Paparazzo era il fotografo che accompagnava Mastroianni nel film di Fellini.','Verificato'),
 ('POP-091','Pop culture','Per la scena nella Fontana di Trevi, Mastroianni aveva sotto lo smoking una ____.',array['muta da sub'],'Si girò d''inverno; secondo i racconti bevve anche vodka per il freddo.','Verificato'),
 ('POP-092','Pop culture','Il tema del “Buono, il brutto, il cattivo” imita il verso del ____.',array['coyote'],'Morricone si ispirò all''ululato del coyote per il famoso motivo.','Verificato'),
 ('POP-093','Pop culture','Bud Spencer fu il primo italiano a ____ in meno di un minuto.',array['un minuto'],'Fece 59"5 nel 1950 a Salsomaggiore; poi nuotò alle Olimpiadi del 1952.','Verificato'),
