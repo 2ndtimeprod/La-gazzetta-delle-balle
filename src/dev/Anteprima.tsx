@@ -7,6 +7,7 @@ import Home from '../screens/Home';
 import Finished from '../screens/Finished';
 import Writing from '../screens/round/Writing';
 import Reading from '../screens/round/Reading';
+import Censor from '../screens/round/Censor';
 import Voting from '../screens/round/Voting';
 import Reveal from '../screens/round/Reveal';
 import Explain from '../screens/round/Explain';
@@ -14,7 +15,7 @@ import Scores from '../screens/round/Scores';
 import RoundHeader from '../components/RoundHeader';
 import Drum from '../components/Drum';
 
-// Solo in sviluppo (npm run dev): /?anteprima=lobby|tamburo|scrive|narratore|lettura|ascolta|vota|rivela|spiega|punti|fine
+// Solo in sviluppo (npm run dev): /?anteprima=lobby|tamburo|censura|censurato|scrive|narratore|lettura|ascolta|vota|rivela|spiega|punti|fine
 const S: Session = { code: 'KUBO', playerId: 'p1', secret: 's' };
 const P = ['Dom', 'Giulia', 'Ale', 'Bea', 'Marco'].map((name, i) => ({ id: `p${i + 1}`, name, score: [7, 9, 4, 6, 2][i], seat: i, connected: i !== 4 }));
 const FRASE = "Alla fine degli anni Novanta l'NSA vietò il Furby nei suoi uffici perché temeva che ____.";
@@ -27,6 +28,12 @@ function state(round: Partial<RoundState> | null, me = 'p1', phase = 'playing'):
       deadline_at: new Date(Date.now() + 42000).toISOString(), bluff_count: 2, vote_count: 0, frase: FRASE, holes: 1, ...round },
   };
 }
+const VERA = 'imparasse segreti e li ripetesse in giro';
+const TOKENS = FRASE.replace('____', `\u0000${VERA}\u0001`).replace(/\.$/, ' .').split(' ').reduce<{ list: { t: string; sp: boolean; h: number; w: boolean }[]; h: number }>((acc, raw, i) => {
+  const start = raw.startsWith('\u0000'); const end = raw.endsWith('\u0001'); const t = raw.replace(/[\u0000\u0001]/g, '');
+  const h = start ? 1 : acc.h;
+  acc.list.push({ t, sp: i > 0 && t !== '.', h, w: t !== '.' }); acc.h = end ? 0 : h; return acc;
+}, { list: [], h: 0 }).list;
 const OPTS = [
   { id: 1, parts: ["cantasse l'inno sovietico al buio"] },
   { id: 2, parts: ['imparasse segreti e li ripetesse in giro'], is_true: true },
@@ -57,6 +64,8 @@ export default function Anteprima({ which }: { which: string }) {
     punti: state({ phase: 'scores', points: { p1: 1, p2: 0, p3: 2, p4: 1 } }),
     fine: state(null, 'p1', 'finished'),
     tamburo: state({ phase: 'picking', category: null }, 'p2'),
+    censura: state({ phase: 'picking', category: null, pending: true, pending_category: 'Pop culture', tokens: TOKENS }, 'p2'),
+    censurato: state({ custom: true, frase: '____ il Furby ____.', holes: 2, write_secs: 90, my_bluff: null }),
   }), []);
   const p = { session: S, refresh: noop };
   switch (which) {
@@ -65,6 +74,8 @@ export default function Anteprima({ which }: { which: string }) {
     case 'tutorial': localStorage.removeItem('balle:tutorial-visto'); return <Home onSession={noop} />;
     case 'lobby': return <Lobby {...p} state={st.lobby} onLeft={noop} />;
     case 'scrive': return <Writing {...p} state={st.scrive} />;
+    case 'censura': return <Censor {...p} state={st.censura} onDone={noop} />;
+    case 'censurato': return <Writing {...p} state={st.censurato} />;
     case 'narratore': return <Writing {...p} state={st.narratore} />;
     case 'lettura': return <Reading {...p} state={st.lettura} />;
     case 'ascolta': return <Reading {...p} state={st.ascolta} />;

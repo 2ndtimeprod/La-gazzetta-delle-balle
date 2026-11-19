@@ -16,6 +16,7 @@ import './theme/tutorial.css';
 import './theme/intro.css';
 import './theme/debate.css';
 import './theme/reading.css';
+import './theme/censor.css';
 import './theme/prova.css';
 import ProvaBar from './components/ProvaBar';
 import { loadProva } from './lib/prova';

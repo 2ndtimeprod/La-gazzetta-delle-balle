@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { pickCategory, skipNarrator, spin, startWriting } from '../../lib/api';
 import { CATEGORIE, NORMALI, nameOf, roles, type RoundProps } from '../../lib/round';
 import { useAct } from '../../lib/useAct';
@@ -6,9 +6,10 @@ import RoundHeader from '../../components/RoundHeader';
 import Drum from '../../components/Drum';
 import Toast from '../../components/Toast';
 import Waiting from '../../components/Waiting';
+import Censor from './Censor';
 
 // Il narratore gira il tamburo. Il server tiene il risultato segreto finché il tamburo non si ferma:
-// solo allora il client del narratore chiama `start_writing` e la frase compare a tutti insieme.
+// allora il narratore vede la frase intera, sceglie il buco (Censor) e `start_writing` la pubblica a tutti insieme.
 // `onHold` tiene questa schermata visibile fino a quel momento.
 export default function Picking({ session, state, refresh, onHold }: RoundProps & { onHold: (b: boolean) => void }) {
   const r = state.round!;
@@ -17,19 +18,18 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
   const [landed, setLanded] = useState<string | null>(null);
   const [spinErr, setSpinErr] = useState('');
   const [showPick, setShowPick] = useState(false); // il Jolly lascia al tamburo il tempo di fermarsi
+  const [ready, setReady] = useState(false); // tamburo fermo: si passa alla scelta del buco
+  const spun = useRef(false);
   const me = nameOf(state.players, state.me);
 
   const doSpin = async () => {
-    setSpinErr(''); onHold(true);
+    setSpinErr(''); onHold(true); spun.current = true;
     try { return (await spin(session)).face; }
     catch (e) { setSpinErr((e as Error).message); onHold(false); throw e; }
   };
-  const done = async () => {
-    try { await startWriting(session); setSpinErr(''); onHold(false); refresh(); }
-    catch (e) { setSpinErr((e as Error).message); }
-  };
+  const done = () => { setReady(true); refresh(); };
 
-  // Dopo una categoria normale la frase si apre da sola a tamburo fermo; il pulsante serve a chi ha fretta.
+  // Dopo una categoria normale la frase arriva da sola a tamburo fermo; il pulsante serve a chi ha fretta.
   useEffect(() => {
     if (!landed || landed === 'Jolly') return;
     const t = setTimeout(done, 1500);
@@ -43,7 +43,10 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
     return () => clearTimeout(t);
   }, [landed]);
 
-  const chooser = isNarrator && r.phase === 'picking' && r.jolly && (landed === 'Jolly' || landed === null);
+  const chooser = isNarrator && r.phase === 'picking' && r.jolly && !r.pending && (landed === 'Jolly' || landed === null);
+  const censor = isNarrator && r.phase === 'picking' && !!r.tokens && (ready || !spun.current);
+
+  if (censor) return <Censor session={session} state={state} refresh={refresh} onDone={() => onHold(false)} />;
 
   if (chooser && landed === null) {
     // rientro dopo un Jolly: niente tamburo, si sceglie e basta
@@ -51,7 +54,7 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
       <main className="page">
         <RoundHeader state={state} />
         <h1 className="head">Jolly: scegli tu</h1>
-        <Choices busy={busy} onPick={(c) => run(async () => { await pickCategory(session, c); onHold(false); })} />
+        <Choices busy={busy} onPick={(c) => run(async () => { await pickCategory(session, c); setReady(true); })} />
         <Toast msg={err} />
       </main>
     );
@@ -62,7 +65,7 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
       <RoundHeader state={state} />
       {isNarrator
         ? <div><h1 className="head">Tocca a te, {me}</h1><p className="lede">Afferra il tamburo, dagli una spinta e lascialo andare.</p></div>
-        : <div><h1 className="head sm">Si gira il tamburo</h1><Waiting>{nameOf(state.players, r.narrator_id)} sta estraendo la categoria</Waiting></div>}
+        : <div><h1 className="head sm">Si gira il tamburo</h1><Waiting>{nameOf(state.players, r.narrator_id)} {r.pending ? 'sta preparando la frase' : 'sta estraendo la categoria'}</Waiting></div>}
       <Drum dark={state.room.settings.dark} interactive={isNarrator && r.phase === 'picking' && !r.jolly}
         onSpin={doSpin} onLanded={(f) => { if (f) setLanded(f); }} />
       {landed && landed !== 'Jolly' && (
@@ -71,8 +74,11 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
       {chooser && landed === 'Jolly' && showPick && (
         <section className="stack">
           <h2 className="section-title"><span>Jolly: scegli la categoria</span></h2>
-          <Choices busy={busy} onPick={(c) => run(async () => { await pickCategory(session, c); onHold(false); })} />
+          <Choices busy={busy} onPick={(c) => run(async () => { await pickCategory(session, c); setReady(true); })} />
         </section>
+      )}
+      {roles(state).isHost && !isNarrator && r.pending && (
+        <div className="actions"><button className="btn small" disabled={busy} onClick={() => run(() => startWriting(session))}>Pubblica col buco dell'archivio</button></div>
       )}
       {roles(state).isHost && !isNarrator && r.phase === 'picking' && !r.jolly && (
         <Skip name={nameOf(state.players, r.narrator_id)} busy={busy} onSkip={() => run(() => skipNarrator(session))} />
