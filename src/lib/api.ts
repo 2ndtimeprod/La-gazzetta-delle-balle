@@ -5,7 +5,7 @@ export type Settings = { giri: number; dark: boolean; estremi: boolean; timer?: 
 export type Player = { id: string; name: string; score: number; seat: number; connected: boolean; debate_used?: boolean };
 export type Option = {
   id: number; parts: string[]; mine?: boolean;
-  is_true?: boolean; authors?: string[]; voters?: string[];
+  is_true?: boolean; authors?: string[]; voters?: string[]; original?: string[] | null;
 };
 export type RoundState = {
   id: number; idx: number; total: number; narrator_id: string; phase: string;
@@ -14,7 +14,7 @@ export type RoundState = {
   debate_by?: string | null; debate_until?: string | null;
   frase?: string; holes?: number; truth?: string[]; spiegazione?: string;
   my_bluff?: string[] | null; submitted?: string[];
-  options?: Option[]; voted?: string[]; my_vote?: number | null; points?: Record<string, number>;
+  options?: Option[]; option_count?: number; voted?: string[]; my_vote?: number | null; points?: Record<string, number>;
 };
 export type GameState = {
   now: string; me: string;
@@ -34,6 +34,8 @@ const MESSAGES: Record<string, string> = {
   not_narrator: 'Solo il narratore può farlo.',
   bad_phase: 'Azione non possibile in questa fase.',
   too_close: 'Troppo simile alla risposta vera: riscrivila.',
+  edit_too_far: 'Correzione troppo diversa da quello che ha scritto il giocatore: solo maiuscole, accenti e refusi.',
+  edit_true: 'La risposta vera non si corregge.',
   duplicate: 'Un altro giocatore ha già scritto una risposta uguale: scrivine una diversa.',
   bad_text: 'Testo non valido (1-80 caratteri).',
   bad_parts: 'Compila tutti i campi.',
@@ -84,3 +86,4 @@ export const closeWriting = (s: Session) => rpc<void>('close_writing', who(s));
 export const startDebate = (s: Session) => rpc<void>('start_debate', who(s));
 export const castVote = (s: Session, option: number) => rpc<void>('cast_vote', { ...who(s), p_option: option });
 export const advance = (s: Session) => rpc<void>('advance', who(s));
+export const editOption = (s: Session, option: number, parts: string[]) => rpc<void>('edit_option', { ...who(s), p_option: option, p_parts: parts });

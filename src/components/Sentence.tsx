@@ -1,11 +1,13 @@
 // Frase con i buchi (____): riempiti con `parts` se presenti, altrimenti righe vuote.
-export default function Sentence({ frase, parts, quote }: { frase: string; parts?: string[]; quote?: boolean }) {
+// `small`: versione compatta per le card (lettura e voto), resa come span per stare dentro un pulsante.
+export default function Sentence({ frase, parts, quote, small, truth }: { frase: string; parts?: string[]; quote?: boolean; small?: boolean; truth?: boolean }) {
   const pieces = frase.split('____');
+  const Tag = small ? 'span' : 'p';
   return (
-    <p className={`sentence${quote ? ' quote' : ''}`}>
+    <Tag className={`sentence${quote ? ' quote' : ''}${small ? ' sm' : ''}`}>
       {pieces.map((t, i) => (
-        <span key={i}>{t}{i < pieces.length - 1 && (parts?.[i] ? <b className="fill">{parts[i]}</b> : <span className="gap" />)}</span>
+        <span key={i}>{t}{i < pieces.length - 1 && (parts?.[i] ? <b className={`fill${truth ? ' true' : ''}`}>{parts[i]}</b> : <span className="gap" />)}</span>
       ))}
-    </p>
+    </Tag>
   );
 }

@@ -15,7 +15,7 @@ Rispondi a Dom sempre in italiano. Dom vuole onestà diretta: digli quando sbagl
 2. Il narratore gira il tamburo a rulli: la categoria la sceglie il server, l'animazione è solo scena.
 3. Il narratore vede la frase con il buco e la risposta vera; gli altri vedono solo la frase.
 4. Gli altri hanno 60 s per scrivere una balla che completi il buco (o i due buchi).
-5. Il narratore legge ad alta voce tutte le risposte mescolate, vera compresa; gli altri votano (non la propria).
+5. Il narratore legge ad alta voce tutte le risposte mescolate, vera compresa, come frasi intere che vede solo lui, e può correggere maiuscole e refusi; poi le manda a tutti e gli altri votano (non la propria).
 6. Punti: 1 a chi vota la vera; 1 all'autore di una balla per ogni voto ricevuto.
 7. Rivelazione, poi spiegazione del fatto (campo `spiegazione`), punteggi, narratore successivo.
 
@@ -53,7 +53,7 @@ Formato di ogni fatto:
 - `bluffs`: round_id, player_id, text (o due parti), normalized.
 - `votes`: round_id, voter_id, choice_id.
 - `facts`: i campi del JSON; nessuna policy di lettura per `anon`.
-- Tabelle segrete aggiunte: `round_options` (card mescolate, balle identiche unite), `round_points`, `app_config` (`fact_filter` = `all`|`verified`). `anon` legge solo `rooms`, `players`, `rounds`; il resto passa da `get_state` e dalle RPC (`supabase/migrations/0001..0012`). I contatori `bluff_count`/`vote_count` in `rounds` servono a far scattare Realtime.
+- Tabelle segrete aggiunte: `round_options` (card mescolate, balle identiche unite), `round_points`, `app_config` (`fact_filter` = `all`|`verified`). `anon` legge solo `rooms`, `players`, `rounds`; il resto passa da `get_state` e dalle RPC (`supabase/migrations/0001..0013`). I contatori `bluff_count`/`vote_count` in `rounds` servono a far scattare Realtime.
 Fasi del round: `picking` → `writing` (60 s) → `reading` → `voting` → `reveal` → `explain` → `scores`.
 
 ## Regole sulle risposte
@@ -102,3 +102,4 @@ mockups/     sorgenti dei mockup
 - 13/11/2026 (dibattito): migration `0012_debate.sql` (da eseguire a mano). `start_debate`, `players.debate_used`, `rounds.debate_by/debate_until`, `settings.dibattito` (assente = acceso). Client: `DebateButton` (footer), `DebateStamp` (timbro 3 s + barra col conto alla rovescia), `theme/debate.css`, scheda nel tutorial. Nessun blocco del gioco durante il dibattito. Non provato su telefono vero.
 - 13/11/2026 (stanza di prova): nessuna migration. Aprendo l'app con `?prova` la Home mostra "Stanza di prova": crea una stanza con 4 giocatori (Anna, Bruno, Carla, Dino) le cui sessioni stanno in `localStorage` (`lib/prova.ts`); `ProvaBar` (barra scura in basso) cambia giocatore con un tocco e tiene vivi i battiti di tutti. Il narratore è marcato (N). Non provata su un Supabase reale.
 - 13/11/2026 (fase 5, import fatti): nessuna migration (`fact_filter` esiste dalla 0001, default `all`). `tools/import_facts.py` (con `--dry-run`) converte l'Excel, convalida (buchi, categorie, id, spiegazioni) e scrive `supabase/seed/facts_all.sql` (upsert per id, 531 fatti, rieseguibile). Dom lo incolla nel SQL Editor. Verificati 250/531, ma per categoria: Animali 0, Geografia 3, Scienza 17, Dark 16: con `verified` il tamburo può cadere su categorie vuote o quasi. `test:db` carica l'archivio completo. Per tornare ai soli verificati: `update app_config set value='verified' where key='fact_filter';`.
+- 19/11/2026 (lettura del narratore): migration `0013_narrator_reading.sql` (da eseguire a mano). In `reading` le card arrivano solo al narratore (con vera, autori, originale); gli altri ricevono solo `option_count`. `edit_option` (solo narratore, solo in lettura): la correzione deve restare `parts_close` al testo del giocatore (`edit_too_far`), non può avvicinarsi alla vera o a un'altra balla, la vera non si tocca; `round_options.original_parts` conserva l'originale. Client: `round/Reading.tsx` (lista, correzione a tutto schermo, "Mostra a tutti per il voto"), `Voting` mostra le frasi intere (`Sentence small`), `theme/reading.css`, anteprime `lettura` e `ascolta`. Mockup nel canvas Claude Design "Gazzetta delle Balle: lettura del narratore".

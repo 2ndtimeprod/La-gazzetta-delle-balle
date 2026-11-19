@@ -1,0 +1,18 @@
+/* Lettura del narratore (card con frase intera e correzione) e frasi intere al voto. */
+.sentence.sm { display: block; font-size: 16px; font-weight: 400; line-height: 1.38; }
+.fill.true { color: var(--true); box-shadow: inset 0 -.32em 0 var(--true-soft); }
+.opt.on .fill { color: inherit; box-shadow: inset 0 -.32em 0 color-mix(in srgb, currentColor 22%, transparent); }
+.read-list { display: flex; flex-direction: column; }
+.read-card { display: grid; grid-template-columns: 24px 1fr auto; gap: 10px; align-items: start; padding: 10px 0; border-bottom: 1px solid var(--rule-soft); animation: rise .45s cubic-bezier(.2,.8,.2,1) both; }
+.read-card:last-child { border-bottom: 0; }
+.read-card .letter { font: var(--num-w) 21px/1 var(--f-num); font-style: var(--num-style); color: var(--accent); padding-top: 2px; }
+.read-card .sub { display: block; margin-top: 5px; font: var(--meta-w) 9.5px/1.3 var(--f-meta); letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); }
+.read-card .sub.v { color: var(--true); }
+.read-card .sub.k { color: var(--gold); }
+.pen { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; padding: 0; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+.pen:disabled { opacity: .5; cursor: default; }
+.orig { margin: 0; font-style: italic; font-size: 16px; line-height: 1.4; color: var(--muted); }
+.lede.small { font-size: 14px; }
+.label.center { text-align: center; }
+.row2 { display: flex; gap: 10px; }
+.row2 .btn { flex: 1; }

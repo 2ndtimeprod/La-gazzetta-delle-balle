@@ -6,6 +6,7 @@ import EdizioneStraordinaria from '../components/EdizioneStraordinaria';
 import Home from '../screens/Home';
 import Finished from '../screens/Finished';
 import Writing from '../screens/round/Writing';
+import Reading from '../screens/round/Reading';
 import Voting from '../screens/round/Voting';
 import Reveal from '../screens/round/Reveal';
 import Explain from '../screens/round/Explain';
@@ -13,7 +14,7 @@ import Scores from '../screens/round/Scores';
 import RoundHeader from '../components/RoundHeader';
 import Drum from '../components/Drum';
 
-// Solo in sviluppo (npm run dev): /?anteprima=lobby|tamburo|scrive|narratore|vota|rivela|spiega|punti|fine
+// Solo in sviluppo (npm run dev): /?anteprima=lobby|tamburo|scrive|narratore|lettura|ascolta|vota|rivela|spiega|punti|fine
 const S: Session = { code: 'KUBO', playerId: 'p1', secret: 's' };
 const P = ['Dom', 'Giulia', 'Ale', 'Bea', 'Marco'].map((name, i) => ({ id: `p${i + 1}`, name, score: [7, 9, 4, 6, 2][i], seat: i, connected: i !== 4 }));
 const FRASE = "Alla fine degli anni Novanta l'NSA vietò il Furby nei suoi uffici perché temeva che ____.";
@@ -39,6 +40,11 @@ export default function Anteprima({ which }: { which: string }) {
     lobby: state(null, 'p1', 'lobby'),
     scrive: state({ my_bluff: null }),
     narratore: state({ truth: ['imparasse segreti e li ripetesse in giro'] }, 'p2'),
+    lettura: state({ phase: 'reading', options: [
+      { ...OPTS[0], authors: ['p3'] }, { ...OPTS[1] },
+      { ...OPTS[2], authors: ['p1'], original: ['le sue pile mandasero in tilt i radar'] }, { ...OPTS[3], authors: ['p4'] },
+    ] }, 'p2'),
+    ascolta: state({ phase: 'reading', option_count: 4 }),
     vota: state({ phase: 'voting', options: OPTS, voted: ['p3'], my_vote: null }),
     rivela: state({ phase: 'reveal', options: [
       { ...OPTS[0], is_true: false, authors: ['p3'], voters: ['p4'] },
@@ -60,6 +66,8 @@ export default function Anteprima({ which }: { which: string }) {
     case 'lobby': return <Lobby {...p} state={st.lobby} onLeft={noop} />;
     case 'scrive': return <Writing {...p} state={st.scrive} />;
     case 'narratore': return <Writing {...p} state={st.narratore} />;
+    case 'lettura': return <Reading {...p} state={st.lettura} />;
+    case 'ascolta': return <Reading {...p} state={st.ascolta} />;
     case 'vota': return <Voting {...p} state={st.vota} />;
     case 'rivela': return <Reveal {...p} state={st.rivela} />;
     case 'spiega': return <Explain {...p} state={st.spiega} />;

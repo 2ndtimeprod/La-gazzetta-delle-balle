@@ -6,6 +6,7 @@ import DebateStamp from '../components/DebateStamp';
 import TimerToggle from '../components/TimerToggle';
 import Picking from './round/Picking';
 import Writing from './round/Writing';
+import Reading from './round/Reading';
 import Voting from './round/Voting';
 import Reveal from './round/Reveal';
 import Explain from './round/Explain';
@@ -18,7 +19,8 @@ function Screen(p: RoundProps & { hold: boolean; setHold: (b: boolean) => void }
   if (phase === 'picking' || (p.hold && phase === 'writing')) return <Picking {...base} onHold={p.setHold} />;
   switch (phase) {
     case 'writing': return <Writing {...base} />;
-    case 'reading': case 'voting': return <Voting {...base} />;
+    case 'reading': return <Reading {...base} />;
+    case 'voting': return <Voting {...base} />;
     case 'reveal': return <Reveal {...base} />;
     case 'explain': return <Explain {...base} />;
     case 'scores': return <Scores {...base} />;
@@ -31,7 +33,7 @@ export default function Playing(p: RoundProps & { onLeft: () => void }) {
   const roundId = p.state.round?.id;
   useEffect(() => { setHold(false); }, [roundId]);
   // La chiave per fase fa ripartire le animazioni d'ingresso a ogni cambio di schermata.
-  const key = `${roundId}-${hold && p.state.round?.phase === 'writing' ? 'picking' : p.state.round?.phase === 'voting' ? 'reading' : p.state.round?.phase}`;
+  const key = `${roundId}-${hold && p.state.round?.phase === 'writing' ? 'picking' : p.state.round?.phase}`;
   return (
     <>
       <Screen key={key} session={p.session} state={p.state} refresh={p.refresh} hold={hold} setHold={setHold} />
