@@ -94,6 +94,21 @@ await call('submit_bluff', others[1], mk('cobra'));
 s = await st(narr);
 ok(s.round.phase === 'reading', 'tutti hanno scritto: si passa a reading');
 ok(s.round.options.length === 3, 'una card per giocatore: vera + 2 balle, nessuna unione');
+ok(s.round.options.filter(o => o.is_true).length === 1, 'lettura: il narratore vede quale card è la vera');
+{ const so = await st(others[0]);
+  ok(!('options' in so.round) && so.round.option_count === 3, 'lettura: gli altri non ricevono le card, solo quante sono'); }
+const zebraOpt = (await db.query(`select id from public.round_options where not is_true and $1 = any(author_ids)`, [others[0].player_id])).rows[0].id;
+ok(await fails_with('not_narrator', 'edit_option', C, others[1].player_id, others[1].secret, zebraOpt, mk('zebra')), 'correzione: solo il narratore');
+ok(await fails_with('edit_too_far', 'edit_option', C, narr.player_id, narr.secret, zebraOpt, mk('Elefante rosa')), 'correzione troppo diversa rifiutata');
+{ const tId = (await db.query(`select id from public.round_options where is_true`)).rows[0].id;
+  ok(await fails_with('edit_true', 'edit_option', C, narr.player_id, narr.secret, tId, s.round.truth), 'la vera non si corregge'); }
+await call('edit_option', narr, Number(zebraOpt), mk('zébra'));
+s = await st(narr);
+{ const o = s.round.options.find(x => x.id === Number(zebraOpt));
+  ok(o.parts[0] === 'zébra 0' && o.original?.[0] === 'Zebra 0', 'correzione salvata, originale conservato'); }
+await call('edit_option', narr, Number(zebraOpt), mk('Zebra'));
+ok((await st(narr)).round.options.find(x => x.id === Number(zebraOpt)).original === null, 'ripristinata: niente più originale');
+await call('edit_option', narr, Number(zebraOpt), mk('zébra'));
 // --- Dibattito
 ok(await fails_with('debate_narrator', 'start_debate', C, narr.player_id, narr.secret), 'il narratore non lancia il dibattito');
 await call('start_debate', others[0]);
@@ -103,9 +118,10 @@ ok(s.players.find((x) => x.id === others[0].player_id).debate_used === true, 'di
 ok(await fails_with('debate_running', 'start_debate', C, others[1].player_id, others[1].secret), 'un solo dibattito alla volta');
 await db.query(`update public.rounds set debate_until = now() - interval '1 second'`);
 ok(await fails_with('debate_used', 'start_debate', C, others[0].player_id, others[0].secret), 'un dibattito a testa per partita');
-ok(!JSON.stringify(s.round.options).includes('is_true'), 'le card non dicono quale è vera');
 await call('advance', narr); // voting
 s = await st(others[0]);
+ok(!JSON.stringify(s.round.options).includes('is_true'), 'al voto le card non dicono quale è vera');
+ok(s.round.options.some(o => o.parts[0] === 'zébra 0') && !JSON.stringify(s.round.options).includes('original'), 'al voto arriva il testo corretto, senza originale');
 const trueText = (await db.query(`select id from public.round_options where is_true`)).rows[0].id;
 const bluffOpt = (await db.query(`select id from public.round_options where not is_true and $1 = any(author_ids)`, [others[0].player_id])).rows[0].id;
 ok(await fails_with('own_bluff', 'cast_vote', C, others[0].player_id, others[0].secret, bluffOpt), 'non si vota la propria balla');

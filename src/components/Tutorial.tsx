@@ -31,7 +31,7 @@ const SLIDES: Slide[] = [
   },
   {
     kicker: '3 · Vota', title: 'Trova la notizia vera',
-    body: <>Il narratore legge ad alta voce tutte le risposte mescolate, vera compresa. <u className="hl">Ognuno vota quella che crede vera</u>. <u className="hl">La tua balla non la puoi votare</u>.</>,
+    body: <>Il narratore legge ad alta voce tutte le risposte mescolate, vera compresa, e <u className="hl">può correggere maiuscole e refusi</u>. Poi le manda sui telefoni come frasi intere e <u className="hl">ognuno vota quella che crede vera</u>. <u className="hl">La tua balla non la puoi votare</u>.</>,
     art: <div className="tu-art tu-letters"><i>A</i><i className="on">B</i><i>C</i><i>D</i></div>,
   },
   {
