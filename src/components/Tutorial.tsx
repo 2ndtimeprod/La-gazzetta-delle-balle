@@ -16,7 +16,7 @@ const SLIDES: Slide[] = [
   },
   {
     kicker: '1 · Il narratore', title: 'A turno, uno conduce',
-    body: <>Il narratore gira il tamburo ed estrae una categoria. <u className="hl">Lui vede la risposta vera, quindi non gioca la mano</u>: legge, conduce e non fa trapelare niente agli altri giocatori. Al round successivo tocca a un altro giocatore.</>,
+    body: <>Il narratore gira il tamburo ed estrae una categoria. <u className="hl">Lui vede la risposta vera, quindi non gioca la mano</u>: legge, conduce e non fa trapelare niente agli altri giocatori. <u className="hl">A tamburo fermo sceglie il buco</u>: tiene quello dell'archivio o censura lui le parole che vuole, anche tutte tranne una. Al round successivo tocca a un altro giocatore.</>,
     art: <div className="tu-art"><span className="tu-strip">Scienza</span></div>,
   },
   {

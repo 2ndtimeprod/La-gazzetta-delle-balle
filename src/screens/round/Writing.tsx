@@ -37,7 +37,7 @@ export default function Writing({ session, state, refresh }: RoundProps) {
       {r.deadline_at
         ? <div className={`timer${left <= 10 ? ' low' : ''}`}>
             <span className="timer-num">{left}</span>
-            <span className="timer-bar"><i style={{ transform: `scaleX(${left / 60})` }} /></span>
+            <span className="timer-bar"><i style={{ transform: `scaleX(${left / (r.write_secs ?? 60)})` }} /></span>
           </div>
         : <p className="label">Senza cronometro: si va avanti quando hanno scritto tutti</p>}
 
@@ -50,13 +50,17 @@ export default function Writing({ session, state, refresh }: RoundProps) {
       ) : (
         <>
           <h1 className="head sm">{sent ? 'Balla in pagina' : 'Scrivi la tua balla'}</h1>
-          <Sentence frase={r.frase!} parts={sent && same ? r.my_bluff! : undefined} />
+          <Sentence frase={r.frase!} parts={sent && same ? r.my_bluff! : undefined} censor={r.custom} />
           {parts.map((v, i) => (
             <div className="field" key={i}>
               <label className="label" htmlFor={`b${i}`}>{holes > 1 ? `Buco ${i + 1}` : 'La tua balla'}</label>
-              <input id={`b${i}`} className="input" maxLength={80} value={v} autoComplete="off" autoCapitalize="none" autoFocus={i === 0 && !sent}
-                placeholder="Deve sembrare vera" enterKeyHint={i === holes - 1 ? 'send' : 'next'}
-                onChange={(e) => setParts(parts.map((x, j) => (j === i ? e.target.value : x)))} />
+              {(() => {
+                const fp = { id: `b${i}`, className: 'input', maxLength: r.custom ? 200 : 80, value: v, autoComplete: 'off', autoCapitalize: 'none',
+                  autoFocus: i === 0 && !sent, placeholder: 'Deve sembrare vera', enterKeyHint: (i === holes - 1 ? 'send' : 'next') as 'send' | 'next',
+                  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setParts(parts.map((x, j) => (j === i ? e.target.value : x))) };
+                // nel round censurato dal narratore i buchi possono essere lunghi: campo su più righe
+                return r.custom ? <textarea {...fp} rows={2} /> : <input {...fp} />;
+              })()}
             </div>
           ))}
         </>

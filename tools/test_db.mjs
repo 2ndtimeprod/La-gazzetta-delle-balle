@@ -77,7 +77,7 @@ if (sp.face !== 'Jolly') {
   const nh = others.find(p => p.player_id !== host.player_id);
   ok(await fails_with('not_narrator', 'start_writing', C, nh.player_id, nh.secret), 'start_writing: solo narratore o direttore');
 }
-if (sp.face === 'Jolly') { await call('pick_category', narr, 'Science'); } else { await call('start_writing', narr); }
+if (sp.face === 'Jolly') await call('pick_category', narr, 'Science'); await call('start_writing', narr);
 s = await st(narr);
 ok(s.round.phase === 'writing' && s.round.truth?.length >= 1, 'narratore vede la risposta vera durante la scrittura');
 const so = await st(others[0]);
@@ -145,7 +145,7 @@ ok(s.round.idx === 1 && s.round.phase === 'picking' && s.round.narrator_id !== n
 for (let i = 1; i < 3; i++) {
   s = await st(host); narr = narrIs(s);
   const oth = Object.values(P).filter(p => p !== narr);
-  sp = await call('spin', narr); if (sp.face === 'Jolly') await call('pick_category', narr, 'History'); else { await call('start_writing', narr); }
+  sp = await call('spin', narr); if (sp.face === 'Jolly') await call('pick_category', narr, 'History'); await call('start_writing', narr);
   s = await st(narr);
   await call('close_writing', narr); // il narratore chiude subito: nessuna balla -> reveal
   s = await st(host);
@@ -184,7 +184,7 @@ ok(await fails_with('unauthorized', 'heartbeat', C, a.player_id, b.secret), 'hea
   ok((await gs(ps, ps[2])).players.find(p => p.id === ps[0].player_id).connected === true, 'presenza: rientro con battito');
 
   // Scrittura: un presente sparisce, gli altri rispondono e si passa avanti
-  const sp = await act(ps, 'spin', ps[1]); if (sp.face === 'Jolly') await act(ps, 'pick_category', ps[1], 'Science'); else { await act(ps, 'start_writing', ps[1]); }
+  const sp = await act(ps, 'spin', ps[1]); if (sp.face === 'Jolly') await act(ps, 'pick_category', ps[1], 'Science'); await act(ps, 'start_writing', ps[1]);
   const holes = (await gs(ps, ps[1])).round.holes;
   await stale(ps[3]); await hb(ps, ps[2]);
   const mk = (t) => Array.from({ length: holes }, (_, i) => `${t} ${i}`);
@@ -228,7 +228,7 @@ await db.exec(`delete from public.rooms where code in (${fill})`);
   await act(ps, 'update_settings', ps[0], JSON.stringify({ timer: false }));
   ok((await gs(ps, ps[1])).room.settings.timer === false, 'timer: spento in lobby');
   await act(ps, 'start_game', ps[0]);
-  const sp = await act(ps, 'spin', ps[0]); if (sp.face === 'Jolly') await act(ps, 'pick_category', ps[0], 'Science'); else { await act(ps, 'start_writing', ps[0]); }
+  const sp = await act(ps, 'spin', ps[0]); if (sp.face === 'Jolly') await act(ps, 'pick_category', ps[0], 'Science'); await act(ps, 'start_writing', ps[0]);
   ok((await gs(ps, ps[1])).round.deadline_at === null, 'timer spento: nessuna scadenza');
   ok(await fails_with('too_early', 'close_writing', ps[0].code, ps[1].player_id, ps[1].secret), 'timer spento: un giocatore non chiude la scrittura');
   ok(await fails_with('game_started', 'update_settings', ps[0].code, ps[0].player_id, ps[0].secret, JSON.stringify({ giri: 2 })), 'in partita: i giri non si cambiano');
@@ -248,13 +248,43 @@ await db.exec(`delete from public.rooms where code in (${fill})`);
   const s2 = await gs(ps, ps[0]); // scores
   await act(ps, 'advance', ps[0]);
   const s3 = await gs(ps, ps[1]);
-  const sp2 = await act(ps, 'spin', ps[1]); if (sp2.face === 'Jolly') await act(ps, 'pick_category', ps[1], 'Science'); else { await act(ps, 'start_writing', ps[1]); }
+  const sp2 = await act(ps, 'spin', ps[1]); if (sp2.face === 'Jolly') await act(ps, 'pick_category', ps[1], 'Science'); await act(ps, 'start_writing', ps[1]);
   ok(s2.round.phase === 'scores' && (await gs(ps, ps[2])).round.deadline_at !== null, 'timer riacceso: il round dopo ha la scadenza');
 }
 
 // --- Filtro fatti
 await db.exec(`update public.app_config set value='verified' where key='fact_filter'`);
 ok((await db.query(`select count(*) c from public.facts where private.fact_ok(stato)`)).rows[0].c < 35, 'filtro "verified" attivo');
+
+// --- Buco scelto dal narratore (0014)
+{ const ps = await mkRoom(['H', 'A', 'B']);
+  for (const p of ps) await hb(ps, p);
+  await act(ps, 'start_game', ps[0]);
+  const n = ps[0], o1 = ps[1], o2 = ps[2];
+  const sp = await act(ps, 'spin', n); if (sp.face === 'Jolly') await act(ps, 'pick_category', n, 'Science');
+  const fid = (await db.query(`select id from public.facts where frase like 'L''elio fu scoperto%' limit 1`)).rows[0].id;
+  await db.query(`update public.round_pending set fact_id = $1`, [fid]);
+  const sn = await gs(ps, n), so = await gs(ps, o1);
+  const words = sn.round.tokens.map((t) => t.t);
+  ok(sn.round.pending && words.join(' ') === "L'elio fu scoperto prima nel Sole che sulla Terra .", 'censura: il narratore riceve la frase intera a parole');
+  ok(so.round.pending && !('tokens' in so.round) && !JSON.stringify(so).includes('Sole'), 'censura: gli altri non vedono la frase');
+  ok(sn.round.tokens.filter((t) => t.h === 1).map((t) => t.t).join(' ') === 'nel Sole', 'censura: segnato il buco dell\'archivio');
+  ok(await fails_with('bad_censor', 'start_writing', ps[0].code, n.player_id, n.secret, [9]), 'censura: la punteggiatura non si censura');
+  ok(await fails_with('nothing_kept', 'start_writing', ps[0].code, n.player_id, n.secret, [0, 1, 2, 3, 4, 5, 6, 7, 8]), 'censura: almeno una parola resta');
+  ok(await fails_with('too_many_holes', 'start_writing', ps[0].code, n.player_id, n.secret, [0, 2, 4, 6]), 'censura: massimo 3 buchi');
+  ok(await fails_with('not_narrator', 'start_writing', ps[0].code, o1.player_id, o1.secret, [0]), 'censura: solo il narratore');
+  await act(ps, 'start_writing', n, [0, 1, 2, 3, 4, 6, 7, 8]);
+  const sw = await gs(ps, o1), snw = await gs(ps, n);
+  ok(sw.round.frase === '____ Sole ____.' && sw.round.holes === 2 && sw.round.custom === true, 'censura: gli altri vedono solo le parole tenute');
+  ok(JSON.stringify(snw.round.truth) === JSON.stringify(["L'elio fu scoperto prima nel", 'che sulla Terra']), 'censura: la verità sono le parti censurate');
+  ok(!JSON.stringify(sw).includes('Terra'), 'censura: le parti censurate non arrivano agli altri');
+  ok(sw.round.write_secs === 90, 'censura: più di 6 parole, 90 secondi');
+  ok(await fails_with('too_close', 'submit_bluff', ps[0].code, o1.player_id, o1.secret, ["L'elio fu scoperto prima nel", 'che sulla terra']), 'censura: storia uguale alla vera rifiutata');
+  await act(ps, 'submit_bluff', o1, ['Una bambina inglese, guardando', 'col telescopio del nonno, trovò un nuovo gas']);
+  await act(ps, 'submit_bluff', o2, ['Il primo nome dell\'elio era luce', 'perché brillava']);
+  const sr = await gs(ps, n);
+  ok(sr.round.phase === 'reading' && sr.round.options.some((x) => x.is_true && x.parts[1] === 'che sulla Terra'), 'censura: la card vera usa le parti censurate');
+}
 
 // --- Archivio completo (supabase/seed/facts_all.sql): carico, riesecuzione e filtro per categoria
 await db.exec(readFileSync('supabase/seed/facts_all.sql', 'utf8'));

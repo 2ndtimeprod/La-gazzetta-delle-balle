@@ -7,11 +7,13 @@ export type Option = {
   id: number; parts: string[]; mine?: boolean;
   is_true?: boolean; authors?: string[]; voters?: string[]; original?: string[] | null;
 };
+export type Token = { t: string; sp: boolean; h: number; w: boolean }; // parola della frase intera (h: buco dell'archivio)
 export type RoundState = {
   id: number; idx: number; total: number; narrator_id: string; phase: string;
   category: string | null; jolly: boolean; deadline_at: string | null;
   bluff_count: number; vote_count: number;
   debate_by?: string | null; debate_until?: string | null;
+  custom?: boolean; write_secs?: number; pending?: boolean; pending_category?: string; tokens?: Token[];
   frase?: string; holes?: number; truth?: string[]; spiegazione?: string;
   my_bluff?: string[] | null; submitted?: string[];
   options?: Option[]; option_count?: number; voted?: string[]; my_vote?: number | null; points?: Record<string, number>;
@@ -35,6 +37,9 @@ const MESSAGES: Record<string, string> = {
   bad_phase: 'Azione non possibile in questa fase.',
   too_close: 'Troppo simile alla risposta vera: riscrivila.',
   edit_too_far: 'Correzione troppo diversa da quello che ha scritto il giocatore: solo maiuscole, accenti e refusi.',
+  bad_censor: 'Si possono censurare solo parole.',
+  nothing_kept: 'Lascia almeno una parola visibile.',
+  too_many_holes: 'Al massimo 3 buchi: unisci le parole censurate.',
   edit_true: 'La risposta vera non si corregge.',
   duplicate: 'Un altro giocatore ha già scritto una risposta uguale: scrivine una diversa.',
   bad_text: 'Testo non valido (1-80 caratteri).',
@@ -79,7 +84,7 @@ export const skipNarrator = (s: Session) => rpc<void>('skip_narrator', who(s));
 export const leaveRoom = (s: Session) => rpc<void>('leave_room', who(s));
 export const updateSettings = (s: Session, p: Partial<Settings>) => rpc<void>('update_settings', { ...who(s), p_settings: p });
 export const spin = (s: Session) => rpc<{ face: string }>('spin', who(s));
-export const startWriting = (s: Session) => rpc<void>('start_writing', who(s));
+export const startWriting = (s: Session, censor?: number[]) => rpc<void>('start_writing', { ...who(s), p_censor: censor ?? null });
 export const pickCategory = (s: Session, c: string) => rpc<void>('pick_category', { ...who(s), p_category: c });
 export const submitBluff = (s: Session, parts: string[]) => rpc<void>('submit_bluff', { ...who(s), p_parts: parts });
 export const closeWriting = (s: Session) => rpc<void>('close_writing', who(s));

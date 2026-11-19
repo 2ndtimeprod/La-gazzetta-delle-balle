@@ -20,7 +20,7 @@ export default function Reveal({ session, state, refresh }: RoundProps) {
       <RoundHeader state={state} />
       <div className="stack">
         <h1 className="head sm">Lo smascheramento</h1>
-        <Sentence frase={r.frase!} quote />
+        <Sentence frase={r.frase!} quote censor={r.custom} />
       </div>
       <div className="reveal">
         {opts.map((o, i) => {

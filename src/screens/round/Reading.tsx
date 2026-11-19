@@ -37,7 +37,7 @@ export default function Reading({ session, state, refresh }: RoundProps) {
         {edit.parts.map((v, i) => (
           <div className="field" key={i}>
             <label className="label" htmlFor={`e${i}`}>{edit.parts.length > 1 ? `Buco ${i + 1}: testo che vedranno tutti` : 'Testo che vedranno tutti'}</label>
-            <input id={`e${i}`} className="input" maxLength={80} value={v} autoComplete="off" autoFocus={i === 0}
+            <input id={`e${i}`} className="input" maxLength={r.custom ? 200 : 80} value={v} autoComplete="off" autoFocus={i === 0}
               onChange={(e) => setEdit({ ...edit, parts: edit.parts.map((x, j) => (j === i ? e.target.value : x)) })} />
           </div>
         ))}
@@ -91,7 +91,7 @@ export default function Reading({ session, state, refresh }: RoundProps) {
         <>
           <div className="stack">
             <h1 className="head sm">Ascolta il narratore</h1>
-            <Sentence frase={r.frase!} quote />
+            <Sentence frase={r.frase!} quote censor={r.custom} />
           </div>
           <div className="secret" data-label="In tipografia">
             <p className="orig">{nameOf(state.players, r.narrator_id)} sta leggendo {r.option_count ?? 'le'} frasi ad alta voce. Arrivano qui quando le manda per il voto.</p>
