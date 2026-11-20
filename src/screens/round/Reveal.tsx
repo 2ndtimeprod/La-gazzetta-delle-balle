@@ -2,6 +2,7 @@ import { advance } from '../../lib/api';
 import { nameOf, roles, type RoundProps } from '../../lib/round';
 import { useAct } from '../../lib/useAct';
 import RoundHeader from '../../components/RoundHeader';
+import Avatar from '../../components/Avatar';
 import Sentence from '../../components/Sentence';
 import Toast from '../../components/Toast';
 import Waiting from '../../components/Waiting';
@@ -29,14 +30,17 @@ export default function Reveal({ session, state, refresh }: RoundProps) {
         {opts.map((o, i) => {
           const d = i * step;
           return (
-            <article key={o.id} className={`rv${o.is_true ? ' true' : ''}`} style={{ animationDelay: `${d}s` }}>
+            <article key={o.id} className={`rv${o.is_true ? ' true' : o.voters?.length ? ' fooled' : ''}`} style={{ animationDelay: `${d}s` }}>
               <div className="stampbox"><span className={`stamp ${o.is_true ? 'true' : 'lie'}`} style={{ animationDelay: `${d + 0.35}s` }}>
                 {o.is_true ? 'Vera' : 'Balla'}</span></div>
               <div className="txt">{o.parts.join(' · ')}</div>
               <div className="by">{o.is_true ? 'La notizia autentica' : `Firmata da ${names(o.authors).join(', ')}`}</div>
               <div className="votes">
                 {o.voters?.length
-                  ? names(o.voters).map((n, j) => <span key={j} className="chip" style={{ animationDelay: `${d + 0.5 + j * 0.06}s` }}>{n}</span>)
+                  ? (o.voters ?? []).map((id, j) => {
+                      const p = state.players.find((x) => x.id === id);
+                      return <span key={j} className="chip" style={{ animationDelay: `${d + 0.5 + j * 0.06}s` }}>{p && <Avatar p={p} />}{nameOf(state.players, id)}</span>;
+                    })
                   : <span className="tag">Nessuno ci è cascato</span>}
               </div>
             </article>

@@ -23,7 +23,7 @@ export default function Home({ onSession, notice }: { onSession: (s: Session) =>
     <main className="page">
       <Masthead big />
       <div className="ticker" aria-hidden="true">
-        <span className="ticker-tag">Ultim'ora</span>
+        <span className="ticker-tag"><i className="live" />Ultim'ora</span>
         <div className="ticker-viewport"><div className="ticker-track">{[...ULTIMORA, ...ULTIMORA].map((t, i) => <span key={i}>{t}</span>)}</div></div>
       </div>
       <section className="coupon">
@@ -35,7 +35,7 @@ export default function Home({ onSession, notice }: { onSession: (s: Session) =>
       </div>
       <div className="actions">
         <button className={`btn primary${busy === 'create' ? ' busy' : ''}`} disabled={!!busy || !nameOk}
-          onClick={() => run('create', () => createRoom(name))}>Crea una partita</button>
+          onClick={() => run('create', () => createRoom(name))}>Crea una partita<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg></button>
         <div className="divider">oppure entra in una stanza</div>
         <input className="input code" maxLength={4} value={code} placeholder="Codice" autoComplete="off" aria-label="Codice stanza"
           onChange={(e) => setCode(e.target.value.toUpperCase().replace(/[^A-Z]/g, ''))} />
