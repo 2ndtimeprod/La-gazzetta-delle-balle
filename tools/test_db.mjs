@@ -391,7 +391,7 @@ ok((await db.query(`select count(*) c from public.facts where private.fact_ok(st
     await db.query(`update public.rounds set jolly=false, drum_face=null, drum_at=null where id=$1`, [rd.id]);
     seen.add((await act(ps, 'spin', nar)).face);
   }
-  ok([...seen].every((f) => ['Science', 'Food & Drink', 'Jolly'].includes(f)) && seen.size === 3, 'riposo: nessuna delle ultime 4 categorie esce, le altre sì');
+  ok([...seen].every((f) => ['History', 'Science', 'Food & Drink', 'Jolly'].includes(f)) && seen.size === 4, 'riposo: nessuna delle ultime 3 categorie esce, le altre sì');
   const s = await gs(ps, ps.find((p) => p !== nar));
   ok(s.round.drum_face && s.round.drum_at, 'tamburo: gli altri ricevono la faccia estratta');
   ok(!JSON.stringify(s).includes('fact_id'), 'tamburo: nessun fatto trapela');

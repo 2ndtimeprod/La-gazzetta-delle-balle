@@ -1,7 +1,7 @@
 -- Tamburo visibile a tutti + riposo delle categorie.
 -- `spin` scrive la faccia estratta in rounds.drum_face/drum_at (è solo la categoria, non il fatto): gli altri
 -- giocatori la ricevono con get_state e fanno girare il tamburo sul loro schermo fino a quella faccia.
--- Una categoria (o il Jolly) uscita non può uscire per le 4 mani successive; se non resta nulla si ignora il riposo.
+-- Una categoria (o il Jolly) uscita non può uscire per le 3 mani successive; se non resta nulla si ignora il riposo.
 
 alter table public.rounds add column drum_face text, add column drum_at timestamptz;
 
@@ -16,11 +16,11 @@ begin
   if v_face is not null and v_r.phase = 'picking' and (v_r.jolly or exists (select 1 from public.round_pending where round_id = v_r.id)) then return jsonb_build_object('face', v_face); end if;
   if v_r.phase <> 'picking' or v_r.category is not null or v_r.jolly then raise exception 'bad_phase'; end if;
   select (settings->>'dark')::boolean into v_dark from public.rooms where code = v_r.room_code;
-  -- Una categoria uscita non può rientrare per le 4 mani successive (anche il Jolly, e la categoria scelta con un Jolly).
+  -- Una categoria uscita non può rientrare per le 3 mani successive (anche il Jolly, e la categoria scelta con un Jolly).
   select coalesce(array_agg(x), '{}') into v_recent from (
     select unnest(array[r.category, case when r.jolly then 'Jolly' end]) as x
       from (select category, jolly from public.rounds
-             where room_code = v_r.room_code and idx < v_r.idx order by idx desc limit 4) r) q
+             where room_code = v_r.room_code and idx < v_r.idx order by idx desc limit 3) r) q
    where x is not null;
   foreach v_c in array private.normal_categories() loop
     if v_c = any(v_recent) then continue; end if;
@@ -30,7 +30,7 @@ begin
     if not ('Dark/Politically incorrect' = any(v_recent)) and private.draw_fact(v_r.room_code, 'Dark/Politically incorrect') is not null then
       v_faces := array_append(v_faces, 'Dark/Politically incorrect'::text);
     end if;
-  elsif not ('Jolly' = any(v_recent)) then
+  elsif not ('Jolly' = any(v_recent)) and random() < 0.4 then -- il Jolly pesa meno (40%)
     v_faces := array_append(v_faces, 'Jolly'::text);
   end if;
   if cardinality(v_faces) = 0 then -- poche categorie con fatti: si ignora il riposo
