@@ -1,8 +1,7 @@
 import { CATEGORIE, type RoundProps } from '../lib/round';
 import { useTheme } from '../lib/theme';
-import Avatar from './Avatar';
 
-// Capsula scura in cima alle schermate di gioco (scura in entrambe le edizioni): round, categoria, narratore, edizione.
+// Testatina squadrata in cima alle schermate di gioco: round, categoria, narratore, edizione.
 export default function RoundHeader({ state }: Pick<RoundProps, 'state'>) {
   const r = state.round!;
   const { theme, toggle } = useTheme();
@@ -20,7 +19,6 @@ export default function RoundHeader({ state }: Pick<RoundProps, 'state'>) {
         ? <span className="cap-chip hot">Narri tu</span>
         : narr && (
           <span className={`cap-chip${narr.connected ? '' : ' off'}`}>
-            <Avatar p={narr} size="sm" />
             <span className="cap-who"><small>{narr.connected ? 'Narra' : 'Offline'}</small><b>{narr.name}</b></span>
           </span>
         )}
