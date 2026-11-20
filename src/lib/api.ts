@@ -11,7 +11,7 @@ export type LiveBluff = { player_id: string; parts: string[]; original: string[]
 export type Token = { t: string; sp: boolean; h: number; w: boolean }; // parola della frase intera (h: buco dell'archivio)
 export type RoundState = {
   id: number; idx: number; total: number; narrator_id: string; phase: string;
-  category: string | null; jolly: boolean; deadline_at: string | null;
+  category: string | null; jolly: boolean; drum_face?: string | null; drum_at?: string | null; deadline_at: string | null;
   bluff_count: number; vote_count: number;
   debate_by?: string | null; debate_until?: string | null;
   revealed?: boolean; live_rev?: number; live?: LiveBluff[];

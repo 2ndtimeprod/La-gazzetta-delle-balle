@@ -376,6 +376,27 @@ ok((await db.query(`select count(*) c from public.facts where private.fact_ok(st
   ok(sr.round.phase === 'reading' && sr.round.options.some((x) => x.is_true && x.parts[1] === 'che sulla Terra'), 'censura: la card vera usa le parti censurate');
 }
 
+// --- Tamburo per tutti e riposo delle categorie (migration 0019)
+{ const ps = await mkRoom(['H', 'A', 'B']); for (const p of ps) await hb(ps, p);
+  await act(ps, 'start_game', ps[0]);
+  const rd = (await db.query(`select * from public.rounds where room_code=$1`, [ps[0].code])).rows[0];
+  const nar = ps.find((p) => p.player_id === rd.narrator_id);
+  await db.query(`update public.rounds set idx = 10 where id = $1`, [rd.id]);
+  let i = 6;
+  for (const c of ['History', 'Pop culture', 'Geography', 'Animal kingdom'])
+    await db.query(`insert into public.rounds(room_code, idx, narrator_id, category, phase) values ($1,$2,$3,$4,'scores')`, [ps[0].code, i++, rd.narrator_id, c]);
+  const seen = new Set();
+  for (let k = 0; k < 40; k++) {
+    await db.query(`delete from public.round_pending where round_id=$1`, [rd.id]);
+    await db.query(`update public.rounds set jolly=false, drum_face=null, drum_at=null where id=$1`, [rd.id]);
+    seen.add((await act(ps, 'spin', nar)).face);
+  }
+  ok([...seen].every((f) => ['History', 'Science', 'Food & Drink', 'Jolly'].includes(f)) && seen.size === 4, 'riposo: nessuna delle ultime 3 categorie esce, le altre sì');
+  const s = await gs(ps, ps.find((p) => p !== nar));
+  ok(s.round.drum_face && s.round.drum_at, 'tamburo: gli altri ricevono la faccia estratta');
+  ok(!JSON.stringify(s).includes('fact_id'), 'tamburo: nessun fatto trapela');
+}
+
 // --- Archivio completo (supabase/seed/facts_all.sql): carico, riesecuzione e filtro per categoria
 await db.exec(readFileSync('supabase/seed/facts_all.sql', 'utf8'));
 await db.exec(readFileSync('supabase/seed/facts_all.sql', 'utf8'));

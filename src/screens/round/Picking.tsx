@@ -11,7 +11,7 @@ import Censor from './Censor';
 // Il narratore gira il tamburo. Il server tiene il risultato segreto finché il tamburo non si ferma:
 // allora il narratore vede la frase intera, sceglie il buco (Censor) e `start_writing` la pubblica a tutti insieme.
 // `onHold` tiene questa schermata visibile fino a quel momento.
-export default function Picking({ session, state, refresh, onHold }: RoundProps & { onHold: (b: boolean) => void }) {
+export default function Picking({ session, state, refresh, onHold, onReveal }: RoundProps & { onHold: (b: boolean) => void; onReveal: (face: string) => void }) {
   const r = state.round!;
   const { isNarrator } = roles(state);
   const { err, busy, run } = useAct(refresh);
@@ -28,10 +28,17 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
     catch (e) { setSpinErr((e as Error).message); onHold(false); throw e; }
   };
   const done = () => { setReady(true); refresh(); };
+  const onLanded = (f: string) => {
+    if (!f) return;
+    setLanded(f);
+    if (f !== 'Jolly') onReveal(f);   // il nome della categoria a tutta pagina, per tutti
+  };
+  const remote = !isNarrator && r.drum_face && r.drum_at
+    ? { face: r.drum_face, ageMs: new Date(state.now).getTime() - new Date(r.drum_at).getTime() } : null;
 
   // Dopo una categoria normale la frase arriva da sola a tamburo fermo; il pulsante serve a chi ha fretta.
   useEffect(() => {
-    if (!landed || landed === 'Jolly') return;
+    if (!isNarrator || !landed || landed === 'Jolly') return;
     const t = setTimeout(done, 1500);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -67,8 +74,8 @@ export default function Picking({ session, state, refresh, onHold }: RoundProps 
         ? <div><h1 className="head">Tocca a te, {me}</h1><p className="lede">Afferra il tamburo, dagli una spinta e lascialo andare.</p></div>
         : <div><h1 className="head sm">Si gira il tamburo</h1><Waiting>{nameOf(state.players, r.narrator_id)} {r.pending ? 'sta preparando la frase' : 'sta estraendo la categoria'}</Waiting></div>}
       <Drum dark={state.room.settings.dark} interactive={isNarrator && r.phase === 'picking' && !r.jolly}
-        onSpin={doSpin} onLanded={(f) => { if (f) setLanded(f); }} />
-      {landed && landed !== 'Jolly' && (
+        onSpin={doSpin} onLanded={onLanded} remote={remote} />
+      {isNarrator && landed && landed !== 'Jolly' && (
         <div className="actions"><button className="btn primary" onClick={done}>Pesca la frase</button></div>
       )}
       {chooser && landed === 'Jolly' && showPick && (
