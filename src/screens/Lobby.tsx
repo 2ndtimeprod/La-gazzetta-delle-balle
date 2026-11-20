@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { leaveRoom, startGame, updateSettings, type GameState, type Settings } from '../lib/api';
 import { clearSession, type Session } from '../lib/session';
+import HostTools from '../components/HostTools';
 import Masthead from '../components/Masthead';
 import Toast from '../components/Toast';
 import Waiting from '../components/Waiting';
@@ -56,6 +57,8 @@ export default function Lobby({ session, state, onLeft, refresh }: Props) {
           ))}
         </ul>
       </section>
+
+      <HostTools session={session} state={state} refresh={refresh} folded />
 
       <section className="card">
         <div className="switch-row" style={{ cursor: 'default' }}>

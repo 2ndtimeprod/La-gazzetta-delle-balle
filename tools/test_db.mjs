@@ -272,6 +272,33 @@ ok((await db.query(`select count(*) c from public.facts where private.fact_ok(st
   ok((await gs(ps, ps[1])).round.phase === 'reading', 'senza cronometro: chiude quando hanno scritto tutti');
 }
 
+// --- Poteri del direttore (0016)
+{ const ps = await mkRoom(['H', 'A', 'B', 'C']);
+  for (const p of ps) await hb(ps, p);
+  const code = ps[0].code;
+  ok(await fails_with('not_host', 'kick_player', code, ps[1].player_id, ps[1].secret, ps[2].player_id), 'kick: solo il direttore');
+  await act(ps, 'kick_player', ps[0], ps[3].player_id);
+  ok((await gs(ps, ps[0])).players.length === 3, 'kick in lobby: giocatore cancellato');
+  ok(await fails_with('unauthorized', 'get_state', code, ps[3].player_id, ps[3].secret), 'kick in lobby: il telefono tolto non entra più');
+  const c2 = await rpc('join_room', code, 'C');
+  ok(c2.player_id && c2.player_id !== ps[3].player_id, 'kick in lobby: rientra col codice');
+  ps[3] = c2; await hb(ps, c2);
+  await act(ps, 'start_game', ps[0]);
+  await db.query(`update public.players set score = 5 where id = $1`, [ps[2].player_id]);
+  await act(ps, 'kick_player', ps[0], ps[2].player_id);
+  ok(await fails_with('unauthorized', 'get_state', code, ps[2].player_id, ps[2].secret), 'kick in partita: il vecchio segreto non vale più');
+  ok((await gs(ps, ps[0])).players.find((x) => x.id === ps[2].player_id).kicked === true, 'kick in partita: il posto resta, segnato come tolto');
+  ok(await fails_with('game_started', 'join_room', code, 'Nuovo'), 'in partita: un nome nuovo non entra');
+  const b2 = await rpc('join_room', code, 'b');
+  ok(b2.player_id === ps[2].player_id, 'in partita: rientra nel suo posto con lo stesso nome');
+  const sb2 = await rpc('get_state', code, b2.player_id, b2.secret);
+  ok(sb2.players.find((x) => x.id === b2.player_id).score === 5 && !sb2.players.find((x) => x.id === b2.player_id).kicked, 'rientro: punti conservati');
+  ok(await fails_with('not_host', 'delete_room', code, ps[1].player_id, ps[1].secret), 'elimina stanza: solo il direttore');
+  await act(ps, 'delete_room', ps[0]);
+  ok(await fails_with('unauthorized', 'get_state', code, ps[1].player_id, ps[1].secret), 'stanza eliminata: nessuno entra più');
+  ok(await fails_with('room_not_found', 'join_room', code, 'Z'), 'stanza eliminata: il codice non esiste più');
+}
+
 // --- Buco scelto dal narratore (0014)
 { const ps = await mkRoom(['H', 'A', 'B']);
   for (const p of ps) await hb(ps, p);
