@@ -18,7 +18,7 @@ export default function Scores({ session, state, refresh }: RoundProps) {
       <Scoreboard players={state.players} me={state.me} gained={r.points} />
       <div className="actions">
         {canAdvance
-          ? <button className="btn primary" disabled={busy} onClick={() => run(() => advance(session))}>{last ? "Ultima edizione: vedi chi vince" : 'Prossimo round'}</button>
+          ? <button className="btn primary" disabled={busy} onClick={() => run(() => advance(session, 'scores'))}>{last ? "Ultima edizione: vedi chi vince" : 'Prossimo round'}</button>
           : <Waiting>{last ? 'Si stampa l\'edizione finale' : 'Il prossimo narratore si prepara'}</Waiting>}
         <Toast msg={err} />
       </div>

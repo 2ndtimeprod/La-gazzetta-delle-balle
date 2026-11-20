@@ -7,10 +7,12 @@ import Toast from '../../components/Toast';
 import Waiting from '../../components/Waiting';
 
 // Le balle compaiono una alla volta, la vera per ultima, ognuna col suo timbro.
+// Prima le vede solo il narratore (autori, voti, punti); con "Mostra a tutti" arrivano su ogni telefono.
 export default function Reveal({ session, state, refresh }: RoundProps) {
   const r = state.round!;
   const { err, busy, run } = useAct(refresh);
-  const { canAdvance } = roles(state);
+  const { canAdvance, isNarrator } = roles(state);
+  const shown = !!r.revealed;
   const names = (ids?: string[]) => (ids ?? []).map((i) => nameOf(state.players, i));
   const opts = [...(r.options ?? [])].sort((a, b) => Number(a.is_true) - Number(b.is_true) || (a.voters?.length ?? 0) - (b.voters?.length ?? 0));
   const step = 0.55;
@@ -22,6 +24,7 @@ export default function Reveal({ session, state, refresh }: RoundProps) {
         <h1 className="head sm">Lo smascheramento</h1>
         <Sentence frase={r.frase!} quote censor={r.custom} />
       </div>
+      {!shown && !isNarrator ? <Waiting>{nameOf(state.players, r.narrator_id)} sta guardando chi ci è cascato: tra poco lo svela a tutti</Waiting> : (
       <div className="reveal">
         {opts.map((o, i) => {
           const d = i * step;
@@ -39,11 +42,13 @@ export default function Reveal({ session, state, refresh }: RoundProps) {
             </article>
           );
         })}
-      </div>
+      </div>)}
       <div className="actions">
+        {isNarrator && !shown && <p className="label center">Per ora lo vedi solo tu</p>}
         {canAdvance
-          ? <button className="btn primary" disabled={busy} onClick={() => run(() => advance(session))}>Leggi l'articolo</button>
-          : <Waiting>Il narratore sta per leggere com'è andata</Waiting>}
+          ? <button className="btn primary" disabled={busy} onClick={() => run(() => advance(session, shown ? 'reveal:shown' : 'reveal'))}>
+              {shown ? "Leggi l'articolo" : 'Mostra a tutti'}</button>
+          : shown && <Waiting>Il narratore sta per leggere com'è andata</Waiting>}
         <Toast msg={err} />
       </div>
     </main>

@@ -46,19 +46,29 @@ export default function Anteprima({ which }: { which: string }) {
   const st = useMemo(() => ({
     lobby: state(null, 'p1', 'lobby'),
     scrive: state({ my_bluff: null }),
-    narratore: state({ truth: ['imparasse segreti e li ripetesse in giro'] }, 'p2'),
+    narratore: state({ truth: ['imparasse segreti e li ripetesse in giro'], live: [
+      { player_id: 'p3', parts: ["cantasse l'inno sovietico al buio"], original: null, changed: false },
+      { player_id: 'p1', parts: ['le sue pile mandassero in tilt i radar'], original: ['le sue pile mandasero in tilt i radar'], changed: false },
+      { player_id: 'p4', parts: ['gli impiegati ci giocassero invece di lavorare'], original: null, changed: true },
+    ] }, 'p2'),
     lettura: state({ phase: 'reading', options: [
       { ...OPTS[0], authors: ['p3'] }, { ...OPTS[1] },
       { ...OPTS[2], authors: ['p1'], original: ['le sue pile mandasero in tilt i radar'] }, { ...OPTS[3], authors: ['p4'] },
     ] }, 'p2'),
     ascolta: state({ phase: 'reading', option_count: 4 }),
     vota: state({ phase: 'voting', options: OPTS, voted: ['p3'], my_vote: null }),
-    rivela: state({ phase: 'reveal', options: [
+    rivela: state({ phase: 'reveal', revealed: true, options: [
       { ...OPTS[0], is_true: false, authors: ['p3'], voters: ['p4'] },
       { ...OPTS[1], voters: ['p1', 'p5'] },
       { ...OPTS[2], is_true: false, authors: ['p1'], voters: [] },
       { ...OPTS[3], is_true: false, authors: ['p4', 'p5'], voters: ['p3'] },
     ] }),
+    rivelanarr: state({ phase: 'reveal', revealed: false, options: [
+      { ...OPTS[0], is_true: false, authors: ['p3'], voters: ['p4'] },
+      { ...OPTS[1], voters: ['p1', 'p5'] },
+      { ...OPTS[2], is_true: false, authors: ['p1'], voters: [] },
+      { ...OPTS[3], is_true: false, authors: ['p4', 'p5'], voters: ['p3'] },
+    ] }, 'p2'),
     spiega: state({ phase: 'explain', truth: ['imparasse segreti e li ripetesse in giro'],
       spiegazione: "Nel 1999 un memorandum interno dell'agenzia vietò i Furby negli edifici di Fort Meade: si credeva, a torto, che il pupazzo registrasse le conversazioni. In realtà non aveva alcuna memoria audio, ma il divieto restò in vigore per anni." }),
     punti: state({ phase: 'scores', points: { p1: 1, p2: 0, p3: 2, p4: 1 } }),
@@ -80,6 +90,7 @@ export default function Anteprima({ which }: { which: string }) {
     case 'lettura': return <Reading {...p} state={st.lettura} />;
     case 'ascolta': return <Reading {...p} state={st.ascolta} />;
     case 'vota': return <Voting {...p} state={st.vota} />;
+    case 'rivela-narratore': return <Reveal {...p} state={st.rivelanarr} />;
     case 'rivela': return <Reveal {...p} state={st.rivela} />;
     case 'spiega': return <Explain {...p} state={st.spiega} />;
     case 'punti': return <Scores {...p} state={st.punti} />;

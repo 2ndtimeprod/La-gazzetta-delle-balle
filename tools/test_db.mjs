@@ -90,8 +90,21 @@ await call('submit_bluff', others[0], mk('Zebra'));
 await call('submit_bluff', others[0], mk('Zebra')); // sostituzione
 ok((await st(host)).round.bluff_count === 1, 'una balla contata');
 ok(await fails_with('duplicate', 'submit_bluff', C, others[1].player_id, others[1].secret, mk('la zebra')), 'balla uguale a quella di un altro (senza articolo) rifiutata');
+{ const sl = await st(narr), sx = await st(others[1]);
+  ok(sl.round.live?.length === 1 && sl.round.live[0].player_id === others[0].player_id, 'balle in diretta: il narratore vede la prima balla appena arriva');
+  ok(!('live' in sx.round), 'balle in diretta: gli altri no');
+  ok(await fails_with('not_narrator', 'edit_bluff', C, others[1].player_id, others[1].secret, others[0].player_id, mk('zebra')), 'correzione in diretta: solo il narratore');
+  ok(await fails_with('edit_too_far', 'edit_bluff', C, narr.player_id, narr.secret, others[0].player_id, mk('Elefante rosa')), 'correzione in diretta: troppo diversa rifiutata');
+  await call('edit_bluff', narr, others[0].player_id, mk('ZEBRA'));
+  const l2 = (await st(narr)).round.live[0];
+  ok(l2.parts[0] === 'ZEBRA 0' && l2.original[0] === 'Zebra 0' && !l2.changed, 'correzione in diretta salvata');
+  await call('submit_bluff', others[0], mk('Zebra'));
+  const l3 = (await st(narr)).round.live[0];
+  ok(l3.parts[0] === 'Zebra 0' && l3.original === null && l3.changed, 'balla riscritta: correzione persa, segnata come cambiata');
+  await call('edit_bluff', narr, others[0].player_id, mk('ZEBRA')); }
 await call('submit_bluff', others[1], mk('cobra'));
 s = await st(narr);
+ok(s.round.options.some((o) => !o.is_true && o.parts[0] === 'ZEBRA 0' && o.original?.[0] === 'Zebra 0'), 'la correzione in diretta passa alla lettura');
 ok(s.round.phase === 'reading', 'tutti hanno scritto: si passa a reading');
 ok(s.round.options.length === 3, 'una card per giocatore: vera + 2 balle, nessuna unione');
 ok(s.round.options.filter(o => o.is_true).length === 1, 'lettura: il narratore vede quale card è la vera');
@@ -134,12 +147,26 @@ ok(s.round.phase === 'reveal', 'tutti hanno votato: rivelazione');
 const pts = s.round.points;
 ok(pts[others[0].player_id] === 1 && pts[others[1].player_id] === 1, 'punti: 1 a chi vota la vera');
 ok(!('spiegazione' in s.round), 'spiegazione non ancora visibile');
+{ const so = await st(others[0]);
+  ok(!('options' in so.round) && !('truth' in so.round) && !('points' in so.round), 'rivelazione: gli altri non vedono nulla finché il narratore non la manda');
+  ok(so.players.every((x) => x.score === 0), 'rivelazione: i punti non sono ancora in classifica');
+  await call('advance', narr, 'voting');
+  ok((await st(narr)).round.phase === 'reveal' && !(await st(narr)).round.revealed, 'advance con fase vecchia: non succede nulla');
+  await call('advance', narr, 'reveal');
+  const so2 = await st(others[0]);
+  ok(so2.round.revealed && so2.round.options.length === 3 && so2.players.find((x) => x.id === others[0].player_id).score === 1, 'rivelazione mandata: tutti vedono voti, autori e punti');
+  await call('advance', narr, 'reveal'); // secondo tocco: ignorato
+  ok((await st(narr)).round.phase === 'reveal', 'doppio tocco su "mostra a tutti": nessuna fase saltata'); }
 await call('advance', narr);
 s = await st(host);
 ok(s.round.phase === 'explain' && typeof s.round.spiegazione === 'string', 'spiegazione visibile in explain');
 await call('advance', narr); await call('advance', narr); // scores -> round 1
 s = await st(host);
 ok(s.round.idx === 1 && s.round.phase === 'picking' && s.round.narrator_id !== narr.player_id, 'round 1 con altro narratore');
+if (s.round.narrator_id !== host.player_id) {
+  ok(await fails_with('not_allowed', 'advance', C, host.player_id, host.secret), 'il direttore non comanda se il narratore è presente');
+  ok(await fails_with('narrator_online', 'skip_narrator', C, host.player_id, host.secret), 'il direttore non salta un narratore presente');
+}
 
 // --- Fine partita: gioca i round restanti con balle subito sbagliate e voti per la vera
 for (let i = 1; i < 3; i++) {
@@ -150,7 +177,7 @@ for (let i = 1; i < 3; i++) {
   await call('close_writing', narr); // il narratore chiude subito: nessuna balla -> reveal
   s = await st(host);
   ok(s.round.phase === 'reveal', `round ${i}: nessuna balla, si va a reveal`);
-  await call('advance', narr); await call('advance', narr); await call('advance', narr);
+  await call('advance', narr); await call('advance', narr); await call('advance', narr); await call('advance', narr);
 }
 s = await st(host);
 ok(s.room.phase === 'finished', 'partita finita dopo giri x giocatori round');
@@ -244,7 +271,7 @@ await db.exec(`delete from public.rooms where code in (${fill})`);
   await act(ps, 'submit_bluff', ps[2], mk('Due'));
   ok((await gs(ps, ps[0])).round.phase === 'reading', 'timer spento: chiude quando scrivono tutti');
   await act(ps, 'update_settings', ps[0], JSON.stringify({ timer: true }));
-  await act(ps, 'advance', ps[0]); await act(ps, 'advance', ps[0]); await act(ps, 'advance', ps[0]); await act(ps, 'advance', ps[0]);
+  for (let k = 0; k < 5; k++) await act(ps, 'advance', ps[0]);
   const s2 = await gs(ps, ps[0]); // scores
   await act(ps, 'advance', ps[0]);
   const s3 = await gs(ps, ps[1]);

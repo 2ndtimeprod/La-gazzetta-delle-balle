@@ -7,12 +7,14 @@ export type Option = {
   id: number; parts: string[]; mine?: boolean;
   is_true?: boolean; authors?: string[]; voters?: string[]; original?: string[] | null;
 };
+export type LiveBluff = { player_id: string; parts: string[]; original: string[] | null; changed: boolean };
 export type Token = { t: string; sp: boolean; h: number; w: boolean }; // parola della frase intera (h: buco dell'archivio)
 export type RoundState = {
   id: number; idx: number; total: number; narrator_id: string; phase: string;
   category: string | null; jolly: boolean; deadline_at: string | null;
   bluff_count: number; vote_count: number;
   debate_by?: string | null; debate_until?: string | null;
+  revealed?: boolean; live_rev?: number; live?: LiveBluff[];
   custom?: boolean; write_secs?: number; pending?: boolean; pending_category?: string; tokens?: Token[];
   frase?: string; holes?: number; truth?: string[]; spiegazione?: string;
   my_bluff?: string[] | null; submitted?: string[];
@@ -28,6 +30,8 @@ const MESSAGES: Record<string, string> = {
   bad_name: 'Il nome deve avere da 1 a 20 caratteri.',
   room_not_found: 'Stanza non trovata.',
   game_started: 'La partita è già iniziata: si rientra solo se il direttore ti ha tolto, con lo stesso nome.',
+  narrator_online: 'Il narratore è presente: comanda lui. Se ha problemi, toglilo dalla stanza.',
+  not_allowed: 'Comanda il narratore.',
   kick_self: 'Non puoi togliere te stesso.',
   bad_player: 'Giocatore non trovato.',
   room_full: 'La stanza è piena (massimo 12).',
@@ -94,5 +98,7 @@ export const submitBluff = (s: Session, parts: string[]) => rpc<void>('submit_bl
 export const closeWriting = (s: Session) => rpc<void>('close_writing', who(s));
 export const startDebate = (s: Session) => rpc<void>('start_debate', who(s));
 export const castVote = (s: Session, option: number) => rpc<void>('cast_vote', { ...who(s), p_option: option });
-export const advance = (s: Session) => rpc<void>('advance', who(s));
+// `from`: la fase vista sullo schermo; se nel frattempo è cambiata il server non fa nulla (niente salti da doppio tocco).
+export const advance = (s: Session, from?: string) => rpc<void>('advance', { ...who(s), p_from: from ?? null });
+export const editBluff = (s: Session, target: string, parts: string[]) => rpc<void>('edit_bluff', { ...who(s), p_target: target, p_parts: parts });
 export const editOption = (s: Session, option: number, parts: string[]) => rpc<void>('edit_option', { ...who(s), p_option: option, p_parts: parts });

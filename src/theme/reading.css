@@ -16,3 +16,6 @@
 .label.center { text-align: center; }
 .row2 { display: flex; gap: 10px; }
 .row2 .btn { flex: 1; }
+.read-card .sub.bad { color: var(--accent); }
+.live-edit { display: flex; flex-direction: column; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--rule-soft); }
+.live-wait { margin: 0; padding: 12px 0; border-bottom: 1px dashed var(--rule-soft); font-style: italic; color: var(--muted); }

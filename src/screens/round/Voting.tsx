@@ -45,7 +45,7 @@ export default function Voting({ session, state, refresh }: RoundProps) {
             {pick == null ? 'Scegli una risposta' : `Ci credo: voto la ${letter(pick)}`}
           </button>
         )}
-        {canAdvance && <button className="btn small" disabled={busy} onClick={() => run(() => advance(session))}>Chiudi le votazioni e rivela</button>}
+        {canAdvance && <button className="btn small" disabled={busy} onClick={() => run(() => advance(session, 'voting'))}>Chiudi le votazioni e rivela</button>}
         <Toast msg={err} />
       </div>
     </main>
