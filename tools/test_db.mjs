@@ -326,6 +326,26 @@ ok((await db.query(`select count(*) c from public.facts where private.fact_ok(st
   ok(await fails_with('room_not_found', 'join_room', code, 'Z'), 'stanza eliminata: il codice non esiste più');
 }
 
+// --- Narratore fisso e ordine dei narratori (0018)
+{ const ps = await mkRoom(['H', 'A', 'B', 'C']);
+  for (const p of ps) await hb(ps, p);
+  const order = async () => (await gs(ps, ps[0])).players.map((x) => x.name).join('');
+  ok(await fails_with('not_host', 'move_player', ps[0].code, ps[1].player_id, ps[1].secret, ps[3].player_id, -1), 'ordine: solo il direttore');
+  await act(ps, 'move_player', ps[0], ps[3].player_id, -1); await act(ps, 'move_player', ps[0], ps[3].player_id, -1);
+  ok(await order() === 'HCAB', 'ordine: C spostato su di due posti');
+  await act(ps, 'move_player', ps[0], ps[0].player_id, -1);
+  ok(await order() === 'HCAB', 'ordine: il primo non sale oltre');
+  ok(await fails_with('not_host', 'set_fixed_narrator', ps[0].code, ps[1].player_id, ps[1].secret, ps[1].player_id), 'narratore fisso: solo il direttore');
+  await act(ps, 'set_fixed_narrator', ps[0], ps[1].player_id);
+  ok((await gs(ps, ps[0])).room.fixed_narrator === ps[1].player_id, 'narratore fisso impostato');
+  await act(ps, 'start_game', ps[0]);
+  const s0 = await gs(ps, ps[0]);
+  ok(s0.round.narrator_id === ps[1].player_id && s0.round.total === 3, 'narratore fisso: narra lui, 3 round (giocano in 3)');
+  ok(await fails_with('game_started', 'set_fixed_narrator', ps[0].code, ps[0].player_id, ps[0].secret, null), 'narratore fisso: non si cambia a partita iniziata');
+  await db.query(`select private.start_round($1, 1)`, [ps[0].code]);
+  ok((await gs(ps, ps[0])).round.narrator_id === ps[1].player_id, 'narratore fisso: anche al round dopo');
+}
+
 // --- Buco scelto dal narratore (0014)
 { const ps = await mkRoom(['H', 'A', 'B']);
   for (const p of ps) await hb(ps, p);

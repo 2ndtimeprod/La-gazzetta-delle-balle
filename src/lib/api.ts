@@ -22,7 +22,7 @@ export type RoundState = {
 };
 export type GameState = {
   now: string; me: string;
-  room: { code: string; host_player_id: string; settings: Settings; phase: string; round_index: number };
+  room: { code: string; host_player_id: string; settings: Settings; phase: string; round_index: number; fixed_narrator?: string | null };
   round: RoundState | null; players: Player[];
 };
 
@@ -88,6 +88,8 @@ export const startGame = (s: Session) => rpc<void>('start_game', who(s));
 export const heartbeat = (s: Session) => rpc<void>('heartbeat', who(s));
 export const skipNarrator = (s: Session) => rpc<void>('skip_narrator', who(s));
 export const leaveRoom = (s: Session) => rpc<void>('leave_room', who(s));
+export const setFixedNarrator = (s: Session, target: string | null) => rpc<void>('set_fixed_narrator', { ...who(s), p_target: target });
+export const movePlayer = (s: Session, target: string, dir: -1 | 1) => rpc<void>('move_player', { ...who(s), p_target: target, p_dir: dir });
 export const kickPlayer = (s: Session, target: string) => rpc<void>('kick_player', { ...who(s), p_target: target });
 export const deleteRoom = (s: Session) => rpc<void>('delete_room', who(s));
 export const updateSettings = (s: Session, p: Partial<Settings>) => rpc<void>('update_settings', { ...who(s), p_settings: p });
