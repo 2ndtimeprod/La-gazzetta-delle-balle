@@ -15,7 +15,7 @@ export default function Scores({ session, state, refresh }: RoundProps) {
     <main className="page">
       <RoundHeader state={state} />
       <h1 className="head">Classifica</h1>
-      <Scoreboard players={state.players} me={state.me} gained={r.points} />
+      <Scoreboard players={state.players.filter((p) => p.id !== state.room.fixed_narrator)} me={state.me} gained={r.points} />
       <div className="actions">
         {canAdvance
           ? <button className="btn primary" disabled={busy} onClick={() => run(() => advance(session, 'scores'))}>{last ? "Ultima edizione: vedi chi vince" : 'Prossimo round'}</button>

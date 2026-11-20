@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { leaveRoom, startGame, updateSettings, type GameState, type Settings } from '../lib/api';
+import { leaveRoom, movePlayer, setFixedNarrator, startGame, updateSettings, type GameState, type Settings } from '../lib/api';
 import { clearSession, type Session } from '../lib/session';
 import HostTools from '../components/HostTools';
 import Masthead from '../components/Masthead';
@@ -15,6 +15,8 @@ export default function Lobby({ session, state, onLeft, refresh }: Props) {
   const isHost = room.host_player_id === me;
   const st = room.settings;
   const enough = players.filter((p) => p.connected).length >= 3;
+  const fixed = room.fixed_narrator ?? null;
+  const turn = players.filter((p) => p.id !== fixed); // l'ordine in cui passa il ruolo di narratore
 
   const act = async (f: () => Promise<unknown>) => {
     try { await f(); setErr(''); refresh(); } catch (e) { setErr((e as Error).message); }
@@ -45,14 +47,22 @@ export default function Lobby({ session, state, onLeft, refresh }: Props) {
 
       <section>
         <h2 className="section-title"><span>La redazione</span><span>{players.length}/12</span></h2>
+        <p className="muted small">{fixed ? 'Narra sempre lo stesso: gli altri giocano soltanto.' : 'Il numero è il turno da narratore.'}{isHost && !fixed ? ' Usa le frecce per cambiare l\'ordine.' : ''}</p>
         <ul className="roster">
           {players.map((p, i) => (
             <li key={p.id} className={p.connected ? '' : 'offline'}>
-              <span className="no">N. {String(i + 1).padStart(2, '0')}</span>
+              <span className="no">{p.id === fixed ? 'Fisso' : `N. ${String(turn.indexOf(p) + 1).padStart(2, '0')}`}</span>
               <span className="nm">{p.name}{p.id === me && <span className="tag"> (tu)</span>}</span>
               <span className="lead" />
               {!p.connected && <span className="tag off">offline</span>}
+              {p.id === fixed && <span className="tag host">Narratore</span>}
               {p.id === room.host_player_id && <span className="tag host">Direttore</span>}
+              {isHost && !fixed && (
+                <span className="order">
+                  <button aria-label={`${p.name} prima`} disabled={i === 0} onClick={() => act(() => movePlayer(session, p.id, -1))}>↑</button>
+                  <button aria-label={`${p.name} dopo`} disabled={i === players.length - 1} onClick={() => act(() => movePlayer(session, p.id, 1))}>↓</button>
+                </span>
+              )}
             </li>
           ))}
         </ul>
@@ -62,11 +72,19 @@ export default function Lobby({ session, state, onLeft, refresh }: Props) {
 
       <section className="card">
         <div className="switch-row" style={{ cursor: 'default' }}>
-          <span><b>Giri</b><small>Ognuno fa il narratore una volta per giro</small></span>
+          <span><b>Giri</b><small>{fixed ? 'Un giro = un round per ogni giocatore' : 'Ognuno fa il narratore una volta per giro'}</small></span>
         </div>
         <div className="seg" style={{ marginBottom: 6 }}>
           {[1, 2, 3].map((g) => <button key={g} className={st.giri === g ? 'on' : ''} disabled={!isHost} onClick={() => set({ giri: g })}>{g}</button>)}
         </div>
+        <div className="switch-row" style={{ cursor: 'default' }}>
+          <span><b>Narratore fisso</b><small>Chi non vuole giocare conduce tutta la partita e non prende punti</small></span>
+        </div>
+        <select className="input" aria-label="Narratore fisso" value={fixed ?? ''} disabled={!isHost}
+          onChange={(e) => act(() => setFixedNarrator(session, e.target.value || null))}>
+          <option value="">Nessuno: si fa a turno</option>
+          {players.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
+        </select>
         <Toggle k="timer" title="Cronometro" desc="60 secondi per scrivere la balla" />
         <Toggle k="dibattito" title="Dibattito" desc="Un minuto di discussione, una volta a testa per partita" />
         <Toggle k="dark" title="Dark" desc="Notizie scorrette: la settima faccia del tamburo" />
