@@ -256,6 +256,22 @@ await db.exec(`delete from public.rooms where code in (${fill})`);
 await db.exec(`update public.app_config set value='verified' where key='fact_filter'`);
 ok((await db.query(`select count(*) c from public.facts where private.fact_ok(stato)`)).rows[0].c < 35, 'filtro "verified" attivo');
 
+// --- Cronometro spento: chi è offline mentre pensa non viene saltato (0015)
+{ const ps = await mkRoom(['H', 'A', 'B']);
+  for (const p of ps) await hb(ps, p);
+  await act(ps, 'update_settings', ps[0], JSON.stringify({ timer: false }));
+  await act(ps, 'start_game', ps[0]);
+  const sp = await act(ps, 'spin', ps[0]); if (sp.face === 'Jolly') await act(ps, 'pick_category', ps[0], 'Science'); await act(ps, 'start_writing', ps[0]);
+  const h = (await gs(ps, ps[0])).round.holes;
+  await stale(ps[2]); await hb(ps, ps[0]);
+  ok((await gs(ps, ps[1])).players.find((x) => x.id === ps[2].player_id).connected === false, 'senza cronometro: B risulta offline');
+  await act(ps, 'submit_bluff', ps[1], Array.from({ length: h }, (_, i) => `Zebra ${i}`));
+  await hb(ps, ps[0]);
+  ok((await gs(ps, ps[1])).round.phase === 'writing', 'senza cronometro: la scrittura aspetta anche chi è offline');
+  await act(ps, 'submit_bluff', ps[2], Array.from({ length: h }, (_, i) => `Cobra ${i}`));
+  ok((await gs(ps, ps[1])).round.phase === 'reading', 'senza cronometro: chiude quando hanno scritto tutti');
+}
+
 // --- Buco scelto dal narratore (0014)
 { const ps = await mkRoom(['H', 'A', 'B']);
   for (const p of ps) await hb(ps, p);
