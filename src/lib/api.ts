@@ -2,7 +2,7 @@ import { supabase } from './supabase';
 import { saveSession, type Session } from './session';
 
 export type Settings = { giri: number; dark: boolean; estremi: boolean; timer?: boolean; dibattito?: boolean }; // timer assente = acceso
-export type Player = { id: string; name: string; score: number; seat: number; connected: boolean; debate_used?: boolean };
+export type Player = { id: string; name: string; score: number; seat: number; connected: boolean; debate_used?: boolean; kicked?: boolean };
 export type Option = {
   id: number; parts: string[]; mine?: boolean;
   is_true?: boolean; authors?: string[]; voters?: string[]; original?: string[] | null;
@@ -27,7 +27,9 @@ export type GameState = {
 const MESSAGES: Record<string, string> = {
   bad_name: 'Il nome deve avere da 1 a 20 caratteri.',
   room_not_found: 'Stanza non trovata.',
-  game_started: 'La partita è già iniziata.',
+  game_started: 'La partita è già iniziata: si rientra solo se il direttore ti ha tolto, con lo stesso nome.',
+  kick_self: 'Non puoi togliere te stesso.',
+  bad_player: 'Giocatore non trovato.',
   room_full: 'La stanza è piena (massimo 12).',
   name_taken: 'Questo nome è già preso nella stanza.',
   not_host: 'Solo chi ha creato la stanza può farlo.',
@@ -82,6 +84,8 @@ export const startGame = (s: Session) => rpc<void>('start_game', who(s));
 export const heartbeat = (s: Session) => rpc<void>('heartbeat', who(s));
 export const skipNarrator = (s: Session) => rpc<void>('skip_narrator', who(s));
 export const leaveRoom = (s: Session) => rpc<void>('leave_room', who(s));
+export const kickPlayer = (s: Session, target: string) => rpc<void>('kick_player', { ...who(s), p_target: target });
+export const deleteRoom = (s: Session) => rpc<void>('delete_room', who(s));
 export const updateSettings = (s: Session, p: Partial<Settings>) => rpc<void>('update_settings', { ...who(s), p_settings: p });
 export const spin = (s: Session) => rpc<{ face: string }>('spin', who(s));
 export const startWriting = (s: Session, censor?: number[]) => rpc<void>('start_writing', { ...who(s), p_censor: censor ?? null });

@@ -119,3 +119,14 @@
 .coupon { display: flex; flex-direction: column; gap: 14px; padding: 14px 14px 16px; border: 1.5px dashed var(--rule); background: var(--paper); box-shadow: 4px 4px 0 var(--rule-soft); }
 .coupon-head { display: flex; justify-content: space-between; align-items: center; font: var(--meta-w) 10.5px/1 var(--f-meta); letter-spacing: 2.2px; text-transform: uppercase; }
 .coupon-no { border: 1.5px solid var(--accent); color: var(--accent); padding: 4px 7px; transform: rotate(-4deg); letter-spacing: 1.4px; border-radius: 2px; }
+
+/* Strumenti del direttore */
+.host-tools { display: flex; flex-direction: column; gap: 8px; }
+.host-list { list-style: none; margin: 0; padding: 0; }
+.host-list li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--rule-soft); }
+.host-list .nm { flex: 1; font-weight: 700; font-size: 17px; }
+.host-list .btn.small { width: auto; min-height: 40px; padding: 0 14px; }
+.host-confirm { display: flex; gap: 6px; }
+.muted.small { font-size: 13.5px; }
+.btn.link.danger { color: var(--accent); }
+.section-title .btn.link { width: auto; min-height: 0; padding: 0; }

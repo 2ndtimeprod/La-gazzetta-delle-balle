@@ -36,9 +36,18 @@ function Screens() {
   const { state, error, refresh } = useRoomState(session);
   useHeartbeat(session, refresh);
 
-  // Sessione salvata ma stanza sparita o giocatore non più valido: torna alla home.
+  // Sessione salvata ma stanza sparita o giocatore non più valido: torna alla home. Se la stanza si era
+  // caricata in questa visita, è stato il direttore (giocatore tolto o stanza chiusa): lo si dice in home.
+  const [notice, setNotice] = useState('');
+  const seen = useRef<string | null>(null);
+  if (state && session) seen.current = session.code;
   useEffect(() => {
-    if (session && error && DEAD.includes(error)) { clearSession(session.code); setSession(null); }
+    if (!(session && error && DEAD.includes(error))) return;
+    if (seen.current === session.code) {
+      setNotice(error === 'Stanza non trovata.' ? 'La stanza è stata chiusa.'
+        : 'Il direttore ti ha tolto dalla stanza. Rientra con il codice e lo stesso nome.');
+    }
+    clearSession(session.code); setSession(null);
   }, [session, error]);
 
   // Inizio partita: da 'lobby' a 'playing' si vede l'edizione straordinaria (non al rientro a partita in corso).
@@ -57,7 +66,7 @@ function Screens() {
   if (!configured) {
     return <main className="page"><Toast msg="Mancano VITE_SUPABASE_URL e VITE_SUPABASE_PUBLISHABLE_KEY." /></main>;
   }
-  if (!session) return <Home onSession={setSession} />;
+  if (!session) return <Home onSession={(s) => { setNotice(''); setSession(s); }} notice={notice} />;
   if (!state) return <main className="page"><Waiting>Caricamento della redazione</Waiting><Toast msg={error} /></main>;
   if (state.room.phase === 'lobby') {
     return <Lobby session={session} state={state} refresh={refresh} onLeft={() => setSession(null)} />;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { RoundProps } from '../lib/round';
 import LeaveGame from '../components/LeaveGame';
+import HostTools from '../components/HostTools';
 import DebateButton from '../components/DebateButton';
 import DebateStamp from '../components/DebateStamp';
 import TimerToggle from '../components/TimerToggle';
@@ -41,6 +42,7 @@ export default function Playing(p: RoundProps & { onLeft: () => void }) {
       <footer className="foot">
         <DebateButton session={p.session} state={p.state} refresh={p.refresh} hidden={hold} />
         <TimerToggle session={p.session} state={p.state} refresh={p.refresh} />
+        <HostTools session={p.session} state={p.state} refresh={p.refresh} folded />
         <LeaveGame session={p.session} onLeft={p.onLeft} />
       </footer>
     </>

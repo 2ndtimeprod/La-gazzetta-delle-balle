@@ -6,7 +6,8 @@ import type { Session } from './session';
 export function useHeartbeat(session: Session | null, refresh: () => void) {
   useEffect(() => {
     if (!session) return;
-    const beat = () => { heartbeat(session).then(refresh, () => {}); };
+    // se il battito fallisce (giocatore tolto, stanza chiusa) get_state lo dice all'app
+    const beat = () => { heartbeat(session).then(refresh, refresh); };
     beat();
     const t = setInterval(beat, 15000);
     const onVis = () => { if (document.visibilityState === 'visible') beat(); };

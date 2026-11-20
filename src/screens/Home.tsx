@@ -7,7 +7,7 @@ import { openTutorial } from '../components/Tutorial';
 import { creaProva, provaAbilitata } from '../lib/prova';
 import { ULTIMORA } from '../data/ultimora';
 
-export default function Home({ onSession }: { onSession: (s: Session) => void }) {
+export default function Home({ onSession, notice }: { onSession: (s: Session) => void; notice?: string }) {
   const [name, setName] = useState('');
   const [code, setCode] = useState(() => new URLSearchParams(location.search).get('c')?.toUpperCase().slice(0, 4) ?? '');
   const [busy, setBusy] = useState<'' | 'create' | 'join'>('');
@@ -41,7 +41,7 @@ export default function Home({ onSession }: { onSession: (s: Session) => void })
           onChange={(e) => setCode(e.target.value.toUpperCase().replace(/[^A-Z]/g, ''))} />
         <button className={`btn${busy === 'join' ? ' busy' : ''}`} disabled={!!busy || !nameOk || code.length !== 4}
           onClick={() => run('join', () => joinRoom(code, name))}>Entra con il codice</button>
-        <Toast msg={err} />
+        <Toast msg={err || notice || ''} />
       </div>
       </section>
       {provaAbilitata() && (
