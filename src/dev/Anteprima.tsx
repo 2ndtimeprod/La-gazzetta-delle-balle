@@ -81,7 +81,7 @@ export default function Anteprima({ which }: { which: string }) {
   switch (which) {
     case 'home': return <Home onSession={noop} />;
     case 'edizione': return <><Lobby session={S} state={state(null, 'p1', 'lobby')} refresh={noop} onLeft={noop} /><EdizioneStraordinaria state={state({ phase: 'picking' })} onDone={noop} /></>;
-    case 'tutorial': localStorage.removeItem('balle:tutorial-visto'); return <Home onSession={noop} />;
+    case 'tutorial': localStorage.removeItem('balle:tutorial-v2'); return <Home onSession={noop} />;
     case 'lobby': return <Lobby {...p} state={st.lobby} onLeft={noop} />;
     case 'scrive': return <Writing {...p} state={st.scrive} />;
     case 'censura': return <Censor {...p} state={st.censura} onDone={noop} />;

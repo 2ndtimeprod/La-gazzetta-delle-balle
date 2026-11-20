@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { INTRO_END } from './Intro';
 
-const SEEN = 'balle:tutorial-visto';
+const SEEN = 'balle:tutorial-v2'; // v2: regole nuove (buco del narratore, narratore che comanda); chi aveva visto la v1 la rivede una volta
 const EVT = 'balle:tutorial';
 export const openTutorial = () => window.dispatchEvent(new Event(EVT));
 
@@ -15,13 +15,18 @@ const SLIDES: Slide[] = [
     art: <div className="tu-art"><span className="tu-mast">La Gazzetta delle Balle</span></div>,
   },
   {
-    kicker: '1 · Il narratore', title: 'A turno, uno conduce',
-    body: <>Il narratore gira il tamburo ed estrae una categoria. <u className="hl">Lui vede la risposta vera, quindi non gioca la mano</u>: legge, conduce e non fa trapelare niente agli altri giocatori. <u className="hl">A tamburo fermo sceglie il buco</u>: tiene quello dell'archivio o censura lui le parole che vuole, anche tutte tranne una. Al round successivo tocca a un altro giocatore.</>,
+    kicker: '1 · Il narratore', title: 'Uno conduce, gli altri giocano',
+    body: <>A turno un giocatore fa il narratore (l'ordine si decide in lobby), oppure <u className="hl">uno solo per tutta la partita</u> se qualcuno preferisce condurre e basta. Il narratore <u className="hl">non gioca la mano e non prende punti</u> in quel round: gira il tamburo, legge ad alta voce ed <u className="hl">è l'unico che manda avanti la partita</u>.</>,
     art: <div className="tu-art"><span className="tu-strip">Scienza</span></div>,
   },
   {
-    kicker: '2 · Scrivi', title: 'Riempi il buco con una balla',
-    body: <>Tutti gli altri vedono la frase con un elemento mancante (a volte due) e <u className="hl">inventano la risposta più credibile possibile</u>. Col cronometro acceso avete <u className="hl">60 secondi</u>.</>,
+    kicker: '2 · Il buco', title: 'Il narratore sceglie cosa censurare',
+    body: <>A tamburo fermo <u className="hl">solo il narratore vede la notizia intera</u>. Può tenere il buco dell'archivio oppure <u className="hl">toccare le parole da nascondere</u>, anche tutte tranne una (al massimo 3 buchi). Gli altri vedono solo le parole rimaste e <u className="hl">delle barre nere</u> al posto del resto.</>,
+    art: <div className="tu-art"><p className="tu-sent"><span className="gap censor" /> il Furby <span className="gap censor" />.</p></div>,
+  },
+  {
+    kicker: '3 · Scrivi', title: 'Riempi i buchi con una balla',
+    body: <>Tutti gli altri <u className="hl">inventano il pezzo mancante più credibile possibile</u>. Col cronometro acceso avete <u className="hl">60 secondi</u> (90 se il buco è lungo); senza cronometro <u className="hl">si aspetta chi sta ancora pensando</u>. Intanto il narratore <u className="hl">vede ogni balla appena arriva</u> e può già correggere i refusi.</>,
     art: <div className="tu-art"><p className="tu-sent">Il Furby fu vietato all'NSA perché temeva che <span className="gap" />.</p></div>,
   },
   {
@@ -30,15 +35,20 @@ const SLIDES: Slide[] = [
     art: <div className="tu-art"><span className="tu-stamp">Troppo simile</span></div>,
   },
   {
-    kicker: '3 · Vota', title: 'Trova la notizia vera',
+    kicker: '4 · Vota', title: 'Trova la notizia vera',
     body: <>Il narratore legge ad alta voce tutte le risposte mescolate, vera compresa, e <u className="hl">può correggere maiuscole e refusi</u>. Poi le manda sui telefoni come frasi intere e <u className="hl">ognuno vota quella che crede vera</u>. <u className="hl">La tua balla non la puoi votare</u>.</>,
     art: <div className="tu-art tu-letters"><i>A</i><i className="on">B</i><i>C</i><i>D</i></div>,
   },
   {
-    kicker: '4 · Punti', title: 'Si vince in due modi',
-    body: <><u className="hl"><b>+1</b> se voti la risposta vera</u>. <u className="hl"><b>+1</b> per ogni giocatore che vota la tua balla</u>. Due balle uguali non sono ammesse: <u className="hl">se qualcuno ha già scritto la stessa cosa, la tua balla non viene accettata</u>.</>,
+    kicker: '5 · Punti', title: 'Si vince in due modi',
+    body: <>Finiti i voti <u className="hl">il narratore vede per primo chi ha scritto cosa e chi ci è cascato</u>, poi lo manda a tutti. <u className="hl"><b>+1</b> se voti la risposta vera</u>. <u className="hl"><b>+1</b> per ogni giocatore che vota la tua balla</u>. Due balle uguali non sono ammesse: <u className="hl">se qualcuno ha già scritto la stessa cosa, la tua balla non viene accettata</u>.</>,
     art: <div className="tu-art tu-points"><span>+1</span><span>+1</span><span>+1</span></div>,
     extra: <div className="tu-shot"><div className="tu-field">la Torre Eiffel</div><div className="tu-err">Un altro giocatore ha già scritto una risposta uguale: scrivine una diversa.</div></div>,
+  },
+  {
+    kicker: 'Il direttore', title: 'Chi crea la stanza la gestisce',
+    body: <>In lobby <u className="hl">sceglie l'ordine dei narratori</u> con le frecce e l'eventuale <u className="hl">narratore fisso</u>. Se un telefono si blocca può <u className="hl">togliere quel giocatore</u>: rientra con il codice e lo stesso nome e ritrova i suoi punti. Può anche chiudere la stanza per tutti, e sostituisce il narratore solo se è offline.</>,
+    art: <div className="tu-art"><span className="tu-stamp">Direttore</span></div>,
   },
   {
     kicker: 'Mossa speciale', title: 'Il dibattito',
@@ -57,7 +67,7 @@ const SLIDES: Slide[] = [
         <li><u className="hl">Imita il tono della frase</u>: la verità è spesso precisa e strana. Numeri esatti e dettagli concreti sembrano veri.</li>
         <li><u className="hl">Lunghezza giusta</u>: poche parole come una risposta vera, non un tema.</li>
         <li><u className="hl">Non votare la più assurda per esclusione</u>: spesso è proprio quella vera.</li>
-        <li>Narratore: <u className="hl">leggi tutto con la stessa voce</u>, senza fermarti sulla vera.</li>
+        <li>Narratore: <u className="hl">leggi tutto con la stessa voce</u>, senza fermarti sulla vera. Censura con giudizio: <u className="hl">troppo poco e la vera è ovvia, troppo e manca il contesto</u>.</li>
         <li>Niente sbirciatine sugli schermi degli altri.</li>
       </ul>
     ),
