@@ -16,17 +16,17 @@ const SLIDES: Slide[] = [
   },
   {
     kicker: '1 · Il narratore', title: 'Uno conduce, gli altri giocano',
-    body: <>A turno un giocatore fa il narratore (l'ordine si decide in lobby), oppure <u className="hl">uno solo per tutta la partita</u> se qualcuno preferisce condurre e basta. Il narratore <u className="hl">non gioca la mano e non prende punti</u> in quel round: gira il tamburo, legge ad alta voce ed <u className="hl">è l'unico che manda avanti la partita</u>.</>,
+    body: <>A turno un giocatore fa il narratore (l'ordine si decide in lobby), oppure <u className="hl">uno solo per tutta la partita</u> se qualcuno preferisce condurre e basta. Il narratore <u className="hl">non gioca la mano e non prende punti</u> in quel round: gira il tamburo, legge ad alta voce ed <u className="hl">è l'unico che manda avanti le fasi della partita</u>.</>,
     art: <div className="tu-art"><span className="tu-strip">Scienza</span></div>,
   },
   {
     kicker: '2 · Il buco', title: 'Il narratore sceglie cosa censurare',
-    body: <>A tamburo fermo <u className="hl">solo il narratore vede la notizia intera</u>. Può tenere il buco dell'archivio oppure <u className="hl">toccare le parole da nascondere</u>, anche tutte tranne una (al massimo 3 buchi). Gli altri vedono solo le parole rimaste e <u className="hl">delle barre nere</u> al posto del resto.</>,
+    body: <>Il narratore <u className="hl">vede la notizia intera</u>. Può tenere l'elemento mancante suggerito, oppure <u className="hl">toccare le parole da nascondere</u>, anche tutte tranne una. Gli altri <u className="hl">vedono solo le parole rimaste</u>.</>,
     art: <div className="tu-art"><p className="tu-sent"><span className="gap censor" /> il Furby <span className="gap censor" />.</p></div>,
   },
   {
     kicker: '3 · Scrivi', title: 'Riempi i buchi con una balla',
-    body: <>Tutti gli altri <u className="hl">inventano il pezzo mancante più credibile possibile</u>. Col cronometro acceso avete <u className="hl">60 secondi</u> (90 se il buco è lungo); senza cronometro <u className="hl">si aspetta chi sta ancora pensando</u>. Intanto il narratore <u className="hl">vede ogni balla appena arriva</u> e può già correggere i refusi.</>,
+    body: <>Tutti gli altri <u className="hl">inventano il pezzo mancante più credibile possibile</u>. Con cronometro acceso avete <u className="hl">fino a 90 secondi</u>; senza cronometro <u className="hl">non c'è limite di tempo</u>.</>,
     art: <div className="tu-art"><p className="tu-sent">Il Furby fu vietato all'NSA perché temeva che <span className="gap" />.</p></div>,
   },
   {
@@ -36,19 +36,14 @@ const SLIDES: Slide[] = [
   },
   {
     kicker: '4 · Vota', title: 'Trova la notizia vera',
-    body: <>Il narratore legge ad alta voce tutte le risposte mescolate, vera compresa, e <u className="hl">può correggere maiuscole e refusi</u>. Poi le manda sui telefoni come frasi intere e <u className="hl">ognuno vota quella che crede vera</u>. <u className="hl">La tua balla non la puoi votare</u>.</>,
+    body: <>Il narratore riceve le risposte di tutti e <u className="hl">può correggere maiuscole e refusi</u>, qualora necessario. Poi legge ad alta voce tutte le risposte mescolate, vera compresa, e le manda a tutti i giocatori, che <u className="hl">votano quella che credono vera</u>. <u className="hl">La tua balla non la puoi votare</u>.</>,
     art: <div className="tu-art tu-letters"><i>A</i><i className="on">B</i><i>C</i><i>D</i></div>,
   },
   {
     kicker: '5 · Punti', title: 'Si vince in due modi',
-    body: <>Finiti i voti <u className="hl">il narratore vede per primo chi ha scritto cosa e chi ci è cascato</u>, poi lo manda a tutti. <u className="hl"><b>+1</b> se voti la risposta vera</u>. <u className="hl"><b>+1</b> per ogni giocatore che vota la tua balla</u>. Due balle uguali non sono ammesse: <u className="hl">se qualcuno ha già scritto la stessa cosa, la tua balla non viene accettata</u>.</>,
+    body: <>Finiti i voti <u className="hl">il narratore li rivela a voce alta</u>. <u className="hl"><b>+1</b> se voti la risposta vera</u>. <u className="hl"><b>+1</b> per ogni giocatore che vota la tua balla</u>. Due balle uguali non sono ammesse: <u className="hl">se qualcuno ha già scritto la stessa cosa, la tua balla non viene accettata</u>.</>,
     art: <div className="tu-art tu-points"><span>+1</span><span>+1</span><span>+1</span></div>,
     extra: <div className="tu-shot"><div className="tu-field">la Torre Eiffel</div><div className="tu-err">Un altro giocatore ha già scritto una risposta uguale: scrivine una diversa.</div></div>,
-  },
-  {
-    kicker: 'Il direttore', title: 'Chi crea la stanza la gestisce',
-    body: <>In lobby <u className="hl">sceglie l'ordine dei narratori</u> con le frecce e l'eventuale <u className="hl">narratore fisso</u>. Se un telefono si blocca può <u className="hl">togliere quel giocatore</u>: rientra con il codice e lo stesso nome e ritrova i suoi punti. Può anche chiudere la stanza per tutti, e sostituisce il narratore solo se è offline.</>,
-    art: <div className="tu-art"><span className="tu-stamp">Direttore</span></div>,
   },
   {
     kicker: 'Mossa speciale', title: 'Il dibattito',

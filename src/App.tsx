@@ -14,6 +14,7 @@ import './theme/game.css';
 import './theme/drum.css';
 import './theme/tutorial.css';
 import './theme/intro.css';
+import './theme/catrev.css';
 import './theme/debate.css';
 import './theme/reading.css';
 import './theme/censor.css';

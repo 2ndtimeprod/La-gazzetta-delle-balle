@@ -12,12 +12,13 @@ type Props = {
   interactive: boolean;
   onSpin?: () => Promise<string>;         // chiede al server la faccia; l'animazione è solo scena
   onLanded?: (face: string) => void;
+  remote?: { face: string; ageMs: number } | null;   // per chi guarda: il tamburo del narratore, girato dal server
 };
 type Phase = 'idle' | 'hold' | 'coast' | 'land' | 'done';
 
 const reducedMotion = () => { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch { return false; } };
 
-export default function Drum({ dark, interactive, onSpin, onLanded }: Props) {
+export default function Drum({ dark, interactive, onSpin, onLanded, remote }: Props) {
   const faces = useMemo(() => [...NORMALI, dark ? 'Dark/Politically incorrect' : 'Jolly'], [dark]);
   const [phase, setPhase] = useState<Phase>('idle');
   const [result, setResult] = useState<string | null>(null);
@@ -115,13 +116,29 @@ export default function Drum({ dark, interactive, onSpin, onLanded }: Props) {
     go('land');
   }
 
-  async function launch(v: number) {
+  async function launch(v: number, preset?: string) {
     unlockAudio();
     m.vel = Math.max(-3200, Math.min(3200, v));
     setResult(null); go('coast'); startLoop();
+    if (preset) { m.pending = { face: preset }; return; }
     try { m.pending = { face: await cb.current.onSpin!() }; }
     catch { m.pending = { error: true }; }
   }
+
+  // Spettatori: appena il server comunica la faccia il tamburo parte da solo e si ferma lì.
+  // Chi arriva tardi (ricarica la pagina) vede il tamburo già fermo sulla faccia.
+  const remoteFace = remote?.face ?? null;
+  useEffect(() => {
+    if (!remoteFace || m.phase !== 'idle') return;
+    const idx = cb.current.faces.indexOf(remoteFace);
+    if (idx < 0) return;
+    if ((remote?.ageMs ?? 0) > 7000) {
+      m.pos = mod(-idx * SA, 360); paint(); go('done'); setResult(remoteFace);
+      return;
+    }
+    void launch((Math.random() < 0.5 ? -1 : 1) * (1500 + Math.random() * 1200), remoteFace);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [remoteFace]);
 
   const can = interactive && (phase === 'idle' || phase === 'done') && !result && !!onSpin;
 
