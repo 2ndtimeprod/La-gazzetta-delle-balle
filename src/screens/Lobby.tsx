@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { leaveRoom, movePlayer, setFixedNarrator, startGame, updateSettings, type GameState, type Settings } from '../lib/api';
 import { clearSession, type Session } from '../lib/session';
+import Avatar from '../components/Avatar';
 import HostTools from '../components/HostTools';
 import Masthead from '../components/Masthead';
 import Toast from '../components/Toast';
@@ -45,13 +46,14 @@ export default function Lobby({ session, state, onLeft, refresh }: Props) {
       <div className="code-tiles" aria-label={`Codice ${room.code}`}>{room.code.split('').map((c, i) => <span key={i}>{c}</span>)}</div>
       <button className="btn small" onClick={share}>{copied ? 'Link copiato' : 'Invita: condividi il link'}</button>
 
-      <section>
+      <section className="card roster-card">
         <h2 className="section-title"><span>La redazione</span><span>{players.length}/12</span></h2>
         <p className="muted small">{fixed ? 'Narra sempre lo stesso: gli altri giocano soltanto.' : 'Il numero è il turno da narratore.'}{isHost && !fixed ? ' Usa le frecce per cambiare l\'ordine.' : ''}</p>
         <ul className="roster">
           {players.map((p, i) => (
             <li key={p.id} className={p.connected ? '' : 'offline'}>
               <span className="no">{p.id === fixed ? 'Fisso' : `N. ${String(turn.indexOf(p) + 1).padStart(2, '0')}`}</span>
+              <Avatar p={p} dot={p.connected ? 'on' : 'off'} />
               <span className="nm">{p.name}{p.id === me && <span className="tag"> (tu)</span>}</span>
               <span className="lead" />
               {!p.connected && <span className="tag off">offline</span>}

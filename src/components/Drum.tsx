@@ -174,7 +174,7 @@ export default function Drum({ dark, interactive, onSpin, onLanded, remote }: Pr
 
   return (
     <div className="drum-wrap">
-      <div className="tray">
+      <div className={`tray${result ? ' done' : ''}`}>
         <div className={`drum-view${can ? '' : ' locked'}`} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}
           role="img" aria-label="Tamburo delle categorie">
           <div className="drum-axis" ref={axis} aria-hidden="true">
@@ -193,7 +193,7 @@ export default function Drum({ dark, interactive, onSpin, onLanded, remote }: Pr
         </div>
         <div className="flap l" ref={flapL} aria-hidden="true"><Pointer /></div>
         <div className="flap r" ref={flapR} aria-hidden="true"><Pointer mirror /></div>
-        <div className="tray-label">{label}</div>
+        {label && <div className="tray-label">{label}</div>}
       </div>
       <div className="result" aria-live="polite">
         {result && <span className="result-chip">{CATEGORIE[result]}</span>}

@@ -9,6 +9,21 @@ import Sentence from '../../components/Sentence';
 import Toast from '../../components/Toast';
 import LiveBluffs from './LiveBluffs';
 
+const C = 2 * Math.PI * 34;
+
+// Cronometro ad anello; il titolo della schermata gli sta accanto.
+function Ring({ left, total }: { left: number; total: number }) {
+  return (
+    <span className="ring" role="timer" aria-label={`${left} secondi`}>
+      <svg viewBox="0 0 84 84" aria-hidden="true">
+        <circle className="track" cx="42" cy="42" r="34" />
+        <circle className="bar" cx="42" cy="42" r="34" strokeDasharray={C} strokeDashoffset={C * (1 - Math.max(0, Math.min(1, left / total)))} />
+      </svg>
+      <span className="ring-num"><b>{left}</b><small>SEC</small></span>
+    </span>
+  );
+}
+
 function Pips({ done, total }: { done: number; total: number }) {
   return <span className="pips" aria-label={`${done} di ${total}`}>{Array.from({ length: total }, (_, i) => <i key={i} className={i < done ? 'on' : ''} />)}</span>;
 }
@@ -36,24 +51,22 @@ export default function Writing({ session, state, refresh }: RoundProps) {
   return (
     <main className="page">
       <RoundHeader state={state} />
-      {r.deadline_at
-        ? <div className={`timer${left <= 10 ? ' low' : ''}`}>
-            <span className="timer-num">{left}</span>
-            <span className="timer-bar"><i style={{ transform: `scaleX(${left / (r.write_secs ?? 60)})` }} /></span>
-          </div>
-        : <p className="label">Senza cronometro: si va avanti quando hanno scritto tutti</p>}
+      {(() => {
+        const title = isNarrator ? 'La verità, solo per te' : sent ? 'Balla in pagina' : 'Scrivi la tua balla';
+        return r.deadline_at
+          ? <div className={`timer${left <= 10 ? ' low' : ''}`}><Ring left={left} total={r.write_secs ?? 60} /><h1 className="head sm">{title}</h1></div>
+          : <div className="stack"><h1 className="head sm">{title}</h1><p className="label">Senza cronometro: si va avanti quando hanno scritto tutti</p></div>;
+      })()}
 
       {isNarrator ? (
         <>
-          <h1 className="head sm">La verità, solo per te</h1>
           <div className="secret" data-label="Riservato al narratore"><Sentence frase={r.frase!} parts={r.truth} /></div>
           <p className="lede">Le balle arrivano qui appena scritte: correggi i refusi intanto. Non far trapelare nulla.</p>
           <LiveBluffs session={session} state={state} refresh={refresh} />
         </>
       ) : (
         <>
-          <h1 className="head sm">{sent ? 'Balla in pagina' : 'Scrivi la tua balla'}</h1>
-          <Sentence frase={r.frase!} parts={sent && same ? r.my_bluff! : undefined} censor={r.custom} />
+          <div className="news" data-label="Notizia vera, con un buco"><Sentence frase={r.frase!} parts={sent && same ? r.my_bluff! : undefined} censor={r.custom} /></div>
           {parts.map((v, i) => (
             <div className="field" key={i}>
               <label className="label" htmlFor={`b${i}`}>{holes > 1 ? `Buco ${i + 1}` : 'La tua balla'}</label>
@@ -70,7 +83,7 @@ export default function Writing({ session, state, refresh }: RoundProps) {
       )}
 
       <div className="actions">
-        <div className="kicker-row"><span className="label">Balle consegnate</span><Pips done={r.bluff_count} total={total} /></div>
+        <div className="progress"><span className="label">Balle consegnate</span><Pips done={r.bluff_count} total={total} />{r.bluff_count < total && <i className="live" />}</div>
         {!isNarrator && (
           <button className={`btn primary${busy ? ' busy' : ''}`} disabled={busy || !ready || same}
             onClick={() => run(async () => { await submitBluff(session, parts); vibrate(12); })}>
