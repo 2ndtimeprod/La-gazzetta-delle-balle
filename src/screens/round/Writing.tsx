@@ -7,6 +7,7 @@ import { vibrate } from '../../lib/drum';
 import RoundHeader from '../../components/RoundHeader';
 import Sentence from '../../components/Sentence';
 import Toast from '../../components/Toast';
+import LiveBluffs from './LiveBluffs';
 
 function Pips({ done, total }: { done: number; total: number }) {
   return <span className="pips" aria-label={`${done} di ${total}`}>{Array.from({ length: total }, (_, i) => <i key={i} className={i < done ? 'on' : ''} />)}</span>;
@@ -46,7 +47,8 @@ export default function Writing({ session, state, refresh }: RoundProps) {
         <>
           <h1 className="head sm">La verità, solo per te</h1>
           <div className="secret" data-label="Riservato al narratore"><Sentence frase={r.frase!} parts={r.truth} /></div>
-          <p className="lede">Gli altri stanno inventando le loro balle. Non far trapelare nulla.</p>
+          <p className="lede">Le balle arrivano qui appena scritte: correggi i refusi intanto. Non far trapelare nulla.</p>
+          <LiveBluffs session={session} state={state} refresh={refresh} />
         </>
       ) : (
         <>

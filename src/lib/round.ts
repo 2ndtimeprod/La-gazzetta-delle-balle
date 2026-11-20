@@ -11,12 +11,13 @@ export const NORMALI = ['History', 'Pop culture', 'Geography', 'Animal kingdom',
 
 export const nameOf = (players: Player[], id: string) => players.find((p) => p.id === id)?.name ?? '?';
 
-// Chi può far avanzare il round: il narratore, oppure l'host se il narratore è sparito.
+// Chi fa avanzare il round: solo il narratore; il direttore lo sostituisce solo se il narratore è offline.
 export function roles(state: GameState) {
   const me = state.me;
   const isNarrator = state.round?.narrator_id === me;
   const isHost = state.room.host_player_id === me;
-  return { me, isNarrator, isHost, canAdvance: isNarrator || isHost };
+  const narratorOff = !!state.round && state.players.find((p) => p.id === state.round!.narrator_id)?.connected === false;
+  return { me, isNarrator, isHost, narratorOff, canAdvance: isNarrator || (isHost && narratorOff) };
 }
 
 // Un dibattito è in corso (orologio del server).

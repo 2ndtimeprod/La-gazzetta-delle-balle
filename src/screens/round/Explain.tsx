@@ -20,7 +20,7 @@ export default function Explain({ session, state, refresh }: RoundProps) {
       <p className="article">{r.spiegazione || 'Su questa notizia l\'archivio tace.'}</p>
       <div className="actions">
         {canAdvance
-          ? <button className="btn primary" disabled={busy} onClick={() => run(() => advance(session))}>Vai alla classifica</button>
+          ? <button className="btn primary" disabled={busy} onClick={() => run(() => advance(session, 'explain'))}>Vai alla classifica</button>
           : <Waiting>Si passa alla classifica</Waiting>}
         <Toast msg={err} />
       </div>

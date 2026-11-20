@@ -7,13 +7,9 @@ import RoundHeader from '../../components/RoundHeader';
 import Sentence from '../../components/Sentence';
 import Toast from '../../components/Toast';
 import Waiting from '../../components/Waiting';
+import Pen from '../../components/PenIcon';
 
 const LETTERS = 'ABCDEFGHIJKLM';
-const Pen = () => (
-  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M4 20h4L19 9l-4-4L4 16z" /><path d="M13.5 6.5l4 4" />
-  </svg>
-);
 
 // Fase "reading": il narratore vede le frasi complete, le legge ad alta voce, corregge i refusi e le manda al voto.
 // Gli altri vedono solo la frase col buco e aspettano.
@@ -102,7 +98,7 @@ export default function Reading({ session, state, refresh }: RoundProps) {
         {!isNarrator && <Waiting>Le votazioni si aprono quando il narratore ha finito di leggere</Waiting>}
         {isNarrator && <p className="label center">Gli altri vedono solo la frase col buco</p>}
         {canAdvance && (
-          <button className={`btn primary${busy ? ' busy' : ''}`} disabled={busy} onClick={() => run(() => advance(session))}>
+          <button className={`btn primary${busy ? ' busy' : ''}`} disabled={busy} onClick={() => run(() => advance(session, 'reading'))}>
             {isNarrator ? 'Mostra a tutti per il voto' : 'Apri le votazioni'}
           </button>
         )}
