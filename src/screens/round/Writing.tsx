@@ -29,7 +29,8 @@ export default function Writing({ session, state, refresh }: RoundProps) {
   const sent = r.my_bluff != null;
   const same = sent && r.my_bluff!.every((x, i) => x === parts[i].trim());
   const ready = parts.every((p) => p.trim().length > 0);
-  const total = needed(state);
+  // senza cronometro si aspettano tutti, anche chi risulta offline (telefono bloccato mentre pensa)
+  const total = r.deadline_at ? needed(state) : state.players.filter((p) => p.id !== r.narrator_id).length;
 
   return (
     <main className="page">
