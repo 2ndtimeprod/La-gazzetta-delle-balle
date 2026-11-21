@@ -1,4 +1,5 @@
 import { useTheme } from '../lib/theme';
+import Title from './Title';
 
 const oggi = () => new Date().toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }).replace(/\./g, '');
 
@@ -18,8 +19,8 @@ export default function Masthead({ meta, big }: { meta?: string; big?: boolean }
       </div>
       <div className="mast-bar">
         {big
-          ? <div className="mast-title" data-mast-title><h1 className="mast-l1">La Gazzetta</h1><div className="mast-l2">delle <em className="shine">Balle</em></div></div>
-          : <><span className="mast-name">La Gazzetta delle Balle</span>{meta && <span className="mast-meta">{meta}</span>}</>}
+          ? <div className="mast-title" data-mast-title><Title /></div>
+          : <><span className="mast-name">Sotto <em>Censura</em></span>{meta && <span className="mast-meta">{meta}</span>}</>}
       </div>
       {big && <div className="motto"><i /><b /><span>Il quotidiano delle verità improbabili</span><b /><i /></div>}
     </header>

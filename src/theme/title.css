@@ -1,0 +1,47 @@
+/* Testata "Sotto Censura" (components/Title.tsx). Uguale nelle due edizioni, cambia solo il colore. */
+.sc-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.sc-title { margin: -.44em 0; display: flex; flex-direction: column; align-items: center; gap: .22em; white-space: nowrap;
+  font: 400 min(110px, 29vw)/.86 'Anton', Impact, sans-serif; letter-spacing: -.5px; -webkit-text-stroke: 3px currentColor;
+  text-shadow: 3px 3px 0 var(--tsh); transform: scale(.94, .58); filter: url(#sc-ink); }
+.sc-title .k { display: inline-block; }
+.sc-title .l2 { position: relative; display: inline-block; color: var(--accent); }
+.sc-title .w { display: inline-block; }
+
+/* La censura: l'alone rosso copre il posto della parola, la linea resta sotto come nelle frasi del gioco. */
+.sc-halo { position: absolute; left: -.04em; right: -.04em; top: .1em; bottom: -.02em; border-radius: 6px 6px 2px 2px; opacity: 0; filter: blur(1.5px);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 16%, transparent), color-mix(in srgb, var(--accent) 42%, transparent),
+    color-mix(in srgb, var(--accent) 16%, transparent)) 0 0 / 200% 100%;
+  box-shadow: 0 0 18px 4px color-mix(in srgb, var(--accent) 16%, transparent); }
+.sc-line { position: absolute; left: .02em; right: .02em; bottom: -.06em; height: .11em; border-radius: 2px; -webkit-text-stroke: 0;
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 45%, #FFF), var(--accent)) 0 0 / 200% 100%;
+  animation: sc-gap 2.2s ease-in-out infinite; }
+
+/* In home: ogni 4 s la parola sfarfalla, ricompare un attimo e torna sotto censura. */
+.sc-title.loop .w { animation: sc-word 4.2s step-end infinite; }
+.sc-title.loop .sc-halo { animation: sc-halo 4.2s step-end infinite, sc-gap 2.2s ease-in-out infinite; }
+/* Intro: mentre si batte a macchina nessuna censura; poi tre lampi rapidi. */
+.sc-title.still .sc-line { opacity: 0; }
+.sc-title.flick .w { animation: sc-word-fast 1.3s step-end both; }
+.sc-title.flick .sc-halo { animation: sc-halo-fast 1.3s step-end both, sc-gap 2.2s ease-in-out infinite; }
+.sc-title .k.off { visibility: hidden; }
+.sc-title .k.hit { animation: ch-hit .14s ease-out both; }
+.sc-title .k.cur { position: relative; }
+.sc-title .k.cur::after { content: ''; position: absolute; right: -.07em; top: .12em; bottom: .06em; width: .05em; background: var(--accent);
+  -webkit-text-stroke: 0; animation: caret .5s steps(1) infinite; }
+
+@keyframes sc-word { 0%, 36% { opacity: 0; } 37% { opacity: 1; } 38% { opacity: 0; } 40% { opacity: 1; } 41% { opacity: 0; } 43%, 68% { opacity: 1; } 69% { opacity: 0; } 70% { opacity: 1; } 71%, 100% { opacity: 0; } }
+@keyframes sc-halo { 0%, 36% { opacity: 1; } 37% { opacity: 0; } 38% { opacity: 1; } 40% { opacity: 0; } 41% { opacity: 1; } 43%, 68% { opacity: 0; } 69% { opacity: 1; } 70% { opacity: 0; } 71%, 100% { opacity: 1; } }
+@keyframes sc-word-fast { 0% { opacity: 1; } 12% { opacity: 0; } 30% { opacity: 1; } 42% { opacity: 0; } 60% { opacity: 1; } 70% { opacity: 0; } 86%, 100% { opacity: 1; } }
+@keyframes sc-halo-fast { 0% { opacity: 0; } 12% { opacity: 1; } 30% { opacity: 0; } 42% { opacity: 1; } 60% { opacity: 0; } 70% { opacity: 1; } 86%, 100% { opacity: 0; } }
+@keyframes sc-gap { 0% { background-position: 150% 0; } 100% { background-position: -50% 0; } }
+
+/* Testatina piccola (pagine interne, edizione straordinaria, tutorial) */
+.mast-name, .edi-mast, .tu-mast { font-family: 'Anton', Impact, sans-serif; font-style: normal; font-weight: 400; text-transform: uppercase; letter-spacing: .5px; }
+.mast-name { display: inline-block; font-size: 26px; line-height: 1; transform: scaleY(.72); transform-origin: left center; }
+.mast-name em, .edi-mast em, .tu-mast em { font-style: normal; color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-title .w { animation: none !important; opacity: 1; }
+  .sc-title .sc-halo { animation: none !important; opacity: 0; }
+}
+.mast.big .mast-bar { padding: 12px 0 16px; }

@@ -12,7 +12,7 @@ const SLIDES: Slide[] = [
   {
     kicker: 'Benvenuto in redazione', title: 'Una notizia è vera. Le altre sono balle.',
     body: <><u className="hl">Da 3 a 12 giocatori</u>, un telefono a testa, tutti nella stessa stanza. Ogni round esce una notizia vera ma incompleta: <u className="hl">voi inventate il pezzo mancante</u> e <u className="hl">cercate di ingannare gli altri</u>.</>,
-    art: <div className="tu-art"><span className="tu-mast">La Gazzetta delle Balle</span></div>,
+    art: <div className="tu-art"><span className="tu-mast">Sotto <em>Censura</em></span></div>,
   },
   {
     kicker: '1 · Il narratore', title: 'Uno conduce, gli altri giocano',

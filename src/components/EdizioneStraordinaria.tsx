@@ -9,7 +9,7 @@ export default function EdizioneStraordinaria({ state, onDone }: { state: GameSt
   return (
     <div className="edi" aria-hidden="true" onClick={onDone}>
       <div className="edi-sheet">
-        <div className="edi-mast">La Gazzetta delle <em>Balle</em></div>
+        <div className="edi-mast">Sotto <em>Censura</em></div>
         <span className="kicker">Edizione straordinaria</span>
         <h2 className="edi-head">Si comincia!</h2>
         <p className="edi-sub">{n} inviati in redazione · {giri} {giri === 1 ? 'giro' : 'giri'}</p>

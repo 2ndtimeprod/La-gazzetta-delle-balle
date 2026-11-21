@@ -18,9 +18,11 @@ import './theme/catrev.css';
 import './theme/debate.css';
 import './theme/reading.css';
 import './theme/censor.css';
+import './theme/title.css';
 import './theme/prova.css';
 import ProvaBar from './components/ProvaBar';
 import { loadProva } from './lib/prova';
+import { InkFilter } from './components/Title';
 import Intro from './components/Intro';
 import EdizioneStraordinaria from './components/EdizioneStraordinaria';
 import Tutorial from './components/Tutorial';
@@ -79,5 +81,5 @@ function Screens() {
 }
 
 export default function App() {
-  return <><Screens /><Intro /><Tutorial /></>;
+  return <><InkFilter /><Screens /><Intro /><Tutorial /></>;
 }
