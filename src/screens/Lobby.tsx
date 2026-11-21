@@ -27,7 +27,7 @@ export default function Lobby({ session, state, onLeft, refresh }: Props) {
   const share = async () => {
     const url = `${location.origin}${location.pathname}?c=${room.code}`;
     try {
-      if (navigator.share) await navigator.share({ title: 'La Gazzetta delle Balle', text: `Entra nella stanza ${room.code}`, url });
+      if (navigator.share) await navigator.share({ title: 'Sotto Censura', text: `Entra nella stanza ${room.code}`, url });
       else { await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 1800); }
     } catch { /* annullato */ }
   };
