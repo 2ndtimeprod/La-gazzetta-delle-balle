@@ -20,12 +20,12 @@ const SLIDES: Slide[] = [
     art: <div className="tu-art"><span className="tu-strip">Scienza</span></div>,
   },
   {
-    kicker: '2 · Il buco', title: 'Il narratore sceglie cosa censurare',
+    kicker: '2 · La censura', title: 'Il narratore sceglie cosa censurare',
     body: <>Il narratore <u className="hl">vede la notizia intera</u>. Può tenere l'elemento mancante suggerito, oppure <u className="hl">toccare le parole da nascondere</u>, anche tutte tranne una. Gli altri <u className="hl">vedono solo le parole rimaste</u>.</>,
     art: <div className="tu-art"><p className="tu-sent"><span className="gap censor" /> il Furby <span className="gap censor" />.</p></div>,
   },
   {
-    kicker: '3 · Scrivi', title: 'Riempi i buchi con una balla',
+    kicker: '3 · Scrivi', title: 'Riempi le censure con una balla',
     body: <>Tutti gli altri <u className="hl">inventano il pezzo mancante più credibile possibile</u>. Con cronometro acceso avete <u className="hl">fino a 90 secondi</u>; senza cronometro <u className="hl">non c'è limite di tempo</u>.</>,
     art: <div className="tu-art"><p className="tu-sent">Il Furby fu vietato all'NSA perché temeva che <span className="gap" />.</p></div>,
   },

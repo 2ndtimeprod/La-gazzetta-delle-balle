@@ -9,7 +9,7 @@ import Waiting from '../../components/Waiting';
 import Censor from './Censor';
 
 // Il narratore gira il tamburo. Il server tiene il risultato segreto finché il tamburo non si ferma:
-// allora il narratore vede la frase intera, sceglie il buco (Censor) e `start_writing` la pubblica a tutti insieme.
+// allora il narratore vede la frase intera, sceglie la censura (Censor) e `start_writing` la pubblica a tutti insieme.
 // `onHold` tiene questa schermata visibile fino a quel momento.
 export default function Picking({ session, state, refresh, onHold, onReveal }: RoundProps & { onHold: (b: boolean) => void; onReveal: (face: string) => void }) {
   const r = state.round!;
@@ -18,7 +18,7 @@ export default function Picking({ session, state, refresh, onHold, onReveal }: R
   const [landed, setLanded] = useState<string | null>(null);
   const [spinErr, setSpinErr] = useState('');
   const [showPick, setShowPick] = useState(false); // il Jolly lascia al tamburo il tempo di fermarsi
-  const [ready, setReady] = useState(false); // tamburo fermo: si passa alla scelta del buco
+  const [ready, setReady] = useState(false); // tamburo fermo: si passa alla scelta della censura
   const spun = useRef(false);
   const me = nameOf(state.players, state.me);
 
@@ -85,7 +85,7 @@ export default function Picking({ session, state, refresh, onHold, onReveal }: R
         </section>
       )}
       {roles(state).isHost && !isNarrator && roles(state).narratorOff && r.pending && (
-        <div className="actions"><button className="btn small" disabled={busy} onClick={() => run(() => startWriting(session))}>Pubblica col buco dell'archivio</button></div>
+        <div className="actions"><button className="btn small" disabled={busy} onClick={() => run(() => startWriting(session))}>Pubblica con la censura consigliata</button></div>
       )}
       {roles(state).isHost && !isNarrator && roles(state).narratorOff && r.phase === 'picking' && !r.jolly && (
         <Skip name={nameOf(state.players, r.narrator_id)} busy={busy} onSkip={() => run(() => skipNarrator(session))} />

@@ -12,7 +12,7 @@ import Pen from '../../components/PenIcon';
 const LETTERS = 'ABCDEFGHIJKLM';
 
 // Fase "reading": il narratore vede le frasi complete, le legge ad alta voce, corregge i refusi e le manda al voto.
-// Gli altri vedono solo la frase col buco e aspettano.
+// Gli altri vedono solo la frase censurata e aspettano.
 export default function Reading({ session, state, refresh }: RoundProps) {
   const r = state.round!;
   const { err, busy, run } = useAct(refresh);
@@ -32,7 +32,7 @@ export default function Reading({ session, state, refresh }: RoundProps) {
         <Sentence frase={r.frase!} parts={edit.parts.map((p) => p.trim())} />
         {edit.parts.map((v, i) => (
           <div className="field" key={i}>
-            <label className="label" htmlFor={`e${i}`}>{edit.parts.length > 1 ? `Buco ${i + 1}: testo che vedranno tutti` : 'Testo che vedranno tutti'}</label>
+            <label className="label" htmlFor={`e${i}`}>{edit.parts.length > 1 ? `Censura ${i + 1}: testo che vedranno tutti` : 'Testo che vedranno tutti'}</label>
             <input id={`e${i}`} className="input" maxLength={r.custom ? 200 : 80} value={v} autoComplete="off" autoFocus={i === 0}
               onChange={(e) => setEdit({ ...edit, parts: edit.parts.map((x, j) => (j === i ? e.target.value : x)) })} />
           </div>
@@ -96,7 +96,7 @@ export default function Reading({ session, state, refresh }: RoundProps) {
       )}
       <div className="actions">
         {!isNarrator && <Waiting>Le votazioni si aprono quando il narratore ha finito di leggere</Waiting>}
-        {isNarrator && <p className="label center">Gli altri vedono solo la frase col buco</p>}
+        {isNarrator && <p className="label center">Gli altri vedono solo la frase censurata</p>}
         {canAdvance && (
           <button className={`btn primary${busy ? ' busy' : ''}`} disabled={busy} onClick={() => run(() => advance(session, 'reading'))}>
             {isNarrator ? 'Mostra a tutti per il voto' : 'Apri le votazioni'}

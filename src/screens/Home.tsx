@@ -50,8 +50,8 @@ export default function Home({ onSession, notice }: { onSession: (s: Session) =>
         </button>
       )}
       <ol className="howto">
-        <li><span><b>Il narratore</b> estrae una notizia vera, con un buco.</span></li>
-        <li><span><b>Gli altri</b> riempiono il buco con una balla credibile.</span></li>
+        <li><span><b>Il narratore</b> estrae una notizia vera, con una parte censurata.</span></li>
+        <li><span><b>Gli altri</b> riempiono la censura con una balla credibile.</span></li>
         <li><span><b>Si vota</b> la vera: punti a chi indovina e a chi inganna.</span></li>
       </ol>
       <button className="btn link howto-link" onClick={openTutorial}>Come si gioca: la guida completa</button>
