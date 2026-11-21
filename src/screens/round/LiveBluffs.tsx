@@ -25,7 +25,7 @@ export default function LiveBluffs({ session, state, refresh }: RoundProps) {
         <div key={b.player_id} className="live-edit">
           <Sentence frase={r.frase!} parts={edit.parts.map((p) => p.trim())} small />
           {edit.parts.map((v, i) => (
-            <input key={i} className="input" aria-label={`Balla di ${name}${edit.parts.length > 1 ? `, buco ${i + 1}` : ''}`} value={v}
+            <input key={i} className="input" aria-label={`Balla di ${name}${edit.parts.length > 1 ? `, censura ${i + 1}` : ''}`} value={v}
               maxLength={r.custom ? 200 : 80} autoFocus={i === 0} autoComplete="off"
               onChange={(e) => setEdit({ ...edit, parts: edit.parts.map((x, j) => (j === i ? e.target.value : x)) })} />
           ))}

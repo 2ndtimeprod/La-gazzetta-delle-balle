@@ -45,7 +45,7 @@ const MESSAGES: Record<string, string> = {
   edit_too_far: 'Correzione troppo diversa da quello che ha scritto il giocatore: solo maiuscole, accenti e refusi.',
   bad_censor: 'Si possono censurare solo parole.',
   nothing_kept: 'Lascia almeno una parola visibile.',
-  too_many_holes: 'Al massimo 3 buchi: unisci le parole censurate.',
+  too_many_holes: 'Al massimo 3 censure: unisci le parole censurate.',
   edit_true: 'La risposta vera non si corregge.',
   duplicate: 'Un altro giocatore ha già scritto una risposta uguale: scrivine una diversa.',
   bad_text: 'Testo non valido (1-80 caratteri).',

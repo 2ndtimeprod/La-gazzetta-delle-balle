@@ -66,15 +66,15 @@ export default function Writing({ session, state, refresh }: RoundProps) {
         </>
       ) : (
         <>
-          <div className="news" data-label="Notizia vera, con un buco"><Sentence frase={r.frase!} parts={sent && same ? r.my_bluff! : undefined} censor={r.custom} /></div>
+          <div className="news" data-label="Notizia vera, censurata"><Sentence frase={r.frase!} parts={sent && same ? r.my_bluff! : undefined} censor={r.custom} /></div>
           {parts.map((v, i) => (
             <div className="field" key={i}>
-              <label className="label" htmlFor={`b${i}`}>{holes > 1 ? `Buco ${i + 1}` : 'La tua balla'}</label>
+              <label className="label" htmlFor={`b${i}`}>{holes > 1 ? `Censura ${i + 1}` : 'La tua balla'}</label>
               {(() => {
                 const fp = { id: `b${i}`, className: 'input', maxLength: r.custom ? 200 : 80, value: v, autoComplete: 'off', autoCapitalize: 'none',
                   autoFocus: i === 0 && !sent, placeholder: 'Deve sembrare vera', enterKeyHint: (i === holes - 1 ? 'send' : 'next') as 'send' | 'next',
                   onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setParts(parts.map((x, j) => (j === i ? e.target.value : x))) };
-                // nel round censurato dal narratore i buchi possono essere lunghi: campo su più righe
+                // nel round censurato dal narratore le censure possono essere lunghe: campo su più righe
                 return r.custom ? <textarea {...fp} rows={2} /> : <input {...fp} />;
               })()}
             </div>

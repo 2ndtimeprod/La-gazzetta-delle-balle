@@ -9,7 +9,7 @@ import Sentence from '../../components/Sentence';
 import Toast from '../../components/Toast';
 
 // Tamburo fermo: il narratore vede la frase intera, senza nulla censurato, e tocca le parole da nascondere.
-// "Censura il buco consigliato" applica il buco dell'archivio, "Azzera" toglie tutto. Se la scelta coincide
+// "Applica la censura consigliata" applica la censura dell'archivio, "Azzera" toglie tutto. Se la scelta coincide
 // con l'archivio si pubblica come un round normale.
 export default function Censor({ session, state, refresh, onDone }: RoundProps & { onDone: () => void }) {
   const r = state.round!;
@@ -21,7 +21,7 @@ export default function Censor({ session, state, refresh, onDone }: RoundProps &
   const isArchive = sel.size === archive.size && [...sel].every((i) => archive.has(i));
   const problem = sel.size === 0 ? 'Tocca almeno una parola da censurare'
     : !pv.kept ? 'Lascia almeno una parola visibile'
-    : pv.holes > 3 ? `${pv.holes} buchi: al massimo 3, unisci le parole censurate` : '';
+    : pv.holes > 3 ? `${pv.holes} censure: al massimo 3, unisci le parole censurate` : '';
 
   const toggle = (i: number) => {
     const n = new Set(sel); if (n.has(i)) n.delete(i); else n.add(i);
@@ -37,7 +37,7 @@ export default function Censor({ session, state, refresh, onDone }: RoundProps &
       <RoundHeader state={state} />
       <div className="stack">
         <h1 className="head sm">Scegli cosa censurare</h1>
-        <p className="lede">Tocca le parole da nascondere, oppure usa il buco consigliato: gli altri vedranno solo le parole che lasci.</p>
+        <p className="lede">Tocca le parole da nascondere, oppure applica la censura consigliata: gli altri vedranno solo le parole che lasci.</p>
       </div>
       <div className="secret" data-label={`Riservato al narratore${r.pending_category ? ' · ' + (CATEGORIE[r.pending_category] ?? r.pending_category) : ''}`}>
         <p className="censor-text">
@@ -47,17 +47,17 @@ export default function Censor({ session, state, refresh, onDone }: RoundProps &
               : <span className="punct">{t.t}</span>}</span>
           ))}
         </p>
-        <p className="censor-legend"><span className="arch-mark">sottolineato</span> il buco consigliato</p>
+        <p className="censor-legend"><span className="arch-mark">sottolineato</span> la censura consigliata</p>
       </div>
       <div className="censor-tools">
-        <button className="btn" disabled={busy || isArchive} onClick={() => { setSel(new Set(archive)); vibrate(8); }}>Censura il buco consigliato</button>
+        <button className="btn" disabled={busy || isArchive} onClick={() => { setSel(new Set(archive)); vibrate(8); }}>Applica la censura consigliata</button>
         <button className="btn link" disabled={busy || sel.size === 0} onClick={() => setSel(new Set())}>Azzera</button>
       </div>
       <div className="stack">
         <span className="label">Gli altri vedranno</span>
         <Sentence frase={pv.frase} quote censor />
         <span className={`censor-count${problem ? ' bad' : ''}`}>
-          {problem || `${pv.words} ${pv.words === 1 ? 'parola censurata' : 'parole censurate'} · ${pv.holes} ${pv.holes === 1 ? 'buco' : 'buchi'}${pv.words > 6 && !isArchive ? ' · 90 secondi per scrivere' : ''}`}
+          {problem || `${pv.words} ${pv.words === 1 ? 'parola censurata' : 'parole censurate'} · ${pv.holes} ${pv.holes === 1 ? 'censura' : 'censure'}${pv.words > 6 && !isArchive ? ' · 90 secondi per scrivere' : ''}`}
         </span>
       </div>
       <div className="actions">
