@@ -14,6 +14,7 @@ import Explain from '../screens/round/Explain';
 import Scores from '../screens/round/Scores';
 import RoundHeader from '../components/RoundHeader';
 import Drum from '../components/Drum';
+import CategoryReveal from '../components/CategoryReveal';
 
 // Solo in sviluppo (npm run dev): /?anteprima=lobby|tamburo|censura|censurato|scrive|narratore|lettura|ascolta|vota|rivela|spiega|punti|fine
 const S: Session = { code: 'KUBO', playerId: 'p1', secret: 's' };
@@ -80,6 +81,7 @@ export default function Anteprima({ which }: { which: string }) {
   const p = { session: S, refresh: noop };
   switch (which) {
     case 'home': return <Home onSession={noop} />;
+    case 'categoria': return <CategoryReveal face={new URLSearchParams(location.search).get('cat') ?? 'Food & Drink'} onDone={noop} />;
     case 'edizione': return <><Lobby session={S} state={state(null, 'p1', 'lobby')} refresh={noop} onLeft={noop} /><EdizioneStraordinaria state={state({ phase: 'picking' })} onDone={noop} /></>;
     case 'tutorial': localStorage.removeItem('balle:tutorial-v2'); return <Home onSession={noop} />;
     case 'lobby': return <Lobby {...p} state={st.lobby} onLeft={noop} />;

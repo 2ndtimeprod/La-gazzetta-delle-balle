@@ -8,7 +8,7 @@ export default function CategoryReveal({ face, onDone }: { face: string; onDone:
     <div className="catrev" role="status" aria-live="polite" onClick={onDone}>
       <div className="catrev-in">
         <span className="kicker">La categoria è</span>
-        <h2>{CATEGORIE[face] ?? face}</h2>
+        <h2><span className="cz"><span className="w">{CATEGORIE[face] ?? face}</span></span></h2>
         <i className="catrev-rule" />
       </div>
     </div>

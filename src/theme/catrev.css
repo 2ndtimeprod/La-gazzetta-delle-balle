@@ -3,8 +3,16 @@
   animation: catrev-bg 3.6s ease both; }
 .catrev-in { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 0 20px; animation: catrev-in 3.6s cubic-bezier(.2,.8,.2,1) both; }
 .catrev h2 { margin: 0; color: var(--accent); font: var(--head-w) clamp(52px, 17vw, 96px)/.95 var(--f-head); text-transform: var(--head-case); letter-spacing: var(--head-track); }
-.catrev-rule { display: block; width: 0; height: 4px; background: var(--ink); animation: catrev-rule 1s .5s ease forwards; }
+/* Censura come nel titolo, riga per riga anche se il nome va a capo: dopo l'apparizione la parola lampeggia tre volte sotto l'alone rosso e
+   resta leggibile; la linea di censura è la riga sotto il nome (`.catrev-rule`). */
+.catrev h2 .cz { display: inline; padding: 0 .04em; box-decoration-break: clone; -webkit-box-decoration-break: clone;
+  background: linear-gradient(color-mix(in srgb, var(--accent) 40%, transparent), color-mix(in srgb, var(--accent) 40%, transparent)) 0 70% / 0 0 no-repeat;
+  animation: cz-fast 1.3s .9s step-end forwards; }
+.catrev h2 .w { animation: sc-word-fast 1.3s .9s step-end both; }
+@keyframes cz-fast { 0%, 30%, 60%, 86%, 100% { background-size: 0 0; } 12%, 42%, 70% { background-size: 100% 80%; } }
+.catrev-rule { display: block; width: 0; height: 5px; border-radius: 2px; background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 45%, #FFF), var(--accent)) 0 0 / 200% 100%;
+  animation: catrev-rule 1s .5s ease forwards, sc-gap 2.2s ease-in-out infinite; }
 @keyframes catrev-bg { 0% { opacity: 0; } 10%, 80% { opacity: 1; } 100% { opacity: 0; } }
 @keyframes catrev-in { 0% { transform: scale(.6); opacity: 0; } 18% { transform: scale(1.04); opacity: 1; } 28%, 100% { transform: scale(1); opacity: 1; } }
 @keyframes catrev-rule { to { width: min(260px, 70vw); } }
-@media (prefers-reduced-motion: reduce) { .catrev, .catrev-in { animation-duration: 3.6s; animation-name: catrev-bg; } .catrev-rule { animation: none; width: 200px; } }
+@media (prefers-reduced-motion: reduce) { .catrev, .catrev-in { animation-duration: 3.6s; animation-name: catrev-bg; } .catrev-rule { animation: none; width: 200px; } .catrev h2 .w { animation: none; } .catrev h2 .cz { animation: none; } }
