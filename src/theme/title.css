@@ -46,7 +46,7 @@
 }
 .mast.big .mast-bar { padding: 12px 0 16px; }
 
-/* Edizione della sera: la testata ha lo stesso aspetto della categoria a tutta pagina (Anton maiuscolo, senza schiacciamento, contorno e bordi d'inchiostro). */
-[data-theme="sera"] .sc-title { margin: 0; gap: .12em; font-size: min(88px, 23vw); letter-spacing: var(--head-track); -webkit-text-stroke: 0; text-shadow: none; transform: none; filter: none; line-height: .95; }
-[data-theme="sera"] .sc-title .k { transform: none !important; }
-[data-theme="sera"] .mast-name { transform: none; letter-spacing: var(--head-track); }
+/* Testata uguale nelle due edizioni, come la categoria della sera: Anton maiuscolo, senza schiacciamento, contorno e bordi d'inchiostro. */
+.sc-title { margin: 0; gap: .12em; font-size: min(88px, 23vw); letter-spacing: .3px; -webkit-text-stroke: 0; text-shadow: none; transform: none; filter: none; line-height: .95; }
+.sc-title .k { transform: none !important; }
+.mast-name { transform: none; letter-spacing: .3px; }
