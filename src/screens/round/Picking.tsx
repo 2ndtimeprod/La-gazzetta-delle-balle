@@ -85,7 +85,7 @@ export default function Picking({ session, state, refresh, onHold, onReveal }: R
         </section>
       )}
       {roles(state).isHost && !isNarrator && roles(state).narratorOff && r.pending && (
-        <div className="actions"><button className="btn small" disabled={busy} onClick={() => run(() => startWriting(session))}>Pubblica col buco dell'archivio</button></div>
+        <div className="actions"><button className="btn small" disabled={busy} onClick={() => run(() => startWriting(session))}>Pubblica col buco consigliato</button></div>
       )}
       {roles(state).isHost && !isNarrator && roles(state).narratorOff && r.phase === 'picking' && !r.jolly && (
         <Skip name={nameOf(state.players, r.narrator_id)} busy={busy} onSkip={() => run(() => skipNarrator(session))} />

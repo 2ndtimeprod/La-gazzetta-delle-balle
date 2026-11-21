@@ -8,13 +8,14 @@ import RoundHeader from '../../components/RoundHeader';
 import Sentence from '../../components/Sentence';
 import Toast from '../../components/Toast';
 
-// Tamburo fermo: il narratore vede la frase intera e sceglie il buco. Parte dal buco dell'archivio;
-// toccando le parole le censura o le rimette. Se la scelta coincide con l'archivio si pubblica come un round normale.
+// Tamburo fermo: il narratore vede la frase intera, senza nulla censurato, e tocca le parole da nascondere.
+// "Censura il buco consigliato" applica il buco dell'archivio, "Azzera" toglie tutto. Se la scelta coincide
+// con l'archivio si pubblica come un round normale.
 export default function Censor({ session, state, refresh, onDone }: RoundProps & { onDone: () => void }) {
   const r = state.round!;
   const tokens = r.tokens!;
   const archive = useMemo(() => archiveHole(tokens), [tokens]);
-  const [sel, setSel] = useState<Set<number>>(() => new Set(archive));
+  const [sel, setSel] = useState<Set<number>>(() => new Set());
   const { err, busy, run } = useAct(refresh);
   const pv = censorPreview(tokens, sel);
   const isArchive = sel.size === archive.size && [...sel].every((i) => archive.has(i));
@@ -36,7 +37,7 @@ export default function Censor({ session, state, refresh, onDone }: RoundProps &
       <RoundHeader state={state} />
       <div className="stack">
         <h1 className="head sm">Scegli cosa censurare</h1>
-        <p className="lede">Tocca le parole da nascondere: gli altri vedranno solo quelle che lasci.</p>
+        <p className="lede">Tocca le parole da nascondere, oppure usa il buco consigliato: gli altri vedranno solo le parole che lasci.</p>
       </div>
       <div className="secret" data-label={`Riservato al narratore${r.pending_category ? ' · ' + (CATEGORIE[r.pending_category] ?? r.pending_category) : ''}`}>
         <p className="censor-text">
@@ -46,7 +47,11 @@ export default function Censor({ session, state, refresh, onDone }: RoundProps &
               : <span className="punct">{t.t}</span>}</span>
           ))}
         </p>
-        <p className="censor-legend"><span className="arch-mark">sottolineato</span> il buco dell'archivio</p>
+        <p className="censor-legend"><span className="arch-mark">sottolineato</span> il buco consigliato</p>
+      </div>
+      <div className="censor-tools">
+        <button className="btn" disabled={busy || isArchive} onClick={() => { setSel(new Set(archive)); vibrate(8); }}>Censura il buco consigliato</button>
+        <button className="btn link" disabled={busy || sel.size === 0} onClick={() => setSel(new Set())}>Azzera</button>
       </div>
       <div className="stack">
         <span className="label">Gli altri vedranno</span>
@@ -56,10 +61,6 @@ export default function Censor({ session, state, refresh, onDone }: RoundProps &
         </span>
       </div>
       <div className="actions">
-        <div className="row2">
-          <button className="btn small" disabled={busy || isArchive} onClick={() => setSel(new Set(archive))}>Buco dell'archivio</button>
-          <button className="btn small" disabled={busy || sel.size === 0} onClick={() => setSel(new Set())}>Azzera</button>
-        </div>
         <button className={`btn primary${busy ? ' busy' : ''}`} disabled={busy || !!problem} onClick={publish}>Manda in stampa</button>
         <Toast msg={err} />
       </div>
